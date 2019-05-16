@@ -1,0 +1,750 @@
+
+<title>Bioenergy Training and Workshops | Department of Energy</title>
+
+<script src='//api.mapbox.com/mapbox.js/v2.4.0/mapbox.js?access_token="pk.eyJ1IjoiZW5lcmd5IiwiYSI6IkozTG9BZDQifQ.1WKh4U0kKCdknF3gxBOF7Q"'></script>
+<link href='//api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet' />
+
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.5.0/papaparse.min.js"></script>
+
+<script src="https://eereweb.github.io/apps-common/js/Leaflet.markercluster.min.js"></script>
+<script src="https://eereweb.github.io/apps-common/js/csv2geojson.src.js"></script>
+
+<script src='https://eereweb.github.io/apps-common/js/funclib.js'></script>
+
+<link rel="stylesheet" type="text/css" href="css/train.css">
+<link rel="stylesheet" type="text/css" href="https://eereweb.github.io/apps-common/css/app.min.css">
+
+<style type="text/css">
+
+	.routes { /*padding-left:4%;*/ }
+	.routes ul.tabs { width:100%; list-style:none; padding:0; margin:0; }
+	.routes ul.tabs li { float:left; width:33%; padding:0; margin:0; }
+	.routes ul.tabs li a { display:block; text-align:center; color:#FFF;/*616161*/ font-weight:700; line-height:1.25em; text-transform:uppercase; text-decoration:none; background-color:#ccc; border-left:3px solid #fff; border-right:3px solid #fff; }
+	.routes ul.tabs li a .vcenter { padding: 12px 5px; font-size: 13px; white-space:nowrap;}
+	.routes ul.tabs li:first-child { width:33%; }
+	.routes ul.tabs li:first-child a { border-left:none; }
+	.routes ul.tabs li:last-child a { border-right:none; }
+	.routes ul.tabs li a:hover { background-color:#8F8D8E; text-decoration:underline; }
+	.routes ul.tabs li a.active { color:#fff; background-color:#8f8d8e; }
+	.routes ul.tabs li ul { display:none; }
+	.routes .description { background-color:#8f8d8e; padding:15px 0; }
+	.routes .description .tab-content { display:none; color:#fff; line-height:1.5em; }
+	.routes .description .tab-content.active { display:block; }
+	.routes .description .tab-content .text p { font-size:0.825em; padding:0 15px; }
+	.routes .description .tab-content .subroutes ul { list-style:none; padding:0; margin:0; }
+	.routes .description .tab-content .subroutes ul li { padding:0; margin:0; }
+	.routes .description .tab-content .subroutes ul li a { display:block; font-size:0.825em; color:#fff; font-weight:700; text-decoration:none; padding:5px 15px; margin:0; }
+	.routes .description .tab-content .subroutes ul li a:hover { background-color:#797979; }
+	.routes .description .tab-content .subroutes ul li a.active { color:#f79e1f; background-color:#616161; }
+</style>
+
+<base target="_blank">
+<!--<div class="content">
+<div class="container">-->
+
+<div class="row">
+	<div class="col-sm-12"> 
+	
+<div class="routes">
+                        <ul class="tabs clear vert-match">
+                            <li class="tab">
+                                <a href="https://www.energy.gov/node/2332633/" target="_parent" data-slug="advancement-routes" data-type="freeform" class="route-item vert-match-box-99">
+                                    <div class="vcenter">BIOENERGY CAREERS</div>
+                                </a>
+                            </li>
+                            <li class="tab">
+                                <a href="https://www.energy.gov/node/4110569/" target="_parent" data-slug="advancement-routes" data-type="freeform" class="route-item vert-match-box-99">
+                                    <div class="vcenter">ALGAE TECHNOLOGY EDUCATIONAL CONSORTIUM</div>
+                                </a>
+                            </li>
+                            <li class="tab">
+                                <a href="https://www.energy.gov/node/4045677" target="_parent" data-slug="advancement-routes" data-type="freeform" class="route-item active vert-match-box-99">
+                                    <div class="vcenter">WORKFORCE DEVELOPMENT OPPORTUNITIES</div>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="description">
+                            <div class="row tab-content active" data-slug="advancement-routes">
+                                <div class="text col-sm-10">
+                                    <p>
+                                        Explore ATEC and other bioenergy workforce development opportunities. Mouse over the pinned locations on the U.S. map and interact with the search fields to create a personalized list of training options.
+                                    </p>
+                                </div>
+                                <div class="col-sm-2">
+                                    <a href="https://www.energy.gov/node/2332633/" target="_parent">
+                                        <img src="/apps/bioenergy/career_map/img/bioenergy-career-map-icon01.png" alt="Bioenergy Career Wheel" title="Back to the Career Exploration Wheel">
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>	
+		
+	</div>
+
+    <div class="col-sm-4" id="facet_div">
+
+        <div class="panel-group">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        <a data-toggle="collapse">Location</a>
+                    </h3>
+                </div>
+                <div id="loc_collapse" class="panel-collapse collapse in">
+                    <div class="panel-body" id="loc_div"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel-group">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        <a data-toggle="collapse">Course Type</a>
+                    </h3>
+                </div>
+                <div id="course_collapse" class="panel-collapse collapse in">
+                    <div class="panel-body" id="course_div">
+						<!--<select id='course_select' name='course_select' class='form-control'>
+                            <option value="All">All</option>
+                            <option value="Online">Online</option>
+                            <option value="Classroom">Classroom</option>
+                        </select>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel-group">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        <a data-toggle="collapse">Program Area</a>
+                    </h3>
+                </div>
+                <div id="tag_collapse" class="panel-collapse collapse in">
+                    <div class="panel-body" id="tag_div">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel-group" style="display: block;">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        <a data-toggle="collapse">Degree/Certificate</a>
+                    </h3>
+                </div>
+                <div id="degree_collapse" class="panel-collapse collapse in">
+                    <div class="panel-body" id="degree_div"></div>
+                </div>
+            </div>
+        </div>
+		
+        <div class="panel-group" style="display: block;">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        <a data-toggle="collapse">Consortia</a>
+                    </h3>
+                </div>
+                <div id="degree_collapse" class="panel-collapse collapse in">
+                    <div class="panel-body" id="consortium_div"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="col-sm-8">
+        <div id='map'>
+			<div id="map" class="leaflet-container leaflet-fade-anim" tabindex="0">
+				<div id="map_intro" style="display: block;"><span class="close" id="close_intro">X</span>
+					<p><strong>Workforce Training Opportunities Map</strong></p><br>
+					<p>This interactive map highlights bioenergy training program options across the United States. Adjust the map filters to control the information displayed. You can zoom in and out of the map several ways:</p>
+					<ol>
+						<li>Double-click on the map </li>
+						<li>Use the +/- buttons on the upper left</li>
+						<li>Zoom in by scrolling the mouse wheel away from you. To zoom out, scroll the wheel toward you.</li>
+					</ol>
+					You can learn more about bioenergy training opportunities at each institution by clicking on the green <img src="https://eereweb.github.io/apps-common/images/dataTables_details_open.png" /> icons at the left of the search list. 
+					</p><br>
+					<div id="divCloseIntro" style="text-align: center;"><button id="btnCloseIntro" type="button" class="btn btn-default">Get Started</button></div>
+					<br><br>
+				</div>
+			</div>
+		</div>
+    </div>
+
+	<div class="col-sm-12">
+		<table id="projects-datatable" class="display dataTable" cellspacing="0"></table>
+	</div>
+
+</div>
+
+<!--
+</div>
+</div>
+-->
+
+<script>
+    //setup Column locations
+    var objColumn = {
+		"Degree/Certificate": 2,
+        "Tag": 4,
+        "Location": 5,
+		"Consortium": 7,
+		"Course Type": 9,
+    };
+
+	var github_location = '';
+	var csvDataFile = github_location + 'beto_training_2019_03_20.csv';
+	$.when($.ajax({
+		type: "GET",
+		url: csvDataFile,
+		aysnc: false
+
+		//success: csvLoaded
+	}).done(csvLoaded));
+
+	// Though these functions are below the places where they're used in this
+	// script, they'll still work due to JavaScript's function hoisting feature.
+	function csvLoaded(data) {
+		$('#map_intro').show();
+
+		//console.log(data);
+		var objJson = Papa.parse(removeTrailingLine(data), { "header": true });
+		//console.log(objJson);
+		var csvJson = JSON.stringify(objJson.data, null, 2);
+		//console.log(csvJson);
+
+		var default_datatable = $('#projects-datatable').DataTable({
+			"processing": true,
+			"serverSide": false,
+			"order": [[1, 'asc']],
+			"lengthMenu": [[ -1, 5, 10, 25, 50], ["All", 5, 10, 25, 50]],
+			"pageLength": (qs['showAll'] == 'true') ? -1 : -1,
+			"data": eval(csvJson),
+
+			"columns": [
+				{
+					"class": 'details-control',
+					"orderable": false,
+					"data": null,
+					"defaultContent": ''
+				},
+				{ "data": "School/Institution" },
+				{ "data": "Degree/Certificate" },
+				{
+					"data": null, render: function (data, type, row) {
+						var strLinks = '', links = data['Link'].split("; "), titles = data['Associated Lab/Research Center/Program'].split("; ");
+					
+						for (var i = 0; i < links.length; i++)
+							strLinks += '<a href="' + links[i] + '" target="_blank">' + titles[i] + '</a>; ';
+						 
+						 return strLinks.substring(0, strLinks.length - 2);
+					}
+				},
+				{ "data": "Tags" },
+				{ "data": "Location" },
+				{ "data": "Description" },
+				{ "data": "Consortium" },
+				{ "data": "City/State" },
+				{ "data": "Course Type" },
+			],
+			"columnDefs": [
+				{
+					"targets": [0],
+				},
+				{
+					"targets": [1],
+					"title": "School/Institution",
+					//"className": 'dt-head-nowrap',
+				},
+				{
+					"targets": [2],
+					"title": "Degree/Certificate"
+				},
+				{
+					"targets": [3],
+					"title": "Associated Lab / Research Center / Program",
+					//"className": 'dt-body-nowrap dt-head-nowrap',
+				},
+				{
+					"targets": [4],
+					"title": "Program Area",
+				},
+				{
+					"targets": [5],
+					"title": "Location",
+				},
+				{
+					"targets": [6],
+					"title": "Description",
+					"visible": false,
+				},
+				{
+					"targets": [7],
+					"title": "Consortium",
+					"visible": false,
+				},
+				{
+					"targets": [8],
+					"title": "City/State",
+					"visible": false,
+				},
+				{
+					"targets": [9],
+					"title": "Course Type",
+					"visible": false,
+				},
+			],
+			"createdRow": function (row, data, index) {
+				//$('td', row).eq(0).append(format(data));
+			},
+			"initComplete": function (settings, json) {
+
+				setup_select_filter('loc_select', '#loc_div', objColumn['Location'], true);
+				setup_select_filter('course_select', '#course_div', objColumn['Course Type'], true);
+				setup_select_filter('tag_select', '#tag_div', objColumn['Tag'], true);
+				setup_select_filter('degree_select', '#degree_div', objColumn['Degree/Certificate'], true);
+				setup_select_filter('consortium_select', '#consortium_div', objColumn['Consortium'], true);
+				
+				$('select').addClass('form-control');
+			
+				$('#projects-datatable_filter').find('input').keyup(function () {
+					if ($('#loc_select').val() != 'All') search_dt_column($('#projects-datatable').DataTable(), objColumn['Location'], '#loc_select');
+					if ($('#course_select').val() != 'All') filter_dt_column($('#projects-datatable').DataTable(), objColumn['Course Type'], '#course_select');
+					if ($('#tag_select').val() != 'All') search_dt_column($('#projects-datatable').DataTable(), objColumn['Tag'], '#tag_select');
+					if ($('#degree_select').val() != 'All') filter_dt_column($('#projects-datatable').DataTable(), objColumn['Degree/Certificate'], '#degree_select');
+					if ($('#consortium_select').val() != 'All') filter_dt_column($('#projects-datatable').DataTable(), objColumn['Consortium'], '#consortium_select');
+					search();
+				});
+				$('#facet_div select').on('change', function () {
+					$('#projects-datatable').DataTable().search('').columns().search('').draw();
+
+					if ($('#loc_select').val() != 'All') search_dt_column($('#projects-datatable').DataTable(), objColumn['Location'], '#loc_select');
+					if ($('#course_select').val() != 'All') filter_dt_column($('#projects-datatable').DataTable(), objColumn['Course Type'], '#course_select');
+					if ($('#tag_select').val() != 'All') search_dt_column($('#projects-datatable').DataTable(), objColumn['Tag'], '#tag_select');
+					if ($('#degree_select').val() != 'All') filter_dt_column($('#projects-datatable').DataTable(), objColumn['Degree/Certificate'], '#degree_select');
+					if ($('#consortium_select').val() != 'All') filter_dt_column($('#projects-datatable').DataTable(), objColumn['Consortium'], '#consortium_select');
+					search();
+				});
+
+				
+				// Add event listener for opening and closing details
+				$('#projects-datatable tbody').on('click', 'td.details-control', function () {
+					var tr = $(this).closest('tr');
+					var row = $('#projects-datatable').DataTable().row(tr);
+
+					if (row.child.isShown()) {
+						// This row is already open - close it
+						row.child.hide();
+						tr.removeClass('shown');
+					}
+					else {
+						// Open this row
+						row.child(format(row.data())).show();
+						tr.addClass('shown');
+					}
+				});
+
+			}
+		});
+		
+		$('#projects-datatable_length').find('select').addClass('form-control');
+		$('#projects-datatable_filter').find('input').addClass('form-control form-text');
+		$('#projects-datatable_paginate').removeClass();
+		$('#projects-datatable_paginate').addClass('pagination');
+		
+		$('#projects-datatable_info').insertAfter('#projects-datatable_filter');
+		$('#projects-datatable_paginate').insertAfter($('#projects-datatable_info'));
+
+        function setup_select_filter(strControlID, strDivID, intCol, blnMulti) {
+
+            var tmpMarkup, tmpLabel, chkBoxMarkup;
+
+            if (!blnMulti) {
+                divMarkup = $('<div id="' + strControlID + '"></div>').appendTo($(strDivID));
+
+                $('#projects-datatable').DataTable().column(intCol).data().unique().sort().each(function (data, value) {
+				
+					var values = data.toString().trim().split(", ");
+					$.each( values, function ( index, itemValue ) {
+						if (itemValue == '') return;
+
+						itemLabel = $('<label />', { 'for': itemValue, text: itemValue })
+						itemMarkup = $('<input />', { type: 'checkbox', id: itemValue, value: itemValue, text: itemLabel });
+
+						var newLabel = itemValue;
+						itemMarkup.append(newLabel);
+						var checkboxes = $('#' + strControlID + ' input');
+						var values = $.map(checkboxes, function (checkbox) {
+							return checkbox.value;
+						});
+
+						var flag = false;
+						for (var i = 0; i < values.length; i++) {
+							if (itemValue == values[i].trim())
+								flag = true;
+						}
+						if (flag == false) {
+							itemMarkup.appendTo(divMarkup);
+							itemLabel.appendTo(divMarkup);
+							$('<br>').appendTo(divMarkup);
+						}
+					});
+                });
+            }
+            else {
+                //there are multiple values in the column. Separate and find all uniques
+                var aryAllValues = [], objAllValues = {};
+                $('#projects-datatable').DataTable().column(intCol).data().each(function (d, j) {
+					//console.log(d);
+                    var tmpColumnValue = d, tmpAryValues = [];
+                    if (typeof tmpColumnValue === 'object') {
+						if (objColumn['Course Type'] == intCol) {
+							tmpColumnValue = d['Course Type'].toString();
+console.log(tmpColumnValue);
+							} }
+                    var tmpColumnVal
+                    if (tmpColumnValue.indexOf("; ") > 0) {
+                        tmpAryValues = tmpColumnValue.split("; ");
+                        $.each(tmpAryValues, function (key, val) {
+                            objAllValues[val.trim()] = true;
+                        });
+                    }
+                    else {
+                        objAllValues[tmpColumnValue.trim()] = true;
+                    }
+                });
+                for (var k in objAllValues) { if (k != '') { aryAllValues.push(k); } }
+                aryAllValues.sort();
+
+                //Build facet control depending on unique values from the column
+                selectMarkup = $('<select/>').attr('id', strControlID).appendTo($(strDivID));
+                $('<option/>').attr('value', 'All').text('All').appendTo(selectMarkup);
+
+                $.each(aryAllValues, function (key, val) {
+                    itemMarkup = $('<option/>');
+                    itemMarkup.attr('value', val.trim());
+                    itemMarkup.append(val.trim());
+
+                    var options = $('#' + strControlID + ' option');
+                    var values = $.map(options, function (option) { return option.value; });
+
+                    var flag = false;
+                    for (var i = 0; i < values.length; i++) {
+                      if (val.trim() == values[i]) flag = true;
+                    }
+                    if (flag == false) itemMarkup.appendTo(selectMarkup);
+                });
+
+            }
+        }
+
+		var dataSet = csv2geojson.csv2geojson(data);
+		var readyLayer = featureLayer.setGeoJSON(dataSet);
+
+		//add the initial data (all of it) to the map.
+		customPopup(readyLayer);
+
+		//use this for clustering
+		map.addLayer(clusterGroup);
+
+		map.featureLayer.on('ready', function () {
+			//use this for no cluster
+			//featureLayer.addTo(map);
+		});
+
+		search();
+	}
+
+	function customPopup(markersLayer) {
+		markersLayer.eachLayer(function (layer) {
+		
+			var columns = layer.feature.properties;
+			
+			var programLinks = '', links = columns['Link'].split("; "), titles = columns['Associated Lab/Research Center/Program'].split("; ");
+		
+			for (var i = 0; i < links.length; i++)
+				programLinks += '<a href="' + links[i] + '" target="_blank">' + titles[i] + '</a>; ';
+			 
+			 programLinks =  programLinks.substring(0, programLinks.length - 2);
+
+			var content = 
+					'<div class="project_title">' + columns['School/Institution'] + '<\/div>' +
+					'<div class="partner_location">' + columns['City/State'] + '<\/div><hr\/>' +
+					'<div class="callout_label">Program Title: <\/div>' + programLinks + '<br\/><br\/>';
+					//+ ( (columns['Low/No Residency (Online)'] != 'Classroom') 
+					//	? '<div class="callout_label"><\/div> <a href="' + columns['Low/No Residency (Online)'] + '"> &laquo; Online Program Information &raquo;<\/a><br\/>' : '');
+					//+ '';
+
+			layer.bindPopup(content);
+			
+			var markerColor;
+			switch (columns['Bioenergy Systems']) {
+			  case 'Terrestrial':
+				markerColor = '#007934';
+				break;
+			  case 'Algae':
+				markerColor = '#1F82BB';
+				break;
+			  case 'Both':
+				markerColor = '#FECB00';
+				break;
+			  default:
+				break;
+			}
+
+			layer.setIcon(L.mapbox.marker.icon({
+				'marker-size': 'small',
+				'marker-color': markerColor,
+				'marker-symbol': '',
+			}));
+
+			clusterGroup.addLayer(layer);
+		});
+
+	}
+
+    /* Formatting function for row details - modify as you need */
+    function format(d) {
+        return '<h4>Description:</h4>' + 
+                ( (d['Description'] ) ? '<p class="dt_details">' + d['Description'] + '</p>' : 'Not Available');
+    }
+	
+	L.mapbox.accessToken = 'pk.eyJ1IjoiZW5lcmd5IiwiYSI6IkozTG9BZDQifQ.1WKh4U0kKCdknF3gxBOF7Q';
+	//mapbox streets default
+	var map = L.mapbox.map('map', 'energy.nda103il',
+	{
+		maxZoom: 9, minZoom: 2, attributionControl: false, legendControl: { position: 'bottomright' }
+	}).setView([40, -97], 4);
+
+	var featureLayer = L.mapbox.featureLayer();
+
+	// The clusterGroup gets each marker in the group added to it
+	// once loaded, and then is added to the map
+	var ClusterSettings = {
+		showCoverageOnHover: false,
+		spiderfyOnMaxZoom: true,
+		maxClusterRadius: 5
+	}
+	var clusterGroup = new L.MarkerClusterGroup(ClusterSettings);
+
+	var resetMap = function () {
+		$('#loc_select, #course_select, #tag_select, #degree_select, #consortium_select').val('All');
+		search_dt_column($('#projects-datatable').DataTable(), objColumn['Location'], '#loc_select');
+		search_dt_column($('#projects-datatable').DataTable(), objColumn['Course Type'], '#course_select');
+		search_dt_column($('#projects-datatable').DataTable(), objColumn['Tag'], '#tag_select');
+		filter_dt_column($('#projects-datatable').DataTable(), objColumn['Degree/Certificate'], '#degree_select');
+		filter_dt_column($('#projects-datatable').DataTable(), objColumn['Consortium'], '#consortium_select');
+		$('#projects-datatable_filter').find('input').val('');
+		$('#projects-datatable').DataTable().search('').columns().search('').draw();
+		search('reset');
+		map.setView([40, -97], 4);
+	};
+	var zoomToData = function () {
+		if (!isObjectEmpty(clusterGroup.getBounds())) map.fitBounds(clusterGroup.getBounds(), { padding: [45, 45] });
+	}
+	$("#btnReset").click(zoomToData);
+	
+    function search_dt_column(dtable, col, cntrl) {
+        var term = '';
+        term = $(cntrl).val();
+
+		//console.log(term);
+		if (term == '' || term == 'All') {
+			dtable.search('').columns().search('').draw();
+		}
+		else {
+			console.log(col);
+			// exact match for degree
+			dtable.column(col).search(term, false, false, false).draw();
+		}
+    }
+
+    function filter_dt_column(dtable, col, cntrl) {
+        var aryCheckVals = [];
+        //$(control + ' input:checked').each(function () { aryCheckVals.push(this.id); });
+		var match = $(cntrl).val() + ';';
+		aryCheckVals.push( $(cntrl).val() );
+		aryCheckVals.push( match );
+        var strSelectedVals = aryCheckVals.join('|');
+        strSelectedVals = strSelectedVals.replace(/\./g, "\\.");
+		
+        dtable.column(col)
+			//.search( val ? strSelectedVals : val, true, false )
+				.search(strSelectedVals, true, false, false)
+				.draw();
+    }
+	
+	function checkMultiple (name, values) {
+		var selected = $('#' + name).val(), success = false;
+		if (selected == 'All') return true;
+	
+		return ($.inArray(selected, values.split("; ")) > -1);
+	}
+
+	function search(strFilterName) {
+		// get the value of the search input field
+		var searchString = ($('#projects-datatable_filter').length ) ? ($('#projects-datatable_filter').find('input').val().toLowerCase().trim()) : '';
+
+		featureLayer.setFilter(showState);
+
+		// here we're simply comparing the 'state' property of each marker
+		// to the search string, seeing whether the former contains the latter.
+		// If this symbol is in the list, return true. if not, return false.
+		// The 'in' operator in javascript does exactly that: given a string
+		// or number, it says if that is in a object.
+		// 2 in { 2: true } // true
+		// 2 in { } // false
+		function showState(feature) {
+			return ((feature.properties.Location.trim().toLowerCase() == $('#loc_select').val().toLowerCase() || $('#loc_select').val() == 'All') //filter Location
+					//&& (feature.properties['Low/No Residency (Online)'].trim().toLowerCase().indexOf($('#course_select').val().toLowerCase()) !== -1 || $('#course_select').val() == 'All') //filter Low/No Residency (Online)
+					&& (feature.properties.Tags.trim().toLowerCase().indexOf($('#tag_select').val().toLowerCase()) !== -1 || $('#tag_select').val() == 'All') //filter Tags
+					&& (checkMultiple('consortium_select', feature.properties['Consortium'])) //filter Consortium					
+					&& (checkMultiple('degree_select', feature.properties['Degree/Certificate'])) //filter Degree/Certificate
+					&& (checkMultiple('course_select', feature.properties['Course Type'])) //filter Degree/Certificate
+					&& ((feature.properties['School/Institution'].toLowerCase().indexOf(searchString) !== -1) // filter by School/Institution
+					|| (feature.properties.Location.toLowerCase().indexOf(searchString) !== -1) // filter by Location
+					|| (feature.properties.Tags.toLowerCase().indexOf(searchString) !== -1) // filter by Tags
+					|| (feature.properties['Degree/Certificate'].toLowerCase().indexOf(searchString) !== -1) // filter by Degree/Certificate
+					|| (feature.properties['Associated Lab/Research Center/Program'].toLowerCase().indexOf(searchString) !== -1) // filter by Associated Lab/Research Center/Program
+					|| (feature.properties['Course Type'].toLowerCase().indexOf(searchString) !== -1) // filter by Course Type
+					 ));
+		}
+		
+		//clean up current map, remove the current clustered layer
+		map.removeLayer(clusterGroup);
+		//reinitialize cluster group
+		clusterGroup = new L.MarkerClusterGroup(ClusterSettings);
+		//update layers with new filtered data
+		customPopup(featureLayer);
+
+		map.addLayer(clusterGroup);
+
+		//reset view if no selections are made
+		if ( ($('#loc_select').val() == 'All') && ($('#course_select').val() == 'All') &&
+			($('#tag_select').val() == 'All') && ($('#degree_select').val() == 'All') &&
+			(searchString == '') )
+		{
+			if (strFilterName != 'reset') map.setView([40, -97], 4);
+			console.log('set');
+		}
+		else{
+			zoomToData();
+		}
+	}
+
+	// Custom jump-to control 
+	(function () {
+		L.Control.Jump = L.Control.extend({
+			options: {
+				position: 'topleft',
+				//alaskaTitle: 'Zoom to Alaska',
+				//hawaiiTitle: 'Zoom to Hawaii',
+				//downloadTitle: 'Download CSV data',
+				//usTitle: 'Zoom to contiguous US',
+				//zoomTitle: 'Zoom to Selections',
+				resetTitle: 'Reset Selections'
+			},
+
+			onAdd: function (map) {
+				// set options
+				options = this.options;
+
+				// create jump container
+				var jumpControl = 'leaflet-control-jump';
+				var container = L.DomUtil.create('div', jumpControl + ' leaflet-bar');
+
+				// add buttons
+				//this._usButton = this._createButton(options.usTitle, jumpControl + '-style-us', container, usAction);
+                //this._alaskaButton = this._createButton(options.alaskaTitle, jumpControl + '-style-al', container, alaskaAction);
+				//this._hawaiiButton = this._createButton(options.hawaiiTitle, jumpControl + '-style-hi', container, hiAction);
+				//this._downloadTitle = this._createButton(options.downloadTitle, jumpControl + '-style-download', container, downloadAction);
+				//this._zoomTitle = this._createButton(options.zoomTitle, jumpControl + '-style-zoom', container, zoomAction);
+				this._resetTitle = this._createButton(options.resetTitle, jumpControl + '-style-reset', container, resetAction);
+
+				return container;
+			},
+
+			_createButton: function (title, className, container, fn) {
+				var link = L.DomUtil.create('a', className, container);
+				link.href = '#';
+				link.title = title;
+				if (className.indexOf('us') > 0)
+					link.innerHTML = '<b style="margin-top:12px;margin-left:6px;color: black;">US</b>';
+				if (className.indexOf('al') > 0)
+					link.innerHTML = '<b style="margin-top:12px;margin-left:6px;color: black">AK</b>';
+				if (className.indexOf('hi') > 0)
+					link.innerHTML = '<b style="margin-top:12px;margin-left:7px;color: black">HI</b>';
+				if (className.indexOf('download') > 0)
+					link.innerHTML = '<i class="fa fa-download fa-1" style="margin-top:7px;margin-left:8px;"></i>';
+				if (className.indexOf('zoom') > 0)
+					link.innerHTML = '<i class="fa fa-search fa-1" style="margin-top:7px;margin-left:8px;"></i>';
+				if (className.indexOf('reset') > 0)
+					link.innerHTML = '<i class="fa fa-undo fa-1" style="margin-top:7px;margin-left:8px;"></i>';
+				L.DomEvent
+					.on(link, 'mousedown dblclick', L.DomEvent.stopPropagation)
+					.on(link, 'click', L.DomEvent.stop)
+					.on(link, 'click', fn, this)
+					.on(link, 'click', this._refocusOnMap, this);
+
+				return link;
+			}
+		});
+
+		L.control.jump = function (options) {
+			return new L.Control.Jump(options);
+		};
+	})();
+
+	// Create button functionality for jump control
+	function usAction() {
+		map.setView([40, -97], 4);
+	}
+
+	function alaskaAction() {
+		map.fitBounds([[51.72702815704774, -170.15625], [71.85622888185527, -127.61718749999999]]);
+	}
+
+	function hiAction() {
+		map.fitBounds([[18.542116654448996, -161.03759765625], [22.573438264572406, -154.22607421875]]);
+	}
+	
+	function downloadAction() {
+		window.parent.location = csvDataFile;
+	}
+
+	function zoomAction() {
+		zoomToData();
+	}
+
+	function resetAction() {
+		resetMap();		
+	}
+
+	// Add custom 'jump to' sidebar
+	L.control.jump().addTo(map);
+
+	$(function() {
+        $('#divCloseIntro').css('text-align', 'center');
+        $('#close_intro').on('click', function () {
+                $('#map_intro').hide();
+        });
+        $('#btnCloseIntro').on('click', function () {
+                $('#map_intro').hide();
+        });
+	});
+
+</script>
+
+<script src="https://pym.nprapps.org/pym.v1.min.js"></script>
+<script src="https://eereweb.github.io/apps-common/js/shim.js"></script>
