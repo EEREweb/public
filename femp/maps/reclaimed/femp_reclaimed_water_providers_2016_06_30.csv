@@ -1,0 +1,517 @@
+Utility_Name,Wastewater_Reclamation_Facility,Facility_Street_Address,City,State,Year_Data_Provided_by_Utility,Latitude,Longitude,Reclaimed_Water_Type
+Town of Oro,Oro Valley Reclaimed WDS,11000 N. La Canada Drive,Ajo,AZ,2010,32.41,-111,Municipal and Public Areas
+Arizona City,Sanitary District,12922 S. Kashmir Rd.,Arizona City,AZ,2010,32.66,-111.55,Municipal and Public Areas
+Liberty Water,Gold Canyon WWTP,6520 E. Hwy 60,Arizona City,AZ,2010,33.25,-111.54,Commercial
+Town of Buckeye,Central Buckeye WWTP,915 S. 9Th Street,Buckeye,AZ,2010,33.25,-112.89,Municipal and Public Areas
+Town of Buckeye,Festival Ranch WRF,18940 N. 287Th Avenue,Buckeye,AZ,2010,33.47,-112.59,Commercial
+Town of Buckeye,Sundance WRF,21760 W. Watkins Road,Buckeye,AZ,2010,33.25,-112.89,Commercial
+Town of Cave Creek,Rancho Manana WWTP,5610 E. Rancho Manana Blvd,Cave Creek,AZ,2010,33.83,-111.96,Municipal and Public Areas
+Town of Florence,South WWTP,100 S. Plant Road,Florence,AZ,2010,32.83,-111.19,Municipal and Public Areas
+Fountain Hills,Fountain Hills SD WWTP,16941 E. Pepperwood Circle,Fountain Hills,AZ,2010,33.62,-111.71,Municipal and Public Areas
+Town of Gilbert,Neely WRF/Greenfield WRF,402 N. Neely Rd/4376 S. Greenfield Rd.,Gilbert,AZ,2010,33.26,-111.71,Municipal and Public Areas
+Pinewood SD,Kay S. Blackman WWTF,18075 S. Navajo Road,Munds Park,AZ,2010,34.94,-111.65,Commercial|Municipal and Public Areas
+City of Page,Lake Powell National Golf Course WRF,Clubhouse Drive,Page,AZ,2010,36.84,-111.15,Municipal and Public Areas
+City of Phoenix,Cave Creek WRP,22841 N. Cave Creek Rd,Phoenix,AZ,2010,33.69,-112.03,Municipal and Public Areas
+City of Prescott,Airport WRF,2800 Melville Road,Prescott,AZ,2010,34.6,-112.42,Municipal and Public Areas
+City of Prescott,Sundog WWTP,1500 Sundog Ranch Road,Prescott,AZ,2010,34.57,-112.44,Commercial|Municipal and Public Areas
+Town of Prescott Valley,Advanced Treatment Facility,7501 E. Civic Circle,Prescott Valley,AZ,2010,34.59,-112.34,Commercial|Industrial
+City of Scottsdale,Water Campus,8787 East Hualapia Drive,Scottsdale,AZ,2010,33.66,-111.89,Municipal and Public Areas
+Tucson Water,Reclaimed Water System,310 W. Alameda,Tucson,AZ,2010,32.22,-110.98,Commercial|Municipal and Public Areas
+City of Angels Camp,City of Angels Camp WWTP,P.O. Box 667,Angels Camp,CA,2009,38.06,-120.58,Golf Course Irrigation
+Beale AFB,Beal AFB WWTP,Not Provided,Beale Afb,CA,2009,39.13,-121.36,Golf Course Irrigation
+Bodega Bay PUD,Bodega Bay PUD WWTP,265 Doran Park Road,Bodega Bay,CA,2009,38.34,-123.03,Municipal and Public Areas|Residential
+Burbank Water and Power,Burbank WWTP,2 West Chestnut Street,Burbank,CA,2009,34.18,-118.32,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+City of California City,California City WWTF,10835 Nelson Dr,California City,CA,2009,35.14,-117.93,Golf Course Irrigation
+City of Alameda,San Leandro Water Pollution Control Plant,Not Provided,Alameda,CA,2009,37.77,-122.24,Golf Course Irrigation
+Delta Diablo Sanitation District,Delta Diablo SD WWTP,Not Provided,California City,CA,2009,38.01,-121.85,Industrial|Municipal and Public Areas|Residential
+East Bay Dischargers Authority,Skywest Golf Course-Recycled Water Use,Not Provided,California City,CA,2009,37.67,-122.16,Golf Course Irrigation
+East Bay Municipal Utility District,EBMUD Water Recycling - RARE WWTP,Not Provided,California City,CA,2009,37.8,-122.27,Commercial|Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+Eastern Municipal WD,Temecula/Winchester Sewage Treatment Plant,Not Provided,California City,CA,2009,33.78,-117.32,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+Encina Wastewater Authority,Vallecitos District Meadowlark WRP,Not Provided,Encina,CA,2009,33.12,-117.32,Industrial|Municipal and Public Areas|Residential
+City of San Leandro,San Leandro Water Pollution Control Plant,Not Provided,San Leandro,CA,2009,37.7,-122.14,Golf Course Irrigation
+Valley Center Municipal WD,Lower Moosa Canyon Reclamation Facility,Not Provided,California City,CA,2009,33.22,-117.04,Golf Course Irrigation
+Marine Corps Base-Camp Pendleton,San Luis Rey WWTP #2,Building 17831,Camp Pendleton,CA,2009,33.37,-117.4,Golf Course Irrigation|Municipal and Public Areas|Residential
+City of Carlsbad,Carlsbad WRF,6200 Avenida Encinas,Carlsbad,CA,2009,33.15,-117.32,Golf Course Irrigation|Municipal and Public Areas|Residential
+Leucadia Wastewater District,Gafner WRF,1960 La Costa Avenue,Carlsbad,CA,2009,33.09,-117.27,Municipal and Public Areas|Residential
+City of Oceanside,La Salina Waste WWTP,6200 Avenida Encinas,Carlsbad,CA,2009,33.15,-117.32,Golf Course Irrigation
+Carmel Area Wastewater District,Carmel Area WWTP,P.O. Box 221428,Carmel,CA,2009,36.54,-121.91,Golf Course Irrigation|Municipal and Public Areas|Residential
+City of Ceres,Ceres WWTP,4200 Morgan Road,Ceres,CA,2009,37.58,-120.98,Municipal and Public Areas|Residential
+Sanitation Districts of LA Co.,Los Coyotes WRP,Not Provided,Cerritos,CA,2009,33.87,-118.08,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+City of Ridgecrest,Ridgecrest WWTF,N.E. Corner Knox & Pole Line Roads,China Lake,CA,2009,35.69,-117.45,Municipal and Public Areas|Residential
+Inland Empire Utilities Agency,IEUA Regional Plant No. 4,14950 Telephone Avenue,Chino,CA,2009,33.98,-117.69,Commercial|Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+City of Corcoran,Corcoran WWTF,895 Pueblo Avenue,Corcoran,CA,2009,36.05,-119.54,Golf Course Irrigation
+City of Corona,Corona WRF No. 1,1904 Clearwater Rd.,Corona,CA,2009,33.88,-117.54,Municipal and Public Areas|Residential
+North San Mateo Co. Sanitation District,North San Mateo Co. Sanitation District WWTP,153 Lake Merced Blvd.,Daly,CA,2009,37.7,-122.49,Golf Course Irrigation|Municipal and Public Areas|Residential
+95 CEG/CEOES,Edwards AFB WWTF,225 N. Rosamond Blvd,Edwards,CA,2009,34.93,-117.9,Municipal and Public Areas|Residential
+El Dorado Irrigation District,El Dorado Hills WWTP,Latrobe Rd.,El Dorado Hills,CA,2009,38.6,-121.03,Commercial|Municipal and Public Areas|Residential
+Sanitation Districts of LA Co.,"Whittier Narrows WRP, El Monte",301 N. Rosemead Blvd.,El Monte,CA,2009,34.05,-118.05,Municipal and Public Areas|Residential
+City of Los Angeles,Hyperion WWTP,1935 Hughes Way,El Segundo,CA,2009,33.91,-118.39,Commercial|Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+Olivenhain Municipal WD,4-S Ranch Water Pollution Control Facility,1966 Olivenhain Road,Encinitas,CA,2009,33.07,-117.25,Golf Course Irrigation|Municipal and Public Areas|Residential
+San Elijo Joint Powers Authority,San Elijo Water Pollution Control Facility,Not Provided,Encinitas,CA,2009,33.01,-117.27,Golf Course Irrigation|Municipal and Public Areas|Residential
+Santa Fe Irrigation District,Santa Fe Irrigation-Hydro WRF,Not Provided,Encinitas,CA,2009,33.03,-117.23,Commercial|Golf Course Irrigation|Municipal and Public Areas|Residential
+City of Escondido,"Hale Avenue Resource Recovery Facility, Recycled Water",1521 South Hale Ave,Escondido,CA,2009,33.1,-117.11,Golf Course Irrigation|Municipal and Public Areas|Residential
+Rincon Del Diablo,Rincon Del Diablo Municipal WD,1521 South Hale Avenue,Escondido,CA,2009,33.1,-117.11,Industrial
+Fairfield-Suisun,FSSD Subregional WWTP,1010 Chadbourne Road,Fairfield,CA,2009,38.15,-121.96,Municipal and Public Areas|Residential
+Fallbrook PUD,Fallbrook Public WD Plant 1,425 So. Alturas St.,Fallbrook,CA,2009,33.38,-117.26,Golf Course Irrigation|Municipal and Public Areas|Residential
+City of Ferndale,Ferndale WWTP,Port Kenyon Rd,Ferndale,CA,2009,40.46,-124.25,Municipal and Public Areas|Residential
+City of Fillmore,Fillmore WWTP-Recycling Plant,1580 River Street,Fillmore,CA,2009,34.42,-118.85,Municipal and Public Areas|Residential
+Fort Irwin,Fort Irwin WWTF,Not Provided,Fort Irwin,CA,2009,35.36,-116.64,Golf Course Irrigation
+Orange Co. WD,Groundwater Replenishment System - AWWTF,P.O. Box 8300,Fountain Valley,CA,2009,33.71,-117.93,Municipal and Public Areas|Residential
+City of Fresno,Fresno Regional WWTF,5607 West Jensen Avenue,Fresno,CA,2009,36.71,-119.89,Golf Course Irrigation
+County of Fresno,Millerton New Town WWTF,"2220 Tulare St, Ste 600",Fresno,CA,2009,36.74,-119.79,Municipal and Public Areas|Residential
+South Co. Regional Wastewater Authority,South Co. Regional WWTF,1500 Southside Drive,Gilroy,CA,2009,36.99,-121.54,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+City of Glendale,Los Angeles-Glendale WRP,800 Airway,Glendale,CA,2009,34.17,-118.29,Commercial|Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+Goleta WD,Goleta Sanitation District Reclaimed Water Facility,Po Box 906,Goleta,CA,2009,34.43,-119.83,Golf Course Irrigation|Municipal and Public Areas|Residential
+Groveland CSD,Groveland Sewer Treatment Plant,18966 Ferretti Road,Groveland,CA,2009,37.82,-120.11,Golf Course Irrigation
+"Co. of San Bernardino/Service Area 70, Zone B",Helendale Silverlakes Sewer Treatment Plant,Not Provided,Helendale,CA,2009,34.78,-117.35,Municipal and Public Areas|Residential
+Hollister,Hollister Domestic WWTP,Not Provided,Holiister,CA,2009,36.85,-121.4,Municipal and Public Areas|Residential
+Sunnyslope CWD,Ridgemark Estates WWTP,Southside Road,Hollister,CA,2009,36.84,-121.39,Municipal and Public Areas|Residential
+City of Sunnyvale,Sunnyvale WPCP-Water Recycling,Southside Road,Hollister,CA,2009,36.84,-121.39,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+Irvine Ranch WD,Michelson WRF,3512 Michelson Dr,Irvine,CA,2009,33.67,-117.84,Commercial|Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+Sanitation Districts of LA Co.,La Canada WRP,533 Meadowview Dr.,La CaÐada,CA,2009,34.21,-118.18,Golf Course Irrigation
+Moulton Niguel WD,Moulton Niguel WD Joint Regional WRF,29101 La Paz Road,Laguna Niguel,CA,2009,33.54,-117.7,Golf Course Irrigation|Municipal and Public Areas|Residential
+South Coast WD,South Coast WD-Hydro WRF,28303 Alicia Parkway,Laguna Niguel,CA,2009,33.55,-117.72,Golf Course Irrigation|Municipal and Public Areas|Residential
+Elsinore Valley Municipal WD,Railroad Canyon WRF,21982 Railroad Canyon Rd,Lake Elsinore,CA,2009,33.7,-117.32,Golf Course Irrigation|Municipal and Public Areas|Residential
+El Toro WD,El Toro WRF,23542 Moulton Pky.,Lake Forest,CA,2009,33.62,-117.73,Golf Course Irrigation|Municipal and Public Areas|Residential
+Lake Co. Sanitation District,NW Regional Waste Disposal Facility,1155 Whalen Way,Lakeport,CA,2009,39.11,-122.91,Industrial
+Sanitation Districts of LA Co.,Lancaster WWTF,1865 W. Ave. D,Lancaster,CA,2009,34.78,-118.17,Industrial|Municipal and Public Areas|Residential
+City of Livermore,Livermore Recycled Water Program,101 West Jack Longdon Boulevard,Livermore,CA,2009,37.69,-121.81,Golf Course Irrigation|Municipal and Public Areas|Residential
+City of Lodi,White Slough Water Pollution Control Facility,12751 North Thornton Road,Lodi,CA,2009,38.09,-121.38,Industrial
+Sanitation Districts of LA Co.,Long Beach WRP,7400 E. Willow St.,Long Beach,CA,2009,33.8,-118.09,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+Las Virgenes Municipal WD,Tapia WRF,731 Las Virgenes Rd.,Malibu,CA,2009,34.07,-118.82,Municipal and Public Areas|Residential
+Malibu Mesa,Malibu Mesa WRF,3863 Malibu County Road,Malibu,CA,2009,34.04,-118.71,Municipal and Public Areas|Residential
+Point Dume Mobile Home Park,Point Dume Club WRP,29500 Heathercliff Road,Malibu,CA,2009,34.02,-118.81,Municipal and Public Areas|Residential
+Triunfo,Triunfo Sanitation District,731 Las Virgenes Rd.,Malibu,CA,2009,34.07,-118.82,Municipal and Public Areas|Residential
+Mammoth Community WD,Mammoth Sewer Treatment Plant,P.O. Box 597,Mammoth Lakes,CA,2009,37.66,-118.9,Municipal and Public Areas|Residential
+Central Contra Costa SD,Central Contra Costa SD WWTP,5019 Imhoff Place,Martinez,CA,2009,38,-122.07,Commercial|Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+Hidden Valley Lake CSD,Hidden Valley Lake WasteWRF,Not Provided,Middletown,CA,2009,38.77,-122.61,Golf Course Irrigation
+Sewerage Agency of Southern Marin,Sewage Agency of Southern Marin Recycled Water Program,26 Corte Madera Avenue,Mill Valley,CA,2009,37.91,-122.55,Municipal and Public Areas|Residential
+Ventura Co. Waterworks District 1,Moorpark WWTP,9550 Los Angeles Avenue,Moorpark,CA,2009,34.27,-118.94,Golf Course Irrigation
+Rancho California WD,Santa Rosa WRF-Recycled WTR,26266 Washington Avenue,Murrieta,CA,2009,33.53,-117.19,Municipal and Public Areas|Residential
+Napa Sanitation District,Napa Sanitation District WWTF,950 Imola Avenue West,Napa,CA,2009,38.5,-122.27,Commercial|Golf Course Irrigation|Municipal and Public Areas|Residential
+Co. of Madera Engineering Dept,Madera Co. #27-Goldside Estates WWTF,Not Provided,Oakhurst,CA,2009,36.97,-120.08,Municipal and Public Areas|Residential
+Coachella Valley WD,Palm Desert WRP #10 00-008,43-000 Cook Street,Palm Desert,CA,2009,33.69,-116.4,Golf Course Irrigation|Municipal and Public Areas|Residential
+Desert Water Agency,Desert Water Agency WWRC Facility,Po Box 1710,Palm Springs,CA,2009,33.83,-116.54,Golf Course Irrigation|Municipal and Public Areas|Residential
+City of Mountain View,Mountain View WWTF,2501 Embarcadero Way,Palo Alto,CA,2009,37.45,-122.11,Golf Course Irrigation|Municipal and Public Areas|Residential
+City of Palo Alto,Palo Alto RWQCP-Water Recycling,2501 Embarcadero Way,Palo Alto,CA,2009,37.45,-122.11,Municipal and Public Areas|Residential
+City of Petaluma,Petaluma Ellis Creek Water Recycling Facility,950 Hopper St. ( P.O. Box 777),Petaluma,CA,2009,38.23,-122.62,Golf Course Irrigation
+Dublin San Ramon Services District,Dublin San Ramon Services District Water Recycling,7399 Johnson Drive,Pleasanton,CA,2009,37.69,-121.91,Golf Course Irrigation|Municipal and Public Areas|Residential
+Sanitation Districts of LA Co.,Pomona WRP,295 Humane Way,Pomona,CA,2009,34.04,-117.76,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+Rancho Murieta CSD,Rancho Murieta CSD and Rec,15160 Jackson Highway,Rancho Murieta,CA,2009,38.51,-121.1,Golf Course Irrigation
+City of Red Bluff,Red Bluff WRP,Riverside Drive At Brearcliff Drive,Red Bluff,CA,2009,40.17,-122.22,Municipal and Public Areas|Residential
+City of Redwood,South Bayside System Authority WWTP,1400 Radio Road,Redwood,CA,2009,37.54,-122.23,Municipal and Public Areas|Residential
+City of Roseville,Dry Creek WWTP,1800 Booth Rd.,Roseville,CA,2009,38.74,-121.31,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+California American Water Company - Monterey,Multiple Facilities Record,100 River Rd,Salinas,CA,2009,36.62,-121.66,Golf Course Irrigation|Municipal and Public Areas|Residential
+Calaveras Co. WD,La Contenta Wastewater Treatment and Reclamation Facility,P.O. Box 846,San Andreas,CA,2009,38.19,-120.61,Municipal and Public Areas|Residential
+City of San Clemente,San Clemente WRP,380 Ave. Pico,San Clemente,CA,2009,33.44,-117.63,Golf Course Irrigation
+City of San Diego,North City WRP,Not Provided,San Diego,CA,2009,32.9,-117.2,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+City of San Jose,San Jose/Santa Clara Water Pollution Control Plant,700 Los Esteros Road,San Jose,CA,2009,37.43,-121.95,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+California Dept of Corrections and Rehabilitation,California Men's Colony WWTP,P.O. Box 8101,San Luis Obispo,CA,2009,35.32,-120.7,Golf Course Irrigation
+City of San Luis Obispo,Oak Shores Lake Nacimiento WWTP,35 Prado Rd.,San Luis Obispo,CA,2009,35.26,-120.67,Municipal and Public Areas|Residential
+Vallecitos WD,Meadowlark WRP,2310 S. Rancho Santa Fe Road,San Marcos,CA,2009,33.11,-117.23,Municipal and Public Areas|Residential
+Marin Municipal WD,Marin Municipal WD - Recycled Water,300 A Smith Ranch Road,San Rafael,CA,2009,38.02,-122.55,Commercial|Golf Course Irrigation|Municipal and Public Areas|Residential
+City of Santa Barbara,El Estero Reclamation Facility,Po Box 1990,Santa Barbara,CA,2009,34.42,-119.71,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+Sanitation Districts of LA Co.,Valencia WRP,Not Provided,Santa Clarita,CA,2009,34.43,-118.59,Municipal and Public Areas|Residential
+Santa Cruz Co. Dept of Public Works,Boulder Creek Golf And Country Club WRF,701 Ocean St,Santa Cruz,CA,2009,36.98,-122.02,Industrial|Municipal and Public Areas|Residential
+Laguna Co.,Laguna Co. Sanitation District,624 W. Foster Rd.,Santa Maria,CA,2009,34.88,-120.45,Industrial
+City of Santa Rosa,Santa Rosa Subregional WRF,6200 Stonebridge Drive,Santa Rosa,CA,2009,38.45,-122.62,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+Padre Dam Municipal WD,Padre Dam WRF,10887 Woodside Ave,Santee,CA,2009,32.84,-116.96,Municipal and Public Areas|Residential
+Scotts Valley WD,Scotts Valley WWTF,700 Lundy Ln (Two Civic Drive),Scotts Valley,CA,2009,37.07,-122.01,Municipal and Public Areas|Residential
+Gualala CSD,Gualala WWTF,42455 State Highway One,Sea Ranch,CA,2009,38.73,-123.47,Golf Course Irrigation
+Ventura Co. Waterworks District 8,Piru WWTP,600 West Los Angeles Avenue,Simi Valley,CA,2009,34.29,-118.69,Commercial
+South Tahoe PUD,ST PUD WWTP,1275 Meadow Crest Drive,South Lake Tahoe,CA,2009,38.92,-119.97,Municipal and Public Areas|Residential
+Otay WD,"Otay WD, Ralph W. Chapman WRF",2554 Sweetwater Springs Blvd.,Spring Valley,CA,2009,32.72,-116.97,Industrial|Municipal and Public Areas|Residential
+Meadowood Resort Hotel,Meadowood Resort WWTP and Reuse,900 Meadowood Resort Hotel,St Helena,CA,2009,38.54,-122.51,Golf Course Irrigation
+Bear Valley CSD,Bear Valley WWTP,28999 South Lower Valley Road,Tehachapi,CA,2009,35.16,-118.65,Golf Course Irrigation
+North Marin WD,Novato and Ignacio WWTP,Not Provided,Tomales,CA,2009,38.13,-122.56,Golf Course Irrigation
+Trabuco Canyon WD,TCWD Robinson Ranch WRF,Not Provided,Trabuco Canyon,CA,2009,33.65,-117.56,Municipal and Public Areas|Residential
+City of Turlock,Turlock WWTP,901 South Walnut Road,Turlock,CA,2009,37.48,-120.87,Industrial|Municipal and Public Areas|Residential
+"USMC, Air Ground Combat Center, Twenty Nine Palms",USMC-29 Palms WWTP,Fac. Maint Utility Sys. Bldg. #1905,Twentynine Palms,CA,2009,34.46,-116.14,Municipal and Public Areas|Residential
+Sonoma Co. Water Agency,SCWA Russian River CSD,18400 Neeley Road,Vacation Beach,CA,2009,38.51,-122.78,Golf Course Irrigation
+City of Ventura,Ventura WRF,1400 Spinnaker Drive,Ventura,CA,2009,34.24,-119.26,Golf Course Irrigation|Municipal and Public Areas|Residential
+Victor Valley Wastewater Rec Authority,Victor Valley Municipal WWTP,Not Provided,Victor Valley,CA,2009,34.56,-117.34,Golf Course Irrigation
+U.S.D.I. - National Park Service,Wawona WWTF,4004 Chilnualna Falls Road,Wawona,CA,2009,37.75,-119.55,Municipal and Public Areas|Residential
+Sanitation Districts of LA Co.,San Jose Creek WRP,Not Provided,Whittier,CA,2009,33.96,-118.03,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+Town of Windsor/ Windsor WD,Windsor WWTF,8400 Windsor Road,Windsor,CA,2009,38.54,-122.82,Golf Course Irrigation|Municipal and Public Areas|Residential
+Town of Yountville,Veterans Home WWTF,7501 Solano,Yountville,CA,2009,38.39,-122.36,Golf Course Irrigation
+City of Aurora,Sand Creek Water Reuse Facility,11405 E. 30Th Avenue,Aurora,CO,2012,39.76,-104.85,Municipal and Public Areas
+City and Co. of Broomfield,Broomfield Reclamation Facility,112Th And Simms,Broomfield,CO,2009,39.95,-105.05,Commercial|Municipal and Public Areas
+City and Co. of Broomfield,Brromfield WWTF,2985 West 124Th Avenue,Broomfield,CO,2009,39.92,-105.02,Commercial|Municipal and Public Areas
+City and Co. of Broomfield,Common Distribution System,2985 West 124Th Avenue,Broomfield,CO,2009,39.92,-105.02,Commercial|Municipal and Public Areas
+Colorado Springs Utilities,J.D. Phillips WRF,155 Aeration View,Colorado Springs,CO,2009,38.88,-104.82,Industrial|Municipal and Public Areas
+Colorado Springs Utilities,Las Vegas Street WWTF,825 E. Las Vegas Street,Colorado Springs,CO,2009,38.81,-104.81,Industrial|Municipal and Public Areas
+Donala Water & Sanitation District,Upper Monument Creek Regional WWTF,15850 Holbein Drive,Colorado Springs,CO,2009,39.06,-104.81,Municipal and Public Areas
+Denver Water,Denver WWRP,5650 York St.,Denver,CO,2009,39.79,-104.95,Industrial|Municipal and Public Areas
+Centennial Water and Sanitation District,Marcy Gulch WWTP Reuse Facility,8700 S. Santa Fe Drive,Littleton,CO,2009,39.48,-105.06,Municipal and Public Areas
+Meridian Metropolitan District,Meridian WWTP,12111 E. Belford Avenue,Littleton,CO,2012,39.55,-104.85,Municipal and Public Areas
+City of Louisville,City of Louisville WWTP,1601 Empire Road,Louisville,CO,2009,39.98,-105.12,Municipal and Public Areas
+City of Westminster,Big Dry Creek WWTF,13050 North Huron,Westminster,CO,2009,39.91,-105.01,Municipal and Public Areas
+City of Alachua,Alachua WRF,13700 Nw 126Th Ter,Alachua,FL,2012,29.82,-82.49,Golf Course Irrigation
+AECOM Water ,Altamonte Springs WRF,950 Keller Road,Altamonte Springs,FL,2012,28.64,-81.4,Industrial|Residential
+AECOM Water,Wekiva Hunt Club WWTF,950 Keller Road,Altamonte Springs,FL,2012,28.64,-81.4,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+City of Apopka,Apopka WRF-Project Arrow,748 E Cleveland St,Apopka,FL,2012,28.65,-81.5,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+Orange Co. Utilities Dept,OCUD-Northwest WRF,701 W. Mccormick Road,Apopka,FL,2012,28.62,-81.52,Commercial|Industrial
+City of Arcadia,William Tyson WWTP,223 S. Parker Ave.,Arcadia,FL,2012,27.22,-81.87,Golf Course Irrigation|Municipal and Public Areas|Residential
+City of Auburndale,Allred WWTF,1300 Recker Hwy #655,Auburndale,FL,2012,28.04,-81.78,Industrial
+City of Auburndale,Regional WWTP,Braddock Road (Northwest Of Auburndale),Auburndale,FL,2012,28.1,-81.82,Industrial
+Ave Marie Utility Company,Ave Maria Utility Company  WRF,5325 Ave Maria Blvd,Ave Maria,FL,2012,26.32,-81.27,Municipal and Public Areas|Residential
+"Brevard Co., Utility Services",BCUD-Barefoot Bay WRF,7773 Dottie Drive,Barefoot Bay,FL,2012,27.86,-80.56,Golf Course Irrigation
+City of Bartow,Wastewater Plant,2505 East Wabash Ave,Bartow,FL,2012,27.87,-81.81,Industrial
+Reedy Creek Energy Services,Reedy Creek Improvement District,2151 Bear Island Road,Bay Lake,FL,2012,28.39,-81.57,Golf Course Irrigation|Industrial|Municipal and Public Areas
+City of Belleview,Belleview WRF,5343 Southeast Abshier Blvd,Belleview,FL,2012,29.06,-82.06,Golf Course Irrigation
+"Gasparilla Island Water Association, Inc.",Gasparilla Island WWTF,P. O. Box 310,Boca Grande,FL,2012,26.67,-82.25,Golf Course Irrigation
+City of Boca Raton,Boca Raton WWTP,1501 W. Glades Road,Boca Raton,FL,2012,26.37,-80.11,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+Bonita Springs Utilities,Bonita Springs East WRF,10 Eight Street,Bonita Springs,FL,2012,26.36,-81.83,Golf Course Irrigation|Municipal and Public Areas|Residential
+Bonita Springs Utilities,Bonita Springs West WRF,10 Eight Street,Bonita Springs,FL,2012,26.36,-81.83,Golf Course Irrigation|Municipal and Public Areas|Residential
+Hunters Ridge Utility Company,Hunter'S Ridge WWTF,12500 Hunters Ridge Blvd,Bonita Springs,FL,2012,26.32,-81.75,Golf Course Irrigation
+City of Bowling Green,Bowling Green STP,Cr 664 A,Bowling Green,FL,2012,27.6,-82.14,Industrial
+Hardee Co. Utilities,Wauchula Hills WWTP,325 State Road 62,Bowling Green,FL,2012,27.59,-81.83,Industrial
+City of Bradenton,Bradenton WWTF,1810 1St St W,Bradenton,FL,2012,27.48,-82.56,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+Manatee Co. Utilities,North WRF,4410 66Th Street West,Bradenton,FL,2012,27.46,-82.63,Golf Course Irrigation|Municipal and Public Areas|Residential
+Manatee Co. Utilities,Southeast WRF,4410 66Th Street West,Bradenton,FL,2012,27.46,-82.63,Golf Course Irrigation|Municipal and Public Areas|Residential
+Manatee Co. Utilities,Southwest WRF,4410 66Th Street West,Bradenton,FL,2012,27.46,-82.63,Golf Course Irrigation|Municipal and Public Areas|Residential
+City of Brooksville,Brooksville/Cobb Road WWTF,600 S. Brooksville Avenue,Brooksville,FL,2012,28.55,-82.38,Industrial
+City of Bunnell,Michael J. Mikulka WWTF,200 Tolman Street At Deen Road,Bunnell,FL,2012,29.43,-81.36,Golf Course Irrigation
+"Florida Dept Corrections, Sumter Correctional Institution",Sumter Correctional Institutional WRF,9544 County Road 476B,Bushnell,FL,2012,28.68,-82.16,Municipal and Public Areas
+Emerald Coast Utilities Authority,ECUA-Central WRF,2980 Old Chemstrand Rd,Cantonment,FL,2012,30.61,-87.32,Industrial|Municipal and Public Areas
+City of Cape Coral,Everest Parkway WRF,1800 Everest Parkway,Cape Coral,FL,2012,26.61,-81.94,Municipal and Public Areas|Residential
+City of Cape Coral,Southwest WRF,1800 Everest Parkway,Cape Coral,FL,2012,26.61,-81.94,Municipal and Public Areas|Residential
+"Aqua Utilities Florida, Inc.",South Seas Plantation WRF,13000 South Seas Plantation Road,Captiva,FL,2012,26.59,-82.22,Golf Course Irrigation
+City of Carrabelle,Carrabelle WRF,U.S. Highway 98,Carrabelle,FL,2012,29.92,-84.52,Commercial|Golf Course Irrigation
+City of Casselberry,Casselberry WRF,700 Cross Street,Casselberry,FL,2012,28.66,-81.31,Golf Course Irrigation|Residential
+Cedar Key,Cedar Key WRF,510 3Rd Streets,Cedar Key,FL,2012,29.14,-83.03,Municipal and Public Areas
+City of Clearwater,East AWWTP,1650 N. Arcturas Avenue,Clearwater,FL,2012,27.98,-82.76,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+City of Clearwater,Marshall Street WWTP,1650 N. Arcturas Avenue,Clearwater,FL,2012,27.98,-82.76,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+City of Largo,City Of Largo WRF,5100 150Th Ave North,Clearwater,FL,2012,27.91,-82.71,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+"Sidney Colen & Associates, Ltd.",On Top Of The World WRF,2025 Denmark Street,Clearwater,FL,2012,27.99,-82.74,Golf Course Irrigation|Residential
+City of Clermont,East WRF,3335 Hancock Road,Clermont,FL,2012,28.53,-81.75,Golf Course Irrigation|Residential
+Cocoa Beach WRF,Cape Canaveral WRF,1600 Minutemen Causeway,Cocoa Beach,FL,2012,28.32,-80.63,Golf Course Irrigation|Industrial|Residential
+Cocoa Beach,Cocoa Beach WRF,1600 Minutemen Causeway,Cocoa Beach,FL,2012,28.32,-80.63,Golf Course Irrigation
+Quality Water Services,Traveler'S Rest RV Resort WRF,29129 Johnston Road,Dade City,FL,2012,28.4,-82.35,Golf Course Irrigation
+Polk Co. Utilities,Northeast Regional WRF,200 Westview Drive,Davenport,FL,2012,28.19,-81.61,Residential
+City of Daytona Beach,Bethune Point WWTF,3651 Lpga Blvd.,Daytona Beach,FL,2012,29.16,-81.11,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+City of Daytona Beach,Westside Regional WWTF,3651 Lpga Blvd.,Daytona Beach,FL,2012,29.16,-81.11,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+Volusia Co. Utilities,VCUD-Southwest Regional WWTF,800 Debary Plantation Blvd,Debary,FL,2012,28.88,-81.32,Industrial|Residential
+City of Deland,Deland Regional WWTF,1032 South Amelia Avenue,Deland,FL,2012,29.01,-81.3,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+South Central Regional WWT & Disposal Board,South Central Regional WWTP,1801 N. Congress Avenue,Delray Beach,FL,2012,26.48,-80.09,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+City of Deltona,Deltona Lakes WRF,401 Fisher Road,Deltona,FL,2012,28.87,-81.25,Golf Course Irrigation|Municipal and Public Areas|Residential
+Volusia Co. Utilities,VCUD-Deltona North WWTF,290 Wolfpack Run,Deltona,FL,2012,28.95,-81.24,Industrial|Municipal and Public Areas
+"Destin Water Users, Inc.",George French WRF,14 Industrial Park Lane,Destin,FL,2012,30.4,-86.48,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+Regional Utilities of Walton Co.,Sandestin WWTP,"Hwy.98, 10 Miles East Of",Destin,FL,2012,30.39,-86.46,Golf Course Irrigation|Residential
+Florida Keys Aqueduct Authority,Duck Key WWTF,Mile Marker 61,Duck Key,FL,2012,24.72,-81.07,Industrial
+City of Dunedin,Dunedin WRF,1140 Highland Av,Dunedin,FL,2012,28.02,-82.79,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+City of Edgewater,Edgewater WWTF,500 West Ocean Avenue,Edgewater,FL,2012,28.99,-80.91,Industrial|Residential
+St. Johns Co. Utilities,Mainland WRF,4428 Golf Ridge Drive,Elkton,FL,2012,29.81,-81.38,Golf Course Irrigation
+City of Eustis,Eustis WWTF,801 Bates Avenue,Eustis,FL,2012,28.86,-81.68,Golf Course Irrigation|Municipal and Public Areas|Residential
+City of Eustis,Eastern WRF,801 Bates Avenue,Eustis,FL,2012,28.86,-81.68,Golf Course Irrigation|Municipal and Public Areas|Residential
+TS Environmental Services,City Of Everglades WWTF,Copeland Avenue And Kumquat Street,Everglades City,FL,2012,25.86,-81.38,Municipal and Public Areas|Residential
+Nassau-Amelia Utilities,Nassau Amelia Utilities WWTF,5390 First Coast Hwy,Fernandina Beach,FL,2012,30.58,-81.45,Golf Course Irrigation|Industrial
+City of Fort Meade,City Of Fort Meade WWTF,201 Edgewood Dr S,Fort Meade,FL,2012,27.75,-81.78,Industrial
+City of Fort Myers,Fort Myers Central WWTF,1501 Raleigh Street,Fort Myers,FL,2012,26.65,-81.85,Golf Course Irrigation|Industrial|Municipal and Public Areas
+"Forest Utilities, Inc.",Forest Utilities WWTF,6000 Forest Blvd,Fort Myers,FL,2012,26.51,-81.86,Golf Course Irrigation
+Lee Co. Utilities,Fiesta Village WRF,1366 San Souci Drive,Fort Myers,FL,2012,26.54,-81.91,Golf Course Irrigation|Municipal and Public Areas|Residential
+Lee Co. Utilities,San Carlos WRF,18078 Cypress Pt Rd-San Carlos Park,Fort Myers,FL,2012,26.54,-81.82,Golf Course Irrigation|Municipal and Public Areas
+Lee Co. Utilities,Three Oaks WWTF,18521 Three Oaks Parkway,Fort Myers,FL,2012,26.46,-81.79,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+Utilities Inc. of Eagle Ridge,Cross Creek WWTF,13050 Cross Creek Blvd,Fort Myers,FL,2012,26.55,-81.83,Golf Course Irrigation
+Utilities Inc. of Eagle Ridge,Eagle Ridge WWTF,14668 Aeries Way,Fort Myers,FL,2012,26.54,-81.82,Golf Course Irrigation
+Okaloosa Co. Water and Sewer,Arbennie Pritchett WRF,250 Ws Roberts Blvd.,Fort Walton Beach,FL,2012,30.46,-86.65,Golf Course Irrigation
+River Park Utilities Management Association,River Park MHP,106 Glenn Street,Fruitland,FL,2012,29.48,-81.67,Golf Course Irrigation
+Fort Pierce Utilities Authority,Fort Pierce Utility Authority WWTF,403 Seaway Drive/ A1A,Fort Pierce,FL,2012,27.45,-80.34,Industrial
+"Harbour Ridge Property Owners Associations, Inc.",Harbour Ridge WWTF,3/4 Mi Nw Of Gilson/Becker Rds,Ft Pierce,FL,2012,27.45,-80.55,Golf Course Irrigation
+Lee Co. Utilities,Gateway WRF,13240 Griffin Drive,Fort Myers,FL,2012,26.52,-81.7,Municipal and Public Areas|Residential
+Lee Co. Utilities,Fort Myers Beach WRF,17155 Pine Ridge Road,Ft. Myers Beach,FL,2012,26.49,-81.94,Golf Course Irrigation|Municipal and Public Areas|Residential
+Severn Trent Services,North Hutchinson WRF,State Road A1A,Ft. Pierce,FL,2012,27.45,-80.55,Municipal and Public Areas|Residential
+U.S. Water Services Corporation,Pantherwoods WRF,3001Johnston Rd. W. Of Ft. Pierce,Ft. Pierce,FL,2012,27.52,-80.42,Golf Course Irrigation
+City of Fort Walton Beach,Fort Walton Beach WWTP,U.S. 98 (1564 Percy Coleman Rd),Ft. Walton Bch.,FL,2012,30.42,-86.61,Golf Course Irrigation
+Wynne Building Corporation,Spanish Lakes Fairways WWTF,La Villa Way/Calle De Lagos,Ft.Pierce,FL,2012,27.45,-80.55,Golf Course Irrigation
+Gainesville Regional Utilities,GRU-Kanapaha WRF,3901 Southwest 63Rd Street,Gainesville,FL,2012,29.61,-82.41,Golf Course Irrigation|Municipal and Public Areas|Residential
+Gainesville Regional Utilities,GRU-Main Street WRF,200 Se 16Th Ave,Gainesville,FL,2012,29.63,-82.33,Industrial|Municipal and Public Areas
+University of Florida WRF,University Of Florida WRF,1070 North-South Drive,Gainesville,FL,2012,29.64,-82.35,Golf Course Irrigation|Industrial
+City of Green Cove Springs,Harbor Road WWTP,1277 Harbor Road,Green Cove Springs,FL,2012,30.01,-81.7,Golf Course Irrigation
+City of Groveland,Groveland WWTF,1198 Sampy Road,Groveland,FL,2012,28.54,-81.89,Golf Course Irrigation
+South Santa Rosa Utility System/City of Gulf Breez,South Santa Rosa-Tiger Point WRF,1150 Circle Lane,Gulf Breeze,FL,2012,30.38,-87.09,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+City of Haines City,Haines City WRF,3642 E. Johnson Ave.,Haines City,FL,2012,28.11,-81.6,Golf Course Irrigation|Industrial|Municipal and Public Areas
+CH2M HILL OMI,Town Of Havana WRF,110 E.14Th Ave.,Havana,FL,2012,30.6,-84.41,Industrial
+South Martin Regional Utilities,South Martin Regional Utility WRF,8181 S.E. Skylark Avenue,Hobe Sound,FL,2012,27.11,-80.16,Golf Course Irrigation|Industrial|Residential
+City of Holly Hill,Holly Hill WWTF,453 Lpga Blvd.,Holly Hill,FL,2012,29.24,-81.05,Golf Course Irrigation|Municipal and Public Areas
+City of Hollywood,Cooper City WWTP,1621 North 14Th Avenue,Hollywood,FL,2012,26.03,-80.14,Golf Course Irrigation|Municipal and Public Areas
+City of Hollywood,Davie WWTP,1621 North 14Th Avenue,Hollywood,FL,2012,26.03,-80.14,Golf Course Irrigation|Municipal and Public Areas
+City of Hollywood,Hollywood Southern Regional WRF,1621 North 14Th Avenue,Hollywood,FL,2012,26.03,-80.14,Golf Course Irrigation|Municipal and Public Areas
+US Water Services Corporation,Island Dunes WRF,8700 South A1A,Hutchinson Island,FL,2012,27.51,-80.31,Golf Course Irrigation
+"Indiantown Company, Inc.",Indiantown WWTF,168Th & Rowland Canal,Indiantown,FL,2012,27.08,-80.52,Industrial
+Martin Correctional Institution,Martin Correctional Institution WRF,1150 Allapattah Road S.W.,Indiantown,FL,2012,27.19,-80.48,Commercial
+St. Johns Co. Utilities,Innlet Beach WWTF,Palmera Drive East,Innlet Beach,FL,2012,30.14,-81.37,Golf Course Irrigation
+Citrus Co. Dept of Water Resources,Point Of Woods WRF,East Sr 470,Inverness,FL,2012,28.83,-82.26,Golf Course Irrigation
+JEA,Arlington East WRF,21 West Church Street,Jacksonville,FL,2012,30.33,-81.66,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+JEA,Blacks Ford WRF,21 West Church Street,Jacksonville,FL,2012,30.33,-81.66,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+JEA,Buckman Street WWTF,2221 Buckman Street,Jacksonville,FL,2012,30.35,-81.63,Industrial
+JEA,District II WWTF,1840 Cedar Bay Road,Jacksonville,FL,2012,30.43,-81.62,Industrial
+JEA,Jacksonville Heights WRF,5957 Tampico Road,Jacksonville,FL,2012,30.22,-81.75,Industrial
+JEA,Julington Creek WRF,21 West Church Street,Jacksonville,FL,2012,30.33,-81.66,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+JEA,Mandarin WRF,21 West Church Street,Jacksonville,FL,2012,30.33,-81.66,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+JEA,Southwest District WWTF,5420 118Th Street,Jacksonville,FL,2012,30.23,-81.72,Industrial
+Navy Public Works Dept Jacksonville,USN NAS Jacksonville WRF,Naval Air Station Bldg 826,Jacksonville,FL,2012,30.22,-81.7,Golf Course Irrigation
+City of Jacksonville Beach,Jacksonville Beach WRF,910 10Th Street S,Jacksonville Beach,FL,2012,30.28,-81.4,Golf Course Irrigation|Industrial
+Martin Co. Utilities,North WRF,Jensen Beach Blvd.,Jensen Beach,FL,2012,27.25,-80.25,Golf Course Irrigation|Municipal and Public Areas|Residential
+Loxahatchee River District,Loxahatchee River District,2500 Jupiter Park Drive,Jupiter,FL,2012,26.92,-80.14,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+Loxahatchee River District,Seacoast Utilities PGA,2500 Jupiter Park Drive,Jupiter,FL,2012,26.92,-80.14,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+Synagro,City Of Key Colony Beach WRF,600 N. 8Th Street,Key Colony Beach,FL,2012,24.72,-81.08,Golf Course Irrigation
+Unknown Utility,North Key Largo WWTF @ Ocean Reef,31 Ocean Reef Dr Ste 301-A,Key Largo,FL,2012,25.32,-80.28,Golf Course Irrigation
+Florida Keys Aqueduct Authority,Big Coppitt WWTF,1100 Kennedy Drive P. O. Box 1239,Key West,FL,2012,24.57,-81.77,Residential
+K.W. Resort Utilities Corp,Key West Resort Utility,"6630 Front St., Stock Island",Key West,FL,2012,24.56,-81.8,Commercial|Golf Course Irrigation
+Good Samaritan Retirement Village,Kissimmee Good Samaritan Retirement Village WRF,4020 Northgate Dr,Kissimmee,FL,2012,28.27,-81.45,Golf Course Irrigation|Municipal and Public Areas|Residential
+TOHO Water Authority,Toho-Camelot WRF,5400 Camelot Country Way,Kissimmee,FL,2012,28.32,-81.49,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+TOHO Water Authority,Toho-South Bermuda Ave WRF,5400 Camelot Country Way,Kissimmee,FL,2012,28.32,-81.49,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+Tohopekaliga Water Authority,Toho-Parkway WRF,2550 Fortune Road,Kissimmee,FL,2012,28.3,-81.34,Golf Course Irrigation|Municipal and Public Areas|Residential
+Tohopekaliga Water Authority,Toho-Sandhill Road WRF,2200 Sand Hill Road,Kissimmee,FL,2012,28.3,-81.61,Golf Course Irrigation|Municipal and Public Areas|Residential
+CH2M HILL OMI,The Villages-LSSA WWTF,2450 El Camino Real,Lady Lake,FL,2012,28.92,-81.91,Golf Course Irrigation|Municipal and Public Areas
+CH2M HILL OMI,The Villages-Central Sumter Utility WWTF,Buena Vista Boulevard,Lady Lake,FL,2012,28.93,-82,Golf Course Irrigation
+CH2M HILL OMI,The Villages-NSU WWTF,Buena Vista Boulevard,Lady Lake,FL,2012,28.93,-82,Golf Course Irrigation
+CH2M HILL OMI,The Villages-Villages WWTF,501 Sunbelt Road,Lady Lake,FL,2012,28.92,-81.91,Golf Course Irrigation|Municipal and Public Areas
+Town of Lady Lake,Lady Lake WWTF,140 Skyline Drive,Lady Lake,FL,2012,28.92,-81.91,Municipal and Public Areas
+Dept of Corrections Columbia Correctional Institution,Columbia Correctional Institution WRF,East Hwy 90 Rt 7 Box 376,Lake City,FL,2012,30.38,-82.59,Commercial
+Seminole Co. Env. Services,Greenwood Lakes WRF,701 Green Way Blvd,Lake Mary,FL,2012,28.73,-81.34,Municipal and Public Areas
+City of Lake Wales,Lake Wales WRF,840 Henry Street,Lake Wales,FL,2012,27.9,-81.6,Industrial|Municipal and Public Areas
+City of Lakeland,Glendale WRF,1825 Glendale Street,Lakeland,FL,2012,28.01,-81.93,Industrial
+City of Lakeland,Northside WRF,1825 Glendale Street,Lakeland,FL,2012,28.01,-81.93,Industrial
+"Cypress Lakes Utilities, Inc.",Cypress Lakes WWTF,10000 Us Highway 98,Lakeland,FL,2012,28.18,-82,Golf Course Irrigation
+Polk Co. Utilities,Northwest Regional WRF,North Campbell Road,Lakeland,FL,2012,28.14,-82.01,Golf Course Irrigation|Municipal and Public Areas|Residential
+Citrus Co. Dept of Water Resources,Meadowcrest WWTF,6000 West Frontier Lane,Lecanto,FL,2012,28.81,-82.48,Golf Course Irrigation
+City of Leesburg,Canal Street WRF,608 North Canal Street,Leesburg,FL,2012,28.82,-81.87,Golf Course Irrigation|Residential
+City of Leesburg,Plantation WRF,608 North Canal Street,Leesburg,FL,2012,28.82,-81.87,Golf Course Irrigation|Residential
+City of Leesburg,Turnpike WRF,608 North Canal Street,Leesburg,FL,2012,28.82,-81.87,Golf Course Irrigation|Residential
+"Utilities, Inc. of Pennbrooke",Pennbrooke WWTF,Trailwood Drive,Leesburg,FL,2012,28.83,-81.95,Golf Course Irrigation
+"Severn Trent Environmental Services, Inc.",FGUA-Lehigh Acres WWTP,500 Consturction Lane,Lehigh Acres,FL,2012,26.61,-81.65,Golf Course Irrigation
+CH2M HILL/City of Live Oak,City Of Live Oak WWTF,701 Lime Avenue Nw,Live Oak,FL,2012,30.31,-82.99,Municipal and Public Areas
+"Aqua Utilities Florida, Inc.",Florida Central Commerce Park WRF,140 Hope St.,Longwood,FL,2012,28.7,-81.36,Municipal and Public Areas
+City of Lynn Haven,Lynn Haven  WRF,825 Ohio Avenue,Lynn Haven,FL,2012,30.25,-85.65,Golf Course Irrigation|Municipal and Public Areas|Residential
+Marco Island Utilities,Marco Shores WWTP,100 Windward Road,Marco Beach,FL,2012,25.93,-81.71,Golf Course Irrigation|Municipal and Public Areas
+City of Marianna,City Of Marianna WRF,2832 Davey Street,Marianna,FL,2012,30.77,-85.22,Industrial
+"Brevard Co., Utility Services",BCUD-South Central Regional WRF,10001 N. Wickham Road,Melbourne,FL,2012,28.23,-80.72,Golf Course Irrigation|Municipal and Public Areas|Residential
+City of Melbourne,David B. Lee WWTF,835 North Apollo Boulevard,Melbourne,FL,2012,28.12,-80.64,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+City of Melbourne,Grant Street WWTF,835 North Apollo Boulevard,Melbourne,FL,2012,28.12,-80.64,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+"Brevard Co., Utility Services",BCUD-South Beaches WWTF,2800 South Sr A-1-A,Melbourne Beach,FL,2012,27.97,-80.51,Golf Course Irrigation|Residential
+"Brevard Co., Utility Services",BCUD-Sykes Creek WRF,3630 N. Courtenay Parkway,Merritt Island,FL,2012,28.43,-80.71,Golf Course Irrigation|Industrial|Residential
+Miami-Dade Water and Sewer Dept,MDWASD Central District WRF,Virginia Key,Miami,FL,2012,25.7442478,-80.173833,Industrial
+Miami-Dade Water and Sewer Dept,MDWASD North District WRF,Ne 151 Street & Biscayne Blvd,Miami,FL,2012,25.92,-80.16,Industrial|Municipal and Public Areas
+Miami-Dade Water and Sewer Dept,MDWASD South District WWTF,South District Wwtf,Miami,FL,2012,25.56,-80.47,Industrial
+Clay Co. Utility Authority,CCUA-Mid-Clay Regional WWTF,Near Sr-739 A,Middleburg,FL,2012,30.09,-81.88,Residential
+Clay Co. Utility Authority,CCUA-Ravines WWTF,Near Sr-739 A,Middleburg,FL,2012,30.09,-81.88,Residential
+"Brevard Co., Utility Services",BCUD-North Regional WWTF,2880 Pine Avenue,Mims,FL,2012,28.68,-80.87,Golf Course Irrigation|Industrial|Residential
+City of Groveland,Sunshine Parkway WWTF,Us Hwy 27 And Sr 19,Minneola,FL,2012,28.62,-81.74,Residential
+City of Miramar,City Of Miramar WWTF,13900 Pembroke Road,Miramar,FL,2012,25.99,-80.33,Industrial|Municipal and Public Areas|Residential
+"South Walton Utility Co., Inc.",South Walton Utility WRF,79 Scenic Gulf Dr. (Hwy 98-Near Sandestin),Miramar Bch,FL,2012,30.39,-86.35,Golf Course Irrigation|Industrial
+Dept of Corrections,Jefferson Correctional Institution WRF,1050 Big Joe Road,Monticello,FL,2012,30.51,-83.8,Commercial
+City of Mount Dora,Mount Dora #1 WWTF,1111 Overhiser Lane,Mount Dora,FL,2012,28.72,-81.63,Industrial|Municipal and Public Areas|Residential
+City of Mount Dora,Mount Dora #2 WWTF,1111 Overhiser Lane,Mount Dora,FL,2012,28.72,-81.63,Industrial|Municipal and Public Areas|Residential
+Polk Co. Utilities,Southwest Regional WWTP,Sr 37 @ Carter Road,Mulberry,FL,2012,27.81,-82,Golf Course Irrigation|Municipal and Public Areas|Residential
+FGUA,Lake Fairways FFEC Six,U.S. 41 North Tamiami Trail @ Lake Fairways,N. Ft. Myers,FL,2010,26.66,-81.88,Golf Course Irrigation
+FGUA/US Water Services Corporation,FGUA-Lake Fairways FFEC Six,U.S. 41 North Tamiami Trail @ Lake Fairways,N. Ft. Myers,FL,2012,26.66,-81.88,Golf Course Irrigation
+Lee Co. Utilities,Waterway Estates AWTP,1667 Inlet Drive,N. Ft. Myers,FL,2012,26.64,-81.91,Municipal and Public Areas|Residential
+Pasco Co. Utilities,City Of New Port Richey WWTF,All Of Pasco Co. Except New Port Richey,Not Provided,FL,2012,28.42,-82.23,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+Pasco Co. Utilities,Deer Park Subregional WWTF,All Of Pasco Co. Except New Port Richey,Not Provided,FL,2012,28.42,-82.23,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+Pasco Co. Utilities,Embassy Hills WRF,All Of Pasco Co. Except New Port Richey,Not Provided,FL,2012,28.42,-82.23,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+Pasco Co. Utilities,Hudson Subregional WWTF,All Of Pasco Co. Except New Port Richey,Not Provided,FL,2012,28.42,-82.23,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+Pasco Co. Utilities,Land O'Lakes Subregional WWTF,All Of Pasco Co. Except New Port Richey,Not Provided,FL,2012,28.42,-82.23,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+Pasco Co. Utilities,Odessa Subregional WWTP,All Of Pasco Co. Except New Port Richey,Not Provided,FL,2012,28.42,-82.23,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+Pasco Co. Utilities,Shady Hills Subregional WWTF,All Of Pasco Co. Except New Port Richey,Not Provided,FL,2012,28.42,-82.23,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+Pasco Co. Utilities,Southeast Pasco Subregional WWTF,All Of Pasco Co. Except New Port Richey,Not Provided,FL,2012,28.42,-82.23,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+Pasco Co. Utilities,Wesley Center Subregional WWTF,All Of Pasco Co. Except New Port Richey,Not Provided,FL,2012,28.42,-82.23,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+City of Naples,Naples WRF,1400 3Rd Ave. North,Naples,FL,2012,26.13,-81.8,Golf Course Irrigation|Municipal and Public Areas|Residential
+Collier Co. Wastewater Dept,North WRF,10500 Goodlette-Frank Road,Naples,FL,2012,26.24,-81.76,Golf Course Irrigation|Municipal and Public Areas|Residential
+Collier Co. Wastewater Dept,South WRF,10500 Goodlette-Frank Road,Naples,FL,2012,26.24,-81.76,Golf Course Irrigation|Municipal and Public Areas|Residential
+Collier Co. Wastewater Dept,South Regional WRF,5600 Warren Street,Naples,FL,2010,26.1,-81.73,Golf Course Irrigation|Municipal and Public Areas|Residential
+"Severn Trent Environmental Services, Inc.",Port Of The Islands-South WRF,12600 Union Road,Naples,FL,2012,25.98,-81.51,Residential
+"Holley Navarre Water System, Inc.",Holley-Navarre WWTF,2166 Pepper Drive,Navarre,FL,2012,30.42,-86.9,Golf Course Irrigation|Municipal and Public Areas
+Navarre Beach STP,Santa Rosa Co.-Navarre Beach WWTF,1411 Utility Drive,Navarre,FL,2012,30.43,-86.89,Industrial
+US Water Services Corporation,FGUA-Seven Springs WWTF,2850 Seven Springs Blvd,New Port Richey,FL,2012,28.21,-82.69,Golf Course Irrigation|Municipal and Public Areas|Residential
+City of New Smyrna Beach,New Smyrna Beach WWTF,207 Williamson Blvd,New Smyrna Beach,FL,2012,29.04,-80.9,Golf Course Irrigation|Industrial|Residential
+NVOC Regional Sewer Board,Niceville-NVOC Regional WWTF,507 Crestview Avenue,Niceville,FL,2012,30.53,-86.47,Golf Course Irrigation|Municipal and Public Areas|Residential
+US Water Services Corporation,FGUA-North Fort Myers Utility WRF,4000 Del Prado Blvd. N,North Ft. Myers,FL,2012,26.73,-81.91,Golf Course Irrigation|Municipal and Public Areas|Residential
+US Water Services Corporation,North Fort Myers Utility WRF,4000 Del Prado Blvd. N,North Ft. Myers,FL,2010,26.73,-81.91,Golf Course Irrigation|Municipal and Public Areas|Residential
+City of North Port,North Port WWTF,200 North Pan American Boulevard,North Port,FL,2012,27.05,-82.25,Golf Course Irrigation|Municipal and Public Areas|Residential
+City of Venice,Eastside WRF,3510 Laurel Road E,North Venice,FL,2012,27.14,-82.39,Golf Course Irrigation|Municipal and Public Areas|Residential
+Volusia Co. Utilities,VCUD-Southeast Regional WRF,325 Beacon Light Road,Oak Hill,FL,2012,28.83,-80.86,Industrial
+Bay Laurel Center CDD,On Top Of The World/Bay Laurel  WRF,8447 Sw 99 St (Sr 200) T,Ocala,FL,2012,29.13,-82.31,Golf Course Irrigation|Municipal and Public Areas
+City of Ocala,Ocala WWTP #2,4200 Southeast 24Th Street,Ocala,FL,2012,29.16,-82.07,Golf Course Irrigation|Municipal and Public Areas|Residential
+City of Ocala,Ocala WWTP #3,3100 Sw 67Th Avenue,Ocala,FL,2012,29.2,-82.07,Municipal and Public Areas
+City of Ocala,Ocala WWTP #1,1220 N.W. 4Th Avenue,Ocala,FL,2012,29.2,-82.14,Golf Course Irrigation|Municipal and Public Areas
+Marion Co. Utilities,Oak Run WRF,State Road 200 & Cr 484 T,Ocala,FL,2012,29.2,-82.07,Golf Course Irrigation
+Marion Co. Utilities,Summerglen WWTF,Sw 152Nd Lane,Ocala,FL,2012,29.12,-82,Golf Course Irrigation
+City of Ocoee,Ocoee WWTF #2,1800 A.D. Mims Rd,Ocoee,FL,2012,28.59,-81.51,Golf Course Irrigation|Residential
+City of Ocoee,Orlando-Mcleod Road WRF,17498 Mackinney Road,Ocoee,FL,2012,28.59,-81.51,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+JEA,Nassau Regional WRF,Sr-200 (A-1-A) @ Chester Road,O'Neal,FL,2012,30.32,-81.68,Golf Course Irrigation|Industrial
+Clay Co. Utility Authority,Fleming Island Regional WWTF,1770 Radar Road,Orange Park,FL,2012,30.11,-81.72,Golf Course Irrigation|Residential
+Clay Co. Utility Authority,Fleming Oaks WWTF,1770 Radar Road,Orange Park,FL,2012,30.11,-81.72,Golf Course Irrigation|Residential
+Clay Co. Utility Authority,CCUA-Ridaught Landing WWTF,1770 Radar Road,Orange Park,FL,2012,30.11,-81.72,Golf Course Irrigation|Residential
+Clay Co. Utility Authority,CCUA-Miller Street WWTP,4145-1 Savannah Glen Drive,Orange Park,FL,2012,30.17,-81.75,Golf Course Irrigation|Residential
+Clay Co. Utility Authority,CCUA-Spencer WWTP,4145-1 Savannah Glen Drive,Orange Park,FL,2012,30.17,-81.75,Golf Course Irrigation|Residential
+City of Orlando,Water Conserv I WRF,11401 Boggy Creek Road,Orlando,FL,2012,28.41,-81.34,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+"Florida Utility Group, LLC",Fairways Country Club WRF,14205 East Colonial Drive,Orlando,FL,2012,28.59,-81.19,Golf Course Irrigation
+Orange Co. Utilities Dept,OCUD-Eastern WRF,1621 South Alafaya Trail,Orlando,FL,2012,28.54,-81.2,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+Orange Co. Utilities Dept,OCUD-South WRF,4760 W. Sand Lake Road,Orlando,FL,2012,28.45,-81.44,Commercial|Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+Utility Partners LLC,Wedgefield WWTF,3100 Bancroft Blvd,Orlando,FL,2012,28.5,-81.08,Golf Course Irrigation
+City of Ormond Beach,Ormond Beach WWTF,550 North Orchard Street,Ormond Beach,FL,2012,29.29,-81.07,Golf Course Irrigation|Municipal and Public Areas|Residential
+Finley Engineering Group,Plantation Bay WWTF,"Old Dixie Highwy, West Of Us-1",Ormond Beach,FL,2012,29.29,-81.17,Golf Course Irrigation
+Tohopekaliga Water Authority,Toho-Poinciana Industrial Park #1,West Mclane Boulevard,Osceola County,FL,2010,28.3,-81.42,Municipal and Public Areas
+"Alafaya Utilities, Inc.",Oviedo WRF,1067 Mckinnon Rd,Oviedo,FL,2012,28.64,-81.19,Golf Course Irrigation|Residential
+City Of Orlando,Iron Bridge WRF,601 Iron Bridge Cir,Oviedo,FL,2012,28.62,-81.22,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+"Florida Utility Group, LLC",Palm Valley Mhc WWTF,3700 Palm Valley Circle,Oviedo,FL,2012,28.62,-81.2,Municipal and Public Areas|Residential
+Pace WasteWRF,"Pace Water System, Inc. WWTF",Hwy 197A,Pace,FL,2012,30.67,-87.2,Golf Course Irrigation|Residential
+City of Palatka,City Of Palatka WRF,"Route 3, Box 129, Lundy Road",Palatka,FL,2012,29.72,-81.69,Golf Course Irrigation|Municipal and Public Areas
+City of Palm Bay Utilities,Palm Bay WRF,1103 Troutman Blvd Ne,Palm Bay,FL,2012,28.02,-80.6,Industrial|Municipal and Public Areas|Residential
+"Davis Enterprises of South Florida, Inc.",Piper's Landing,4001 Sw Mapp Rd,Palm City,FL,2012,27.16,-80.27,Golf Course Irrigation
+City of Palm Coast,Palm Coast WWTF,2 Utility Drive,Palm Coast,FL,2012,29.55,-81.21,Golf Course Irrigation|Municipal and Public Areas|Residential
+Dunes CDD,Dunes CDD WWTF,101 Jungle Hut Road,Palm Coast,FL,2012,29.58,-81.29,Golf Course Irrigation|Residential
+Pinellas Co. Utilities,Clearwater-Northeast AWWTF,4100 Douglas St,Palm Harbor,FL,2012,28.15,-82.76,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+Pinellas Co. Utilities,Oldsmar WRF,4100 Douglas St,Palm Harbor,FL,2012,28.15,-82.76,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+Pinellas Co. Utilities,William E. Dunn WRF,4100 Douglas St,Palm Harbor,FL,2012,28.15,-82.76,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+City of Palmetto,Palmetto WWTF,1310 28Th Ave West,Palmetto,FL,2012,27.52,-82.6,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+Bay Co. Board of Commissioners,Military Point Regional AWT Facility,100 Lagoon Rd.,Panama City,FL,2012,30.03,-85.51,Golf Course Irrigation|Industrial
+"Sandy Creek Utility Services, Inc.",Sandy Creek Ranch WRF,2405 County Road 2297,Panama City,FL,2012,30.11,-85.49,Golf Course Irrigation
+City of Panama City Beach,Panama City Beach WRF,206 North Gulf Blvd.,Panama City Beach,FL,2012,30.21,-85.85,Industrial|Municipal and Public Areas|Residential
+Emerald Coast Utilities Authority,ECUA-Bayou Marcus WRF,3050 Fayal Drive,Pensacola,FL,2012,30.44,-87.33,Industrial
+Emerald Coast Utilities Authority,ECUA-Main Street WWTP,401 W. Government St.,Pensacola,FL,2012,30.41,-87.22,Industrial
+Emerald Coast Utilities Authority,ECUA-Pensacola Beach WRF,Avenida 10 And Via Deluna Drive,Pensacola Beach,FL,2012,30.34,-87.12,Industrial|Municipal and Public Areas
+Englewood WD,Englewood WWTF,140 Telman Road,Placiada,FL,2012,26.89,-82.27,Golf Course Irrigation|Industrial|Residential
+City of Plant City,Plant City WRF,705 North Alexander Street,Plant City,FL,2012,28.02,-82.14,Industrial|Municipal and Public Areas|Residential
+Equity LifeStyle Properties,Country Meadows/Golden Lakes WRF,723 Sam Allen Road,Plant City,FL,2012,28.05,-82.13,Golf Course Irrigation
+City of Plantation,Plantation Regional WWTF,6500 Nw 11Th Place,Plantation,FL,2012,26.11,-80.23,Industrial
+Tohopekaliga Water Authority,Toho-Poinciana WWTP #2,601 South Country Club Road,Poinciana,FL,2012,28.09,-81.44,Golf Course Irrigation|Municipal and Public Areas|Residential
+Tohopekaliga Water Authority,Toho-Poinciana WWTP #3,601 South Country Club Road,Poinciana,FL,2012,28.09,-81.44,Golf Course Irrigation|Municipal and Public Areas|Residential
+Tohopekaliga Water Authority,Toho-Poinciana WWTP #5,601 South Country Club Road,Poinciana,FL,2012,28.09,-81.44,Golf Course Irrigation|Municipal and Public Areas|Residential
+Broward Co. North Regional Wastewater Treatment,North Regional WRF,2401 N Powerline Road,Pompano Beach,FL,2012,26.26,-80.15,Industrial|Municipal and Public Areas
+City of Pompano Beach,Pompano Beach Reuse Facility,1801 N. Federal Hwy,Pompano Beach,FL,2012,26.25,-80.1,Golf Course Irrigation|Residential
+JEA,Ponce De Leon WRF,3152 S Ponte Vedra Blvd,Ponte Vedra Beach,FL,2010,30.16,-81.36,Golf Course Irrigation|Industrial
+JEA,Ponte Vedra WWTF,200 State Road A1A,Ponte Vedra Beach,FL,2012,30.24,-81.39,Golf Course Irrigation
+St. Johns Co. Utilities,Marsh Landing WWTF,166 Marsh Cove Drive,Ponte Vedra Beach,FL,2012,30.25,-81.39,Golf Course Irrigation
+St. Johns Co. Utilities,Players Club South WRF,5250 Palm Valley Road,Ponte Vedra Beach,FL,2012,30.19,-81.38,Golf Course Irrigation
+St. Johns Co. Utilities,Sawgrass WWTF,10042 Sawgrass Drive West,Ponte Vedra Beach,FL,2012,30.19,-81.38,Golf Course Irrigation
+Charlotte Co. Utilities,East Port WRF,25550 Harbor View Road Unit 1,Port Charlotte,FL,2012,26.97,-82.03,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+Charlotte Co. Utilities,West Port WRF,15005 Cattle Dock Point Road,Port Charlotte,FL,2012,26.94,-82.21,Golf Course Irrigation|Municipal and Public Areas
+"Severn Trent Environmental Services, Inc.",Riverwood Utilities WWTP,4100 Riverwood Drive,Port Charlotte,FL,2012,26.98,-82.22,Golf Course Irrigation
+"Severn Trent Environmental Services, Inc.",Riverwoods Utilities WWTP,4100 Riverwood Drive,Port Charlotte,FL,2010,26.98,-82.22,Golf Course Irrigation
+City of Port Orange,Port Orange WRF,817 Oak Street,Port Orange,FL,2012,29.14,-80.99,Residential
+Martin Co. Utilities,Tropical Farms WRF,Inez Way,Port Salerno,FL,2012,27.15,-80.2,Golf Course Irrigation|Municipal and Public Areas|Residential
+Martin Co. Utilities,Tropical Farms WRF,Inez Way,Port Salerno,FL,2010,27.15,-80.2,Golf Course Irrigation|Municipal and Public Areas|Residential
+"Brevard Co., Utility Services",BCUD-Port St. John WWTF,3710 Juanita Street At Carole Drive,Port St John,FL,2012,28.47,-80.82,Municipal and Public Areas
+City of Port St. Lucie,Westport WRF,Darwin Blvd And Feldman St,Port St Lucie,FL,2012,27.3,-80.3,Golf Course Irrigation
+City of Port St. Lucie,Southport WRF,Sunshine Ave & Pine Valley St,Port St. Lucie,FL,2012,27.3,-80.3,Golf Course Irrigation|Residential
+Charlotte Correctional Institution,Charlotte Correctional Institution WRF,33123 Oil Well Road,Punta Gorda,FL,2012,26.81,-81.91,Commercial
+Charlotte Co. Utilities,Burnt Store WRF,17430 Burnt Store Road,Punta Gorda,FL,2012,26.77,-82.04,Municipal and Public Areas
+CH2M HILL OMI,City Of Quincy WRF,300 N G.F.& A Drive,Quincy,FL,2012,30.52,-84.67,Industrial
+City of Rockledge,Jerry Sellers WRF,1700 Jack Oates Road,Rockledge,FL,2012,28.33,-80.72,Commercial|Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+City of Rockledge,Rockledge WWTF,1700 Jack Oates Road,Rockledge,FL,2012,28.33,-80.72,Golf Course Irrigation|Industrial|Residential
+Charlotte Co. Utilities,Rotonda West WWTF,3740 Kendall Road,Rotonda West,FL,2012,26.89,-82.27,Golf Course Irrigation|Residential
+Hillsborough Co. WRS,Falkenburg Road WRF,520 Teco Rd,Ruskin,FL,2012,27.73,-82.39,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+Hillsborough Co. WRS,South Co. Regional WWTP,520 Teco Rd,Ruskin,FL,2012,27.73,-82.39,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+Hillsborough Co. WRS,Valrico AWWTP,520 Teco Rd,Ruskin,FL,2012,27.73,-82.39,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+City of Sanford,North WWTF,1201 West Seminole Boulevard,Sanford,FL,2012,28.82,-81.28,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+City of Sanford,South WRF #2,1201 West Seminole Boulevard,Sanford,FL,2012,28.82,-81.28,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+Seminole Co. Env. Services,Northwest WRF,501 Yankee Lake Road (State Road 46),Sanford,FL,2012,28.81,-81.32,Golf Course Irrigation|Municipal and Public Areas|Residential
+City of Sanibel,Donax WRF,930 Donax Street,Sanibel,FL,2012,26.44,-82.05,Golf Course Irrigation|Industrial|Residential
+Regional Utilities of Walton Co.,Point Washington WWTP,South Side Of U.S. Hwy 98,Santa Rosa Beach,FL,2012,30.36,-86.18,Golf Course Irrigation
+Regional Utilities of Walton Co.,Seacrest WWTP,South Side Of U.S. Hwy 98,Santa Rosa Beach,FL,2012,30.36,-86.18,Golf Course Irrigation
+"Aqua Utilities Florida, Inc.",Fruitville WWTP,1616 Wendel Kent Road,Sarasota,FL,2012,27.34,-82.35,Commercial|Golf Course Irrigation
+Camelot Utilities,Camelot Lakes WRF,5580 Axminster Dr,Sarasota,FL,2012,27.27,-82.45,Municipal and Public Areas
+City of Sarasota,Sarasota AWWTP,1850 12Th Street,Sarasota,FL,2012,27.35,-82.53,Golf Course Irrigation|Municipal and Public Areas|Residential
+Sarasota Co. Environmental Services,Atlantic/Brentwood WRF,7905 South Mcintosh Road,Sarasota,FL,2010,27.22,-82.48,Commercial|Golf Course Irrigation|Municipal and Public Areas|Residential
+Sarasota Co. Environmental Services,Bee Ridge WRF,7905 South Mcintosh Road,Sarasota,FL,2012,27.22,-82.48,Commercial|Golf Course Irrigation|Municipal and Public Areas|Residential
+Sarasota Co. Environmental Services,Central/North Sarasota Regional Reuse System,7905 South Mcintosh Road,Sarasota,FL,2012,27.22,-82.48,Commercial|Golf Course Irrigation|Municipal and Public Areas|Residential
+City of Sebring,City Of Sebring WRF,4200 Cemetary Road,Sebring,FL,2012,27.51,-81.42,Industrial
+City of Sebring,Western Blvd WWTP,4200 Cemetary Road,Sebring,FL,2012,27.51,-81.42,Industrial
+"Fiddlesticks Country Club, Inc.",Fiddlesticks Country Club WRF,15527 Fiddlesticks Blvd.,South Fort Myers,FL,2012,26.52,-81.81,Golf Course Irrigation
+Hernando Co. Utilities Dept,Spring Hill WWTF,2514 Osowaw Blvd,Spring Hill,FL,2012,28.45,-82.65,Golf Course Irrigation
+City of St. Augustine,St. Augustine WWTF #1,501 Riberia Street,St Augustine,FL,2012,29.88,-81.31,Industrial
+City of St. Cloud,Southside #2 WWTF,2800 Lakeshore Boulevard,St Cloud,FL,2012,28.26,-81.3,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+City of St. Petersburg,Albert Whitted WRF,1635 3Rd Ave N,St Petersburg,FL,2012,27.77,-82.66,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+City of St. Petersburg,Northeast WRF,1635 3Rd Ave N,St Petersburg,FL,2012,27.77,-82.66,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+City of St. Petersburg,Northwest WRF,1635 3Rd Ave N,St Petersburg,FL,2012,27.77,-82.66,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+City of St. Petersburg,Southwest WRF,1635 3Rd Ave N,St Petersburg,FL,2012,27.77,-82.66,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+Pinellas Co. Utilities,South Cross Bayou WRF,5900 74Th St N,St Petersburg,FL,2012,27.82,-82.74,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+Saint Johns Co. Utility,SR16 WWTP,3000 Industry Center Road,St. Augustine,FL,2012,29.91,-81.38,Golf Course Irrigation
+St. Johns Co. Utilities,Anastasia Island WWTF,860 W. 16Th St.,St. Augustine,FL,2012,29.86,-81.29,Golf Course Irrigation
+Lee Co. Utilities,Pine Island WWTF,6928 Stringfellow Road,St. James City,FL,2012,26.56,-82.1,Residential
+"Severn Trent Environmental Services, Inc.",South Hutchinson Island WRF,South Ocean Drive,St. Lucie County,FL,2012,27.25,-80.39,Residential
+St. Lucie West Services District,"St. Lucie West Utilities, Inc.",450 Sw Utility Drive,St. Lucie West,FL,2012,27.31,-80.39,Golf Course Irrigation|Residential
+"Southern Water Services, LLC",St. Marks WWTF,Magnolia Street,St. Marks,FL,2012,30.16,-84.21,Industrial
+City of Starke,City Of Starke WRF,602 Edwards Road,Starke,FL,2012,29.94,-82.11,Industrial
+City of Stuart,City Of Stuart WWTF,301 Se Stypmann Blvd,Stuart,FL,2012,27.2,-80.25,Municipal and Public Areas
+Martin Co. Utilities,Indian River Plantation WRF,660 N.E. Ocean Blvd,Stuart,FL,2012,27.21,-80.18,Golf Course Irrigation
+Martin Co. Utilities,Miles Grant Condo WWTF,5481 Miles Grant Road,Stuart,FL,2012,27.15,-80.18,Golf Course Irrigation
+Sailfish Point Utilities Corp.,Sailfish Point WWTF,6929 Se North Marina Way,Stuart,FL,2012,27.18,-80.16,Golf Course Irrigation
+Marion Co. Utilities,Stonecrest WWTF,115Th Terrance Road,Summerfield,FL,2012,29,-82.04,Golf Course Irrigation
+City of Tallahassee,Lake Bradford WWTF,3805 B Springhill Road,Tallahassee,FL,2010,30.38,-84.51,Municipal and Public Areas
+City of Tallahassee,T.P. Smith WWTF,3805 B Springhill Road,Tallahassee,FL,2012,30.38,-84.51,Municipal and Public Areas
+6th Civil Engineer Squadron,MacDill AFB WWTP,8208 Hanger Loop Drive,Tampa,FL,2012,27.85,-82.49,Golf Course Irrigation
+City of Tampa,Howard F. Curren AWTP,2700 Maritime Point,Tampa,FL,2012,27.92,-82.44,Industrial|Municipal and Public Areas|Residential
+Hillsborough Co. WRS,Dale Mabry AWWTP,10890 South Mobley Road,Tampa,FL,2012,28.08,-82.61,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+Hillsborough Co. WRS,Northwest WRF,10890 South Mobley Road,Tampa,FL,2012,28.08,-82.61,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+Hillsborough Co. WRS,River Oaks AWWTP,10890 South Mobley Road,Tampa,FL,2012,28.08,-82.61,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+Hillsborough Co. WRS,Van Dyke WWTP,10890 South Mobley Road,Tampa,FL,2012,28.08,-82.61,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+"Pluris Pebble Creek, Inc.",Pebble Creek WWTF,10210 Regents Park Dr.,Tampa,FL,2012,28.16,-82.35,Golf Course Irrigation|Municipal and Public Areas
+City of Tarpon Springs,Tarpon Springs WWTF,201 East Pine Street,Tarpon Springs,FL,2012,28.15,-82.75,Commercial|Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+City of Titusville,North-Osprey WRF,1105 Buffalo Road,Titusville,FL,2012,28.62,-80.82,Golf Course Irrigation|Municipal and Public Areas|Residential
+The Great Outdoors CDA,The Great Outdoors RV/Golf Resort WRF,311 Raccoon Road,Titusville,FL,2012,28.51,-80.86,Golf Course Irrigation|Residential
+The Great Outdoors CDA,Titusville South-Blue Heron WRF,311 Raccoon Road,Titusville,FL,2012,28.51,-80.86,Golf Course Irrigation|Municipal and Public Areas|Residential
+City of Umatilla,Umatilla WWTF,700 Golden Gem Drive,Umatilla,FL,2012,28.96,-81.7,Industrial
+Palm Beach Co. Water Utilities,Southern Regional WWTP,12751 Hagen Ranch Road,Unincorporated Palm Beach County,FL,2012,26.7,-80.04,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+Sarasota Co. Environmental Services,Venice Gardens WRF,375 Venice East Blvd.,Venice,FL,2012,27.07,-82.38,Golf Course Irrigation|Residential
+City of Vero Beach,Vero Beach WWTF,Indian River Blvd & 17 Street,Vero Beach,FL,2012,27.63,-80.38,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+Indian River Co.,IRCUD-Blue Cypress WRF,8405 8Th Street,Vero Beach,FL,2012,27.62,-80.5,Golf Course Irrigation
+Indian River Co.,IRCUD-Central WWTF,8405 8Th Street,Vero Beach,FL,2012,27.62,-80.5,Golf Course Irrigation
+Indian River Co.,IRCUD-South Regional WWTF,8405 8Th Street,Vero Beach,FL,2012,27.62,-80.5,Golf Course Irrigation
+Indian River Co.,IRCUD-West Regional WWTF,8405 8Th Street,Vero Beach,FL,2012,27.62,-80.5,Golf Course Irrigation
+City of Wuachula,City Of Wuachula Of WWTP,155 Griffen Road,Wauchula,FL,2012,27.55,-81.8,Industrial
+Village of Wellington,Wellington WWTP,11860 Pierson Road,Wellington,FL,2010,26.64,-80.27,Municipal and Public Areas
+Veolia Water N.A. - South,Ray Bullard WRF,1415 Henry Ave.,West Melbourne,FL,2012,28.07,-80.65,Residential
+ECR WRF,East Central Regional WWTP,4325 Haverhill Road North,West Palm Beach,FL,2012,26.75,-80.12,Industrial
+Palm Beach Co. Water Utilities,Century Village-Reclaimed Water Production Facility,2969 Northhampton Street,West Palm Beach,FL,2012,26.72,-80.12,Residential
+City of Wildwood,City Of Wildwood WWTF,1290 Industrial Drive,Wildwood,FL,2012,28.86,-82.05,Golf Course Irrigation|Municipal and Public Areas
+City of Winter Garden,Winter Garden WWTF,Po Box 771005,Winter Garden,FL,2012,28.57,-81.59,Golf Course Irrigation|Residential
+City of Winter Haven,Winter Haven #2 WWTF,3190 Lake Conine Dr W,Winter Haven,FL,2012,28.06,-81.73,Commercial|Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+City of Winter haven,Winter Haven #3 WWTF,4400 Pollard Road,Winter Haven,FL,2012,27.97,-81.71,Industrial
+City of Winter Park,Winter Park WWTF,2655 Bongart Road,Winter Park,FL,2012,28.61,-81.31,Golf Course Irrigation|Industrial|Municipal and Public Areas
+City of Winter Springs,West WRF,1000 West Sr-434,Winter Springs,FL,2012,28.7,-81.32,Residential
+City of Winter Springs,East WRF,1560 Winter Springs Blvd.,Winter Springs,FL,2012,28.67,-81.24,Golf Course Irrigation|Municipal and Public Areas|Residential
+City of Zephyrhills,City Of Zephyrhills WRF,39825 Alston Avenue,Zephryhills,FL,2012,28.22,-82.16,Golf Course Irrigation|Industrial|Municipal and Public Areas|Residential
+City of Henderson,Kurt R. Segler WRF,450 East Galleria Drive,Henderson,NV,2012,36.13,-114.96,Municipal and Public Areas
+Clark Co. Water Reclamation District,Central and AWT Facilities,5857 E. Flamingo Road,Las Vegas,NV,2012,36.11,-115.05,Industrial|Municipal and Public Areas
+Las Vegas Valley WD,Desert Breeze Recycled WDS,8320 W. Flamingo Road,Las Vegas,NV,2012,36.11,-115.27,Municipal and Public Areas
+Las Vegas Valley WD,Durango Hills Recycled WDS,3271 N. Durango Drive,Las Vegas,NV,2012,36.23,-115.29,Municipal and Public Areas
+City of Amarillo,Hollywood Road WWTF,3700 S.E. Loop 335,Amarillo,TX,2010,35.12,-101.88,Industrial
+City of Amarillo,River Road WWTF,126000 Reclamation Plant Rd.,Amarillo,TX,2010,35.21,-101.84,Industrial
+Travis Co. WC&ID #17,Flintrock WWRP,2200 Lohmans Spur Rd,Austin,TX,2010,30.38,-97.95,Municipal and Public Areas
+Travis Co. WC&ID #17,Steiner WWRP,3315 1/2 A Quinlan Park Rd.,Austin,TX,2010,30.38,-97.89,Municipal and Public Areas
+City of Azle,Ash Creek WWTP,816 Park Street,Azle,TX,2010,32.89,-97.53,Municipal and Public Areas
+Cibolo Creek Municipal Authority,OJR WRF,12423 Authority Ln,Cibolo,TX,2010,29.57,-98.22,Municipal and Public Areas
+City of Copperas Cove,Northeast WWTP,1203 Golf Course Road,Copperas Cove,TX,2010,31.25,-98.1,Municipal and Public Areas
+City of Crandall,Crandall WWTP,153 1/2 Buffalo Creek Road,Crandal,TX,2010,32.62,-96.45,Municipal and Public Areas
+City of Dallas,Dallas Central WWTP,1020 Sargent Road,Dallas,TX,2010,32.74,-96.78,Municipal and Public Areas
+Trinity River Authority,TRA Central WWTP,6500 Singleton Blvd.,Dallas,TX,2010,32.78,-96.92,Municipal and Public Areas
+El Paso Water Utilities,Northwest Treatment Plant,701 Executive Center Boulevard,El Paso,TX,2010,31.79,-106.52,Industrial
+El Paso Water Utilities,Fred Hervey WRP,11700 Railroad Drive,El Paso,TX,2010,31.95,-106.36,Commercial|Industrial
+El Paso Water Utilities,Roberto R. Bustamante WWTF,10001 Southside Rd.,El Paso,TX,2010,31.66,-106.32,Commercial
+North Texas MWD,Stewart Creek West WRF,5100 Fourth Army Memorial Rd.,Frisco,TX,2010,33.15,-96.86,Municipal and Public Areas
+City of Gainesville,Gainesville WWTP,1801 South Weaver Street,Gainesville,TX,2010,33.64,-97.15,Municipal and Public Areas
+City of Houston,Kingwood Central WWTP,3928 Kingwood Drive,Houston,TX,2010,30.05,-95.19,Municipal and Public Areas
+Harris Co. MUD 208,Harris Co. MUD No. 208 WRF,5820 Hwy 6 North Suite 215,Houston,TX,2010,29.86,-95.65,Municipal and Public Areas
+City of Houston,North Belt WWTP,14506 Smith Road,Humble,TX,2010,29.93,-95.29,Commercial
+City of La Porte,Little Cedar Bayou WWTP,1301 South 4Th St.,La Porte,TX,2010,29.65,-95.02,Municipal and Public Areas
+City of Lago Vista,City Of Lago Vista WWTP,5206 1/2 Country Club,Lago Vista,TX,2010,30.45,-97.97,Municipal and Public Areas
+Lakeway MUD,S-4 WWRP,417 Palos Verdes,Lakeway,TX,2010,30.38,-97.95,Commercial|Municipal and Public Areas|Residential
+Lakeway MUD,S-5 WWRP,251 Highlands Boulevard,Lakeway,TX,2010,30.38,-97.95,Commercial|Municipal and Public Areas
+City of League City,Dallas Salmon WWTP,703 N. Wisconsin,League City,TX,2010,29.52,-95.09,Municipal and Public Areas
+City of Lubbock,Southeast Water Reclamation WWTF,3603 Guava Avenue,Lubbock,TX,2010,33.56,-101.8,Industrial
+City of Denton,Pecan Creek WRP,Not Provided,Denton,TX,2009,33.214911,-97.13305,Commercial|Industrial|Municipal and Public Areas
+City of Fort Worth,Village Creek WWTP,Not Provided,Fort Worth,TX,2009,32.772817,-97.144242,Municipal and Public Areas
+City of Lewisville,Lewisville WWTP,Not Provided,Lewisville,TX,2010,33.043464,-96.993978,Municipal and Public Areas
+San Antonio Water System,Medio Creek WRC,Not Provided,San Antonio,TX,2009,29.421147,-98.493425,Commercial|Industrial|Municipal and Public Areas
+San Antonio Water System,Salado Creek WRC,Not Provided,San Antonio,TX,2009,29.421147,-98.493425,Commercial|Industrial|Municipal and Public Areas
+City of Odessa,Bob Derrington WRP,9600 So. County Rd 1325,Odessa,TX,2010,31.83,-102.27,Municipal and Public Areas|Residential
+North Texas MWD,Rowlett Creek WWTP,1401 Los Rios Blvd.,Plano,TX,2010,33.01,-96.65,Municipal and Public Areas
+Nueces Co. WCID 4,Nueces Co. WCID 4,315 S 9Th Street,Port Aransas,TX,2010,27.83,-97.06,Municipal and Public Areas
+North Texas MWD,Buffalo Creek WWTP,4920 Horizon Rd.,Rockwall,TX,2010,32.88,-96.46,Municipal and Public Areas
+City of San Marcos,City of San Marcos WWTP,720 River Road,San Marcos,TX,2010,29.87,-97.93,Industrial
+City of Seguin,Walnut Branch WWTP,101 East Klein,Seguin,TX,2010,29.53,-97.94,Industrial
+City of Garland,Garland Duck Creek WWTP,750 Duck Creek Way,Sunnyvale,TX,2010,32.8,-96.52,Industrial
