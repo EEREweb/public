@@ -1,0 +1,367 @@
+#map {
+    position: relative;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 590px;
+}
+
+.leaflet-control-jump-style-zoom:before {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 0.4px;
+    color: black;
+}
+
+.leaflet-control-jump-style-download:before {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 0.4px;
+    color: black;
+}
+
+.leaflet-control-jump-style-reset:before {
+	font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 0.4px;
+    color: black;
+}
+
+.leaflet-control-how-style:before {
+    content: "?";
+    font: 12px/16px Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: black;
+}
+
+.row {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
+
+.container {
+	width: auto !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+
+.panel-body {
+    font-size: 12px;
+}
+
+.datatable {
+  font-size: 14px;
+}
+
+#projects-datatable_length select {
+    display: inline;
+    width: 82px;
+}
+
+#projects-datatable_filter input {
+    display: inline;
+    width: 240px;
+    border: 1px solid #bbb;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    height: 36px;
+    text-shadow: 0 1px #fff;
+    background-color: #fff;
+    background-image: none;
+    border-radius: 4px;
+    color: #444;
+    font-size: 16px;
+    line-height: 1.65;
+    padding: 6px 12px;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+}
+
+#projects-datatable_info {
+    color: #444;
+    font-size: 90%;
+    float: right !important;
+}
+
+.search-ui {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+}
+
+.filter-ui {
+    background: #fff;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    z-index: 1001;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+.chkboxColorKey {
+    display: inline-block;
+    border: solid 1px #CCCCCC;
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+    vertical-align: middle;
+}
+
+/*-----------CUSTOM CSS for Energy.gov embedding--------------*/
+
+.col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9 {
+    /*float: left;
+    min-height: 1px;*/
+    padding-left: 2px !important;
+    padding-right: 2px !important;
+    position: relative;
+}
+
+
+.leaflet-popup-content {
+    font-size: 110%;
+}
+
+    .leaflet-popup-content h3 {
+        color: #000000 !important;
+    }
+
+    .leaflet-popup-content .partner_location {
+        margin-top: -5px;
+        color: #888888;
+        font-size: 80%;
+    }
+
+    .leaflet-popup-content .callout_label {
+        color: #888888;
+        font-size: 80%;
+        margin-bottom: -7px;
+        margin-top: 7px;
+        padding-bottom: 3px;
+    }
+
+    .leaflet-popup-content .project_title {
+        margin-top: 3px;
+        font-size: 105%;
+        font-weight: bold;
+        line-height: 0em;
+        padding-bottom: 14px;
+    }
+
+    .leaflet-popup-content hr {
+        margin-top: 3px;
+        margin-bottom: 5px;
+    }
+
+    .leaflet-popup-content .factsheet {
+        text-align: right;
+    }
+
+    .leaflet-popup-content h6 {
+        font-size: 97%;
+    }
+
+h3.panel-title {
+    color: #000000 !important;
+    font-size: 150% !important;
+    font-weight: 200;
+}
+
+.checkbox label {
+    color: #333333 !important;
+}
+
+.marker-cluster-small {
+    background-color: rgba(128, 128, 128, 0.6) !important;
+}
+
+    .marker-cluster-small div {
+        background-color: rgba(128, 128, 128, 0.6) !important;
+    }
+
+.marker-cluster-medium {
+    background-color: rgba(128, 128, 128, 0.6) !important;
+}
+
+    .marker-cluster-medium div {
+        background-color: rgba(128, 128, 128, 0.6) !important;
+    }
+
+.marker-cluster-large {
+    background-color: rgba(128, 128, 128, 0.6) !important;
+}
+
+    .marker-cluster-large div {
+        background-color: rgba(128, 128, 128, 0.6) !important;
+    }
+
+.marker-cluster div span {
+    color: #eeeeee !important;
+}
+
+.well, .panel-group {
+    font-size: 85% !important;
+}
+
+.panel-body h5 {
+    color: #666666 !important;
+    font-size: 100%;
+    text-transform: none !important;
+}
+
+img.info-icon {
+    width: 20px;
+    height: 20px;
+    margin-left: 7px;
+}
+
+.qtip-content h4 {
+    color: #558409 !important;
+}
+
+
+
+
+
+/********************** markercluster/dist/MarkerCluster.css ********************/
+
+.leaflet-cluster-anim .leaflet-marker-icon, .leaflet-cluster-anim .leaflet-marker-shadow {
+    -webkit-transition: -webkit-transform 0.3s ease-out, opacity 0.3s ease-in;
+    -moz-transition: -moz-transform 0.3s ease-out, opacity 0.3s ease-in;
+    -o-transition: -o-transform 0.3s ease-out, opacity 0.3s ease-in;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-in;
+}
+
+/********************** markercluster/dist/MarkerCluster.Default.css ********************/
+
+
+.marker-cluster-small {
+    background-color: rgba(181, 226, 140, 0.6);
+}
+
+    .marker-cluster-small div {
+        background-color: rgba(110, 204, 57, 0.6);
+    }
+
+.marker-cluster-medium {
+    background-color: rgba(241, 211, 87, 0.6);
+}
+
+    .marker-cluster-medium div {
+        background-color: rgba(240, 194, 12, 0.6);
+    }
+
+.marker-cluster-large {
+    background-color: rgba(253, 156, 115, 0.6);
+}
+
+    .marker-cluster-large div {
+        background-color: rgba(241, 128, 23, 0.6);
+    }
+
+/* IE 6-8 fallback colors */
+.leaflet-oldie .marker-cluster-small {
+    background-color: rgb(181, 226, 140);
+}
+
+    .leaflet-oldie .marker-cluster-small div {
+        background-color: rgb(110, 204, 57);
+    }
+
+.leaflet-oldie .marker-cluster-medium {
+    background-color: rgb(241, 211, 87);
+}
+
+    .leaflet-oldie .marker-cluster-medium div {
+        background-color: rgb(240, 194, 12);
+    }
+
+.leaflet-oldie .marker-cluster-large {
+    background-color: rgb(253, 156, 115);
+}
+
+    .leaflet-oldie .marker-cluster-large div {
+        background-color: rgb(241, 128, 23);
+    }
+
+.marker-cluster {
+    background-clip: padding-box;
+    border-radius: 20px;
+}
+
+    .marker-cluster div {
+        width: 30px;
+        height: 30px;
+        margin-left: 5px;
+        margin-top: 5px;
+        text-align: center;
+        border-radius: 15px;
+        font: 12px "Helvetica Neue", Arial, Helvetica, sans-serif;
+    }
+
+    .marker-cluster span {
+        line-height: 30px;
+    }
+
+/* datatable pagination */
+.pagination {
+    border-radius: 4px;
+    display: inline-block;
+    font-weight: 500;
+    height: 29px;
+    line-height: 16px;
+    margin: 10px 25px;
+	float: left;
+    padding-left: 0;
+}
+.pagination > a {
+    display: inline-block;
+    height: 31px;
+    line-height: inherit;
+    margin: 0 0.1em;
+}
+.pagination > span > a {
+    background-color: #fff;
+    background-image: linear-gradient(white, #eee);
+    border: 1px solid #ccc;
+    border-radius: 0.25em;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.8) inset, 0 1px 3px rgba(0, 0, 0, 0.1);
+    color: #0074a1;
+    line-height: inherit;
+    padding: 0.3em 0.5em;
+    text-decoration: none;
+    margin: 0px 3px;
+}
+.pagination > a {
+    background-color: #fff;
+    background-image: linear-gradient(white, #eee);
+    border: 1px solid #ccc;
+    border-radius: 0.25em;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.8) inset, 0 1px 3px rgba(0, 0, 0, 0.1);
+    color: #0074a1;
+    line-height: 20px;
+    padding: 0.3em 0.5em;
+    text-decoration: none;
+}
+.pagination > span {
+    border: medium none;
+    color: inherit;
+    height: inherit;
+    line-height: inherit;
+    padding: 0.3em 0;
+}
+.pagination > span:hover {
+    background-color: transparent;
+}
+.pagination  > span > a.current{
+    background-color: #f2f2f1;
+    background-image: linear-gradient(#f2f2f2, #e1e1e1);
+}
+.pagination > a.current, .pagination > a.current:focus, .pagination > a.current:hover {
+    border: 1px solid #ccc;
+    color: #444;
+}
