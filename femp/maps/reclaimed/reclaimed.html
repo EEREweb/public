@@ -40,8 +40,9 @@ function format(d) {
 }
 
 $(document).ready(function () {
-
+	
 	var dataFilePath = 'femp_reclaimed_water_providers_2016_06_30.csv';
+
 
 	$.get(dataFilePath, function (data) {
 		var objJson = Papa.parse(removeTrailingLine(data), { "header": true });
@@ -602,8 +603,13 @@ $(document).ready(function () {
 
 		function downloadAction() {
 			//window.location = 'http://energy.gov/node/1645011';
-			window.location = '//www.energy.gov/node/1875856';
+			//window.location = '//www.energy.gov/node/1875856';
 		}
+		
+		$('#btnDataDownload').on('click', function () {
+			window.parent.location = dataFilePath;
+		});
+
 
 		function zoomAction() {
 			zoomToData();
@@ -859,8 +865,11 @@ function setup_select_filter(strSelectID, strDivID, intCol, blnMulti) {
             </div>
         </div>
 
-        <a id="lnkDownload" onclick="downloadAction();" href="javascript:void(0);"><i class="fa fa-download fa-1"></i> Download All Water Reclamation Utility Data</a>
-
+	<div id="download_div">
+	     <a id="btnDataDownload" target="_parent" class="btn btn-primary">Download All Water Reclamation Utility Data</a>
+	</div>
+	
+	
     </div>
 
     <div class="col-sm-8">
