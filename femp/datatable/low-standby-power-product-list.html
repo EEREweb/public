@@ -88,7 +88,8 @@ var objColumn = {
 
 $(document).ready(function () {
 
-	var directoryLocation = "https://www1.eere.energy.gov/apps/femp/datatables/standbypower/";
+	//var directoryLocation = "https://www1.eere.energy.gov/apps/femp/datatables/standbypower/";
+	var directoryLocation = "";
 	var csvDataFile = directoryLocation + "standby_power_product_list_2019_04_17.csv";
 	$.get(csvDataFile, function (data) {
 		var csvJson = Papa.parse(removeTrailingLine(data), { "header": true });
