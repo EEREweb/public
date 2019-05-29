@@ -818,7 +818,7 @@ i[e] == "desc" ? d.sSortJUIDesc : c.sSortingClassJUI)
             }
         }
 
-        var dataFilePath_ALL = "SYC_MapData_050919.csv";
+        var dataFilePath_ALL = "SYC_MapData_050519.csv";
 
         $.get(dataFilePath_ALL, function (data) {
 			//console.log(data);
@@ -851,10 +851,12 @@ i[e] == "desc" ? d.sSortJUIDesc : c.sSortingClassJUI)
 					{ "data": "Project_Program" },
                     { "data": "Seed_Fund_Amount" },
                     { "data": "kW_by_2018" },
+					{ "data": "Description" },
                 ],
                 "columnDefs": [
                     {
                         "targets": [0],
+						"visible": false,
                     },
                     {
                         "targets": [1],
@@ -894,6 +896,11 @@ i[e] == "desc" ? d.sSortJUIDesc : c.sSortingClassJUI)
                         "targets": [9],
                         "title": "2018 Planned kW Development"
                     }
+					{
+						"targets": [11],
+						"title": "Description",
+						"visible": false,
+					},
                 ],
                 "createdRow": function (row, data, index) {
                     //$('td', row).eq(0).append(format(data));
@@ -1253,6 +1260,12 @@ console.log(strSelectedVals);
             'WI': "Wisconsin",
             'WY': "Wyoming"
         };
+
+	    /* Formatting function for row details - modify as you need */
+		function format(d) {
+			return '<h4>Description:</h4>' + 
+                ( (d['Description'] ) ? '<p class="dt_details">' + d['Description'] + '</p>' : 'Not Available');
+		}
 
 
         // Find and store a variable reference to the list of filters.
