@@ -23,7 +23,7 @@ Id,Organization,City,State,Latitude,Longitude,Country,Role,Stories,Stories_URL,L
 22,BAM Superior Solutions,Scottsdale,AZ,33.470878,-111.940862,United States,Consultant/Advisor;Contractor/Trade Ally,,,,,,,http://www.bamsuperiorsolutions.com/
 23,Bates County,Butler,MO,38.27807,-94.356513,United States,Government - Local;Program Administrator/Implementer;Utility;Other,,,Peer Exchange Calls No. 6,http://energy.gov/eere/better-buildings-residential-network/downloads/lessons-learned-peer-exchange-calls-no-6,,,http://www.batescounty.net/
 24,BC Hydro,Burnaby,BC,49.230171,-123.002643,Canada,Program Administrator/Implementer;Utility,BC Hydro Brings Energy Savings to Low-Income Families in Canada,http://energy.gov/eere/better-buildings-residential-network/bc-hydro-brings-energy-savings-low-income-families-canada,,,,,http://www.bchydro.com/index.html
-25,Bay Area Regional Energy Network,San Francisco,CA,37.789018,-122.391506,United States,Government - Local; Government - State,,,,,,,https://www.bayren.org/
+25,Bay Area Regional Energy Network,San Francisco,CA,37.789018,-122.391506,United States,Government - Local;Government - State,,,,,,,https://www.bayren.org/
 26,BELCO,Pembroke,Hamilton,32.297844,-64.792203,Bermuda,Utility,,,,,,,https://belco.bm/
 27,BEST-Techs Contracting,Garden Grove,CA,33.780273,-118.030085,United States,Consultant/Advisor;Contractor/Trade Ally,,,,,,,http://www.BEST-Techs.org
 28,"Black Hills Professional Home Inspections, LLC",Rapid City,SD,44.080543,-103.231015,United States,Consultant/Advisor;Contractor/Trade Ally;Program Administrator/Implementer,,,,,,,http://bhhomeinspections.com
@@ -34,8 +34,8 @@ Id,Organization,City,State,Latitude,Longitude,Country,Role,Stories,Stories_URL,L
 33,BrightHome Energy Solutions,Elmsford,NY,41.068349,-73.80736,USA,Consultant/Advisor;Contractor/Trade Ally,,,,,,,http://www.brighthome.com
 34,Build It Green,Oakland,CA,37.810449,-122.239864,United States,Nonprofit,,,,,,,http://www.builditgreen.org
 35,"Build SMART, LLC",Lawrence,KS,38.947154,-95.187611,United States,Manufacturer,,,,,,,http://www.buildsmartna.com
-36,BuildCoach,Tucson,AZ,32.224581,-110.972051,United States,Consultant/Advisor; Contractor/Trade Ally,,,,,,,http://buildcoach.biz/
-37,Building Envelope Materials,Amesbury,MA,42.85651,-70.933517,United States,Contractor/Trade Ally; Manufacturer; Other,,,,,,,https://www.bematerials.com/
+36,BuildCoach,Tucson,AZ,32.224581,-110.972051,United States,Consultant/Advisor;Contractor/Trade Ally,,,,,,,http://buildcoach.biz/
+37,Building Envelope Materials,Amesbury,MA,42.85651,-70.933517,United States,Contractor/Trade Ally;Manufacturer;Other,,,,,,,https://www.bematerials.com/
 38,Building Doctors,Los Angeles,CA,34.066482,-118.352039,United States,Contractor/Trade Ally,,,Peer Exchange Calls No. 12,https://energy.gov/eere/better-buildings-residential-network/downloads/lessons-learned-peer-exchange-calls-no-12,,,http://www.buildingdoctors.com
 39,Building Hubww,Chaska,MN,44.810381,-93.630207,United States,Consultant/Advisor,,,,,,,http://buildinghubww.com
 40,"Building Media, Inc.",Kent,WA,47.366651,-122.197612,United States,Other,,,Peer Exchange Calls No. 5,http://energy.gov/eere/better-buildings-residential-network/downloads/lessons-learned-peer-exchange-calls-no-5,,,http://www.buildingmedia.com
@@ -96,7 +96,7 @@ Id,Organization,City,State,Latitude,Longitude,Country,Role,Stories,Stories_URL,L
 95,Civic Works,Baltimore,MD,39.334283,-76.531482,United States,Nonprofit;Program Administrator/Implementer,,,,,,,http://www.baltimoregreencareers.org/
 96,"Clean Efficient Energy Company, LLC",Overland Park,KS,38.94015,-94.702307,United States,Consultant/Advisor;Contractor/Trade Ally,,,,,,,http://www.CleanEfficientEnergy.com
 97,Clean Energy Coalition,Ann Arbor,MI,42.266088,-83.7146,United States,Nonprofit;Program Administrator/Implementer,,,,,,,http://cec-mi.org/
-98,ClearlyEnergy,Severna Park,MD,39.070389,-76.545242,United States,Consultant/Advisor; Program Administrator/Implementer,,,,,,,https://www.clearlyenergy.com/
+98,ClearlyEnergy,Severna Park,MD,39.070389,-76.545242,United States,Consultant/Advisor;Program Administrator/Implementer,,,,,,,https://www.clearlyenergy.com/
 99,CLEAResult,San Bruno,CA,37.630082,-122.422586,United States,Consultant/Advisor;Program Administrator/Implementer,CLEAResult and NREL Award Winner of the JUMP Call for Innovation,http://energy.gov/eere/better-buildings-residential-network/clearesult-and-nrel-award-winner-jump-call-innovation,Peer Exchange Calls No. 11; Peer Exchange Calls No. 8,https://energy.gov/eere/better-buildings-residential-network/downloads/lessons-learned-peer-exchange-calls-no-11; http://energy.gov/eere/better-buildings-residential-network/downloads/lessons-learned-peer-exchange-calls-no-8,,,http://www.clearesult.com/
 100,Cleveland Public Power,Cleveland,OH,41.506805,-81.688217,United States,Government - Local;Utility,,,,,,,http://cpp.org
 101,Clinton Climate Initiative - Home Energy Affordability Loan,Little Rock,AR,34.749966,-92.285201,United States,Foundation;Nonprofit;Program Administrator/Implementer,,,Peer Exchange Calls No. 8,http://energy.gov/eere/better-buildings-residential-network/downloads/lessons-learned-peer-exchange-calls-no-8,,,https://www.clintonfoundation.org/clinton-presidential-center/about/heal
@@ -128,7 +128,7 @@ Id,Organization,City,State,Latitude,Longitude,Country,Role,Stories,Stories_URL,L
 127,ecobee,Toronto,ON,43.650322,-79.386983,Canada,Manufacturer;Other,,,,,,,http://www.ecobee.com
 128,Ecolibrium3,Duluth,MN,46.761925,-92.131325,United States,Nonprofit,,,,,,,http://ecolibrium3.org
 129,Ecolighten Energy Solutions Ltd.,Vancouver,BC,49.321968,-123.091639,Canada,Consultant/Advisor;Program Administrator/Implementer,,,,,,,http://www.ecolighten.com/
-130,Ecotagious,Vancouver,BC,49.321968,-123.091639,Canada,Program Administrator/Implementer; Other,,,,,,,https://www.ecotagious.com/
+130,Ecotagious,Vancouver,BC,49.321968,-123.091639,Canada,Program Administrator/Implementer;Other,,,,,,,https://www.ecotagious.com/
 131,EcoWorks,Detroit,MI,42.335712,-83.132733,United States,Consultant/Advisor;Nonprofit;Program Administrator/Implementer,,,,,,,http://www.ecoworksdetroit.org/
 132,Eden Housing,Hayward,CA,37.669076,-122.089479,United States,Nonprofit,,,,,,,http://www.edenhousing.org
 133,Efficiency First,San Francisco,CA,37.789018,-122.391506,United States,Contractor/Trade Ally;Nonprofit,,,,,,,http://www.efficiencyfirst.org
@@ -146,8 +146,8 @@ Id,Organization,City,State,Latitude,Longitude,Country,Role,Stories,Stories_URL,L
 145,"Empower Efficiency, LLC",Bethel,CT,41.368615,-73.406234,United States,Consultant/Advisor,,,,,,,http://empowerefficiency.com/
 146,Energize New York,Yorktown Heights,NY,41.286868,-73.783086,United States,Nonprofit;Program Administrator/Implementer,,,,,,,http://energizeny.org
 147,Energy and Environmental Building Alliance,Plymouth,MN,44.99513,-93.435221,United States,Nonprofit,,,,,,,http://www.eeba.org
-148,Energy Centric,Rochester,MN,44.012123,-92.480202,United States,Contractor/Trade ally,,,,,,,http://www.ecinspections.com/Home/
-149,Energy Circle,Portland,ME,43.6591,-70.256821,United States,Consultant/Advisor; Other,,,,,,,https://www.energycircle.com/
+148,Energy Centric,Rochester,MN,44.012123,-92.480202,United States,Contractor/Trade Ally,,,,,,,http://www.ecinspections.com/Home/
+149,Energy Circle,Portland,ME,43.6591,-70.256821,United States,Consultant/Advisor;Other,,,,,,,https://www.energycircle.com/
 150,Energy Conservation Associates,Louisville,KY,38.242991,-85.764101,United States,Consultant/Advisor;Contractor/Trade Ally;Nonprofit,,,,,,,http://projectwarm.org
 151,Energy Conservation Solutions,Atlanta,GA,33.75454,-84.359962,USA,Consultant/Advisor;Contractor/Trade Ally,,,,,,,http://www.energyconservationga.com
 152,Energy Conservation Works,Jackson,WY,43.468697,-110.672417,United States,Government - State;Nonprofit;Other,,,,,,,http://choosetoreduce.org
@@ -162,7 +162,7 @@ Id,Organization,City,State,Latitude,Longitude,Country,Role,Stories,Stories_URL,L
 161,EnergyFit Nevada,Las Vegas,NV,36.076518,-115.153343,United States,Nonprofit;Program Administrator/Implementer,,,,,,,http://www.energyfitnevada.org/
 162,EnergySavvy,Seattle,WA,47.599078,-122.332305,United States,Other,,,Peer Exchange Calls No. 6,http://energy.gov/eere/better-buildings-residential-network/downloads/lessons-learned-peer-exchange-calls-no-6,,,http://www.energysavvy.com/
 163,EnergyWize,Xenia,OH,39.640929,-84.025532,United States,Contractor/Trade Ally,,,,,,,http://EnergyWizeNow.com
-164,EnergyWorks,El Paso,TX,31.761877,-106.485023,United States,Consultant/Advisor; Contractor/Trade Ally; Program Administrator/Implementer,,,,,,,http://www.energyworksusa.com/
+164,EnergyWorks,El Paso,TX,31.761877,-106.485023,United States,Consultant/Advisor;Contractor/Trade Ally;Program Administrator/Implementer,,,,,,,http://www.energyworksusa.com/
 165,EnerScore Inc.,Belmont,MA,42.397211,-71.158375,United States,Contractor/Trade Ally,,,,,,,http://www.enerscore.com
 166,Enervee,Venice,CA,33.988247,-118.459678,United States,Other,,,,,,,https://enervee.com/
 167,Enhabit,Portland,OR,45.54197,-122.648613,United States,Nonprofit;Program Administrator/Implementer,Portland Scores With New Home Energy Policy; Promoting High-Performance Homes to Portland Real Estate Pros,https://energy.gov/eere/better-buildings-residential-network/portland-scores-new-home-energy-policy; http://energy.gov/eere/better-buildings-residential-network/promoting-high-performance-homes-portland-real-estate-pros,Peer Exchange Calls No. 4,http://energy.gov/eere/better-buildings-residential-network/downloads/lessons-learned-peer-exchange-calls-no-4,,,https://enhabit.org/
@@ -205,7 +205,7 @@ Id,Organization,City,State,Latitude,Longitude,Country,Role,Stories,Stories_URL,L
 204,Home Energy Magazine,Berkeley,CA,37.868058,-122.285237,United States,Nonprofit,,,,,,,http://www.homeenergy.org/
 205,Home Performance Coalition,Moon Township,PA,40.505749,-80.207893,United States,Nonprofit,,,,,,,http://www.homeperformance.org/
 206,Home Performance Guild of Oregon,Portland,OR,45.5,-122.65,United States,Consultant/Advisor;Contractor/Trade Ally;Nonprofit,,,Peer Exchange Calls No. 1,http://energy.gov/eere/better-buildings-residential-network/downloads/better-buildings-residential-network-lessons,,,http://www.oregonhpcg.org/
-207,Home Performance Services,Richmond,VA,37.540726,-77.43605,United States,Consultant/Advisor; Contractor/Trade Ally,,,,,,,
+207,Home Performance Services,Richmond,VA,37.540726,-77.43605,United States,Consultant/Advisor;Contractor/Trade Ally,,,,,,,
 208,Home Performance Washington,Seattle,WA,47.61,-122.33,United States,Nonprofit,,,,,,,http://homeperformancewashington.org
 209,Home Star Iowa,Cedar Rapids,IA,42.013868,-91.725336,USA,Consultant/Advisor,,,,,,,http://www.HomeStarIowa.com
 210,"Homesol Building Solutions, Inc.",Perth,ON,44.89992,-76.250962,Canada,Consultant/Advisor,,,,,,,http://www.homesol.ca
@@ -224,7 +224,7 @@ Id,Organization,City,State,Latitude,Longitude,Country,Role,Stories,Stories_URL,L
 223,Insulation Systems,Eastlake,OH,41.655593,-81.444379,United States,Consultant/Advisor;Contractor/Trade Ally,,,,,,,http://www.eastlakehomeinsulation.com/
 224,International Association of Certified Home Inspectors (InterNACHI),Boulder,CO,40.040651,-105.20778,United States,Nonprofit,,,,,,,http://www.nachi.org/
 225,International Center for Appropriate and Sustainable Technology (ICAST),Lakewood,CO,39.710146,-105.084969,United States,Nonprofit,,,,,Energy Efficiency Upgrades in Multifamily Housing,http://energy.gov/eere/better-buildings-residential-network/downloads/energy-efficiency-upgrades-multifamily-housing,http://www.icastusa.org/
-226,International WELL Building Institute,New York,NY,40.751903,-73.987903,United States,Program Administrator/Implementer; Other,,,,,,,https://www.wellcertified.com/
+226,International WELL Building Institute,New York,NY,40.751903,-73.987903,United States,Program Administrator/Implementer;Other,,,,,,,https://www.wellcertified.com/
 227,Invisco Whole House Fan Company,Temecula,CA,33.484613,-117.079304,United States,Manufacturer,,,,,,,http://invisco.com/
 228,"Iowa State University, Department of Civil, Construction, and Environmental Engineering",Ames,IA,42.029539,-93.652756,United States,University,,,,,,,http://www.ccee.iastate.edu/
 229,Jackson Electric Membership Corporation (JEMC),Jefferson,GA,34.096398,-83.570964,United States,Utility,,,,,,,http://www.jacksonemc.com/
@@ -266,7 +266,7 @@ Id,Organization,City,State,Latitude,Longitude,Country,Role,Stories,Stories_URL,L
 265,Montgomery County Faith Alliance for Climate Solutions,Bethesda,MD,38.984653,-77.094711,United States,Nonprofit,,,,,,,
 266,Mountain Association for Community Economic Development,Berea,KY,37.567723,-84.29841,United States,Consultant/Advisor;Nonprofit,,,,,,,http://www.maced.org/
 267,National Association of State Energy Officials (NASEO),Arlington,VA,38.893009,-77.085388,United States,Nonprofit,Residential Network Members Support New Data-Driven Initiative,http://energy.gov/eere/better-buildings-residential-network/residential-network-members-support-new-data-driven,,,,,http://www.naseo.org/
-268,National Fenestration Rating Council,Greenbelt,MD,39.004608,-76.875671,United States,Nonprofit; Program Administrator/Implementer,,,,,,,https://www.nfrc.org/
+268,National Fenestration Rating Council,Greenbelt,MD,39.004608,-76.875671,United States,Nonprofit;Program Administrator/Implementer,,,,,,,https://www.nfrc.org/
 269,National Grid (MA),Westborough,MA,42.265873,-71.61711,United States,Utility,National Grid's Efficiency Program Aims to Save Customers $3.6 Billion,http://energy.gov/eere/better-buildings-residential-network/national-grid-s-efficiency-program-aims-save-customers-36,,,,,http://www2.nationalgridus.com/index_ma.jsp
 270,National Grid (RI),Lincoln,RI,41.911012,-71.44181,United States,Utility,,,,,,,https://www1.nationalgridus.com/StateLandingRI
 271,National Housing Trust/Enterprise,Washington,DC,38.915649,-77.073715,United States,Nonprofit,,,,,,,http://www.nhtinc.org/
@@ -286,7 +286,7 @@ Id,Organization,City,State,Latitude,Longitude,Country,Role,Stories,Stories_URL,L
 285,North Slope Borough - Public Works Weatherization Program,Barrow,AK,71.271549,-156.75145,United States,Government - Local;Program Administrator/Implementer,,,,,,,http://www.north-slope.org/
 286,"NorthEast Building Science Institute, Inc.",Falmouth,MA,41.557192,-70.620286,USA,,,,,,,,http://www.nebsi.org
 287,Northeast Energy Efficiency Partnerships (NEEP),Lexington,MA,42.466904,-71.263795,United States,Nonprofit,,,,,,,http://www.neep.org
-288,"Northeast Natural Homes, Inc.",Syracuse,NY,43.047939,-76.147453,United States,Consultant/Advisor; Contractor/Trade Ally,,,,,,,https://www.ngbc.us/
+288,"Northeast Natural Homes, Inc.",Syracuse,NY,43.047939,-76.147453,United States,Consultant/Advisor;Contractor/Trade Ally,,,,,,,https://www.ngbc.us/
 289,OmStout Consulting,Burlington,VT,44.475844,-73.212121,United States,Consultant/Advisor,,,Peer Exchange Calls No. 6,http://energy.gov/eere/better-buildings-residential-network/downloads/lessons-learned-peer-exchange-calls-no-6,,,http://omstout.com
 290,Operation Green Team,Huntsville,AL,34.728149,-86.586578,United States,Nonprofit,,,,,,,http://www.huntsvilleal.gov/greenteam/
 291,"Optimal Energy, Inc.",Providence,RI,41.823116,-71.43613,United States,Consultant/Advisor,,,,,,,http://www.optenergy.com/
@@ -374,7 +374,7 @@ Id,Organization,City,State,Latitude,Longitude,Country,Role,Stories,Stories_URL,L
 373,WattzOn,Mountain View,CA,37.386052,-122.083851,United States,Contractor/Trade Ally;Program Administrator/Implementer,,,,,,,http://wattzon.com
 374,Wausau Supply Company,Eau Claire,WI,44.867212,-91.469622,United States,Consultant/Advisor,,,,,,,http://www.wausausupply.com
 375,West Michigan Environmental Action Council (WMEAC),Grand Rapids,MI,42.941101,-85.610039,United States,Nonprofit;Program Administrator/Implementer,,,,,,,https://wmeac.org/
-376,"Whole House Energy Solutions, LLC",Smiths Station,AL,32.540139,-85.098547,United States,Consultant/Advisor; Other,,,,,,,
+376,"Whole House Energy Solutions, LLC",Smiths Station,AL,32.540139,-85.098547,United States,Consultant/Advisor;Other,,,,,,,
 377,Windham & Windsor Housing Trust,Brattleboro,VT,42.850328,-72.561284,United States,Nonprofit,,,,,,,http://www.w-wht.org/
 378,Wisconsin Energy Conservation Corporation (WECC),Madison,WI,43.028208,-89.521451,United States,Nonprofit,,,,,,,http://www.weccusa.org
 379,Working in Neighborhoods,Cincinnati,OH,39.103197,-84.506488,United States,Nonprofit,,,,,,,https://wincincy.org/
