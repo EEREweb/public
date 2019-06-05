@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<title>BBRN Members Map | Department of Energy</title>
+
+<meta name="datafile" content="bbrn_members_2019_06_04.csv">
+
+<script src="states.json.js"></script>
+
+<script src="https://www1.eere.energy.gov/apps/js/jquery/3.2.0/jquery.min.js"></script>
+<script src="https://www1.eere.energy.gov/apps/js/bootstrap/3.3.7/bootstrap.min.js"></script>
+<script src="https://www1.eere.energy.gov/apps/js/datatables/1.10.15/jquery.dataTables.min.js"></script>
+<script src="https://www1.eere.energy.gov/apps/js/papaparse/4.1.2/papaparse.min.js"></script>
+
+<script src="https://www1.eere.energy.gov/apps/js/bootstrap-multiselect/2.0/bootstrapMultiselect.src.js"></script>
+
+<script src='//api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>
+<link href='//api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet' />
+
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="https://www1.eere.energy.gov/apps/js/leaflet/clustering/Leaflet.markercluster.min.js"></script>
+<script src="https://www1.eere.energy.gov/apps/js/csv2geojson/csv2geojson.src.js"></script>
+<script src="https://www1.eere.energy.gov/apps/js/funclib.js"></script>
+
+<link rel="stylesheet" type="text/css" href="members.css">
+
+<!-- BEGIN CONTENT -->
+<div class="content">
+<div class="container">
+<div class="row">
+	<div class="col-sm-12" id="introText">
+		<p class="map_pretext">
+		Better Buildings Residential Network members come from all sectors of the energy efficiency industry to leverage one another's experiences and expertise in an effort to accelerate the pace of energy upgrades in existing homes.  
+		Members include state and local governments, nonprofit organizations, utilities, financial institutions, and private-sector companies involved in energy efficiency programs in their locality.
+		</br></br>
+
+		<strong>Become a member</strong><br/>Add your organization's name to the list by becoming a member of the Better Buildings Residential Network. To join, complete the <a href="//energy.gov/node/796256">Membership Form</a> and email it to the <a href="mailto:bbresidentialnetwork@ee.doe.gov?subject=Further%20Information">Residential Network</a>.<br/><br/>
+
+		<em>Zoom in or click on a state or province below to learn more about the work members are doing to advance residential energy efficiency.  
+		Numbered map clusters can be divided further with the click of a mouse, and the filters below the map can be used to customize your search.</em><br/>
+		</p>
+
+	</div>
+
+	<div class="col-sm-12" id="divMap">
+		<div class="panel panel-default" id="bbrn_member">
+			<div id='map'></div>
+		</div>
+	</div>
+
+<div class="col-sm-3">
+    <div class="panel-group">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">                    
+					<a data-toggle="collapse"><span>State / Province</span></a>
+                </h3>
+            </div>
+            <div id="state_collapse" class="panel-collapse collapse in">
+                <div class="panel-body" id="state_div"><select id='state_select' name='state_select' class='form-control'>
+                    <option value=" ">All</option>
+                </select></div>
+            </div>
+        </div>
+	</div>
+</div>
+<div class="col-sm-4">
+    <div class="panel-group">		
+		<div class="panel panel-default" >
+            <div class="panel-heading">
+                <h3 class="panel-title">
+					<a data-toggle="collapse">Role</a>
+                </h3>
+            </div>
+            <div id="type_collapse" class="panel-collapse collapse in">
+				<div class="panel-body" id="">
+					<select id="type_div" multiple="multiple"></select></div>
+            </div>
+        </div>
+    </div>	
+</div>
+<div class="col-sm-3" id="divSearch">
+    <div class="panel-group">
+		<div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+					<a data-toggle="collapse">Search</a>
+                </h3>
+            </div>
+            <div id="org_collapse" class="panel-collapse collapse in">
+                <div class="panel-body">
+					<div align="center" id="ctrlSearch">
+					</div>
+				</div>
+            </div>
+		</div>
+	</div>
+</div>
+<div class="col-sm-1">
+    <div class="panel-group">
+        <div id="reset_collapse" class="panel-collapse collapse in">
+			<button id="btnReset" type="button" class="btn btn-default">Reset</button>
+		</div>
+	</div>
+</div>
+    <div class="col-sm-12">
+
+        <table id="bto_members-table1" class="display dataTable" cellspacing="0">
+            <thead>
+            <tr>
+				<th>Id</th>
+                <th>Member</th>
+                <th>City</th>
+                <th>State/Province</th>
+                <th>Country</th>
+                <th>Role</th>
+				<th>Latitude</th>
+				<th>Longitude</th>
+				<th>Stories</th>
+				<th>Stories_URL</th>
+				<th>Lessons_Learned</th>
+				<th>Lessons_Learned_URL</th>
+				<th>Case_Studies</th>
+				<th>Case_Studies_URL</th>
+				<th>Website</th>
+            </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+</div>
+</div>
+
+<script>
+
+$(document).ready(function() {
+	//setup Column locations
+	var objColumn = {
+		"State": 3,
+		"Role": 5
+	};
+
+    // Find and store a variable reference to the list of filters.
+    var stateSelect = document.getElementById('state_select');
+    var projectTypeColors = {
+        '': 
+			{ color:'#e37222',	//orange
+			   icon: '' }, 
+        'State Projects': 
+			{ color:'#1FFFFC',	//light blue
+			  icon: '' }, 
+        'R&D': 
+			{ color:'#5d9300',	//green
+			  icon: '' },  
+        'Technical Assistance':  
+			{ color:'#fecb00',	//yellow
+			   icon: '' },
+		'CHP Technical Support':
+			{ color: '#FFFFFF',
+			   icon: '' },
+        'In Plant Training':
+			{ color:'#B22222',	//red
+			  icon: '' }, 
+        'Assessment': 
+			{ color:'#5D478B',	//purple
+			  icon: '' },
+        'SEP': 
+			{ color:'#5D478B',	//purple
+			  icon: '' },
+		'Innovation Institutes': 
+			{ color:'#0074a1',	//blue
+			  icon: '' },
+        'Commercial Technologies': 
+			{ color:'#000066',	//dark blue
+			  icon: '' } 
+    };
+
+	L.mapbox.accessToken = 'pk.eyJ1IjoiZW5lcmd5IiwiYSI6IkozTG9BZDQifQ.1WKh4U0kKCdknF3gxBOF7Q';
+
+	var map = L.mapbox.map('map', 'energy.nda103il', {maxZoom:9, attributionControl: false } )
+		.setView([39, -95], 4);
+		
+	//map.legendControl.addLegend($('#legend-content').html());
+
+	L.control.layers({
+		'Base Map': L.mapbox.tileLayer('energy.nda103il').addTo(map),
+		'Grey Map': L.mapbox.tileLayer('mapbox.light'),
+		'Outdoors Map': L.mapbox.tileLayer('examples.ik7djhcc'),
+		'Light US Map': L.mapbox.tileLayer('examples.map-h67hf2ic')
+	}, null).addTo(map);
+
+	var featureLayer = L.mapbox.featureLayer();
+	
+	// The clusterGroup gets each marker in the group added to it
+	// once loaded, and then is added to the map
+	var clusterGroup = new L.MarkerClusterGroup({
+		showCoverageOnHover: false,
+		spiderfyOnMaxZoom: true,
+		maxClusterRadius: 35,
+	});	
+	
+    $.when($.ajax({
+		type: "GET",
+        url: 'bbrn_members_2019_06_04.csv',
+		aysnc: false
+    }).done(dataLoaded)
+	.fail(function (jqXHR, textStatus, errorThrown) {
+		console.log(textStatus +' - '+ errorThrown );
+	}) );
+
+    // Though these functions are below the places where they're used in this
+    // script, they'll still work due to JavaScript's function hoisting feature.
+function dataLoaded(data) {
+
+	var objJson = Papa.parse(removeTrailingLine(data), { "header": true});
+	var csvJson = JSON.stringify(objJson.data, null, 2);
+	//console.log(csvJson);
+		
+        var bto_datatable = $('#bto_members-table1').DataTable( {
+            "processing": true,
+            "serverSide": false,
+            "order": [[ 1, 'asc' ]],
+            "lengthMenu":  [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]],
+			"pageLength": -1, 
+			"data": eval(csvJson),
+
+            "columns": [
+                { "data": "Id"},
+                { 
+                    "data": null, render:function(data,type,row) {
+						if (data.Website == '') return data.Organization;
+						return  '<span style="display: none;">' + data.Organization + '</span><a href="' + data.Website + '" target="_blank">'+ data.Organization +'</a>';
+					}
+				},
+                { "data": "City" },
+                { "data": "State" },
+                { "data": "Country" },
+				{ "data": "Role" },
+                { "data": "Latitude" },
+                { "data": "Longitude" },
+				{ "data": "Stories" },
+                { "data": "Stories_URL" },
+				{ "data": "Lessons_Learned" },
+                { "data": "Lessons_Learned_URL" },
+				{ "data": "Case_Studies" },
+                { "data": "Case_Studies_URL" },
+                { "data": "Website" },
+				
+            ],
+            "columnDefs": [
+                {
+                    "targets": [ 0 ],
+					"visible": false
+                },
+                {
+                    "targets": [ 1 ],
+					"title":"Member"
+                },
+                {
+                    "targets": [ 2 ],
+					"title":"City"
+                },
+                {
+                    "targets": [ 3 ],
+					"title":"State / Province"
+                },
+                {
+                    "targets": [ 4 ],
+					"title":"Country"
+                },
+                {
+                    "targets": [ 5 ],
+					"title":"Role"
+                },
+                {
+                    "targets": [ 6 ],
+					"title":"Latitude",
+					"visible": false
+                },
+                {
+                    "targets": [ 7 ],
+					"title":"Longitude",
+					"visible": false
+                },
+                {
+                    "targets": [ 8 ],
+					"title":"Stories",
+					"visible": false
+                },
+                {
+                    "targets": [ 9 ],
+					"title":"Stories_URL",
+					"visible": false
+                },
+                {
+                    "targets": [ 10 ],
+					"title":"Lessons_Learned",
+					"visible": false
+                },
+                {
+                    "targets": [ 11 ],
+					"title":"Lessons_Learned_URL",
+                    "visible":false
+                },
+                {
+                    "targets": [ 12 ],
+					"title":"Case_Studies",
+                    "visible":false
+                },
+                {
+                    "targets": [ 13 ],
+					"title":"Case_Studies_URL",
+                    "visible":false
+                },
+                {
+                    "targets": [ 14 ],
+					"title":"Website",
+                    "visible":false
+                },
+
+            ],
+            "createdRow": function ( row, data, index ) {
+                //$('td', row).eq(0).append(format(data));
+            },
+            "initComplete": function (settings, json) {
+
+				$('#bto_members-table1_filter').find('input').keyup( function () { search(''); });
+            }
+        } );
+        $('#bto_members-table1_length').find('select').addClass('form-control');
+		$('#bto_members-table1_filter').find('input').addClass('form-control form-text');
+		$('#bto_members-table1_filter').find('input').attr('placeholder', 'Enter a search term');
+		$('#ctrlSearch').append( $('#bto_members-table1_filter').find('input') );
+		//$('#ctrlSearch').find('input').keyup( function () { search(); });
+
+		$('#bto_members-table1_paginate').removeClass();
+		$('#bto_members-table1_paginate').addClass('pagination');
+		
+        var dataSet = csv2geojson.csv2geojson(data);
+        var readyLayer = featureLayer.setGeoJSON(dataSet);
+
+		setupDataControls();
+		customPopup(readyLayer);
+		//map.dragging.disable();
+		map.touchZoom.disable();
+		map.doubleClickZoom.disable();
+		//map.scrollWheelZoom.disable();
+		// disable tap handler, if present.
+		if (map.tap) map.tap.disable();
+
+		var popup = new L.Popup({ autoPan: false });
+
+		var features = featureLayer.getGeoJSON().features;
+		var statesObj = {}, statesInPlay = [];
+		$.each( features, function ( key, feature ) {
+			statesObj[ feature.properties['State'] ] = true;
+		});
+		for (var state in statesObj) statesInPlay.push(state);
+		statesInPlay.sort();
+		
+		var statesLayer0 = L.geoJson(statesData0,  {
+		  style: getStyle0,
+		  onEachFeature: onEachFeature0
+		}).addTo(map);
+
+		function getStyle0(feature) {
+			bto_green = {
+			  weight: 2,
+			  opacity: 0.4,
+			  color: 'green',
+			  fillOpacity: 0.06,
+			  fillColor: 'green'
+			};
+		  
+		  	blank = {
+			  weight: 0,
+			  opacity: 0.0,
+			  color: 'white',
+			  fillOpacity: 0.0,
+			  fillColor: 'white'
+			};
+			
+			if ( $.inArray(feature.properties.abbreviation.toString(), statesInPlay) == -1 )
+				return blank;
+
+			return bto_green;
+		}
+
+		function onEachFeature0(feature, layer) {
+		  layer.on({
+			  mousemove: mousemove,
+			  mouseout: mouseout0,
+			  click: zoomToFeature
+		  });
+		}
+		
+	  var closeTooltip;
+	  function mousemove(e) {
+		  var layer = e.target;
+
+		  // popup.setLatLng(e.latlng);
+		  
+		  // popup.setContent('<div class="marker-title">' + layer.feature.properties.name + '</div>');
+
+		  // if (!popup._map && !layer.feature.properties.name) popup.openOn(map);
+		  // window.clearTimeout(closeTooltip);
+
+		  // highlight feature
+		  layer.setStyle({
+			  weight: 3,
+			  opacity: 0.3,
+			  fillOpacity: 0.18
+		  });
+
+		  if (!L.Browser.ie && !L.Browser.opera) {
+			  layer.bringToFront();
+		  }
+	  }
+	  
+		function mouseout0(e) {
+			statesLayer0.resetStyle(e.target);
+			// closeTooltip = window.setTimeout(function() {
+			  // map.closePopup();
+			// }, 100);
+		}
+	  
+		function zoomToFeature(e) {
+			var stateAbbr = e.target.feature.properties.abbreviation;
+			if ( $.inArray(stateAbbr, statesInPlay) == -1 ) return;
+			$("#state_select").val(stateAbbr);
+			search('state_select');
+
+			search_dt_column( $('#bto_members-table1').DataTable(), objColumn['State'], stateAbbr);
+			//map.fitBounds(e.target.getBounds());
+		}
+		
+		//add the initial data (all of it) to the map.
+		//map.addLayer(clusterGroup);
+		//map.addLayer(featureLayer);
+		//var featureLayer = L.mapbox.featureLayer();
+		featureLayer.on('ready', function(e){
+			//customPopup(readyLayer);
+
+			//add the initial data (all of it) to the map.
+			//map.addLayer(clusterGroup);
+			console.log ('ready');
+		});
+    }
+
+    //map.featureLayer.on('ready', function(){
+    function setupDataControls(){
+		function search_dt_column(dtable, col, term) {
+		    //KC: changed to case sensitive so searching on state ID works better with the international text in the State column.
+			dtable.column(col).search( term,true,true,false ).draw();
+		}
+
+		function filter_dt_column(dtable, col, control) {
+			var aryCheckVals = [];
+			$(control + ' input:checked').each(function (){
+				aryCheckVals.push(this.value);
+			} );
+			var strSelectedVals = aryCheckVals.join('|');
+			strSelectedVals = strSelectedVals.replace(/\./g,"\\.");
+
+			dtable.column(col)
+				//.search( val ? strSelectedVals : val, true, false )
+					.search( strSelectedVals, true, false )
+					.draw();
+		}
+	
+		$("#btnReset").click(function(){
+			$("#ctrlSearch").find('input').val('');
+			$("#state_select").val(' ');
+			$("[type='checkbox']:checked").click();//.prop('checked', false);
+			$("#ctrlSearch").find('input').val('');
+			search('state_select');
+			$('#bto_members-table1').DataTable().search('').columns().search('').draw();
+			map.removeLayer(clusterGroup);
+		});
+	
+        var typesObj = {}, types = [];
+        var features = featureLayer.getGeoJSON().features;
+        //create projects type interface
+		
+        for (var i = 0; i < features.length; i++) {
+			if ( features[i].properties['Role'].indexOf(";") > 0 ) {
+				var arrTypes = features[i].properties['Role'].split(";");
+				$.each( arrTypes, function ( key, val ) {
+					typesObj[ val.toString() ]  = true;
+				});
+			}
+			else {
+				typesObj[ features[i].properties['Role'] ]  = true;
+			}
+
+        }
+		
+        for (var k in typesObj) types.push(k);
+		
+        types.sort();
+	
+        // Create a projects type filter interface.
+        for (var i = 0; i < types.length; i++) {
+		
+            // Create an an input option
+            var option = $('<option/>');
+			option.attr({ 'value': types[i] }).text( types[i] );
+
+            // Whenever a person clicks on this option, call the update().
+            if (types[i] != '') $('#type_div').append(option);
+        }
+		
+		$('#type_div').multiselect({
+            numberDisplayed: 1,
+			nonSelectedText: 'Select Options',
+			buttonWidth: '100%'
+        });
+
+		$('.checkbox input:checkbox').on( 'change',  function () {
+			search('option');
+			filter_dt_column($('#bto_members-table1').DataTable(), objColumn['Role'], '.dropdown-menu');
+		});
+
+        //create state selection interface
+        var statesObj = {}, states = [];
+        for (var i = 0; i < features.length; i++) {
+            statesObj[features[i].properties['State'].trim()] = true;
+        }
+        for (var k in statesObj) states.push(k);
+
+        states.sort();
+
+		//KC: commented out for now, in favor of optgroup.
+		//stateOption = $('<option>').text('US States:').val('').attr('id','optState').appendTo(stateSelect);
+		countryOption = $('<optgroup label="US States:">').appendTo(stateSelect);
+		
+		
+		//stateOption = stateSelect.appendChild(document.createElement('option'));
+		//stateOption.setAttribute('value', '');
+		//stateOption.setAttribute('id', 'optState');
+		//stateOption.innerHTML = 'US States:';
+
+        for (var i = 0; i < states.length; i++) {
+            // Create an an input checkbox and label inside.
+
+			if ( (states[i] == 'BC' || states[i] == 'NS' || states[i] == 'ON' || states[i] == 'Guanajuato'  || states[i] == 'Sindh'|| states[i] == 'Hamilton' || states[i] == '') ) continue;
+
+			//item = stateSelect.appendChild(document.createElement('option'));
+
+            //item.setAttribute('value', states[i]);
+            //item.innerHTML = '&nbsp;&nbsp;&nbsp;&nbsp;' + states[i];
+
+             $('<option>').text(states[i]).val(states[i]).appendTo(stateSelect);
+
+        }
+		countryOption = $('</optgroup>').appendTo(stateSelect);
+		
+		countryOption = $('<optgroup label="Canada:">').appendTo(stateSelect);
+        states.reverse();
+
+        for (var i = 0; i < states.length; i++) {
+            // Create an an input checkbox and label inside.
+			
+			if ( (states[i] == 'BC' || states[i] == 'NS' || states[i] == 'ON') )
+			{
+				$('<option>').text(states[i]).val(states[i]).appendTo(stateSelect);
+			}
+
+        }
+		
+		countryOption = $('</optgroup>').appendTo(stateSelect);
+		
+		countryOption = $('<optgroup label="Mexico:">').appendTo(stateSelect);
+		
+
+        //states.reverse();
+
+        for (var i = 0; i < states.length; i++) {
+            // Create an an input checkbox and label inside.
+			
+			if ( states[i] == 'Guanajuato' )
+			{
+				$('<option>').text(states[i]).val(states[i]).appendTo(stateSelect);
+			}
+
+        }
+		countryOption = $('</optgroup>').appendTo(stateSelect);
+		
+		countryOption = $('<optgroup label="Other International:">').appendTo(stateSelect);
+        //states.reverse();
+
+        for (var i = 0; i < states.length; i++) {
+            // Create an an input checkbox and label inside.
+			
+			if ( (states[i] == 'Sindh' || states[i] == 'Hamilton' ) )
+			{
+				$('<option>').text(states[i]).val(states[i]).appendTo(stateSelect);
+			}
+
+        }
+		countryOption = $('</optgroup>').appendTo(stateSelect);
+		
+        stateSelect.addEventListener('change', function() { 
+			search('state_select');
+			search_dt_column($('#bto_members-table1').DataTable(),objColumn['State'],$(this).val());
+		});
+		
+    }
+
+    function customPopup(markersLayer){
+        markersLayer.eachLayer(function(layer) {
+
+			// build the address string for locations
+			function formatAddress(city, state, zipcode) {				
+				if (city) city += ', ';
+				if (zipcode) zipcode = ' (' + zipcode + ')';
+				
+				return city + state;
+			}
+			
+			function buildMultiURL (propName, textProp, urlProp) {
+				var lstOfURLs = '';
+				if (textProp != '')
+				{
+					aryProp = textProp.split("; ");
+					aryURLs = urlProp.split("; ");
+					lstOfURLs = '<div class="callout_label">' + propName + ':<\/div> ';
+					$.each(aryProp, function ( key, val) {
+						lstOfURLs += '<a class="factsheet" href="' + aryURLs[key] + '" target="_blank">' + val + '<\/a>' + ' <br\/>';
+					});
+				}
+				return lstOfURLs ;
+			}
+				
+            //build URL lists
+            var lstStories = '', lstLessonsLearned = '', lstCaseStudies = '';
+			
+			lstStories = buildMultiURL( 'Stories', layer.feature.properties.Stories, layer.feature.properties.Stories_URL );
+			lstLessonsLearned = buildMultiURL( 'Lessons Learned', layer.feature.properties.Lessons_Learned, layer.feature.properties.Lessons_Learned_URL );
+			lstCaseStudies = buildMultiURL( 'Case Studies', layer.feature.properties.Case_Studies, layer.feature.properties.Case_Studies_URL );
+			
+			
+            //build out the popup in a string
+            var content = '<h5>' + layer.feature.properties.Organization + '<\/h5>' +
+                '<div class="partner_location">' + formatAddress(layer.feature.properties.City, layer.feature.properties.State, '') +
+                '<\/div><hr\/>' +
+                '<div class="callout_label">Role: <\/div><div class="project_title">' + layer.feature.properties.Role + '<\/div> ' +
+				lstStories + lstLessonsLearned + lstCaseStudies +				
+				( (layer.feature.properties.Website != '') ? ( '<br\/><a class="factsheet" href="' + layer.feature.properties.Website + '" target="_blank">Website<\/a></div>' + ' <br\/>' ) : ' <br\/>' ) +
+                '';
+            layer.bindPopup(content);
+
+            //style the marker
+            var type = layer.feature.properties.Role;
+
+
+            layer.setIcon(L.mapbox.marker.icon({
+                'marker-size': 'small',
+                'marker-color': '#007A3E', //projectTypeColors[type].color,
+				'marker-symbol': '' //projectTypeColors[type].icon
+            }));
+
+            clusterGroup.addLayer(layer);
+        });
+
+    }
+
+	function checkRoles(feature){
+		var blnRole = false;
+		if ($('.checkbox input[type=checkbox]:checked').length <= 0) return true;
+		
+		var aryRoles = feature.properties['Role'].split(";");
+		$.each ( aryRoles , function ( key, val) {
+			if ( $(".checkbox input[type=checkbox][value='" + val.trim() + "']").is(':checked') ) {
+				blnRole = true;
+			}
+		});
+
+		return blnRole;
+	}
+    function search(strFilterName) {
+
+        // get the value of the search input field
+        //var searchString = $('#search_map').val().toLowerCase();
+		var stateString = $('#state_select').val().toLowerCase().trim();
+		var searchString = ( $('#ctrlSearch').find('input').length > 0 ) ? ( $('#ctrlSearch').find('input').val().trim().toLowerCase() ) : '' ;
+		//console.log(strFilterName + '|' + stateString + '|' + searchString );
+		featureLayer.setFilter(showSelected);
+        //call update to check the project type filters
+
+        // here we're simply comparing the 'state' property of each marker
+        // to the search string, seeing whether the former contains the latter.
+        // If this symbol is in the list, return true. if not, return false.
+        // The 'in' operator in javascript does exactly that: given a string
+        // or number, it says if that is in a object.
+        // 2 in { 2: true } // true
+        // 2 in { } // false
+		function showSelected(feature) {
+			
+			return ((feature.properties.State.toLowerCase() == stateString.toLowerCase() || stateString == '') //filter state
+					&& ((feature.properties.Organization.toLowerCase().indexOf(searchString) !== -1) // filter by Organization
+					|| (feature.properties.Role.toLowerCase().indexOf(searchString) !== -1) // filter by Role
+					|| (feature.properties.City.toLowerCase().indexOf(searchString) !== -1) // filter by City
+					|| (feature.properties.State.toLowerCase().indexOf(searchString) !== -1) // filter by State
+					|| (feature.properties.Country.toLowerCase().indexOf(searchString) !== -1) // filter by Country
+					|| (feature.properties.Lessons_Learned.toLowerCase().indexOf(searchString) !== -1) // filter by Lessons Learned
+					|| (feature.properties.Case_Studies.toLowerCase().indexOf(searchString) !== -1) // filter by Case_Studies
+					|| (feature.properties.Stories.toLowerCase().indexOf(searchString) !== -1)) // filter by Stories
+					&& (checkRoles(feature) ) );
+		}
+
+        //clean up current map, remove the current clustered layer
+        map.removeLayer(clusterGroup);
+
+        //reinitialize cluster group
+        clusterGroup = new L.MarkerClusterGroup({
+			showCoverageOnHover:false,
+			spiderfyOnMaxZoom: true,
+			maxClusterRadius: 35,
+        });
+
+        //update layers with new filtered data
+        customPopup(featureLayer);
+
+        if (stateString != '') {
+            map.fitBounds(clusterGroup.getBounds(), {padding: [45,45]});
+        }
+		
+        map.addLayer(clusterGroup);
+
+	    //reset view if user changed the state to 'all'
+		if ( (strFilterName == 'state_select' || searchString == '') && (stateString == '') &&
+			(strFilterName.indexOf('option') == -1) ) {
+			map.setView([39, -95], 4);
+		}
+
+    }
+
+});
+
+//}(jQuery));
+
+</script>
+
+<script src="https://www1.eere.energy.gov/apps/js/pym.v1.min.js"></script>
+<script src="https://www1.eere.energy.gov/apps/js/shim.js"></script>
