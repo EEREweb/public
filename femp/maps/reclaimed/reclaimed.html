@@ -414,14 +414,9 @@ $(document).ready(function () {
 			for (var k in utilityObj) if (k != "") utility.push(k);
 
 			utility.sort();
-
 			for (var i = 0; i < utility.length; i++) {
-				// Create an an input checkbox and label inside.
-				item = utilitySelect.appendChild(document.createElement('option'));
-
-				item.setAttribute('value', utility[i]);
-				item.innerHTML = utility[i];
-
+			// Create an an input checkbox and label inside.
+				$('<option>').text(utility[i]).val(utility[i]).appendTo(utilitySelect);
 			}
 			utilitySelect.addEventListener('change', function () {
 				search_dt_column($('#projects-datatable').DataTable(), objColumn['Utility'], $(this).val());
@@ -526,11 +521,11 @@ $(document).ready(function () {
 			if (($('#state_select').val() == ' ') && ($('#city_select').val() == ' ') && ($('#utility_select').val() == ' ') &&
 				(searchString == '')) {
 				map.setView([40, -97], 4);
-				console.log('set');
+				//console.log('set');
 			}
 			else {
 				map.fitBounds(clusterGroup.getBounds(), { padding: [45, 45] });
-				console.log('bounds');
+				//console.log('bounds');
 			}
 		}
 

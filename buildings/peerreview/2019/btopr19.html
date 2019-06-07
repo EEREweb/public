@@ -64,13 +64,15 @@
 
     /* Formatting function for row details - modify as you need */
     function format(d) {
-        return '<h5>Peer Review Details:</h5>' +
-            '<p class="dt_details">' + (d.Text.toString()) + '</p>';
+        var tmpActivityType = '';
+        if (d.Activity_Detail.toString().indexOf("(Portfolio)") > 0 )
+            tmpActivityType = 'Activity Category: ' + (d.Activity_Detail.toString()) + '<br/><br/>';
+        return '<h5>Peer Review Details:</h5>' + '<p class="dt_details">' + tmpActivityType + (d.Text.toString()) + '</p>';
     }
 
     $(document).ready(function () {
 
-        $.get("2019_BTO_Peer_Review_2019_05_30.csv", function (data) {
+        $.get("2019_BTO_Peer_Review_2019_06_06.csv", function (data) {
             var csvJson = Papa.parse(removeTrailingLine(data), { "header": true });
             csvJson = JSON.stringify(csvJson.data, null, 2);
 
