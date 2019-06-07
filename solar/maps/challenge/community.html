@@ -494,6 +494,8 @@
 				.draw();
     }
 
+    
+
     var projectTypeAttributes = {
         'LMI': {
             color: '#0074a1', //blue
@@ -696,7 +698,7 @@
             </div>
         </div>
 
-        <a id="lnkDownload" href="javascript: parent.window.open(dataFilePath_ALL);" target="_blank"><i class="fa fa-download fa-1"></i> Download Community Challenge Project Data</a>
+        <a id="btnDataDownload" target="_parent" class="btn btn-primary">Download Community Challenge Project Data</a>
 
     </div>
 
@@ -780,6 +782,9 @@
             'WY': "Wyoming"
         };
 
+        $('#btnDataDownload').on('click', function () {
+			window.parent.location = dataFilePath_ALL;
+		});
 
         // Find and store a variable reference to the list of filters.
         var program_filter = document.getElementById('challenge_div');
