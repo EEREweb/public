@@ -1,3 +1,22 @@
+Skip to content
+ 
+Search or jump to…
+
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@david-brown-doe 
+0
+0 4 david-brown-doe/public
+forked from EEREweb/public
+ Code  Pull requests 0  Projects 0  Wiki  Security  Insights  Settings
+public/amo/datatable/event/ww.html
+@david-brown-doe david-brown-doe Update ww.html
+88a593a 21 minutes ago
+364 lines (312 sloc)  12.6 KB
+    
 <title>Workshops and Webinars Datatable | Department of Energy</title>
 
 <script src="//www1.eere.energy.gov/apps/js/jquery/3.2.0/jquery.min.js"></script>
@@ -83,26 +102,20 @@
 </div>
 
 <script>
-
 /* Formatting function for row details - modify as you need */
 function format(d) {
 	return "<h4><b>Event Description:</b></h4>" + ((d.Description)? d.Description : "None Provided") + "<br><br>";
 }
-
 //setup Column locations
 var objColumn = {
 	"EventType": 2,
 	"EventDate": 7,
 	"Pillar": 6,
 };
-
-
 $(document).ready(function () {
-
-	$.get("amo_workshop_webinar_2019_02_20.csv", function (data) {
+	$.get("amo_workshop_webinar_2019_07_5.csv", function (data) {
 		var csvJson = Papa.parse(removeTrailingLine(data), { "header": true });
 		csvJson = JSON.stringify(csvJson.data, null, 2);
-
 		var datatable = $('#datatable_cf').DataTable({
 			"processing": true,
 			"serverSide": false,
@@ -111,7 +124,6 @@ $(document).ready(function () {
 			"lengthMenu": [[-1, 10, 25, 50, 100], ["All", 10, 25, 50, 100]],
 			"pageLength": 10,
 			"data": eval(csvJson),
-
 			"columns": [
 				{
 					"class": 'details-control',
@@ -182,7 +194,6 @@ $(document).ready(function () {
 				$('td', row).eq(0).append((data));
 			},
 			"initComplete": function (settings, json) {
-
 				$('#datatable_cf_filter').prependTo('#datatable_cf_wrapper');
 				$('#datatable_cf_length').prependTo('#datatable_cf_wrapper');
 				
@@ -192,7 +203,6 @@ $(document).ready(function () {
 				$('#datatable_cf_paginate').removeClass();
 				$('#datatable_cf_paginate').addClass('pagination');
 				$('#datatable_cf_paginate').after($('#datatable_cf_info'));
-
 				//Setup datatable if there are querystring vars
 				//todo: handle multiple values for Facets, find a better way to do this, there is a bug if the Value sent in is not unique to all facets
 				if (Object.keys(qs).length != 0) {
@@ -212,7 +222,6 @@ $(document).ready(function () {
 							search_dt_column($('#datatable_cf').DataTable(), objColumn[val], key);
 						}
 					});
-
 				}
 				
 				setup_select_filter('event_select', '#event_div', objColumn['EventType'], false);
@@ -230,12 +239,10 @@ $(document).ready(function () {
 					if ($(this).attr('id') == 'date_select') filter_dt_column($('#datatable_cf').DataTable(), objColumn["EventDate"], $(this));
 					if ($(this).attr('id') == 'pillar_select') search_dt_column($('#datatable_cf').DataTable(), objColumn["Pillar"], $(this));
 				});
-
 				// Add event listener for opening and closing details
 				$('#datatable_cf tbody').on('click', 'td.details-control', function () {
 					var tr = $(this).closest('tr');
 					var row = $('#datatable_cf').DataTable().row(tr);
-
 					if (row.child.isShown()) {
 						// This row is already open - close it
 						row.child.hide();
@@ -263,15 +270,11 @@ $(document).ready(function () {
 		}
 		
         function setup_select_filter(strSelectID, strDivID, intCol, blnMulti) {
-
             var tmpMarkup, tmpLabel, chkBoxMarkup;
-
             if (!blnMulti) {
                 selectMarkup = $('<select id="' + strSelectID + '"></select>').appendTo($(strDivID));
                 $('<option value="">All</option>').appendTo(selectMarkup);
-
                 $('#datatable_cf').DataTable().column(intCol).data().unique().sort().each(function (data, value) {
-
                     var itemValue;
 					
 					if ( intCol == objColumn['EventDate']) {
@@ -284,17 +287,14 @@ $(document).ready(function () {
 						itemValue = data.trim();
 						if (itemValue == '') return;
 					}
-
                     itemMarkup = $('<option />');
                     itemMarkup.val(itemValue);
-
                     var newLabel = itemValue;
                     itemMarkup.append(newLabel);
                     var options = $('#' + strSelectID + ' option');
                     var values = $.map(options, function (option) {
                         return option.value;
                     });
-
                     var flag = false;
                     for (var i = 0; i < values.length; i++) {
                         if (itemValue == values[i].trim())
@@ -313,13 +313,11 @@ $(document).ready(function () {
                         if (objColumn['Program_Area'] == intCol)
                             tmpColumnValue = d.Program_Area.toString();
                     }
-
                     if (tmpColumnValue.indexOf("; ") > 0) {
                         tmpAryValues = tmpColumnValue.split("; ");
                         $.each(tmpAryValues, function (key, val) {
                             objAllValues[val.trim()] = true;
                         });
-
                     }
                     else {
                         objAllValues[tmpColumnValue.trim()] = true;
@@ -327,21 +325,17 @@ $(document).ready(function () {
                 });
                 for (var k in objAllValues) { if (k != '') { aryAllValues.push(k); } }
                 aryAllValues.sort();
-
                 //Build facet control depending on unique values from the column
                 selectMarkup = $('<select/>').attr('id', strSelectID).appendTo($(strDivID));
                 $('<option/>').attr('value', 'All').text('All').appendTo(selectMarkup);
-
                 $.each(aryAllValues, function (key, val) {
                     itemMarkup = $('<option/>');
                     itemMarkup.val(val.trim());
                     itemMarkup.append(val.trim());
-
                     var options = $('#' + strSelectID + ' span');
                     var values = $.map(options, function (option) {
                         return option.value;
                     });
-
                     var flag = false;
                     for (var i = 0; i < values.length; i++) {
                         if (val.trim() == values[i])
@@ -350,14 +344,12 @@ $(document).ready(function () {
                     if (flag == false)
                         itemMarkup.appendTo(selectMarkup);
                 });
-
             }
         }
-
 	});
 });
-
 </script>
 
 <script src="/apps/js/pym.v1.min.js"></script>
 <script src="/apps/js/shim.js"></script>
+
