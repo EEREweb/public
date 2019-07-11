@@ -24,8 +24,8 @@
 			<div class="col-sm-4" id="facet_div">
 				<p>Shareable link: <br> 
 				<input id="queryURL" type=text class="form-control form-text"></input>
-				<button id="copybtn" data-copytarget="#queryURL" type=button class="btn btn-info" style="display: none;" title="Copy URL to clipboard"><img src="/apps/images/clipboard.png" width=17px/></button>
-				<img id="copyimg" src="/apps/images/hyperlink_blue.png" width=35px title="Click to copy URL to clipboard" style="cursor: hand;" /></p>
+				<button id="copybtn" data-copytarget="#queryURL" type=button class="btn btn-info" style="display: none;" title="Copy URL to clipboard"><img src="//www1.eere.energy.gov/apps/images/clipboard.png" width=17px/></button>
+				<img id="copyimg" src="//www1.eere.energy.gov/apps/images/hyperlink_blue.png" width=35px title="Click to copy URL to clipboard" style="cursor: hand;" /></p>
 				<p> <button id="toggleSummary" type=button class="btn btn-primary">Collapse All / Expand All</button> </p>
                 <div class="panel-group">
                     <div class="panel panel-default">
@@ -101,7 +101,7 @@ $('#queryURL').val('');
 
 $(document).ready(function () {
 
-	$.get("VTO_Publications_Database_3.14.2019.csv", function (data) {
+	$.get("VTO_Publications_Database_7.5.2019.csv", function (data) {
 		var csvJson = Papa.parse(removeTrailingLine(data), { "header": true });
 		csvJson = JSON.stringify(csvJson.data, null, 2);
 
@@ -510,5 +510,5 @@ $(document).ready(function () {
 
 </script>
 
-<script src="/apps/js/pym.v1.min.js"></script>
-<script src="/apps/js/shim.js"></script>
+<script src="//www1.eere.energy.gov/apps/js/pym.v1.min.js"></script>
+<script src="//www1.eere.energy.gov/apps/js/shim.js"></script>
