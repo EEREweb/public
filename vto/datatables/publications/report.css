@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css?family=Karla');
+
+body {
+	font-family: "Karla",Verdana,sans-serif !important;
+}
+
+.dataTable  {
+	font-size: 14px;
+	border-top: 0px solid #00324d;
+	/*word-wrap: break-word;*/
+	table-layout:fixed;
+	padding-top: 10px;
+}
+
+#datatable_cf_filter {
+  margin-bottom:10px;
+}
+
+#datatable_cf_filter input {
+	width: 250px;
+	display: block !important;
+}
+
+#datatable_cf_length {
+}
+
+#datatable_cf_length select {
+    display: inline;
+    width: 75px;
+}
+
+.dataTables_wrapper .dataTables_info {
+  clear: none;
+  float: right;
+}
+
+#introtext {
+	font-size: 16px !important;
+}
+
+.container {
+  width: auto !important;
+}
+
+thead tr {
+  background-color: white !important;
+  text-transform: uppercase;	
+}
+
+#dt_div {
+  padding-left: 15px !important;
+}
+.form-control {
+  display: inline !important;
+}
+#facet_div input[type="checkbox"] + label {
+  font-weight: 200;
+  margin-left: 5px;
+  font-size: 12px;
+}
+
+#queryURL {
+  width: 212px;
+  height: 34px;
+  font-size: 13px;
+}
+#copyimg {
+  margin-left: 5px;
+}
+
+.dataTable {
+  font-size: 13px !important;
+}
+
+/* datatable pagination */
+.pagination {
+    border-radius: 4px;
+    display: inline-block;
+    font-weight: 500;
+    height: 29px;
+    line-height: 16px;
+    margin: 10px 2px;
+	width: 62%;
+	float: left;
+    padding-left: 0;
+}
+.pagination > a {
+    display: inline-block;
+    height: 31px;
+    line-height: inherit;
+    margin: 0 0.1em;
+}
+.pagination > span > a {
+    background-color: #fff;
+    background-image: linear-gradient(white, #eee);
+    border: 1px solid #ccc;
+    border-radius: 0.25em;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.8) inset, 0 1px 3px rgba(0, 0, 0, 0.1);
+    color: #0074a1;
+    line-height: inherit;
+    padding: 0.3em 0.5em;
+    text-decoration: none;
+    margin: 0px 3px;
+}
+.pagination > a {
+    background-color: #fff;
+    background-image: linear-gradient(white, #eee);
+    border: 1px solid #ccc;
+    border-radius: 0.25em;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.8) inset, 0 1px 3px rgba(0, 0, 0, 0.1);
+    color: #0074a1;
+    line-height: 20px;
+    padding: 0.3em 0.5em;
+    text-decoration: none;
+}
+.pagination > span {
+    border: medium none;
+    color: inherit;
+    height: inherit;
+    line-height: inherit;
+    padding: 0.3em 0;
+}
+.pagination > span:hover {
+    background-color: transparent;
+}
+.pagination  > span > a.current{
+    background-color: #f2f2f1;
+    background-image: linear-gradient(#f2f2f2, #e1e1e1);
+}
+.pagination > a.current, .pagination > a.current:focus, .pagination > a.current:hover {
+    border: 1px solid #ccc;
+    color: #444;
+}
+
+.details-control {
+	width: 10px !important;
+}
+
+td.details-control {
+    background: url('/apps/images/dataTables_details_open.png') no-repeat center center;
+    cursor: pointer;
+}
+tr.shown td.details-control {
+    background: url('/apps/images/dataTables_details_close.png') no-repeat center center;
+}
+
