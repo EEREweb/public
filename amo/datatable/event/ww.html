@@ -4,7 +4,6 @@
 <script src="//www1.eere.energy.gov/apps/js/funclib.js"></script>
 <script src="//www1.eere.energy.gov/apps/js/datatables/1.10.15/jquery.dataTables.min.js"></script>
 <script src="//www1.eere.energy.gov/apps/js/papaparse/4.1.2/papaparse.min.js"></script>
-
 <link href="//www1.eere.energy.gov/apps/template2017/public/css/app.min.css" rel="stylesheet" />
 <link href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
 
@@ -94,7 +93,7 @@ var objColumn = {
 	"Pillar": 6,
 };
 $(document).ready(function () {
-	$.get("amo_workshop_webinar_2019_07_5.csv", function (data) {
+	$.get("amo_workshop_webinar_2019_07_26.csv", function (data) {
 		var csvJson = Papa.parse(removeTrailingLine(data), { "header": true });
 		csvJson = JSON.stringify(csvJson.data, null, 2);
 		var datatable = $('#datatable_cf').DataTable({
@@ -333,4 +332,3 @@ $(document).ready(function () {
 
 <script src="/apps/js/pym.v1.min.js"></script>
 <script src="/apps/js/shim.js"></script>
-
