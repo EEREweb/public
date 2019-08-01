@@ -1,15 +1,19 @@
-<title>Workshops and Webinars Datatable | Department of Energy</title>
+
+<!DOCTYPE html>
+<title>ZERH Testimonials | Department of Energy</title>
+<meta charset="UTF-8">
 
 <script src="//www1.eere.energy.gov/apps/js/jquery/3.2.0/jquery.min.js"></script>
 <script src="//www1.eere.energy.gov/apps/js/funclib.js"></script>
 <script src="//www1.eere.energy.gov/apps/js/datatables/1.10.15/jquery.dataTables.min.js"></script>
 <script src="//www1.eere.energy.gov/apps/js/papaparse/4.1.2/papaparse.min.js"></script>
+
 <link href="//www1.eere.energy.gov/apps/template2017/public/css/app.min.css" rel="stylesheet" />
 <link href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
 
-<link href="//www1.eere.energy.govapps/css/common.css" rel="stylesheet" />
+<link href="//www1.eere.energy.gov/apps/css/common.css" rel="stylesheet" />
 
-<link href="ww.css" rel="stylesheet" />
+<link href="testimonials.css" rel="stylesheet" />
 
 <base target="_blank">
 
@@ -18,56 +22,34 @@
         <div class="row">
 
 			<div class="col-sm-12" id="introtext">
-				<p>The Advanced Manufacturing Office (AMO) program managers, industry and energy experts often give presentations or lead educational workshops and webinars on subjects related to current programs and technologies that cover a wide range of topics. The reports and presentations are available to view and download below. </p>
-				<p>Click on the green plus sign to view a quick overview of the event or click on the title to access additional resources. You can also enter a key word into the search box to locate an event.</p>
-				<p>The results presented are not intended to be comprehensive of all topics discussed but rather they are a summary of those capabilities and opportunities that are relevant to stakeholder needs, potential metrics, challenges / barriers to moving forward, or identified R&D needs.</p>
+				<h2>ZERH Testimonials</h2>
 			</div>
 
 			<div class="col-sm-12" id="facet_div">
-                <div class="panel-group col-sm-3">
+                <div class="panel-group col-sm-4">
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h3 class="panel-title">
-                                <a data-toggle="collapse">Event Type</a>
+                                <a data-toggle="collapse">Category</a>
                             </h3>
                         </div>
-                        <div id="event_collapse" class="panel-collapse collapse in">
+                        <div id="product_collapse" class="panel-collapse collapse in">
                             <div class="panel-body">
-								<div id="event_div">
+								<div id="category_div">
 								</div>
 							</div>
 						</div>
-					</div>
-				</div>
-				<div class="col-sm-1"></div>
-                <div class="panel-group col-sm-3">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">
-                                <a data-toggle="collapse">Pillar</a>
-                            </h3>
-                        </div>
-                        <div id="pillar_collapse" class="panel-collapse collapse in">
-                            <div class="panel-body">
-								<div id="pillar_div">
-								</div>
-							</div>
+					</div><br/>
+						<div id="download_div">
+							<a id="btnDataDownload" target="_parent" class="btn btn-primary">Export All Data to Spreadsheet</a>
 						</div>
-					</div>
 				</div>
-				<div class="col-sm-1"></div>
-                <div class="panel-group col-sm-3">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">
-                                <a data-toggle="collapse">Event Date</a>
-                            </h3>
-                        </div>
-                        <div id="date_collapse" class="panel-collapse collapse in">
-                            <div class="panel-body">
-								<div id="date_div">
-								</div>
-							</div>
+                <div class="panel-group col-sm-4">&nbsp;</div>
+                <div class="panel-group col-sm-4">
+					<div id="download_collapse" class="panel-collapse collapse in">
+						<div class="panel-body" style="text-align: center;">
+							
+							
 						</div>
 					</div>
 				</div>
@@ -82,28 +64,34 @@
 </div>
 
 <script>
+
 /* Formatting function for row details - modify as you need */
 function format(d) {
 	return "<h4><b>Event Description:</b></h4>" + ((d.Description)? d.Description : "None Provided") + "<br><br>";
 }
-//setup Column locations
+
+//setup Column locations, start index at 1
 var objColumn = {
-	"EventType": 2,
-	"EventDate": 7,
-	"Pillar": 6,
+	"Category": 1,
+	//"ProductType": 3,
 };
+
+
 $(document).ready(function () {
-	$.get("amo_workshop_webinar_2019_07_26.csv", function (data) {
+	var csvDataFile = "ZERH_Testimonials_20190731.csv";
+	$.get(csvDataFile, function (data) {
 		var csvJson = Papa.parse(removeTrailingLine(data), { "header": true });
 		csvJson = JSON.stringify(csvJson.data, null, 2);
+
 		var datatable = $('#datatable_cf').DataTable({
 			"processing": true,
 			"serverSide": false,
 			"autoWidth": false,
-			"order": [[5, 'desc']],
+			"order": [[1, 'asc']],
 			"lengthMenu": [[-1, 10, 25, 50, 100], ["All", 10, 25, 50, 100]],
-			"pageLength": 10,
+			"pageLength": 50,
 			"data": eval(csvJson),
+
 			"columns": [
 				{
 					"class": 'details-control',
@@ -111,62 +99,38 @@ $(document).ready(function () {
 					"data": null,
 					"defaultContent": ''
 				},
-				{ "data": "Subject" },
-				{ "data": "Event Type" },
-				{ 
-					"data": null, render: function (data, type, row) {
-					if (data.Attachment && data.Attachment.trim() != '')
-						return '<a href="' + data.Attachment + '">' + data.Title + '</a>';
-					else
-						return data.Title;
-					}
-				},
-				{ "data": "Location" },
-				{ 
-					"data": null, render: function (data, type, row) {
-						if ( type === 'sort' ) {
-							var eventDate = parseInt((new Date(data["Event Date"]).getTime() / 1000).toFixed(0));
-							return eventDate;
-						}
-						//eventDate = eventDate.getUTCMonth(eventDate)+1 + '/' +eventDate.getUTCDate(eventDate) + '/'+ eventDate.getUTCFullYear(eventDate);
-						return data["Event Date"];
-					}
-				},
-				{ "data": "AMO Pillar" },
-				{ "data": "Event Date" },
+				{ "data": "Category" },
+				{ "data": null, render: function (data, type, row) {
+							
+							
+							return '<div class="testimonial-quote group"><img src="https://via.placeholder.com/80x80?Text=\
+								' + data['Category'] + '"><div class="quote-container"><blockquote> \
+										<p>' + data.Quote + '</p></blockquote>  \
+									<cite><span>&mdash; ' + data['Source'] + '</span></cite></div></div>';
+
+
+                        }
+			    },
+				{ "data": "Source" },
 			],
 			"columnDefs": [
 				{
 					"targets": [0],
-					"title": ""
+					"title": "",
+					"visible": false
 				},
 				{
 					"targets": [1],
-					"title": "Subject"
+					"title": "Category",
+					"visible": false
 				},
 				{
 					"targets": [2],
-					"title": "Event Type"
+					"title": "Quote"
 				},
 				{
 					"targets": [3],
-					"title": "Title"
-				},
-				{
-					"targets": [4],
-					"title": "Location"
-				},
-				{
-					"targets": [5],
-					"title": "Event Date"
-				},
-				{
-					"targets": [6],
-					"title": "AMO Pillar"
-				},
-				{
-					"targets": [7],
-					"title": "Event Date",
+					"title": "Source",
 					"visible": false
 				},
 			],
@@ -174,15 +138,17 @@ $(document).ready(function () {
 				$('td', row).eq(0).append((data));
 			},
 			"initComplete": function (settings, json) {
-				$('#datatable_cf_filter').prependTo('#datatable_cf_wrapper');
-				$('#datatable_cf_length').prependTo('#datatable_cf_wrapper');
+
+				//$('#datatable_cf_filter').prependTo('#datatable_cf_wrapper');$('#datatable_cf_length').prependTo('#datatable_cf_wrapper');
 				
 				$('#datatable_cf_filter').find('input').addClass('form-control');
 				$('#datatable_cf_length').find('select').addClass('form-control');
 				
 				$('#datatable_cf_paginate').removeClass();
 				$('#datatable_cf_paginate').addClass('pagination');
-				$('#datatable_cf_paginate').after($('#datatable_cf_info'));
+				$('#datatable_cf_info').insertAfter('#datatable_cf_filter');
+				$('#datatable_cf_paginate').insertAfter($('#datatable_cf_info'));
+
 				//Setup datatable if there are querystring vars
 				//todo: handle multiple values for Facets, find a better way to do this, there is a bug if the Value sent in is not unique to all facets
 				if (Object.keys(qs).length != 0) {
@@ -202,27 +168,28 @@ $(document).ready(function () {
 							search_dt_column($('#datatable_cf').DataTable(), objColumn[val], key);
 						}
 					});
+
 				}
+				setup_select_filter('category_select', '#category_div', objColumn['Category'], false);
+				$('select').addClass('form-control');				
 				
-				setup_select_filter('event_select', '#event_div', objColumn['EventType'], false);
-				setup_select_filter('date_select', '#date_div', objColumn['EventDate'], false);
-				setup_select_filter('pillar_select', '#pillar_div', objColumn['Pillar'], false);
-				$("#date_select").html($("#date_select option").sort(function (a, b) {
-					return a.text == b.text ? 0 : a.text < b.text ? -1 : 1
-				}));
-				$("#date_select option:last").insertBefore($("#date_select option:first"));
 				
-				$('select').addClass('form-control');
 				
-				$('select').on('change', function () {
-					if ($(this).attr('id') == 'event_select') search_dt_column($('#datatable_cf').DataTable(), objColumn["EventType"], $(this));
-					if ($(this).attr('id') == 'date_select') filter_dt_column($('#datatable_cf').DataTable(), objColumn["EventDate"], $(this));
-					if ($(this).attr('id') == 'pillar_select') search_dt_column($('#datatable_cf').DataTable(), objColumn["Pillar"], $(this));
+				$('#category_select').on('change', function () {
+					if ($(this).attr('id') == 'category_select')
+						filter_dt_column($('#datatable_cf').DataTable(), objColumn["Category"], $(this));
+					
 				});
+				
+				$('#btnDataDownload').on('click', function () {
+					window.parent.location = csvDataFile;
+				});
+
 				// Add event listener for opening and closing details
 				$('#datatable_cf tbody').on('click', 'td.details-control', function () {
 					var tr = $(this).closest('tr');
 					var row = $('#datatable_cf').DataTable().row(tr);
+
 					if (row.child.isShown()) {
 						// This row is already open - close it
 						row.child.hide();
@@ -237,10 +204,13 @@ $(document).ready(function () {
 			}
 		});
 		
-		function search_dt_column(dtable, col, cntl) {
-			var val = '^' + $(cntl).val() + '$';
-			if ($(cntl).val() == '') val = '';
-			dtable.column(col).search(val, true, false, false).draw();
+		function search_dt_column(dtable, col, ctrl) {
+			var val = ctrl.val(); //'^' + ctrl.val() + '$';
+			console.log(val);
+			if ($(ctrl).is(':checked'))
+				dtable.column(col).search('').draw();
+			else 
+				dtable.column(col).search(val, true, true, false).draw();
 		}
 		
 		function filter_dt_column(dtable, col, cntl) {
@@ -250,31 +220,28 @@ $(document).ready(function () {
 		}
 		
         function setup_select_filter(strSelectID, strDivID, intCol, blnMulti) {
+
             var tmpMarkup, tmpLabel, chkBoxMarkup;
+
             if (!blnMulti) {
                 selectMarkup = $('<select id="' + strSelectID + '"></select>').appendTo($(strDivID));
                 $('<option value="">All</option>').appendTo(selectMarkup);
+
                 $('#datatable_cf').DataTable().column(intCol).data().unique().sort().each(function (data, value) {
-                    var itemValue;
+
+                    var itemValue = data.trim();
+					if (itemValue == '') return;
 					
-					if ( intCol == objColumn['EventDate']) {
-						itemValue = data;
-						if (itemValue == '') return;
-						var eventDate = new Date(itemValue);
-						itemValue = eventDate.getUTCFullYear(eventDate);
-					}
-					else {
-						itemValue = data.trim();
-						if (itemValue == '') return;
-					}
-                    itemMarkup = $('<option />');
+					itemMarkup = $('<option />');
                     itemMarkup.val(itemValue);
+
                     var newLabel = itemValue;
                     itemMarkup.append(newLabel);
                     var options = $('#' + strSelectID + ' option');
                     var values = $.map(options, function (option) {
                         return option.value;
                     });
+
                     var flag = false;
                     for (var i = 0; i < values.length; i++) {
                         if (itemValue == values[i].trim())
@@ -293,11 +260,13 @@ $(document).ready(function () {
                         if (objColumn['Program_Area'] == intCol)
                             tmpColumnValue = d.Program_Area.toString();
                     }
+
                     if (tmpColumnValue.indexOf("; ") > 0) {
                         tmpAryValues = tmpColumnValue.split("; ");
                         $.each(tmpAryValues, function (key, val) {
                             objAllValues[val.trim()] = true;
                         });
+
                     }
                     else {
                         objAllValues[tmpColumnValue.trim()] = true;
@@ -305,17 +274,21 @@ $(document).ready(function () {
                 });
                 for (var k in objAllValues) { if (k != '') { aryAllValues.push(k); } }
                 aryAllValues.sort();
+
                 //Build facet control depending on unique values from the column
                 selectMarkup = $('<select/>').attr('id', strSelectID).appendTo($(strDivID));
                 $('<option/>').attr('value', 'All').text('All').appendTo(selectMarkup);
+
                 $.each(aryAllValues, function (key, val) {
                     itemMarkup = $('<option/>');
                     itemMarkup.val(val.trim());
                     itemMarkup.append(val.trim());
+
                     var options = $('#' + strSelectID + ' span');
                     var values = $.map(options, function (option) {
                         return option.value;
                     });
+
                     var flag = false;
                     for (var i = 0; i < values.length; i++) {
                         if (val.trim() == values[i])
@@ -324,11 +297,14 @@ $(document).ready(function () {
                     if (flag == false)
                         itemMarkup.appendTo(selectMarkup);
                 });
+
             }
         }
+
 	});
 });
+
 </script>
 
-<script src="/apps/js/pym.v1.min.js"></script>
-<script src="/apps/js/shim.js"></script>
+<script src="//www1.eere.energy.gov/apps/js/pym.v1.min.js"></script>
+<script src="//www1.eere.energy.gov/apps/js/shim.js"></script>
