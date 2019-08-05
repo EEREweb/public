@@ -1,0 +1,310 @@
+
+<!DOCTYPE html>
+<title>ZERH Testimonials | Department of Energy</title>
+<meta charset="UTF-8">
+
+<script src="//www1.eere.energy.gov/apps/js/jquery/3.2.0/jquery.min.js"></script>
+<script src="//www1.eere.energy.gov/apps/js/funclib.js"></script>
+<script src="//www1.eere.energy.gov/apps/js/datatables/1.10.15/jquery.dataTables.min.js"></script>
+<script src="//www1.eere.energy.gov/apps/js/papaparse/4.1.2/papaparse.min.js"></script>
+
+<link href="//www1.eere.energy.gov/apps/template2017/public/css/app.min.css" rel="stylesheet" />
+<link href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
+
+<link href="//www1.eere.energy.gov/apps/css/common.css" rel="stylesheet" />
+
+<link href="testimonials.css" rel="stylesheet" />
+
+<base target="_blank">
+
+<div class="content">
+    <div class="container">
+        <div class="row">
+
+			<div class="col-sm-12" id="introtext">
+				<h2>ZERH Testimonials</h2>
+			</div>
+
+			<div class="col-sm-12" id="facet_div">
+                <div class="panel-group col-sm-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                                <a data-toggle="collapse">Category</a>
+                            </h3>
+                        </div>
+                        <div id="product_collapse" class="panel-collapse collapse in">
+                            <div class="panel-body">
+								<div id="category_div">
+								</div>
+							</div>
+						</div>
+					</div><br/>
+						<div id="download_div">
+							<a id="btnDataDownload" target="_parent" class="btn btn-primary">Export All Data to Spreadsheet</a>
+						</div>
+				</div>
+                <div class="panel-group col-sm-4">&nbsp;</div>
+                <div class="panel-group col-sm-4">
+					<div id="download_collapse" class="panel-collapse collapse in">
+						<div class="panel-body" style="text-align: center;">
+							
+							
+						</div>
+					</div>
+				</div>
+
+			</div>
+			
+            <div class="col-sm-12">
+                <table id="datatable_cf" class="display dataTable"></table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+/* Formatting function for row details - modify as you need */
+function format(d) {
+	return "<h4><b>Event Description:</b></h4>" + ((d.Description)? d.Description : "None Provided") + "<br><br>";
+}
+
+//setup Column locations, start index at 1
+var objColumn = {
+	"Category": 1,
+	//"ProductType": 3,
+};
+
+
+$(document).ready(function () {
+	var csvDataFile = "ZERH_Testimonials_20190731.csv";
+	$.get(csvDataFile, function (data) {
+		var csvJson = Papa.parse(removeTrailingLine(data), { "header": true });
+		csvJson = JSON.stringify(csvJson.data, null, 2);
+
+		var datatable = $('#datatable_cf').DataTable({
+			"processing": true,
+			"serverSide": false,
+			"autoWidth": false,
+			"order": [[1, 'asc']],
+			"lengthMenu": [[-1, 10, 25, 50, 100], ["All", 10, 25, 50, 100]],
+			"pageLength": 50,
+			"data": eval(csvJson),
+
+			"columns": [
+				{
+					"class": 'details-control',
+					"orderable": false,
+					"data": null,
+					"defaultContent": ''
+				},
+				{ "data": "Category" },
+				{ "data": null, render: function (data, type, row) {
+							
+							
+							return '<div class="testimonial-quote group"><img src="https://via.placeholder.com/80x80?Text=\
+								' + data['Category'] + '"><div class="quote-container"><blockquote> \
+										<p>' + data.Quote + '</p></blockquote>  \
+									<cite><span>&mdash; ' + data['Source'] + '</span></cite></div></div>';
+
+
+                        }
+			    },
+				{ "data": "Source" },
+			],
+			"columnDefs": [
+				{
+					"targets": [0],
+					"title": "",
+					"visible": false
+				},
+				{
+					"targets": [1],
+					"title": "Category",
+					"visible": false
+				},
+				{
+					"targets": [2],
+					"title": "Quote"
+				},
+				{
+					"targets": [3],
+					"title": "Source",
+					"visible": false
+				},
+			],
+			"createdRow": function (row, data, index) {
+				$('td', row).eq(0).append((data));
+			},
+			"initComplete": function (settings, json) {
+
+				//$('#datatable_cf_filter').prependTo('#datatable_cf_wrapper');$('#datatable_cf_length').prependTo('#datatable_cf_wrapper');
+				
+				$('#datatable_cf_filter').find('input').addClass('form-control');
+				$('#datatable_cf_length').find('select').addClass('form-control');
+				
+				$('#datatable_cf_paginate').removeClass();
+				$('#datatable_cf_paginate').addClass('pagination');
+				$('#datatable_cf_info').insertAfter('#datatable_cf_filter');
+				$('#datatable_cf_paginate').insertAfter($('#datatable_cf_info'));
+
+				//Setup datatable if there are querystring vars
+				//todo: handle multiple values for Facets, find a better way to do this, there is a bug if the Value sent in is not unique to all facets
+				if (Object.keys(qs).length != 0) {
+					
+					function objLookup (colName) {
+						var found = false;
+						for (var k in objColumn) {
+							if ( k == colName) 
+								found = true;
+						}
+						return found;
+					}
+				
+					$.each(qs, function (val, key) {
+						if ( objLookup(val) ){
+							$('input[type="checkbox"][value="' + key + '"]').prop('checked', true);
+							search_dt_column($('#datatable_cf').DataTable(), objColumn[val], key);
+						}
+					});
+
+				}
+				setup_select_filter('category_select', '#category_div', objColumn['Category'], false);
+				$('select').addClass('form-control');				
+				
+				
+				
+				$('#category_select').on('change', function () {
+					if ($(this).attr('id') == 'category_select')
+						filter_dt_column($('#datatable_cf').DataTable(), objColumn["Category"], $(this));
+					
+				});
+				
+				$('#btnDataDownload').on('click', function () {
+					window.parent.location = csvDataFile;
+				});
+
+				// Add event listener for opening and closing details
+				$('#datatable_cf tbody').on('click', 'td.details-control', function () {
+					var tr = $(this).closest('tr');
+					var row = $('#datatable_cf').DataTable().row(tr);
+
+					if (row.child.isShown()) {
+						// This row is already open - close it
+						row.child.hide();
+						tr.removeClass('shown');
+					}
+					else {
+						// Open this row
+						row.child(format(row.data())).show();
+						tr.addClass('shown');
+					}
+				});
+			}
+		});
+		
+		function search_dt_column(dtable, col, ctrl) {
+			var val = ctrl.val(); //'^' + ctrl.val() + '$';
+			console.log(val);
+			if ($(ctrl).is(':checked'))
+				dtable.column(col).search('').draw();
+			else 
+				dtable.column(col).search(val, true, true, false).draw();
+		}
+		
+		function filter_dt_column(dtable, col, cntl) {
+			var val = $(cntl).val();
+			if ($(cntl).val() == '') val = '';
+			dtable.column(col).search(val, true, false, false).draw();
+		}
+		
+        function setup_select_filter(strSelectID, strDivID, intCol, blnMulti) {
+
+            var tmpMarkup, tmpLabel, chkBoxMarkup;
+
+            if (!blnMulti) {
+                selectMarkup = $('<select id="' + strSelectID + '"></select>').appendTo($(strDivID));
+                $('<option value="">All</option>').appendTo(selectMarkup);
+
+                $('#datatable_cf').DataTable().column(intCol).data().unique().sort().each(function (data, value) {
+
+                    var itemValue = data.trim();
+					if (itemValue == '') return;
+					
+					itemMarkup = $('<option />');
+                    itemMarkup.val(itemValue);
+
+                    var newLabel = itemValue;
+                    itemMarkup.append(newLabel);
+                    var options = $('#' + strSelectID + ' option');
+                    var values = $.map(options, function (option) {
+                        return option.value;
+                    });
+
+                    var flag = false;
+                    for (var i = 0; i < values.length; i++) {
+                        if (itemValue == values[i].trim())
+                            flag = true;
+                    }
+                    if (flag == false)
+                        itemMarkup.appendTo(selectMarkup);
+                });
+            }
+            else {
+                //there are multiple values in the column. Separate and find all uniques
+                var aryAllValues = [], objAllValues = {};
+                $('#datatable_cf').DataTable().column(intCol).data().each(function (d, j) {
+                    var tmpColumnValue = d, tmpAryValues = [];
+                    if (typeof tmpColumnValue === 'object') {
+                        if (objColumn['Program_Area'] == intCol)
+                            tmpColumnValue = d.Program_Area.toString();
+                    }
+
+                    if (tmpColumnValue.indexOf("; ") > 0) {
+                        tmpAryValues = tmpColumnValue.split("; ");
+                        $.each(tmpAryValues, function (key, val) {
+                            objAllValues[val.trim()] = true;
+                        });
+
+                    }
+                    else {
+                        objAllValues[tmpColumnValue.trim()] = true;
+                    }
+                });
+                for (var k in objAllValues) { if (k != '') { aryAllValues.push(k); } }
+                aryAllValues.sort();
+
+                //Build facet control depending on unique values from the column
+                selectMarkup = $('<select/>').attr('id', strSelectID).appendTo($(strDivID));
+                $('<option/>').attr('value', 'All').text('All').appendTo(selectMarkup);
+
+                $.each(aryAllValues, function (key, val) {
+                    itemMarkup = $('<option/>');
+                    itemMarkup.val(val.trim());
+                    itemMarkup.append(val.trim());
+
+                    var options = $('#' + strSelectID + ' span');
+                    var values = $.map(options, function (option) {
+                        return option.value;
+                    });
+
+                    var flag = false;
+                    for (var i = 0; i < values.length; i++) {
+                        if (val.trim() == values[i])
+                            flag = true;
+                    }
+                    if (flag == false)
+                        itemMarkup.appendTo(selectMarkup);
+                });
+
+            }
+        }
+
+	});
+});
+
+</script>
+
+<script src="//www1.eere.energy.gov/apps/js/pym.v1.min.js"></script>
+<script src="//www1.eere.energy.gov/apps/js/shim.js"></script>
