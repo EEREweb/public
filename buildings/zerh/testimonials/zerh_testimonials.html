@@ -20,11 +20,6 @@
 <div class="content">
     <div class="container">
         <div class="row">
-
-			<div class="col-sm-12" id="introtext">
-				<h2>ZERH Testimonials</h2>
-			</div>
-
 			<div class="col-sm-12" id="facet_div">
                 <div class="panel-group col-sm-4">
                     <div class="panel panel-default">
@@ -48,10 +43,7 @@
 					</div></div>
                 <div class="panel-group col-sm-4">
 					<div id="download_collapse" class="panel-collapse collapse in">
-						<div class="panel-body" style="text-align: center;">
-							
-							
-						</div>
+						<div class="panel-body">&nbsp;</div>
 					</div>
 				</div>
 
@@ -90,7 +82,9 @@ $(document).ready(function () {
 			"autoWidth": false,
 			//"order": [[1, 'asc']],
 			"lengthMenu": [[-1, 10, 25, 50, 100], ["All", 10, 25, 50, 100]],
-			"pageLength": 50,
+			"pageLength": 10,
+			"scrollY": 1000,
+			"dom": 'lfipti<"bottom_paginate"p>',
 			"data": eval(csvJson),
 
 			"columns": [
@@ -179,6 +173,10 @@ $(document).ready(function () {
 				$('#datatable_cf_info').insertAfter('#datatable_cf_filter');
 				$('#datatable_cf_paginate').insertAfter($('#datatable_cf_info'));
 
+				//styling the bottom controls
+				$('.bottom_paginate div:first-child').removeClass();
+				$('.bottom_paginate div:first-child').addClass('pagination');
+				$('.bottom_paginate div:first-child').css("float","right");
 				//Setup datatable if there are querystring vars
 				//todo: handle multiple values for Facets, find a better way to do this, there is a bug if the Value sent in is not unique to all facets
 				if (Object.keys(qs).length != 0) {
