@@ -40,7 +40,7 @@ body {
   float: left !important;
 }
 #datatable_cf_wrapper {
-  width: 60% !important;
+  width: 100% !important;
 }
 
 #introtext {
@@ -187,11 +187,11 @@ Fancy Blockquote styling from https://codepen.io/andrewwright/pen/Aigre
 }
 
 .testimonial-quote img {
-    border: 3px solid #9CC1D3;
+    border: 0px solid #9CC1D3;
     border-radius: 50%;
     display: block;
-    width: 80px;
-    height: 80px;
+    width: 90px;
+    height: 90px;
     position: absolute;
     top: -.2em; 
     left: 0;    

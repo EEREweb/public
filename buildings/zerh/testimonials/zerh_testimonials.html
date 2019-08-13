@@ -20,11 +20,6 @@
 <div class="content">
     <div class="container">
         <div class="row">
-
-			<div class="col-sm-12" id="introtext">
-				<h2>ZERH Testimonials</h2>
-			</div>
-
 			<div class="col-sm-12" id="facet_div">
                 <div class="panel-group col-sm-4">
                     <div class="panel panel-default">
@@ -40,17 +35,15 @@
 							</div>
 						</div>
 					</div><br/>
-						<div id="download_div">
-							<a id="btnDataDownload" target="_parent" class="btn btn-primary">Export All Data to Spreadsheet</a>
-						</div>
+					<div class="checkbox" id="source_div"><label><input id="chk_source" type="checkbox" value="Homeowner"> Homeowner only quotes</label></div>
 				</div>
-                <div class="panel-group col-sm-4">&nbsp;</div>
+                <div class="panel-group col-sm-4"><br/>
+					<div id="download_div">
+						<a id="btnDataDownload" target="_parent" class="btn btn-primary">Export All Data to Spreadsheet</a>
+					</div></div>
                 <div class="panel-group col-sm-4">
 					<div id="download_collapse" class="panel-collapse collapse in">
-						<div class="panel-body" style="text-align: center;">
-							
-							
-						</div>
+						<div class="panel-body">&nbsp;</div>
 					</div>
 				</div>
 
@@ -73,12 +66,12 @@ function format(d) {
 //setup Column locations, start index at 1
 var objColumn = {
 	"Category": 1,
-	//"ProductType": 3,
+	"Source": 3,
 };
 
 
 $(document).ready(function () {
-	var csvDataFile = "ZERH_Testimonials_20190731.csv";
+	var csvDataFile = "ZERH_Testimonials_20190802.csv";
 	$.get(csvDataFile, function (data) {
 		var csvJson = Papa.parse(removeTrailingLine(data), { "header": true });
 		csvJson = JSON.stringify(csvJson.data, null, 2);
@@ -87,9 +80,11 @@ $(document).ready(function () {
 			"processing": true,
 			"serverSide": false,
 			"autoWidth": false,
-			"order": [[1, 'asc']],
+			//"order": [[1, 'asc']],
 			"lengthMenu": [[-1, 10, 25, 50, 100], ["All", 10, 25, 50, 100]],
-			"pageLength": 50,
+			"pageLength": 10,
+			"scrollY": 1000,
+			"dom": 'lfipti<"bottom_paginate"p>',
 			"data": eval(csvJson),
 
 			"columns": [
@@ -101,14 +96,43 @@ $(document).ready(function () {
 				},
 				{ "data": "Category" },
 				{ "data": null, render: function (data, type, row) {
+					var strImageName = "";
+					switch (data['Category']) {
+						case 'Advanced Tech':
+							strImageName = "advanced_tech.gif";
+							break;
+						case 'Affordable Quotes':
+							strImageName = "affordable.gif";
+							break;
+						case 'Builder Quotes':
+							strImageName = "builder.gif";
+							break;
+						case 'Comfort Plus':
+							strImageName = "comfort_plus.gif";
+							break;
+						case 'Durability':
+							strImageName = "durability.gif";
+							break;
+						case 'Experience':
+							strImageName = "experience.gif";
+							break;
+						case 'Healthful Environment':
+							strImageName = "healthful_environment.gif";
+							break;
+						case 'Quality Built':
+							strImageName = "quality_built.gif";
+							break;
+						case 'Ultra Efficient':
+							strImageName = "ultra_efficient.gif";
+							break;
+						default:
+							strImageName = "https://https://via.placeholder.com/90x90";
+						}
 							
-							
-							return '<div class="testimonial-quote group"><img src="https://via.placeholder.com/80x80?Text=\
-								' + data['Category'] + '"><div class="quote-container"><blockquote> \
+							return '<div class="testimonial-quote group"><img src="icons/' + strImageName + '" title="' + data['Category'] + '"/>\
+										<div class="quote-container"><blockquote> \
 										<p>' + data.Quote + '</p></blockquote>  \
 									<cite><span>&mdash; ' + data['Source'] + '</span></cite></div></div>';
-
-
                         }
 			    },
 				{ "data": "Source" },
@@ -149,6 +173,10 @@ $(document).ready(function () {
 				$('#datatable_cf_info').insertAfter('#datatable_cf_filter');
 				$('#datatable_cf_paginate').insertAfter($('#datatable_cf_info'));
 
+				//styling the bottom controls
+				$('.bottom_paginate div:first-child').removeClass();
+				$('.bottom_paginate div:first-child').addClass('pagination');
+				$('.bottom_paginate div:first-child').css("float","right");
 				//Setup datatable if there are querystring vars
 				//todo: handle multiple values for Facets, find a better way to do this, there is a bug if the Value sent in is not unique to all facets
 				if (Object.keys(qs).length != 0) {
@@ -180,6 +208,16 @@ $(document).ready(function () {
 						filter_dt_column($('#datatable_cf').DataTable(), objColumn["Category"], $(this));
 					
 				});
+
+				$('#chk_source').on('change', function () {
+					
+
+
+
+
+					//$(this).prop('checked', true);
+						search_dt_column($('#datatable_cf').DataTable(), objColumn["Source"], $(this));
+				});
 				
 				$('#btnDataDownload').on('click', function () {
 					window.parent.location = csvDataFile;
@@ -206,11 +244,11 @@ $(document).ready(function () {
 		
 		function search_dt_column(dtable, col, ctrl) {
 			var val = ctrl.val(); //'^' + ctrl.val() + '$';
-			console.log(val);
+			//console.log(val);
 			if ($(ctrl).is(':checked'))
-				dtable.column(col).search('').draw();
-			else 
 				dtable.column(col).search(val, true, true, false).draw();
+			else 
+				dtable.column(col).search('').draw();
 		}
 		
 		function filter_dt_column(dtable, col, cntl) {
