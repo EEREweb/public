@@ -176,12 +176,12 @@ h5 {
     }
 
 td.details-control {
-    background: url('/sites/prod/files/dataTables_details_open.png') no-repeat center center;
+    background: url('//www1.eere.energy.gov/sites/prod/files/dataTables_details_open.png') no-repeat center center;
     cursor: pointer;
 }
 
 tr.shown td.details-control {
-    background: url('/sites/prod/files/dataTables_details_close.png') no-repeat center center;
+    background: url('//www1.eere.energy.gov/sites/prod/files/dataTables_details_close.png') no-repeat center center;
 }
 
 .open > .dropdown-menu {
