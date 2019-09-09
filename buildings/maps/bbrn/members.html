@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <title>BBRN Members Map | Department of Energy</title>
 
-<meta name="datafile" content="bbrn_members_2019_06_04.csv">
+<meta name="datafile" content="bbrn_members_2019_09_09.csv">
 
 <script src="states.json.js"></script>
 
@@ -200,7 +200,7 @@ $(document).ready(function() {
 	
     $.when($.ajax({
 		type: "GET",
-        url: 'bbrn_members_2019_06_04.csv',
+        url: 'bbrn_members_2019_09_09.csv',
 		aysnc: false
     }).done(dataLoaded)
 	.fail(function (jqXHR, textStatus, errorThrown) {
