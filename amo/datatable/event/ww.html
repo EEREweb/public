@@ -93,7 +93,7 @@ var objColumn = {
 	"Pillar": 6,
 };
 $(document).ready(function () {
-	$.get("amo_workshop_webinar_2019_07_26.csv", function (data) {
+	$.get("amo_workshop_webinar_2019_11_13", function (data) {
 		var csvJson = Papa.parse(removeTrailingLine(data), { "header": true });
 		csvJson = JSON.stringify(csvJson.data, null, 2);
 		var datatable = $('#datatable_cf').DataTable({
