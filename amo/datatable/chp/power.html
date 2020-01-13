@@ -3,7 +3,7 @@
 <title>Combined Heat and Power (CHP) Project Profiles Database | Department of Energy</title>
 
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-
+ 
 <script src="//www1.eere.energy.gov/apps/js/jquery/3.2.0/jquery.min.js"></script>
 <script src="//www1.eere.energy.gov/apps/js/bootstrap/3.3.7/bootstrap.min.js"></script>
 <script src="//www1.eere.energy.gov/apps/js/papaparse/4.1.2/papaparse.min.js"></script>
@@ -435,7 +435,7 @@
 			"State": 15,
         };
 
-		$.get('chpdb_master_2019_12_4.csv', function (data) {
+		$.get('chpdb_master_2020_1_9.csv', function (data) {
 			var objJson = Papa.parse(removeTrailingLine(data), { "header": true });
 			var csvJson = JSON.stringify(objJson.data, null, 2);
 
