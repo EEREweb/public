@@ -40,6 +40,13 @@ function format(d) {
 				'<br /><h4>Principal Investigators:</h4><p class="dt_details">' + d.Principal_Investigator + '</p>' : '');
 }
 
+function formatCurrency(total) {
+	var formattedTotal = '';
+	formattedTotal = parseFloat(total, 10).toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, "$1,");
+	formattedTotal = formattedTotal.substring(0, formattedTotal.length - 3);
+	return '$'+formattedTotal.toString();
+}
+
 $(document).ready(function () {
 
 	var dataFilePath = 'solar_projects_08_12_2019-2.csv';
@@ -51,6 +58,9 @@ $(document).ready(function () {
 		//console.log(objJson);
 		var csvJson = JSON.stringify(objJson.data, null, 2);
 		//console.log(csvJson);
+		//found solution here to add tfoot manually: https://datatables.net/forums/discussion/40370/datatables-footercallback-function-not-displaying-results-in-footer
+		$("#projects-datatable").append('<tfoot><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th colspan="3" style="text-align:right;padding-right:10px"></th><th></th><th></th></tfoot>');
+				
 
 		var workforce_table = $('#projects-datatable').DataTable({
 			"processing": true,
@@ -58,6 +68,42 @@ $(document).ready(function () {
 			"order": [[10, 'desc']],
 			"lengthMenu": [[ -1, 5, 10, 25, 50], ["All", 5, 10, 25, 50]],
 			"pageLength": (qs['showAll'] == 'true') ? -1 : 50,
+			//https://datatables.net/examples/advanced_init/footer_callback.html
+			"footerCallback": function ( row, data, start, end, display ) {
+					var api = this.api(), data;
+		
+					// Remove the formatting to get integer data for summation
+					var intVal = function ( i ) {
+						return typeof i === 'string' ?
+							i.replace(/[\$,]/g, '')*1 :
+							typeof i === 'number' ?
+								i : 0;
+					};
+					
+					// Total over all pages
+					total = api
+						.column( 11 )
+						.data()
+						.reduce( function (a, b) {
+							return intVal(a) + intVal(b);
+						}, 0 );
+						
+					// Total over this page
+					pageTotal = api
+						.column( 11, { page: 'current'} )
+						.data()
+						.reduce( function (a, b) {
+							return intVal(a) + intVal(b);
+						}, 0 );
+					// Update footer
+					$( api.column( 11 ).footer() ).html(
+						'Amount awarded: ' + formatCurrency(pageTotal) +' <br/>('+ formatCurrency(total) +' total)'
+					);
+					
+					var formattedTot =' Amount awarded: ' + formatCurrency(pageTotal) +' ('+ formatCurrency(total) +' total)';
+					$('.dataTables_info').append(' Amount awarded: ' + formatCurrency(pageTotal) +' ('+ formatCurrency(total) +' total)');
+					
+				},
 			"data": eval(csvJson),
 
 			"columns": [
@@ -221,7 +267,6 @@ $(document).ready(function () {
 				//$('td', row).eq(0).append(format(data));
 			},
 			"initComplete": function (settings, json) {
-
 				$('#projects-datatable_filter').find('input').keyup(function () {
 					filter_dt_column($('#projects-datatable').DataTable(), objColumn['SubProgram'], '#program_div');
 					if ($('#status_select').val() != '-99') search_dt_column($('#projects-datatable').DataTable(), objColumn['Status'], '#status_select');
@@ -659,11 +704,11 @@ $(document).ready(function () {
 			(searchString == '')) {
 			map.setView([40, -97], 4);
 			//mapOverlayHawaii.fitBounds([[18.542116654448996, -161.03759765625], [22.573438264572406, -154.22607421875]]);
-			console.log('set');
+			//console.log('set');
 		}
 		else {
 			//map.fitBounds(clusterGroup.getBounds(), { padding: [45, 45] });
-			console.log('bounds');
+			//console.log('bounds');
 		}
 	}
 
