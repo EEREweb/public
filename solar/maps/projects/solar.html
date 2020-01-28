@@ -479,6 +479,7 @@ $(document).ready(function () {
 				checkbox.addEventListener('change', function () {
 					search('checkbox1');
 					filter_dt_column($('#projects-datatable').DataTable(), objColumn['SubProgram'], '#program_div');
+					map.fitBounds(clusterGroup.getBounds(), { padding: [45, 45] });
 					//search_dt_column($('#projects-datatable').DataTable(), objColumn['Status'], '#status_select');
 					//search_dt_column($('#projects-datatable').DataTable(), objColumn['FOA_Acronym'], '#foa_select');
 				});
@@ -514,7 +515,7 @@ $(document).ready(function () {
 					filter_dt_column($('#projects-datatable').DataTable(), objColumn['SubProgram'], '#program_div');
 					if ($('#status_select').val() != '-99') search_dt_column($('#projects-datatable').DataTable(), objColumn['Status'], '#status_select');
 					if ($('#foa_select').val() != ' ') search_dt_column($('#projects-datatable').DataTable(), objColumn['FOA_Acronym'], '#foa_select');
-
+					map.fitBounds(clusterGroup.getBounds());
 				}
 			});
 
@@ -530,7 +531,7 @@ $(document).ready(function () {
 					filter_dt_column($('#projects-datatable').DataTable(), objColumn['SubProgram'], '#program_div');
 					if ($('#status_select').val() != '-99') search_dt_column($('#projects-datatable').DataTable(), objColumn['Status'], '#status_select');
 					if ($('#foa_select').val() != ' ') search_dt_column($('#projects-datatable').DataTable(), objColumn['FOA_Acronym'], '#foa_select');
-
+					map.fitBounds(clusterGroup.getBounds(), { padding: [45, 45] });
 				}
 			});
 
@@ -696,13 +697,14 @@ $(document).ready(function () {
 		customPopup(featureLayer);
 
 		map.addLayer(clusterGroup);
-
+		map.fitBounds(clusterGroup.getBounds(), { padding: [45, 45] });
 
 		//reset view if no selections are made
 		if (($('#program_div input[type=checkbox]:checked').length == 5) &&
 			($('#foa_select').val() == ' ') && ($('#status_select').val() == '-99') &&
 			(searchString == '')) {
-			map.setView([40, -97], 4);
+			//map.setView([40, -97], 4);
+			map.fitBounds(clusterGroup.getBounds(), { padding: [45, 45] });
 			//mapOverlayHawaii.fitBounds([[18.542116654448996, -161.03759765625], [22.573438264572406, -154.22607421875]]);
 			//console.log('set');
 		}
