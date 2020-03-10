@@ -224,11 +224,13 @@
 										<option value="611110 Elementary and Secondary Schools">611110 Elementary and Secondary Schools</option>
 										<option value="611310 Colleges, Universities and Professional Schools">611310 Colleges, Universities and Professional Schools</option>
 										<option value="622110 General Medical and Surgical Hospitals">622110 General Medical and Surgical Hospitals</option>
+										<option value="623110 Nursing Care Facilities">623110 Nursing Care Facilities</option>
 										<option value="623311 Continuing Care Retirement Communities">623311 Continuing Care Retirement Communities</option>
 										<option value="713940 Fitness and Recreational Sports Centers">713940 Fitness and Recreational Sports Centers</option>
 										<option value="721110 Hotels and Motels">721110 Hotels and Motels</option>
 										<option value="721120 Casino Hotels">721120 Casino Hotels</option>
 										<option value="813110 Religious Organizations">813110 Religious Organizations</option>
+										<option value="813410 Civic and Social Organizations">813410 Civic and Social Organizations</option>
 										<option value="813990 Cooperative Owners' Associations">813990 Cooperative Owners' Associations</option>
 										<option value="921110">921110 Executive Offices (Public Administration)</option>
 										<option value="922140 Correctional Institutions">922140 Correctional Institutions</option>
@@ -435,7 +437,7 @@
 			"State": 15,
         };
 
-		$.get('chpdb_master_2020_3_3.csv', function (data) {
+		$.get('chpdb_master_2020_3_10.csv', function (data) {
 			var objJson = Papa.parse(removeTrailingLine(data), { "header": true });
 			var csvJson = JSON.stringify(objJson.data, null, 2);
 
