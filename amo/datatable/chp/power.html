@@ -259,7 +259,7 @@
                             <div class="panel-body">
                                 <div id="tech_div">
 									<select id="tech_select" name="tech_select" multiple="multiple">
-										<option value="Back Pressure Turbine">Back Pressure Turbine</option><option value="Combined Cycle Gas Turbine">Combined Cycle Gas Turbine</option><option value="Combustion Turbine">Combustion Turbine</option><option value="Fuel Cell">Fuel Cell</option><option value="Microturbine">Microturbine</option><option value="Organic Rankine Cycle">Organic Rankine Cycle</option><option value="Other">Other</option><option value="Reciprocating Engine">Reciprocating Engine</option><option value="Renewables Integrated with CHP">Renewables Integrated with CHP</option><option value="Steam Turbine">Steam Turbine</option>
+										<option value="Combined Cycle Gas Turbine">Combined Cycle Gas Turbine</option><option value="Combustion Turbine">Combustion Turbine</option><option value="Fuel Cell">Fuel Cell</option><option value="Microturbine">Microturbine</option><option value="Organic Rankine Cycle">Organic Rankine Cycle</option><option value="Reciprocating Engine">Reciprocating Engine</option><option value="Renewables Integrated with CHP">Renewables Integrated with CHP</option><option value="Steam Turbine">Steam Turbine</option>
 									</select>
                                 </div>
                             </div>
@@ -286,7 +286,6 @@
 										<option value="Geothermal Energy">Geothermal Energy</option>
 										<option value="Municipal Solid Waste">Municipal Solid Waste</option>
 										<option value="Natural Gas">Natural Gas</option>
-										<option value="Other">Other</option>
 										<option value="Propane">Propane</option>
 										<option value="Waste Heat">Waste Heat</option>
 									</select>
@@ -437,7 +436,7 @@
 			"State": 15,
         };
 
-		$.get('chpdb_master_2020_3_10.csv', function (data) {
+		$.get('chpdb_master_2020_3_17.csv', function (data) {
 			var objJson = Papa.parse(removeTrailingLine(data), { "header": true });
 			var csvJson = JSON.stringify(objJson.data, null, 2);
 
