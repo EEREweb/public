@@ -197,6 +197,7 @@
 										<option value="321113 Sawmills">321113 Sawmills</option>
 										<option value="321918 Other Millwork">321918 Other Millwork</option>
 										<option value="321999 Other Miscellaneous Wood Product Manufacturing">321999 Other Miscellaneous Wood Product Manufacturing</option>
+										<option value="322110 Pulp Mills">322110 Pulp Mills</option>
 										<option value="322121 Paper Mills">322121 Paper Mills</option>
 										<option value="322291 Sanitary Paper Product Manufacturing">322291 Sanitary Paper Product Manufacturing</option>
 										<option value="324110 Petroleum Refineries">324110 Petroleum Refineries</option>
@@ -436,7 +437,7 @@
 			"State": 15,
         };
 
-		$.get('chpdb_master_2020_3_23.csv', function (data) {
+		$.get('chpdb_master_2020_4_13.csv', function (data) {
 			var objJson = Papa.parse(removeTrailingLine(data), { "header": true });
 			var csvJson = JSON.stringify(objJson.data, null, 2);
 
