@@ -113,6 +113,7 @@ $(document).ready(function () {
 				},
 				{ "data": "Publishing_Organization" },
 				{ "data": "Subject" },
+				{ "data": "Author" },
 				{ "data": "Summary" },
 			],
 			"columnDefs": [
@@ -135,6 +136,10 @@ $(document).ready(function () {
 				},
 				{
 					"targets": [4],
+					"title": "Author",
+				},
+				{
+					"targets": [5],
 					"title": "Summary",
 					"visible": false,
 				},
@@ -301,7 +306,7 @@ $(document).ready(function () {
 				});
 				
 				$('#none').on('click', function () {
-					var userAuthor = 'david.brown@ee.doe.gov';
+					var userAuthor = 'ravi.gaddipati@ee.doe.gov';
 					var apiKey = 'c45a411f6cb6995869a4c2d71d48b95f';
 					var longURL = encodeURI($('#queryURL').val());
 					//console.log(longURL);
