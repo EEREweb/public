@@ -106,7 +106,7 @@ $(document).ready(function () {
 				{ 
 					"data": null, render: function (data, type, row) {
 					if (data["filePresenter"] && data["filePresenter"] != '')
-						return '<a href="https://energy.gov' + data["filePresenter"] + '">' + data["Title"] + '</a>';
+						return '<a href="https://energy.gov' + data["filename"] + '">' + data["Title"] + '</a>';
 					else
 						return data["Title"];
 					}
