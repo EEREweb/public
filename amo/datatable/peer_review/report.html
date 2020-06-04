@@ -82,7 +82,7 @@ $('#queryURL').val('');
 
 $(document).ready(function () {
 
-	$.get("amo_peer-review_6.1.2020.csv", function (data) {
+	$.get("amo_peer-review_6.4.2020.csv", function (data) {
 		var csvJson = Papa.parse(removeTrailingLine(data), { "header": true });
 		csvJson = JSON.stringify(csvJson.data, null, 2);
 
