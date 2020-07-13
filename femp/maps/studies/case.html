@@ -239,7 +239,10 @@
 					<div class="panel-body">
 						<div id="type_div">
 							<select id="type_select" name="type_select" multiple="multiple">
-								<option value="Fact sheet">Fact sheet</option><option value="Video">Video</option><option value="Web page">Web page</option>
+								<option value="Fact sheet">Fact sheet</option>
+								<option value="Report">Report</option>
+								<option value="Video">Video</option>
+								<option value="Web page">Web page</option>
 							</select>
 						</div>
 					</div>
@@ -364,7 +367,7 @@
                         ('<p class="dt_details">' + d.Description + '</p>');
         }
 
-		$.get('casestudiesmap-060820.csv', function (data) {
+		$.get('case-studies-map071320', function (data) {
 			var objJson = Papa.parse(removeTrailingLine(data), { "header": true });
 			var csvJson = JSON.stringify(objJson.data, null, 2);
 
