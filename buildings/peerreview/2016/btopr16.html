@@ -186,9 +186,21 @@
                     //Setup datatable if there are querystring vars
                     //todo: handle multiple values for Facets, find a better way to do this, there is a bug if the Value sent in is not unique to all facets
                     if (Object.keys(qs).length != 0) {
+						
+						function objLookup (colName) {
+							var found = false;
+							for (var k in objColumn) {
+								if ( k == colName) 
+									found = true;
+							}
+							return found;
+						}
+					
                         $.each(qs, function (val, key) {
-                            $('input[type="checkbox"][value="' + key + '"]').prop('checked', true);
-                            search_dt_column($('#datatable1').DataTable(), objColumn[val], key);
+							if ( objLookup(val) ){
+								$('input[type="checkbox"][value="' + key + '"]').prop('checked', true);
+								search_dt_column($('#datatable1').DataTable(), objColumn[val], key);
+							}
                         });
 
                     }
