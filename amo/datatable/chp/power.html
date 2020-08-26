@@ -207,6 +207,7 @@
 										<option value="325311 Nitrogenous Fertilizer Manufacturing">325311 Nitrogenous Fertilizer Manufacturing</option>
 										<option value="325411 Medicinal and Botanical Manufacturing">325411 Medicinal and Botanical Manufacturing</option>
 										<option value="325612 Polish and Other Sanitation Good Manufacturing">325612 Polish and Other Sanitation Good Manufacturing</option>
+										<option value="325998 Other Miscellaneous Chemical Product and Preparation Manufacturing">325998 Other Miscellaneous Chemical Product and Preparation Manufacturing</option>
 										<option value="326199 All Other Plastics Product Manufacturing">326199 All Other Plastics Product Manufacturing</option>
 										<option value="331110 Iron and Steel Mills">331110 Iron and Steel Mills</option>
 										<option value="331411 Primary Smelting and Refining of Copper">331411 Primary Smelting and Refining of Copper</option>
@@ -437,7 +438,7 @@
 			"State": 15,
         };
 
-		$.get('chpdb_master_2020_7_31.csv', function (data) {
+		$.get('chpdb_master_2020_8_24.csv', function (data) {
 			var objJson = Papa.parse(removeTrailingLine(data), { "header": true });
 			var csvJson = JSON.stringify(objJson.data, null, 2);
 
