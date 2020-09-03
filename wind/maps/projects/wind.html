@@ -346,6 +346,7 @@ $(document).ready(function () {
 					{
 						"data": null, render: function (data, type, row) {
 							var strValue = data.Recipient_Type;
+							//this was to make College wrap to the next line so the column isn't too wide
 							if (strValue == 'University/College')
 								strValue = 'University/ College';
 							return strValue;
@@ -803,6 +804,9 @@ $(document).ready(function () {
 				var aryCheckVals = [];
 				$(control + ' input:checked').each(function () {
 					var value = $(this).val();
+					//account for the update made to make College wrap to the next line
+					if (value == 'University/College')
+						value = 'University/ College';
 					//console.log(value);
 					aryCheckVals.push(value);
 				});
