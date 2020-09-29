@@ -179,6 +179,7 @@
 								<option value="Facilities">Facilities</option>
 								<option value="Federal Investment Highlights">Federal Investment Highlights</option>
 								<option value="Fleets">Fleets</option>
+								<option value="Healthy Buildings">Healthy Buildings</option>
 								<option value="Institutional Change">Institutional Change</option>
 								<option value="Laboratories">Laboratories</option>
 								<option value="Resilience Planning">Resilience Planning</option>
@@ -367,7 +368,7 @@
                         ('<p class="dt_details">' + d.Description + '</p>');
         }
 
-		$.get('casestudiesmap-082720.csv', function (data) {
+		$.get('casestudiesmap-092920.csv', function (data) {
 			var objJson = Papa.parse(removeTrailingLine(data), { "header": true });
 			var csvJson = JSON.stringify(objJson.data, null, 2);
 
