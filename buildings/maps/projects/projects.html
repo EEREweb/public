@@ -167,7 +167,7 @@ function format ( d ) {
 
 	return '<h5>Project Description:</h5>' +
 			'<p class="dt_details">' +
-			d['Concise Description'] + '<br/>' +
+			d['Concise_Description'] + '<br/>' +
 			'<a href="' + d['DOE Project Web Page'] + '" target="_blank">Project Information</a>' + '<br/>' +
 	'</p>';
 }
@@ -268,7 +268,7 @@ function search_dt_column(dtable, col, term) {
 
 $.when($.ajax({
     type: "GET",
-    url: "2019.09.11_ProjMapExport.csv",
+    url: "bto_projects_2020_10_05.csv",
     aysnc: false
 
     //success: csvLoaded
@@ -307,7 +307,7 @@ function csvLoaded(data) {
                 { "data": "Latitude" },
                 { "data": "Longitude" },
                 { "data": "DOE Project Web Page" },
-                { "data": "Concise Description" },
+                { "data": "Concise_Description" },
 				{ "data": "Funding Type" },
 				{ "data": "Status" },
 				
@@ -769,12 +769,12 @@ function search(strFilterName) {
         return ((feature.properties.State.toLowerCase() == stateString.toLowerCase() || stateString == '') //filter state
 				&& ( (feature.properties.Program.toLowerCase().indexOf(searchString) !== -1) // filter by Program
 				|| (feature.properties.Activity.toLowerCase().indexOf(searchString) !== -1) // filter by Activity
-				|| (feature.properties.Project_Lead.toLowerCase().indexOf(searchString) !== -1) // filter by Partner
-				|| (feature.properties.Project_Title.toLowerCase().indexOf(searchString) !== -1) // filter by Title
+				|| (feature.properties.ProjectLead.toLowerCase().indexOf(searchString) !== -1) // filter by Partner
+				|| (feature.properties.ProjectTitle.toLowerCase().indexOf(searchString) !== -1) // filter by Title
 				|| (feature.properties.City.toLowerCase().indexOf(searchString) !== -1) // filter by City
 				|| (feature.properties.State.toLowerCase().indexOf(searchString) !== -1) // filter by State
 				|| (feature.properties.Status.toLowerCase().indexOf(searchString) !== -1) // filter by Status
-				|| (feature.properties.Description.toLowerCase().indexOf(searchString) !== -1) ) // filter by Project Description
+				|| (feature.properties.Concise_Description.toLowerCase().indexOf(searchString) !== -1) ) // filter by Project Description
 				&& (checkProjectTypes(feature)) && checkActivityTypes(feature) && (checkStatus(feature.properties['Status'])) );
     }
 
@@ -896,5 +896,5 @@ As you zoom in to an individual project, you can click "Project Information" to 
 
 </div>
 
-<script src="/apps/js/pym.v1.min.js"></script>
-<script src="/apps/js/shim.js"></script>
+<script src="//www1.eere.energy.gov/apps/js/pym.v1.min.js"></script>
+<script src="//www1.eere.energy.gov/apps/js/shim.js"></script>
