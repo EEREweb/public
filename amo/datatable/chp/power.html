@@ -221,7 +221,7 @@
 										<option value="518210 Data Processing, Hosting and Related Services">518210 Data Processing, Hosting and Related Services</option>
 										<option value="531110 Rental Housing">531110 Rental Housing</option>
 										<option value="531312 Nonresidential Property Managers">531312 Nonresidential Property Managers</option>
-										<option value="541712 Research and Development in the Physical, Engineering, and Life Sciences">541712 Research and Development in the Physical, Engineering, and Life Sciences</option>
+										<option value="541715 Research and Development in the Physical, Engineering, and Life Sciences">541715 Research and Development in the Physical, Engineering, and Life Sciences</option>
 										<option value="562212 Solid Waste Landfills">562212 Solid Waste Landfills</option>
 										<option value="562213 Solid Waste Combustors and Incinerators">562213 Solid Waste Combustors and Incinerators</option>
 										<option value="611110 Elementary and Secondary Schools">611110 Elementary and Secondary Schools</option>
@@ -439,7 +439,7 @@
 			"State": 15,
         };
 
-		$.get('chpdb_master_2020_10_7.csv', function (data) {
+		$.get('chpdb_master_2020_10_22.csv', function (data) {
 			var objJson = Papa.parse(removeTrailingLine(data), { "header": true });
 			var csvJson = JSON.stringify(objJson.data, null, 2);
 
