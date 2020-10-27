@@ -347,7 +347,7 @@ Id,Organization,City,State,Latitude,Longitude,Country,Role,Stories,Stories_URL,L
 346,Stewards of Affordable Housing for the Future,Washington,DC,38.905276,-76.981588,United States,Nonprofit,,,Peer Exchange Calls No. 10,https://energy.gov/eere/better-buildings-residential-network/downloads/lessons-learned-peer-exchange-calls-no-10,,,http://www.sahfnet.org
 347,Structural Insulated Panel Association (SIPA),Ft. Lauderdale,FL,26.16,-80.11,United States,Nonprofit,,,,,,,http://www.SIPS.org
 348,"STX Efficiency Experts, LLC",Houston,TX,29.598101,-95.404427,United States,Contractor/Trade Ally,,,,,,,http://www.drenergysaverstx.com
-349,"Aquantas",McLean,VA,38.958642,-77.229019,United States,Manufacturer,,,,,,,https://aquanta.io/
+349,Aquantas,McLean,VA,38.958642,-77.229019,United States,Manufacturer,,,,,,,https://aquanta.io/
 350,"Sunverge Energy, Inc.",San Francisco,CA,37.77264,-122.409915,United States,Manufacturer,,,,,,,http://www.sunverge.com
 351,Sustainable Claremont,Claremont,CA,34.170737,-117.702148,United States,Nonprofit,,,,,,,http://sustainableclaremont.org/
 352,Sustainable Living Center,Walla Walla,WA,46.081956,-118.31527,United States,Consultant/Advisor;Nonprofit;Program Administrator/Implementer,,,,,,,http://www.sustainablelivingcenter.com/
@@ -384,3 +384,19 @@ Id,Organization,City,State,Latitude,Longitude,Country,Role,Stories,Stories_URL,L
 383,Yellow Brick Properties,Evanston,IL,42.052158,-87.687866,United States,Consultant/Advisor,,,,,,,http://www.yellowbrickproperty.com/
 384,Yolo County Housing,Woodland,CA,38.665173,-121.856261,United States,Government - Local,,,,,,,http://ych.ca.gov/
 385,"z2zero, Inc.",Kansas City,MO,39.094818,-94.593653,United States,Consultant/Advisor;Contractor/Trade Ally;University,,,,,,,http://z2zero.com
+386,Prince George's County Government,Largo,MD,38.882454,-76.828575,United States,Government - Local,,,,,,,https://www.princegeorgescountymd.gov/936/Sustainable-Energy-Program
+387,Center for Sustainable Communities,Portsmouth,VA,36.835426,-76.298271,United States,Consultant/Advisor; Nonprofit; Program Administrator/Implementer,,,,,,,https://www.csc-atl.org
+388,See Change Institute,Venice,CA,33.995044,-118.466888,United States,Consultant/Advisor,,,,,,,http://www.seechangeinstitute.com/
+389,Ciel Power,Kearny,NJ,40.768434,-74.145421,United States,Consultant/Advisor; Contractor/Trade Ally,,,,,,,http://cielpower.com/
+390,Minnesota Department of Commerce,St. Paul,MN,44.953705,-93.089958,United States,Government - State,,,,,,,http://mn.gov/commerce
+391,Cormack Construction,Madison,NH,43.899365,-71.148834,United States,Contractor/Trade Ally,,,,,,,http://cormackconstructionmanagement.com/
+392,Renewable Energy Owners Coalition of America,Pueblo,CO,38.254447,-104.609141,United States,Nonprofit,,,,,,,http://reoca.org/
+393,Sonoma County Energy Independence Program (SCEIP),Santa Rosa,CA,38.440493,-122.714105,United States,Government - Local; Program Administrator/Implementer,,,,,,,http://sonomacountyenergy.org/
+394,Transduction Technologies,Omaha,NE,41.2587459,-95.9383758,United States,Consultant/Advisor; Contractor/Trade Ally,,,,,,,http://www.transductiontechnologies.com/
+395,Stash Energy,Fredericton,NB,45.966425,-66.645813,Canada,,,,,,,,https://stash.energy/
+396,Salcido Solutions,Louisville,CO,39.977763,-105.1319296,United States,Consultant/Advisor,,,,,,,http://salcidosolutions.com/
+397,Energy Outreach Colorado,Denver,CO,39.7348381,-104.9653271,United States,Nonprofit,,,,,,,http://www.energyoutreach.org/
+398,HDR Consulting,Las Vegas,NV,36.1672559,-115.1485163,United States,Consultant/Advisor,,,,,,,http://hdrconsultingllc.com/
+399,Thinkwell Shift,Halifax,NS,44.8543667,-63.137798,Canada,Consultant/Advisor; Contractor/Trade Ally,,,,,,,http://thinkwellshift.ca/
+400,Calortech,London,England,51.5073219,-0.1276474,United Kingdom,Consultant/Advisor; Financial Institution,,,,,,,http://www.calortech.co.uk/
+401,Green Compass Sustainability Consulting,Bozeman,MT,45.679984,-111.044675,United States,Consultant/Advisor; University,,,,,,,http://www.greencompasssustainability.com/
