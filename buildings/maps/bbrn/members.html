@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <title>BBRN Members Map | Department of Energy</title>
 
-<meta name="datafile" content="bbrn_members_2019_09_09.csv">
+<meta name="datafile" content="bbrn_members_2019_10_31.csv">
 
 <script src="states.json.js"></script>
 
@@ -200,7 +200,7 @@ $(document).ready(function() {
 	
     $.when($.ajax({
 		type: "GET",
-        url: 'bbrn_members_2019_09_09.csv',
+        url: 'bbrn_members_2019_10_31.csv',
 		aysnc: false
     }).done(dataLoaded)
 	.fail(function (jqXHR, textStatus, errorThrown) {
@@ -542,7 +542,7 @@ function dataLoaded(data) {
         for (var i = 0; i < states.length; i++) {
             // Create an an input checkbox and label inside.
 
-			if ( (states[i] == 'BC' || states[i] == 'NS' || states[i] == 'ON' || states[i] == 'Guanajuato'  || states[i] == 'Sindh'|| states[i] == 'Hamilton' || states[i] == '') ) continue;
+			if ( (states[i] == 'BC' || states[i] == 'NS' || states[i] == 'ON' || states[i] == 'Guanajuato'  || states[i] == 'Sindh'|| states[i] == 'Hamilton' || states[i] == 'England' || states[i] == '') ) continue;
 
 			//item = stateSelect.appendChild(document.createElement('option'));
 
@@ -597,6 +597,22 @@ function dataLoaded(data) {
 			}
 
         }
+		
+		countryOption = $('</optgroup>').appendTo(stateSelect);
+		
+		countryOption = $('<optgroup label="United Kingdom:">').appendTo(stateSelect);
+        states.reverse();
+
+        for (var i = 0; i < states.length; i++) {
+            // Create an an input checkbox and label inside.
+			
+			if ( (states[i] == 'England') )
+			{
+				$('<option>').text(states[i]).val(states[i]).appendTo(stateSelect);
+			}
+
+        }
+		
 		countryOption = $('</optgroup>').appendTo(stateSelect);
 		
         stateSelect.addEventListener('change', function() { 
