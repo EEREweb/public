@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <title>BBRN Members Map | Department of Energy</title>
 
-<meta name="datafile" content="bbrn_members_2019_10_31.csv">
+<meta name="datafile" content="bbrn_members_2020_10_27.csv">
 
 <script src="states.json.js"></script>
 
@@ -181,12 +181,14 @@ $(document).ready(function() {
 		
 	//map.legendControl.addLegend($('#legend-content').html());
 
+	/* KC: Removing as all the other layers do not exist besides base map.
 	L.control.layers({
 		'Base Map': L.mapbox.tileLayer('energy.nda103il').addTo(map),
 		'Grey Map': L.mapbox.tileLayer('mapbox.light'),
 		'Outdoors Map': L.mapbox.tileLayer('examples.ik7djhcc'),
 		'Light US Map': L.mapbox.tileLayer('examples.map-h67hf2ic')
 	}, null).addTo(map);
+	*/
 
 	var featureLayer = L.mapbox.featureLayer();
 	
@@ -200,7 +202,7 @@ $(document).ready(function() {
 	
     $.when($.ajax({
 		type: "GET",
-        url: 'bbrn_members_2019_10_31.csv',
+        url: 'bbrn_members_2020_10_27.csv',
 		aysnc: false
     }).done(dataLoaded)
 	.fail(function (jqXHR, textStatus, errorThrown) {
@@ -447,7 +449,6 @@ function dataLoaded(data) {
     }
 
     //map.featureLayer.on('ready', function(){
-    function setupDataControls(){
 		function search_dt_column(dtable, col, term) {
 		    //KC: changed to case sensitive so searching on state ID works better with the international text in the State column.
 			dtable.column(col).search( term,true,true,false ).draw();
@@ -466,6 +467,9 @@ function dataLoaded(data) {
 					.search( strSelectedVals, true, false )
 					.draw();
 		}
+
+    function setupDataControls(){
+		
 	
 		$("#btnReset").click(function(){
 			$("#ctrlSearch").find('input').val('');
