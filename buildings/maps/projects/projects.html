@@ -177,11 +177,12 @@ var program_filter = document.getElementById('program_div');
 var stateSelect = document.getElementById('state_select');
 
 L.mapbox.accessToken = 'pk.eyJ1IjoiZW5lcmd5IiwiYSI6IkozTG9BZDQifQ.1WKh4U0kKCdknF3gxBOF7Q';
-//mapbox streets default
-var map = L.mapbox.map('map', 'examples.map-i875kd35',
-{
-	maxZoom:9,attributionControl: false, legendControl: {position: 'bottomleft'}
-}).setView([40, -97], 4);
+//var mapid = 'energy.nda103il'; //removed this was old classic tiles api, https://docs.mapbox.com/help/troubleshooting/migrate-legacy-static-tiles-api/
+var mapid = '';
+		var map = L.mapbox.map('map', mapid,
+		{ maxZoom: 9, minZoom: 2, attributionControl: false, legendControl: { position: 'bottomright' } })
+		.setView([40, -97], 4)
+		.addLayer(L.mapbox.styleLayer('mapbox://styles/energy/ckhc7eaqv0mjm19p3yr4jtlcw'));
 
 map.legendControl.addLegend($('#legend-content').html());
 
