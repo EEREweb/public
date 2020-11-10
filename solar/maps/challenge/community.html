@@ -792,12 +792,12 @@
         var winner_chk = document.getElementById('Winner');
 
         L.mapbox.accessToken = 'pk.eyJ1IjoiZW5lcmd5IiwiYSI6IkozTG9BZDQifQ.1WKh4U0kKCdknF3gxBOF7Q';
-        //mapbox streets default
-        var mapid = 'energy.nda103il';
-        var map = L.mapbox.map('map', mapid,
-        {
-            maxZoom: 9, minZoom: 2, attributionControl: false, legendControl: { position: 'bottomright' }
-        }).setView([40, -97], 4);
+        //var mapid = 'energy.nda103il'; //removed this was old classic tiles api, https://docs.mapbox.com/help/troubleshooting/migrate-legacy-static-tiles-api/
+		var mapid = '';
+		var map = L.mapbox.map('map', mapid,
+		{ maxZoom: 9, minZoom: 2, attributionControl: false, legendControl: { position: 'bottomright' } })
+		.setView([40, -97], 4)
+		.addLayer(L.mapbox.styleLayer('mapbox://styles/energy/ckhc7eaqv0mjm19p3yr4jtlcw'));
 
 
         // L.control.layers({
