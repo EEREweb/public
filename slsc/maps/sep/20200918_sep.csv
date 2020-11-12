@@ -1,0 +1,31 @@
+Title,Description,Category,Agency,Location,Type
+Public Utilities Office Building,"This report describes a set of five field evaluations to estimate the potential energy saving capability of advanced lighting control systems in a set of public office buildings. The lighting control systems were integrated to include task tuning (light levels adjusted/reduced to meet occupant or programmatic need), occupancy sensors, and daylighting controls. One study site, a 19,400 ft<sup>2</sup> public utilities office building in Warwick, Rhode Island, demonstrated energy savings of 23% compared to the baseline measurement, resulting in a 14-year payback. 
+<br><br>
+<strong>Energy Savings:</strong> 23% (per year)<br>
+<strong>Cost Savings:</strong> $4,700 (per year)<br>
+<strong>Report:</strong><a href=""https://www.designlights.org/default/assets/File/Lighting%20Controls/DLC_Advanced-Lighting-Controls_Final-Report_PNNL.pdf""> Advanced Lighting Control System Performance: A Field Evaluation of Five Systems</a>",Advanced Lighting Controls,LED Lighting and Controls,RI,Fact sheet
+Los Angeles James K. Hahn City Hall East ,"This report describes the demonstration of a chemical-free water treatment technology from Dynamic Water Technologies, LLC and Universal Environmental Technologies. The study was performed at the Los Angeles James K. Hahn City Hall East, an 18-story office building with a floor area of approximately 530,000 ft<sup>2</sup>. The water plant contains two 500-ton and two 800-ton chillers and provides chilled water to serve the facility. Cost savings were realized through reduced water consumption, reduced sewer discharges, elimination of chemicals, and reduced annual maintenance costs. Removal of calcium and other minerals added an estimated annual water savings of 1.16 million gallons, or 20% of the site water needs. 
+<br><br>
+<strong>Energy Savings:</strong> No energy savings reported</br>
+<strong>Cost Savings:</strong> $34,105 (per year)</br>
+<strong>Report:</strong><a href=""https://www.nrel.gov/docs/fy19osti/73911.pdf""> Testing and Evaluation of a Chemical-Free Cooling Tower Water Treatment Technology</a>",Space Conditioning,Chemical-Free Water Treatment ,CA,Fact sheet
+California State University Chancellor's Office,"This report describes a field validation and verification of the Building Predictive Energy Optimization (PEO) technology based on a five-site study. The PEO technology is a software-as-a-service platform that optimizes commercial building HVAC control for system efficiency, occupant comfort, and cost. In this validation study, California State University Chancellor's Office, a 168,00 ft<sup>2</sup> building in Long Beach, California, demonstrated HVAC electricity savings of 7,167 kWh or 8.9%. 
+<br><br>
+<strong>Energy Savings:</strong> 7,167 kWh or 8.9% per study (one year)<br>
+<strong>Cost Savings:</strong> N/A<br>
+<strong>Report:</strong><a href=""https://www.osti.gov/biblio/1569630""> Building Technology Field Validation</a>",Energy Management Information System,Predictive Energy Optimization ,CA,Fact sheet
+Woodson High School,"This report describes a field validation and verification of the Building Predictive Energy Optimization (PEO) technology based on a five-site study. The PEO technology is a software-as-a-service platform that optimizes commercial building HVAC control for system efficiency, occupant comfort, and cost. In this validation study, District of Columbia's Woodson High School, a 235,000 ft<sup>2</sup> building in Washington, D.C., demonstrated HVAC electricity savings of 11,425 kWh or 1.9%. 
+<br>
+<strong>Energy Savings:</strong> 1% per study period (11 months)<br>
+<strong>Cost Savings:</strong> $3,640 (per year)<br>
+<strong>Report:</strong><a href=""https://www.osti.gov/servlets/purl/1569630""> Building Technology Field Validation</a>",Energy Management Information System,Predictive Energy Optimization ,DC,Fact sheet
+University of New Haven,"This project will validate a diagnostic fault detection system for building HVAC systems. The system is a set of software and hardware technology platforms that apply algorithms to identify, diagnose, and fix “broken” electric cooling, ventilation and refrigeration systems in buildings. The technology will be verified in 10 field sites, with monitoring for two seasons to capture varied environments and HVAC stresses. Fault detection and diagnosis tools have a potential savings of 927 TBtu per year or 50% energy savings across all HVAC and refrigeration systems.
+<br><br>
+<strong>Energy Savings:</strong> 50% (potential energy savings)</br>
+<strong>Cost Savings:</strong> N/A<br>
+<strong>Project Summary</strong><a href=""/node/2840461""> Fault Detection and Diagnosis (FDD) Tools for Retro-Commissioning and Continuous Commissioning of HVAC and Refrigeration Systems</a>",Energy Management Information System,Automated Fault Detection and Diagnostics,CT,Fact sheet
+"University of Minnesota, City of St. Paul and Hennepin County","The project will validate a software platform to improve efficiency across energy systems, including optimization of daylighting, LED lighting, plug load sensors, and zonal air plow controls. The technology verification includes a package of an integrated LED control retrofit, a plug load controller, and window film at three to five sites. If widely adopted, the integrated controls package in this project could have savings up to 750 Tbtu per year, representing a 50% savings across all building sectors. 
+<br><br>
+<strong>Energy Savings:</strong> 50% (potential energy savings)<br>
+<strong>Cost Savings:</strong> N/A<br>
+<strong>Project Summary:</strong><a href=""/node/2840371""> Integrated Controls Package for High Performance Interior Retrofit</a>",Integration,Integrated Controls,MN,Fact sheet
