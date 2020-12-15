@@ -12,7 +12,7 @@
 <link href="ww.css" rel="stylesheet" />
 
 <base target="_blank">
-
+ 
 <div class="content">
     <div class="container">
         <div class="row">
@@ -93,7 +93,7 @@ var objColumn = {
 	"Pillar": 6,
 };
 $(document).ready(function () {
-	$.get("amo_workshop_webinar_2020_10_9.csv", function (data) {
+	$.get("amo_workshop_webinar_2020_12_15.csv", function (data) {
 		var csvJson = Papa.parse(removeTrailingLine(data), { "header": true });
 		csvJson = JSON.stringify(csvJson.data, null, 2);
 		var datatable = $('#datatable_cf').DataTable({
