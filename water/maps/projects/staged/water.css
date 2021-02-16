@@ -204,12 +204,12 @@ table.dataTable tbody th, table.dataTable tbody td {
     }
 
 td.details-control {
-    background: url('/apps/images/dataTables_details_open.png') no-repeat center center;
+    background: url('//www1.eere.energy.gov/apps/images/dataTables_details_open.png') no-repeat center center;
     cursor: pointer;
 }
 
 tr.shown td.details-control {
-    background: url('/apps/images/dataTables_details_close.png') no-repeat center center;
+    background: url('//www1.eere.energy.gov/apps/images/dataTables_details_close.png') no-repeat center center;
 }
 
 /*-----------CUSTOM CSS for Energy.gov embedding--------------*/

@@ -7,16 +7,16 @@
 
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
-<script src="/apps/js/jquery/3.2.0/jquery.min.js"></script>
-<script src="/apps/js/bootstrap/3.3.7/bootstrap.min.js"></script>
-<script src="/apps/js/datatables/1.10.15/jquery.dataTables.min.js"></script>
-<script src="/apps/js/papaparse/4.1.2/papaparse.min.js"></script>
+<script src="https://www1.eere.energy.gov/apps/js/jquery/3.2.0/jquery.min.js"></script>
+<script src="https://www1.eere.energy.gov/apps/js/bootstrap/3.3.7/bootstrap.min.js"></script>
+<script src="https://www1.eere.energy.gov/apps/js/datatables/1.10.15/jquery.dataTables.min.js"></script>
+<script src="https://www1.eere.energy.gov/apps/js/papaparse/4.1.2/papaparse.min.js"></script>
 
-<link href="/apps/template2017/public/css/app.min.css" rel="stylesheet" />
+<link href="https://www1.eere.energy.gov/apps/template2017/public/css/app.min.css" rel="stylesheet" />
 <link href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
 
 <script src="states.json.js"></script>
-<script src="/apps/js/funclib.js"></script>
+<script src="https://www1.eere.energy.gov/apps/js/funclib.js"></script>
 
 <script>
     /*
@@ -35,7 +35,7 @@
 <div class="container">
 <div class="row">
 
-	<div class="col-sm-12" style="display: none;>
+	<div class="col-sm-12" style="display: none;">
 		<p class="intro_text">The Water Power Technologies Office leads innovation with strategic investments in early-stage research. Our partners in business, academia, non-governmental organizations, and the national laboratories use funding to develop technologies that can help the United States harness the full potential of hydropower and marine energy, leading to increased energy security, economic vitality, and grid reliability. Learn more about our investments in cutting-edge water power research below.</p>
 	</div>
 	<div class="col-sm-4">
@@ -59,7 +59,7 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<h3 class="panel-title">
-						<a data-toggle="collapse">Program Area</a>
+						<a data-toggle="collapse">Activity Area</a>
 					</h3>
 				</div>
 				<div id="program_collapse" class="panel-collapse collapse in">
@@ -155,7 +155,7 @@ $(document).ready(function () {
 
 	//setup Column locations
 	var objColumn = {
-		"Program_Area": 4,
+		"Activity_Area": 5,
 		"Recipient_Type": 6,
 		"Award_Type": 7,
 		"State": 8,
@@ -177,7 +177,7 @@ $(document).ready(function () {
 					'<br /><h5 class="smallField">Year Awarded:</h5><p class="dt_details smallField">&nbsp;&nbsp;' + d.Fiscal_Year_Awarded + '</p>' : '');
 	}
 
-	var csvDataFile = 'water_projects_data_2019_3_5.csv';
+	var csvDataFile = 'water_projects_data_2021_02_16.csv';
 	$.get(csvDataFile, function (data) {
 		//console.log(data);
 		var objJson = Papa.parse(removeTrailingLine(data), { "header": true });//, dynamicTyping: false, encoding: "ISO-8859-1" });
@@ -239,25 +239,26 @@ $(document).ready(function () {
 				{ "data": "CID" },
 				{
 					"data": null, render: function (data, type, row) {
-						if (data.Project_Page && data.Project_Page.trim() != '')
-							return '<a href="https://energy.gov' + data.Project_Page + '">' + data.Project_Title + '</a>';
-						else
+						//if (data.Project_Page && data.Project_Page.trim() != '')
+						//	return '<a href="https://energy.gov' + data.Project_Page + '">' + data.////Project_Title + '</a>';
+						//else
 							return data.Project_Title;
 					}
 				},
 				{ "data": "Awardee" },
+				{ "data": "Program_Area" },
 				{
 					"data": null, render: function (data, type, row) {
-						//console.log('|' + data.Subprogram_Node + '|');
+						//console.log('|' + data.Activity_Area_Node + '|');
 
 						var links = '', names = '';
-						var links = ((typeof data.Subprogram_Node !== "undefined") ? (data.Subprogram_Node.split(", ")) : '');
-						var names = ((typeof data.Program_Area !== "undefined") ? data.Program_Area.split(", ") : '');
+						var links = ((typeof data.Activity_Area_Node !== "undefined") ? (data.Activity_Area_Node.split("| ")) : '');
+						var names = ((typeof data.Activity_Area !== "undefined") ? data.Activity_Area.split("| ") : '');
 
 						var strLinks = '';
 						for (var i = 0; i < links.length; i++) {
 							if (links[i] == null || links[i].trim() === '') {
-								strLinks += names[i];
+								strLinks += names[i]+'<br/>';
 							}
 							else {
 								strLinks += '<a href="https://energy.gov' + links[i] + '"  target="_blank">' + names[i] + '</a>, ';
@@ -270,14 +271,13 @@ $(document).ready(function () {
 						return strLinks.substr(0, strLinks.length - 2);
 					}
 				},
-				{ "data": "DOE_Funding_Amount" },
 				{ "data": "Recipient_Type" },
 				{ "data": "Award_Type" },
 				{ "data": "State" },
 				{ "data": "FOA_Name" },
 				{ "data": "FOA_NodeID" },
 				{ "data": "Fiscal_Year_Awarded" },
-				{ "data": "Subprogram_Node" },
+				{ "data": "Activity_Area_Node" },
 				{ "data": "Project_Description" },
 				{ "data": "Status" },
 				{ "data": "Principal_Investigator" },
@@ -308,7 +308,8 @@ $(document).ready(function () {
 				},
 				{
 					"targets": [5],
-					"title": "DOE Funding Amount"
+					"title": "Activity Area",
+					"className": "dt-head-nowrap"
 				},
 				{
 					"targets": [6],
@@ -365,7 +366,7 @@ $(document).ready(function () {
 			},
 			"initComplete": function (settings, json) {
 
-				setup_select_filter('program_select', '#program_div', objColumn['Program_Area'], true);
+				setup_select_filter('program_select', '#program_div', objColumn['Activity_Area'], true);
 				setup_select_filter('recipient_select', '#recipient_div', objColumn['Recipient_Type'], false);
 				setup_select_filter('status_select', '#status_div', objColumn['Status'], false);
 				setup_select_filter('year_select', '#year_div', objColumn['Fiscal_Year_Awarded'], true);
@@ -408,10 +409,12 @@ $(document).ready(function () {
 
 		L.mapbox.accessToken = 'pk.eyJ1IjoiZW5lcmd5IiwiYSI6IkozTG9BZDQifQ.1WKh4U0kKCdknF3gxBOF7Q';
 
-		var map = L.mapbox.map('map', 'energy.nda103il', //'energy.0bhnj00g', 
-		{
-			zoomControl: true, attributionControl: false, maxZoom: 7, minZoom: 3,
-		}).setView([40, -96], 4);
+		//var mapid = 'energy.nda103il'; //removed this was old classic tiles api, https://docs.mapbox.com/help/troubleshooting/migrate-legacy-static-tiles-api/
+		var mapid = '';
+		var map = L.mapbox.map('map', mapid,
+		{ maxZoom: 7, minZoom: 3, attributionControl: false, legendControl: { position: 'bottomright' } })
+		.setView([40, -97], 4)
+		.addLayer(L.mapbox.styleLayer('mapbox://styles/energy/ckhc7eaqv0mjm19p3yr4jtlcw'));
 
 		var featureLayer = L.mapbox.featureLayer();
 
@@ -584,7 +587,7 @@ $(document).ready(function () {
 			// filter the full dataset from the inputs
 			var filtered = $.grep(objJson.data, function (el, idx) {
 				var valid = true;
-				if ($('#program_select').val() != 'All' && el.Program_Area.indexOf($('#program_select').val()) < 0) valid = false;
+				if ($('#program_select').val() != 'All' && el.Activity_Area.indexOf($('#program_select').val().replace("&","&amp;")) < 0) valid = false;
 				//if ($('#award_select').val() != 'All' && el.Award_Type.indexOf($('#award_select').val()) < 0) valid = false;
 				if ($('#recipient_select').val() != 'All' && el.Recipient_Type.indexOf($('#recipient_select').val()) < 0) valid = false;
 				if ($('#state_select').val() != 'All' && el.State.indexOf($('#state_select').val()) < 0) valid = false;
@@ -595,7 +598,7 @@ $(document).ready(function () {
 				if (searchString != '') {
 					if (!((el.Project_Title.toLowerCase().indexOf(searchString) == -1) // filter by Project Title
 					&& (el.Awardee.toLowerCase().indexOf(searchString) == -1) // filter by Awardee
-					&& (el.Program_Area.toLowerCase().indexOf(searchString) == -1) // filter by Program Area
+					&& (el.Activity_Area.toLowerCase().indexOf(searchString) == -1) // filter by Activity Area
 					&& (el.Recipient_Type.toLowerCase().indexOf(searchString) == -1) // filter by Recipient Type
 					&& (el.Award_Type.toLowerCase().indexOf(searchString) == -1) // filter by Award Type
 					&& (el.FOA_Name.toLowerCase().indexOf(searchString) == -1) // filter by FOA Name
@@ -662,7 +665,7 @@ $(document).ready(function () {
 		$('select').change(function () {
 			$('#projects-datatable').DataTable().search('').columns().search('').draw();
 
-			search_dt_column($('#projects-datatable').DataTable(), objColumn['Program_Area'], $('#program_select').val());
+			search_dt_column($('#projects-datatable').DataTable(), objColumn['Activity_Area'], $('#program_select').val());
 			//search_dt_column($('#projects-datatable').DataTable(), objColumn['Award_Type'], $('#award_select').val());
 			search_dt_column($('#projects-datatable').DataTable(), objColumn['Recipient_Type'], $('#recipient_select').val());
 			search_dt_column($('#projects-datatable').DataTable(), objColumn['State'], $('#state_select').val());
@@ -825,12 +828,12 @@ $(document).ready(function () {
 			$('#projects-datatable').DataTable().column(intCol).data().each(function (d, j) {
 				var tmpColumnValue = d, tmpAryValues = [];
 				if (typeof tmpColumnValue === 'object') {
-					if (objColumn['Program_Area'] == intCol)
-						tmpColumnValue = d.Program_Area.toString();
+					if (objColumn['Activity_Area'] == intCol)
+						tmpColumnValue = d.Activity_Area.toString();
 				}
 
-				if (tmpColumnValue.indexOf(", ") > 0) {
-					tmpAryValues = tmpColumnValue.split(", ");
+				if (tmpColumnValue.indexOf("| ") > 0) {
+					tmpAryValues = tmpColumnValue.split("| ");
 					$.each(tmpAryValues, function (key, val) {
 						objAllValues[val.trim()] = true;
 					});
@@ -840,7 +843,7 @@ $(document).ready(function () {
 					objAllValues[tmpColumnValue.trim()] = true;
 				}
 			});
-			for (var k in objAllValues) { if (k != '') { aryAllValues.push(k); } }
+			for (var k in objAllValues) { if (k != '') { aryAllValues.push(k.replace("&amp;","&")); } }
 			aryAllValues.sort();
 
 			//Build facet control depending on unique values from the column
@@ -871,5 +874,5 @@ $(document).ready(function () {
 });
 </script>
 
-<script src="/apps/js/pym.v1.min.js"></script>
-<script src="/apps/js/shim.js"></script>
+<script src="https://www1.eere.energy.gov/apps/js/pym.v1.min.js"></script>
+<script src="https://www1.eere.energy.gov/apps/js/shim.js"></script>
