@@ -42,8 +42,9 @@
 
 .container {
 	width: auto !important;
-    padding-left: 0px !important;
-    padding-right: 0px !important;
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+    padding-top: 8px !important;
 }
 
 /* Project Title */

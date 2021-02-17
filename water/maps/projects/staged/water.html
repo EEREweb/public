@@ -174,10 +174,10 @@ $(document).ready(function () {
 						'<a href="https://energy.gov' + d.FOA_NodeID + '" target="_blank">' + d.FOA_Name + '</a></p><br />' : d.FOA_Name + '</p><br />') : '') +
 
 				((d.Fiscal_Year_Awarded) ?
-					'<br /><h5 class="smallField">Year Awarded:</h5><p class="dt_details smallField">&nbsp;&nbsp;' + d.Fiscal_Year_Awarded + '</p>' : '');
+					'<br /><h5 class="smallField">Year Awarded:</h5><p class="dt_details smallField">&nbsp;&nbsp;' + d.Fiscal_Year_Awarded.replaceAll("| ",", ") + '</p>' : '');
 	}
 
-	var csvDataFile = 'water_projects_data_2021_02_16.csv';
+	var csvDataFile = 'water_projects_data_2021_02_17.csv';
 	$.get(csvDataFile, function (data) {
 		//console.log(data);
 		var objJson = Papa.parse(removeTrailingLine(data), { "header": true });//, dynamicTyping: false, encoding: "ISO-8859-1" });
