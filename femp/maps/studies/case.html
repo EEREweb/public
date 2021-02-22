@@ -184,7 +184,7 @@
 								<option value="Laboratories">Laboratories</option>
 								<option value="Resilience Planning">Resilience Planning</option>
 								<option value="Training">Training</option>
-								<option value="Utility Energy Service Contracts">Utility Energy Service Contracts</option>
+								<option value="Utility Program and Utility Energy Service Contracts">Utility Program and Utility Energy Service Contracts</option>
 								<option value="Water Efficiency">Water Efficiency</option>
 							</select>
 						</div>
@@ -368,7 +368,7 @@
                         ('<p class="dt_details">' + d.Description + '</p>');
         }
 
-		$.get('casestudiesmap-11121.csv', function (data) {
+		$.get('casestudies_0221.csv', function (data) {
 			var objJson = Papa.parse(removeTrailingLine(data), { "header": true });
 			var csvJson = JSON.stringify(objJson.data, null, 2);
 
