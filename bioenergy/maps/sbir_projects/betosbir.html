@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<title>Small Business Innovation Research (SBIR) Projects | Energy.gov</title>
+<meta charset="UTF-8">
+
+<script src="//www1.eere.energy.gov/apps/js/jquery/3.2.0/jquery.min.js"></script>
+
+<script src='//api.tiles.mapbox.com/mapbox.js/v3.0.1/mapbox.js?access_token="pk.eyJ1IjoiZW5lcmd5IiwiYSI6IkozTG9BZDQifQ.1WKh4U0kKCdknF3gxBOF7Q'></script>
+<link href='//api.tiles.mapbox.com/mapbox.js/v3.0.1/mapbox.css' rel='stylesheet' />
+
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
+
+<script src="//www1.eere.energy.gov/apps/js/datatables/1.10.15/jquery.dataTables.min.js"></script>
+<script src="//www1.eere.energy.gov/apps/js/bootstrap/3.3.7/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.0.6/leaflet.markercluster.js"></script>
+
+<script src="//www1.eere.energy.gov/apps/js/csv2geojson/csv2geojson.src.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.3.5/papaparse.js"></script>
+
+<script src="//www1.eere.energy.gov/apps/js/funclib.js"></script>
+
+<link href="//www1.eere.energy.gov/apps/template2017/public/css/app.min.css" rel="stylesheet" />
+<link href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
+
+<link href='betosbir.css' rel='stylesheet' />
+
+<base target="_parent">
+
+
+<div class="row">
+    <div class="col-sm-3" id="facet_div">
+
+        <div class="panel-group">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        <a data-toggle="collapse">Fiscal Year</a>
+                    </h3>
+                </div>
+                <div id="type_collapse" class="panel-collapse collapse in">
+                    <div class="panel-body" id="fy_div"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel-group">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        <a data-toggle="collapse"><i class="fa fa-minus-square-o" style="display: none;"></i>State</a>
+                    </h3>
+                </div>
+                <div id="state_collapse" class="panel-collapse collapse in">
+                    <div class="panel-body" id="state_div">
+                        <select id='state_select' name='state_select' class='form-control'>
+                            <option value="na">All</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel-group">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        <a data-toggle="collapse">SBIR Phase</a>
+                    </h3>
+                </div>
+                <div id="type_collapse" class="panel-collapse collapse in">
+                    <div class="panel-body" id="sbir_div">
+                        <select id='sbir_select' name='sbir_select' class='form-control'>
+                            <option value="na">All</option>
+                            <option value="1">1</option>
+                            <option value="2">2 and 2b</option>
+                            <option value="2b">2b</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel-group">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        <a data-toggle="collapse">Program</a>
+                    </h3>
+                </div>
+                <div id="type_collapse" class="panel-collapse collapse in">
+                    <div class="panel-body" id="program_div">
+                        <select id='program_select' name='program_select' class='form-control'>
+                            <option value="na">All</option>
+                            <option value="Algae">Advanced Algal Systems</option>
+							<option value="CO2">Carbon Dioxide</option>
+							<option value="Cookstoves">Cookstoves</option>
+                            <option value="FSL">Feedstock Supply and Logistics</option>
+							<option value="Nanocellulose">Nanocellulose</option>
+                            <option value="WTE">Waste to Energy</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+    <div class="col-sm-9">
+            <div id='map'></div>
+    </div>
+    <div class="col-sm-12">
+        <table id="sbir_projects-table1" class="display dataTable" cellspacing="0"></table>
+    </div>
+</div>
+
+<script>
+
+//setup Column locations
+var objColumn = {
+	"State": 3,
+	"FY": 5,
+	"SBIR_Phase": 6,
+	"Program": 10
+};
+
+/* Formatting function for row details - modify as you need */
+function format(d) {
+
+	return '<h5>Project Description:</h5>' +
+			'<p class="dt_details">' +
+			d.Description + '<br/>' +
+			'<a href="' + d.Web_Page + '" target="_blank">Project Information</a>' + '<br/>' + 
+	'</p>';
+}
+function search_dt_column(dtable, col, cntrl) {
+
+	var term = '';
+	term = $(cntrl).val().trim();
+	
+	//console.log('this: ' + cntrl + ' : '  + term  );
+	 
+		if (term == 'na' || term == 'All') term = '';
+		
+		if (term == '') {
+			//dtable.search('').columns().search('').draw();
+		} else {
+			//term = "^" + term + "$";
+			dtable.column(col).search(term, false, false, false).draw();
+		}
+
+}
+
+function filter_dt_column(dtable, col, control) {
+	var aryCheckVals = [];
+	$(control + ' input:checked').each(function () {
+		aryCheckVals.push(this.value);
+	});
+	var strSelectedVals = aryCheckVals.join('|');
+	strSelectedVals = strSelectedVals.replace(/\./g, "\\.");
+
+	dtable.column(col)
+		//.search( val ? strSelectedVals : val, true, false )
+			.search(strSelectedVals, true, false)
+			.draw();
+}
+
+var projectTypeAttributes = {
+	'FY 15': {
+		color: '#e37222', //orange
+		desc: '', icon: '',
+		size: 'small'
+	},
+	'FY 16': {
+		color: '#0074a1', //blue
+		desc: '', icon: '',
+		size: 'small'
+	},
+	'FY 17': {
+		color: '#5d9300', //green
+		desc: '', icon: '',
+		size: 'small'
+	},
+	'FY 18': {
+		color: '#fecb00', //yellow
+		desc: '', icon: '',
+		size: 'small'
+	},
+	//'Residential Buildings Integration': {
+	//    color: '#fecb00', //yellow
+	//    desc: '', icon: '',
+	//    size: 'small'
+	//},
+	//'Appliance Standards Program': {
+	//    color: '#5D478B', //purple
+	//    desc: '', icon: '',
+	//    size: 'small'
+	//},
+	// 'DOE - WAP': {
+	// color: '#000066', //dkblue
+	// desc:'<h4>DOE Weatherization Assistance Program</h4>'+
+	// '<p>The U.S. Department of Energy (DOE) Weatherization Assistance Program provides grants to states, territories, and some Indian tribes to improve the energy efficiency of the homes of low-income families. These governments, in turn, contract with local governments and nonprofit agencies to provide weatherization services to those in need using the latest technologies for home energy upgrades.</p>',
+	// icon:'',
+	// legend_label:'Weatherization Assistance Program',
+	// //legend_label:'WAP',
+	// size:'small'
+	// },
+	// 'NNMI': {
+	// color: '#B22222', //red
+	// desc:'<h4>National Network for Manufacturing Innovation</h4>' 
+	// icon:'industrial',
+	// //legend_label:'NNMI',
+	// legend_label:'National Network for Manufacturing Innovation',
+	// size:'large'
+	// },
+	// 'DOE - NIICE': {
+	// color: '#5E6A71', //grey
+	// desc:'<h4>DOE National Incubator Initiative for Clean Energy</h4>'
+	// icon:'',
+	// //legend_label:'NIICE',
+	// legend_label:'National Incubator Initiative for Clean Energy',
+	// size:'small'
+	// },
+	// 'DOE - National Lab': {
+	//color:'#CC66CC', //pink
+	// desc:'<h4>DOE National Laboratories</h4>'
+	// icon:'chemist',
+	// legend_label:'National Lab',
+	// size:'large'
+	// }
+};	
+
+//setup abbreviations
+var state_list = {
+	'AL': "Alabama",
+	'AK': "Alaska",
+	'AZ': "Arizona",
+	'AR': "Arkansas",
+	'CA': "California",
+	'CO': "Colorado",
+	'CT': "Connecticut",
+	'DE': "Delaware",
+	'DC': "District Of Columbia",
+	'FL': "Florida",
+	'GA': "Georgia",
+	'HI': "Hawaii",
+	'ID': "Idaho",
+	'IL': "Illinois",
+	'IN': "Indiana",
+	'IA': "Iowa",
+	'KS': "Kansas",
+	'KY': "Kentucky",
+	'LA': "Louisiana",
+	'ME': "Maine",
+	'MD': "Maryland",
+	'MA': "Massachusetts",
+	'MX': "Mexico",
+	'MI': "Michigan",
+	'MN': "Minnesota",
+	'MS': "Mississippi",
+	'MO': "Missouri",
+	'MT': "Montana",
+	'NE': "Nebraska",
+	'NV': "Nevada",
+	'NH': "New Hampshire",
+	'NJ': "New Jersey",
+	'NM': "New Mexico",
+	'NY': "New York",
+	'NC': "North Carolina",
+	'ND': "North Dakota",
+	'OH': "Ohio",
+	'OK': "Oklahoma",
+	'OR': "Oregon",
+	'PA': "Pennsylvania",
+	'PR': "Puerto Rico",
+	'RI': "Rhode Island",
+	'SC': "South Carolina",
+	'SD': "South Dakota",
+	'TN': "Tennessee",
+	'TX': "Texas",
+	'UT': "Utah",
+	'VI': "Virgin Islands",
+	'VT': "Vermont",
+	'VA': "Virginia",
+	'WA': "Washington",
+	'WV': "West Virginia",
+	'WI': "Wisconsin",
+	'WY': "Wyoming"
+};
+
+// Find and store a variable reference to the list of filters.
+var program_filter = document.getElementById('fy_div');
+var stateSelect = document.getElementById('state_select');
+
+L.mapbox.accessToken = 'pk.eyJ1IjoiZW5lcmd5IiwiYSI6IkozTG9BZDQifQ.1WKh4U0kKCdknF3gxBOF7Q';
+
+
+//var mapid = 'energy.nda103il'; //removed this was old classic tiles api, https://docs.mapbox.com/help/troubleshooting/migrate-legacy-static-tiles-api/
+var mapid = '';
+		var map = L.mapbox.map('map', mapid,
+		{ maxZoom: 7, minZoom: 3, attributionControl: false, legendControl: { position: 'bottomright' } })
+		.setView([40, -97], 4)
+		.addLayer(L.mapbox.styleLayer('mapbox://styles/energy/ckhc7eaqv0mjm19p3yr4jtlcw'));
+
+
+
+
+var featureLayer = L.mapbox.featureLayer();
+
+
+// The clusterGroup gets each marker in the group added to it
+// once loaded, and then is added to the map
+var clusterGroup = new L.MarkerClusterGroup({
+	showCoverageOnHover: true,
+	spiderfyOnMaxZoom: true,
+	maxClusterRadius: 25
+});
+
+$("#btnReset").click(function () {
+	resetMap();
+});
+
+function resetMap() {
+	$('#sbir_projects-table1_filter').find('input').val('');
+	$("#state_select").val('na');
+	$("#sbir_select").val('na');
+	$("#program_select").val('na');
+	$("#fy_div [type='checkbox']").prop('checked', true);
+
+	search();
+	filter_dt_column($('#sbir_projects-table1').DataTable(), objColumn['FY'], '#fy_div');
+	search_dt_column($('#sbir_projects-table1').DataTable(), objColumn['SBIR_Phase'], '#sbir_select');
+	search_dt_column($('#sbir_projects-table1').DataTable(), objColumn['Program'], '#program_select');
+	$('#sbir_projects-table1_filter').find('input').val('');
+
+	$('#sbir_projects-table1').DataTable().search('').columns().search('').draw();
+	map.setView([40, -97], 4);
+}
+
+$.when($.ajax({
+	type: "GET",
+	url: 'beto_sbir_awards_2019_01_07.csv',
+	aysnc: false
+
+	//success: csvLoaded
+}).done(csvLoaded));
+
+// Though these functions are below the places where they're used in this
+// script, they'll still work due to JavaScript's function hoisting feature.
+function csvLoaded(data) {
+	var objJson = Papa.parse(removeTrailingLine(data), { "header": true });
+	var csvJson = JSON.stringify(objJson.data, null, 2);
+
+	var workforce_table = $('#sbir_projects-table1').DataTable({
+		"processing": true,
+		"serverSide": false,
+		"order": [[1, 'asc'], [5, 'asc'], [6, 'asc']],
+		"pageLength": 50,
+		"data": eval(csvJson),
+
+		"columns": [
+			{
+				"class": 'details-control',
+				"orderable": false,
+				"data": null,
+				"defaultContent": ''
+			},
+			{ "data": "Institution" },
+			{
+				"data": null, render: function (data, type, row) {
+					var strLocation = data.City + ', ' + data.State;
+					return strLocation;
+				}
+			},
+			{ "data": "State" },
+			{ "data": "Title" },
+			{ "data": "FY" },
+			{ "data": "SBIR Phase" },
+			{ "data": "Start",
+				render: null, render: function (data, type, row) {
+					if ( type === 'sort' ) {
+						var d = new Date( data );
+						var unixTimestamp = Math.round(d.getTime() / 1000);
+						return unixTimestamp;
+					}
+			 
+					return data;
+				}
+			},
+			{ "data": "End",
+				render: null, render: function (data, type, row) {
+					if ( type === 'sort' ) {
+						var d = new Date( data );
+						var unixTimestamp = Math.round(d.getTime() / 1000);
+						return unixTimestamp;
+					}
+			 
+					return data;
+				}
+			},
+			{ "data": "Amount" },
+			{ "data": "Program"	},
+
+		],
+		"columnDefs": [
+			{
+				"targets": [0],
+				"visible": false
+			},
+			{
+				"targets": [1],
+				"title": "Institution"
+			},
+			{
+				"targets": [2],
+				"title": "Location"
+			},
+			{
+				"targets": [3],
+				"title": "State",
+				"visible": false
+			},
+			{
+				"targets": [4],
+				"title": "Title"
+			},
+			{
+				"targets": [5],
+				"title": "FY"
+			},
+			{
+				"targets": [6],
+				"title": "SBIR Phase"
+			},
+			{
+				"targets": [7],
+				"title": "Start",
+			},
+			{
+				"targets": [8],
+				"title": "End",
+			},
+			{
+				"targets": [9],
+				"title": "Amount"
+			},
+			{
+				"targets": [10],
+				"title": "Program",
+				"visible": false
+			},
+
+		],
+		"createdRow": function (row, data, index) {
+			//$('td', row).eq(0).append(format(data));
+		},
+		"initComplete": function (settings, json) {
+
+			$('#sbir_projects-table1_filter').find('input').keyup(function () {
+				filter_dt_column($('#sbir_projects-table1').DataTable(), objColumn['FY'], '#fy_div');
+				if ($('#state_select').val() != 'na') search_dt_column($('#sbir_projects-table1').DataTable(), objColumn['State'], '#state_select');
+				if ($('#sbir_select').val() != 'na') search_dt_column($('#sbir_projects-table1').DataTable(), objColumn['SBIR_Phase'], '#sbir_select');
+				if ($('#program_select').val() != 'na') search_dt_column($('#sbir_projects-table1').DataTable(), objColumn['Program'], '#program_select');
+				search();
+			});
+
+			// Add event listener for opening and closing details
+			$('#sbir_projects-table1 tbody').on('click', 'td.details-control', function () {
+				var tr = $(this).closest('tr');
+				var row = $('#sbir_projects-table1').DataTable().row(tr);
+
+				if (row.child.isShown()) {
+					// This row is already open - close it
+					row.child.hide();
+					tr.removeClass('shown');
+				}
+				else {
+					// Open this row
+					row.child(format(row.data())).show();
+					tr.addClass('shown');
+				}
+			});
+
+		}
+	});
+	$('#sbir_projects-table1_length').find('select').addClass('form-control');
+	$('#sbir_projects-table1_filter').find('input').addClass('form-control form-text');
+	$('#sbir_projects-table1_paginate').removeClass();
+	$('#sbir_projects-table1_paginate').addClass('pagination');
+	
+	$('#sbir_projects-table1_info').insertAfter('#sbir_projects-table1_filter');
+	$('#sbir_projects-table1_paginate').insertAfter('#sbir_projects-table1_info');
+
+	// Setup Map 
+	var dataSet = csv2geojson.csv2geojson(data);
+	//console.log(dataSet);
+	var readyLayer = featureLayer.setGeoJSON(dataSet);
+
+	setupDataControls();
+
+	map.featureLayer.on('ready', function () {
+		//add the initial data (all of it) to the map.
+		customPopup(readyLayer);
+
+		//use this for clustering
+		map.addLayer(clusterGroup);
+
+		//use this for no cluster
+		//featureLayer.addTo(map);
+	});
+
+}
+
+var checkboxes = [];
+
+function setupDataControls() {
+
+	var features = featureLayer.getGeoJSON().features;
+
+	var typesObj = {}, types = [];
+	//create projects type interface
+	for (var i = 0; i < features.length; i++) {
+		var programs = features[i].properties['FY'].split(",");
+		for (var j = 0; j < programs.length; j++) {
+			typesObj[programs[j].trim()] = true;
+		}
+	}
+	for (var k in typesObj) types.push(k);
+
+	types.sort();
+
+	// Create a resource type filter interface.
+	for (var i = 0; i < types.length; i++) {
+
+		// Create an an input checkbox and label inside.
+		var item = program_filter.appendChild(document.createElement('div'));
+		item.setAttribute('class', 'checkbox');
+		var checkbox = item.appendChild(document.createElement('input'));
+		var colorCode = item.appendChild(document.createElement('div'));
+		var label = item.appendChild(document.createElement('label'));
+
+		colorCode.setAttribute('class', 'chkboxColorKey');
+		colorCode.innerHTML = '<img />';
+		colorCode.style.background = projectTypeAttributes[types[i]].color;
+		checkbox.type = 'checkbox';
+		checkbox.id = types[i];
+		checkbox.value = types[i];
+		checkbox.checked = true;
+
+		label.innerHTML = '&nbsp;' + types[i];
+		label.setAttribute('for', types[i]);
+
+		// Whenever a person clicks on this checkbox, call the update().
+		checkbox.addEventListener('change', function () {
+			search('checkbox1');
+			var val = $(this).val();
+			
+			filter_dt_column($('#sbir_projects-table1').DataTable(), objColumn['FY'], '#fy_div');
+		});
+		checkboxes.push(checkbox);
+	}
+
+	//create state selection interface
+	var statesObj = {}, states = [];
+	for (var i = 0; i < features.length; i++) {
+		statesObj[features[i].properties['State'].trim().toUpperCase()] = true;
+	}
+	for (var k in statesObj) states.push(k);
+
+	states.sort();
+
+	for (var i = 0; i < states.length; i++) {
+		// Create an an input checkbox and label inside.
+		item = stateSelect.appendChild(document.createElement('option'));
+
+		item.setAttribute('value', states[i]);
+		//item.innerHTML = states[i];
+		item.innerHTML = state_list[states[i]];
+
+	}
+
+	$('#state_select').on('change', function () {
+		search('state_select');
+		var val = $(this).val();
+		
+		if (val == 'na') {
+			$('#sbir_projects-table1').DataTable().search('').columns().search('').draw();
+			search_dt_column($('#sbir_projects-table1').DataTable(), objColumn['State'], '#state_select');
+			search_dt_column($('#sbir_projects-table1').DataTable(), objColumn['SBIR_Phase'], '#sbir_select');
+			search_dt_column($('#sbir_projects-table1').DataTable(), objColumn['Program'], '#program_select');
+		} else {
+			if ($('#state_select').val() != 'na') search_dt_column($('#sbir_projects-table1').DataTable(), objColumn['State'], '#state_select');
+			if ($('#sbir_select').val() != 'na') search_dt_column($('#sbir_projects-table1').DataTable(), objColumn['SBIR_Phase'], '#sbir_select');
+			if ($('#program_select').val() != 'na') search_dt_column($('#sbir_projects-table1').DataTable(), objColumn['Program'], '#program_select');
+		}
+   });
+	
+	$('#sbir_select').on('change', function () {
+		search('sbir_select');
+		var val = $(this).val();
+		
+		if (val == 'na') {
+			$('#sbir_projects-table1').DataTable().search('').columns().search('').draw();
+			search_dt_column($('#sbir_projects-table1').DataTable(), objColumn['State'], '#state_select');
+			search_dt_column($('#sbir_projects-table1').DataTable(), objColumn['SBIR_Phase'], '#sbir_select');
+			search_dt_column($('#sbir_projects-table1').DataTable(), objColumn['Program'], '#program_select');
+		} else {
+			if ($('#state_select').val() != 'na') search_dt_column($('#sbir_projects-table1').DataTable(), objColumn['State'], '#state_select');
+			if ($('#sbir_select').val() != 'na') search_dt_column($('#sbir_projects-table1').DataTable(), objColumn['SBIR_Phase'], '#sbir_select');
+			if ($('#program_select').val() != 'na') search_dt_column($('#sbir_projects-table1').DataTable(), objColumn['Program'], '#program_select');
+		}
+   });
+   
+   $('#program_select').on('change', function () {
+		search('program_select');
+		var val = $(this).val();
+
+		if (val == 'na') {
+			$('#sbir_projects-table1').DataTable().search('').columns().search('').draw();
+			search_dt_column($('#sbir_projects-table1').DataTable(), objColumn['State'], '#state_select');
+			search_dt_column($('#sbir_projects-table1').DataTable(), objColumn['SBIR_Phase'], '#sbir_select');
+			search_dt_column($('#sbir_projects-table1').DataTable(), objColumn['Program'], '#program_select');
+		} else {
+			if ($('#state_select').val() != 'na') search_dt_column($('#sbir_projects-table1').DataTable(), objColumn['State'], '#state_select');
+			if ($('#sbir_select').val() != 'na') search_dt_column($('#sbir_projects-table1').DataTable(), objColumn['SBIR_Phase'], '#sbir_select');
+			if ($('#program_select').val() != 'na') search_dt_column($('#sbir_projects-table1').DataTable(), objColumn['Program'], '#program_select');
+		}
+   });
+
+	search();
+}
+
+function customPopup(markersLayer) {
+	markersLayer.eachLayer(function (layer) {
+
+		function getProgramLink(abbrev) {
+			var link = '';
+			var url = 'https://www.energy.gov/';
+			var programName = ''
+			
+			switch( abbrev ) {
+				case 'Algae': 
+					programName = $("#program_select option[value='"+abbrev+"']").text();
+					url += 'node/851471/';
+					break;
+				case 'FSL': 
+					programName = $("#program_select option[value='"+abbrev+"']").text();
+					url += 'node/851546/';
+					break;
+				case 'WTE': 
+					programName = $("#program_select option[value='"+abbrev+"']").text();
+					url += 'node/2243553/';
+					break;
+				case 'CO2':
+					programName = $("#program_select option[value='"+abbrev+"']").text();
+					url += 'eere/bioenergy/conversion-technologies';
+					break;
+				case "Other":
+					programName = 'Other';
+					url += 'node/851566/';
+					break;
+				default:
+					programName = abbrev;
+					url += 'eere/bioenergy/conversion-technologies';
+					break;					
+			}
+			
+			if ( url == 'https://www.energy.gov/' )
+			  link = programName;
+			else
+			  link = '<a href="' + url + '"" target="_blank"> ' + programName + '</a>';
+			
+			return link;
+		}
+	
+		//build out the popup in a string
+		var content = '<h3>' + layer.feature.properties.Institution + '<\/h3>' +
+				'<div class="partner_location">' + layer.feature.properties.City + ', ' + layer.feature.properties.State + '<\/div><hr\/>' +
+				'<div class="callout_label">Title: <\/div><div class="project_title">' + layer.feature.properties.Title + '<\/div>' +
+				'<div class="callout_label">Program:<\/div> ' + getProgramLink(layer.feature.properties.Program) + '<br\/>' +
+				'<div class="callout_label">Amount: <\/div>' + layer.feature.properties.Amount + ' <br\/>' + 
+				'<div class="callout_label">Fiscal Year: <\/div>' + layer.feature.properties.FY + ' <br\/>' +
+				'<div class="callout_label">SBIR Phase: <\/div>' + layer.feature.properties['SBIR Phase'] + ' <br\/>';
+
+		layer.bindPopup(content);
+
+		//style the marker
+		var project_type = layer.feature.properties.FY;
+
+		layer.setIcon(L.mapbox.marker.icon({
+			'marker-size': projectTypeAttributes[project_type].size,
+			'marker-color': projectTypeAttributes[project_type].color,
+			'marker-symbol': projectTypeAttributes[project_type].icon
+
+			//'marker-size': 'small',
+			//'marker-color': '#007A3E',
+			//'marker-symbol': ''
+		}));
+
+		clusterGroup.addLayer(layer);
+	});
+
+}
+
+function checkboxFilter(prop, cntrl) {
+	var blnFilter = false;
+
+	if ($(cntrl + ' input:checked').length <= 0) return true;
+	
+	var arr = prop.split(",");
+	for (var i = 0; i < arr.length; i++)
+	{
+		if ($("input[value='" + arr[i].trim() + "']").is(':checked')) {
+			blnFilter = true;
+		}
+	}
+
+	return blnFilter;
+}
+
+function search(strFilterName) {
+
+	// get the value of the search input field
+	var stateString = $('#state_select').val().trim().toLowerCase();          //console.log(stateString);
+	var programString = $('#program_select').val().trim().toLowerCase();      //console.log(programString);
+	var sbirString = $('#sbir_select').val().trim().toLowerCase();            //console.log(sbirString);
+	var searchString = ($('#sbir_projects-table1_filter').find('input').length > 0) ? ($('#sbir_projects-table1_filter').find('input').val().toLowerCase().trim()) : '';
+
+	featureLayer.setFilter(showState);
+	//call update to check the project type filters
+
+	// here we're simply comparing the 'state' property of each marker
+	// to the search string, seeing whether the former contains the latter.
+	// If this symbol is in the list, return true. if not, return false.
+	// The 'in' operator in javascript does exactly that: given a string
+	// or number, it says if that is in a object.
+	// 2 in { 2: true } // true
+	// 2 in { } // false
+	
+	function showState(feature) {
+		return ((feature.properties.State.toLowerCase() == stateString || stateString == 'na') // State filter 
+				&& (feature.properties.Program.trim().toLowerCase() == programString || programString == 'na') // Program filter 
+				&& (feature.properties['SBIR Phase'].indexOf(sbirString) !== -1 || sbirString == 'na') // SBIR_Phase filter
+				&& ((feature.properties.Program.toLowerCase().indexOf(searchString) !== -1) // filter by Program
+				|| (feature.properties.Institution.toLowerCase().indexOf(searchString) !== -1) // filter by Institution
+				|| (feature.properties.FY.toLowerCase().indexOf(searchString) !== -1) // filter by Fiscal Year
+				|| (feature.properties.Title.toLowerCase().indexOf(searchString) !== -1) // filter by Title
+				|| (feature.properties.City.toLowerCase().indexOf(searchString) !== -1) ) // filter by City
+				&& checkboxFilter(feature.properties['FY'], '#fy_div')); // filter by Fiscal Year
+	}
+
+	//clean up current map, remove the current clustered layer
+	map.removeLayer(clusterGroup);
+
+	//reinitialize cluster group
+	clusterGroup = new L.MarkerClusterGroup({
+		showCoverageOnHover: true,
+		spiderfyOnMaxZoom: true,
+		maxClusterRadius: 25
+	});
+
+	//update layers with new filtered data
+	customPopup(featureLayer);
+
+	map.addLayer(clusterGroup);
+	
+	function isEmpty(obj) {
+		for(var key in obj) {
+			if(obj.hasOwnProperty(key))
+				return false;
+		}
+		return true;
+	}
+
+	if ( ! ((searchString == '') && (stateString == 'na') && (programString == 'na') && (sbirString == 'na')) ) {
+		if ( ! isEmpty( clusterGroup.getBounds() )) map.fitBounds(clusterGroup.getBounds(), { padding: [45, 45] });
+	}
+
+	//reset view if user changed the state to 'all'
+	if ( (searchString == '') && (stateString == 'na') && (programString == 'na') && (sbirString == 'na') 
+		&& $("input[type='checkbox']").length == $("input[type='checkbox']:checked").length ) {
+		map.setView([40, -97], 4);
+	}
+
+}
+
+// Custom jump-to control 
+(function () {
+	L.Control.Jump = L.Control.extend({
+		options: {
+			position: 'topleft',
+			usTitle: 'Zoom to contiguous US',
+			zoomTitle: 'Zoom to Selections',
+			resetTitle: 'Reset Selections'
+		},
+
+		onAdd: function (map) {
+			// set options
+			options = this.options;
+
+			// create jump container
+			var jumpControl = 'leaflet-control-jump';
+			var container = L.DomUtil.create('div', jumpControl + ' leaflet-bar');
+
+			// add buttons
+			//this._usButton = this._createButton(options.usTitle, jumpControl + '-style-us', container, usAction);
+			this._resetTitle = this._createButton(options.resetTitle, jumpControl + '-style-reset', container, resetAction);
+
+			return container;
+		},
+
+		_createButton: function (title, className, container, fn) {
+			var link = L.DomUtil.create('a', className, container);
+			link.href = '#';
+			link.title = title;
+			if (className.indexOf('us') > 0)
+				link.innerHTML = '<b style="margin-top:12px;margin-left:5px;color: black;">US</b>';
+				link.innerHTML = '<i class="fa fa-search fa-1" style="margin-top:7px;margin-left:8px;"></i>';
+			if (className.indexOf('reset') > 0)
+				link.innerHTML = '<i class="fa fa-undo fa-1" style="margin-top:7px;margin-left:8px;"></i>';
+			L.DomEvent
+				.on(link, 'mousedown dblclick', L.DomEvent.stopPropagation)
+				.on(link, 'click', L.DomEvent.stop)
+				.on(link, 'click', fn, this)
+				.on(link, 'click', this._refocusOnMap, this);
+
+			return link;
+		}
+	});
+
+	L.control.jump = function (options) {
+		return new L.Control.Jump(options);
+	};
+})();
+
+// Create button functionality for jump control
+function usAction() {
+	map.setView([40, -97], 4);
+}
+
+function resetAction() {
+	resetMap();
+}
+
+// Add custom 'jump to' sidebar
+L.control.jump().addTo(map);
+
+</script>
+
+<script src="//www1.eere.energy.gov/apps/js/pym.v1.min.js"></script>
+<script src="//www1.eere.energy.gov/apps/js/shim.js"></script>
