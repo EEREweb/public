@@ -192,6 +192,7 @@
 										<option value="311919 Other Snack Food Manufacturing">311919 Other Snack Food Manufacturing</option>
 										<option value="311920 Coffee and Tea Manufacturing">311920 Coffee and Tea Manufacturing</option>
 										<option value="311999 Other Miscellaneous Food Manufacturing">311999 Other Miscellaneous Food Manufacturing</option>
+										<option value="312111 Soft Drink Manufacturing">312111 Soft Drink Manufacturing</option>
 										<option value="312120 Breweries">312120 Breweries</option>
 										<option value="312130 Wineries">312130 Wineries</option>
 										<option value="314110 Carpet and Rug Mills">314110 Carpet and Rug Mills</option>
@@ -440,7 +441,7 @@
 			"State": 15,
         };
 
-		$.get('chpdb_master_2021_2_25.csv', function (data) {
+		$.get('chpdb_master_2021_3_18.csv', function (data) {
 			var objJson = Papa.parse(removeTrailingLine(data), { "header": true });
 			var csvJson = JSON.stringify(objJson.data, null, 2);
 
