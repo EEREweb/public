@@ -90,7 +90,7 @@ $(document).ready(function () {
 
 	//var directoryLocation = "https://www1.eere.energy.gov/apps/femp/datatables/standbypower/";
 	var directoryLocation = "";
-	var csvDataFile = directoryLocation + "standby_power_product_list_2021_03_04.csv";
+	var csvDataFile = directoryLocation + "standby_power_product_list20210704.csv";
 	$.get(csvDataFile, function (data) {
 		var csvJson = Papa.parse(removeTrailingLine(data), { "header": true });
 		csvJson = JSON.stringify(csvJson.data, null, 2);
