@@ -226,6 +226,7 @@
 										<option value="541715 Research and Development in the Physical, Engineering, and Life Sciences">541715 Research and Development in the Physical, Engineering, and Life Sciences</option>
 										<option value="562212 Solid Waste Landfills">562212 Solid Waste Landfills</option>
 										<option value="562213 Solid Waste Combustors and Incinerators">562213 Solid Waste Combustors and Incinerators</option>
+										<option value="562219 Other Non-hazardous Waste Treatment and Disposal">562219 Other Non-hazardous Waste Treatment and Disposal</option>
 										<option value="611110 Elementary and Secondary Schools">611110 Elementary and Secondary Schools</option>
 										<option value="611310 Colleges, Universities and Professional Schools">611310 Colleges, Universities and Professional Schools</option>
 										<option value="622110 General Medical and Surgical Hospitals">622110 General Medical and Surgical Hospitals</option>
@@ -441,7 +442,7 @@
 			"State": 15,
         };
 
-		$.get('chpdb_master_2021_3_18.csv', function (data) {
+		$.get('chpdb_master_2021_4_6.csv', function (data) {
 			var objJson = Papa.parse(removeTrailingLine(data), { "header": true });
 			var csvJson = JSON.stringify(objJson.data, null, 2);
 
