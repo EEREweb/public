@@ -124,7 +124,7 @@ $(document).ready(function () {
 				{ 
 					"data": null, render: function (data, type, row) {
 					if (data["CMS node"] && data["CMS node"] != '')
-						return '<a href="https://energy.gov/node/' + data["CMS node"] + '">' + data["Publication Title"] + '</a>';
+						return '<a href="' + data["CMS node"] + '">' + data["Publication Title"] + '</a>';
 					else
 						return data["Publication Title"];
 					}
