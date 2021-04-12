@@ -101,7 +101,7 @@ $('#queryURL').val('');
 
 $(document).ready(function () {
 
-	$.get("VTO_Publications_Database_2_15_2021.csv", function (data) {
+	$.get("VTO_Publications_Database_4092021.csv", function (data) {
 		var csvJson = Papa.parse(removeTrailingLine(data), { "header": true });
 		csvJson = JSON.stringify(csvJson.data, null, 2);
 
@@ -124,7 +124,7 @@ $(document).ready(function () {
 				{ 
 					"data": null, render: function (data, type, row) {
 					if (data["CMS node"] && data["CMS node"] != '')
-						return '<a href="https://energy.gov/node/' + data["CMS node"] + '">' + data["Publication Title"] + '</a>';
+						return '<a href="' + data["CMS node"] + '">' + data["Publication Title"] + '</a>';
 					else
 						return data["Publication Title"];
 					}
