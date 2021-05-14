@@ -240,7 +240,9 @@ $(document).ready(function () {
 				}				
 				
 				updateLink = function () {
-					var filterLink = document.referrer.split('?')[0];
+					//document.referrer no longer works browsers + energy.gov do not allow for this functionality to work. Had to hardcode direct URL.
+					//var filterLink = document.referrer.split('?')[0];
+					var filterLink = "https://www.energy.gov/eere/vehicles/reports-and-publications";
 					var strQuery = '';
 					$('#queryURL').val('');
 					var search_term = $('#datatable_cf_filter').find('input').val() 
