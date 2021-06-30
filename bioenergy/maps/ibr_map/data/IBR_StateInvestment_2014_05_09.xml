@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<data>
+  <properties code="CA" investment="4.540000000000000e+001" investmentlabel="$45,400,000"/>
+  <properties code="CO" investment="2.300000000000000e+001" investmentlabel="$23,000,000"/>
+  <properties code="FL" investment="7.400000000000000e+001" investmentlabel="$74,000,000"/>
+  <properties code="GA" investment="4.410000000000000e+001" investmentlabel="$44,100,000"/>
+  <properties code="HI" investment="2.500000000000000e+001" investmentlabel="$25,000,000"/>
+  <properties code="IA" investment="1.000000000000000e+002" investmentlabel="$100,000,000"/>
+  <properties code="IL" investment="7.500000000000000e+001" investmentlabel="$75,000,000"/>
+  <properties code="KS" investment="1.000000000000000e+002" investmentlabel="$100,000,000"/>
+  <properties code="LA" investment="6.490000000000001e+001" investmentlabel="$64,900,000"/>
+  <properties code="ME" investment="3.000000000000000e+001" investmentlabel="$30,000,000"/>
+  <properties code="MI" investment="4.990000000000000e+001" investmentlabel="$49,900,000"/>
+  <properties code="MO" investment="2.500000000000000e+001" investmentlabel="$25,000,000"/>
+  <properties code="MS" investment="1.375000000000000e+002" investmentlabel="$137,500,000"/>
+  <properties code="NM" investment="5.000000000000000e+001" investmentlabel="$50,000,000"/>
+  <properties code="OH" investment="2.000000000000000e+001" investmentlabel="$20,000,000"/>
+  <properties code="OR" investment="2.610000000000000e+001" investmentlabel="$26,100,000"/>
+  <properties code="WA" investment="2.950000000000000e+001" investmentlabel="$29,500,000"/>
+  <properties code="WI" investment="1.300000000000000e+002" investmentlabel="$130,000,000"/>
+</data>
