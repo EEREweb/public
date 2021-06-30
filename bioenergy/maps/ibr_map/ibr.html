@@ -1,0 +1,183 @@
+<html>
+<head>
+
+
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.10.2/themes/redmond/jquery-ui.min.css" />
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/ui/1.10.2/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="https://www1.eere.energy.gov/apps/bioenergy/IBRMap2/js/Leaflet/leaflet.css" /><!--[if lte IE 8]><link rel="stylesheet" href="//www1.eere.energy.gov/apps/bioenergy/IBRMap2/js/Leaflet/leaflet.ie.css" /><![endif]-->
+<link rel="stylesheet" href="https://www1.eere.energy.gov/apps/bioenergy/IBRMap2/styles/main.css" /><!--[if lte IE 8]><link rel="stylesheet" href="//www1.eere.energy.gov/apps/bioenergy/IBRMap2/styles/mainIE8.css" /><![endif]-->
+<link rel="stylesheet" href="https://www1.eere.energy.gov/apps/bioenergy/IBRMap2/styles/mapindex.css" />
+</head>
+<div style="display: block; height: 200px" id="map1"></div>
+<div style="display: none" id="map2"></div>
+<script type="text/javascript" src="https://www1.eere.energy.gov/apps/bioenergy/IBRMap2/js/Leaflet/leaflet.js"></script>
+<script type="text/javascript" src="https://www1.eere.energy.gov/apps/bioenergy/IBRMap2/js/Leaflet/us-states.js"></script>
+<!--<link rel="stylesheet" href="//www1.eere.energy.gov/apps/bioenergy/IBRMap2/js/Leaflet/MarkerCluster.css" />
+	<link rel="stylesheet" href="//www1.eere.energy.gov/apps/bioenergy/IBRMap2/js/Leaflet/MarkerCluster.Default.css" />
+	<script type="text/javascript" src="//www1.eere.energy.gov/apps/bioenergy/IBRMap2/js/Leaflet/leaflet.markercluster-src.js"></script>
+
+	<script src='https://api.mapbox.com/mapbox.js/v2.2.3/mapbox.js'></script>-->
+<!--<link href='https://api.mapbox.com/mapbox.js/v2.2.3/mapbox.css' rel='stylesheet' />-->
+
+<script src='//api.tiles.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>
+<link href='//api.tiles.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet' />
+
+
+<style>
+    .markerTextLabels, .popupRightSide, .feedstocktd, .info {
+	color: #000;
+}
+
+.markerTextLabels {	
+	font-weight: bold;
+	
+	border: 2px solid gray;
+	padding: 2px;
+	background-color: white;
+	
+	white-space: nowrap;
+}
+
+.p_text {
+  color: #000;
+  border-bottom: none !important;
+}
+
+#divDesc {
+  max-width: 800px;
+}
+
+.leaflet-overlay-pane {
+	display: none;
+}
+
+#map_intro > ol {
+  list-style: inside decimal !important;
+    counter-reset: foo;
+    display: table;
+}
+
+#map_intro > li {
+  padding-left: 2.5em;
+  text-indent: -2.5em;
+    counter-increment: foo;
+    display: table-row;
+}
+#map_intro > li::before {
+    content: counter(foo) ".\a0";
+    display: table-cell; 
+    text-align: right;
+}
+.ui-dialog.ui-widget {
+  top: 600px !important;
+}
+
+ol {
+    counter-reset: foo;
+    display: table;
+}
+
+ol > li {
+    counter-increment: foo;
+    display: table-row;
+}
+
+ol > li::before {
+    content: counter(foo) ".\a0";
+    display: table-cell; /* aha! */
+    text-align: right;
+}
+
+#PrimaryFeedstock {
+    text-align:left;
+}
+
+#ProjectScale {
+    text-align:left;
+}
+
+body {
+max-height: 735px !important;
+}
+
+</style>
+
+<script>
+
+
+var GlobalVariables = {
+	getcolor: function (d) {
+		return d > 100 ? '#6d9e4f' :
+		d > 75 ? '#89b16d' :
+		d > 50 ? '#a3cb8d' :
+		d > 25 ? '#c1daae' :
+		d > 1 ? '#d3e2bb' :
+		'#e5f1d9';
+	},
+	grades: [0, 1, 25, 50, 75, 100]
+};
+
+$(function() {
+	$('#divCloseIntro').css('text-align', 'center');
+	$('#close_intro').on('click', function () {
+		$('#map_intro').hide();
+	});	
+	$('#btnCloseIntro').on('click', function () {
+		$('#map_intro').hide();
+	});
+});
+
+$( document ).ready(function() {
+	$('#map_intro').show();
+	$('#divCloseIntro').css('text-align', 'center');
+	$('#close_intro').on('click', function () {
+		$('#map_intro').hide();
+	});	
+	$('#btnCloseIntro').on('click', function () {
+		$('#map_intro').hide();
+	});
+});
+</script>
+<script type="text/javascript" src="https://www1.eere.energy.gov/apps/bioenergy/IBRMap2/js/Leaflet/overlappingMarkerSpiderfier.min.js"></script>
+
+
+<body>
+
+<div style="display: none" id="timer"></div>
+<div class="outer2">
+<div class="inner2">
+<div class="boxSmall box1"><label class="ddllabel" for="ddlConversionTechnology">Conversion Technology</label>
+<div class="styled"><select id="ddlConversionTechnology">
+<option selected="true">Loading...</option>
+</select></div>
+<label class="ddllabel2">Primary Feedstock</label>
+<div id="PrimaryFeedstock" class="bottom">Loading... </div>
+</div>
+<!--close box1-->
+<div class="box box2"><label class="ddllabel" for="ddlPrimaryProduct">Primary Product</label>
+<div class="styled"><select id="ddlPrimaryProduct">
+<option selected="true">Loading...</option>
+</select></div>
+<label class="ddllabel2">Project Scale</label>
+<div id="ProjectScale" class="bottom">Loading... </div>
+</div>
+<!--close box2-->
+<div class="box box4">
+	<fieldset id="radio" style="display: none;"><legend>Choose map view</legend><input style="display: inline" id="radio1" value="investment" type="radio" name="map" /><label style="display: inline" for="radio1">BETO Biorefinery Investments by State</label><br />
+	<input style="display: inline" id="radio2" value="name" checked="true" type="radio" name="map" /><label style="display: inline" for="radio2">Display by Project</label> </fieldset>
+	<div style="margin-top:25px;">
+		<input style="font-weight: normal;" id="showHideCheckbox" value="showLabels" type="checkbox" name="label" /><label style="display: inline" for="showHideCheckbox">Show Map Labels</label> 
+	</div>
+</div><!--close box4-->
+</div><!--close inner-->
+</div><!--outer-->
+<div class="outer2">
+<script type="text/javascript" src="namemap2.js"></script>
+<script type="text/javascript" src="drawmap2.js"></script>
+<script src="index2.js"></script>
+
+</div>
+
+</body>
+</html>

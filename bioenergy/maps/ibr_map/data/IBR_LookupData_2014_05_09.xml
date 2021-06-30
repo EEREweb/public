@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Lookups AppVersion="2014-04-10 14:01:59.497">
+  <ConversionTechnology Name="Algae"/>
+  <ConversionTechnology Name="Biochemical"/>
+  <ConversionTechnology Name="Chemical"/>
+  <ConversionTechnology Name="Hybrid"/>
+  <ConversionTechnology Name="Thermochemical-Gasification"/>
+  <ConversionTechnology Name="Thermochemical-Pyrolysis"/>
+  <Product Name="biobutanol"/>
+  <Product Name="bioproducts"/>
+  <Product Name="ethanol"/>
+  <Product Name="renewable hydrocarbons"/>
+  <ProjectScale ShowLast="0" Name="Pioneer" Label="Pioneer" MarkerIcon="commercial.png"/>
+  <ProjectScale ShowLast="0" Name="Demonstration" Label="Demonstration" MarkerIcon="demo.png"/>
+  <ProjectScale ShowLast="1" Name="Inactive" Label="Successfully Completed Projects" MarkerIcon="successful.png"/>
+  <ProjectScale ShowLast="0" Name="Pilot" Label="Pilot" MarkerIcon="pilot.png"/>
+  <Feedstock Name="Agricultural Residues"/>
+  <Feedstock Name="Algae"/>
+  <Feedstock Name="Woody Biomass"/>
+  <Feedstock Name="Energy Crops"/>
+  <Feedstock Name="MSW"/>
+  <Feedstock Name="Vegetative and yard waste"/>
+</Lookups>
