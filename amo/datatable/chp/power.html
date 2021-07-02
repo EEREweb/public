@@ -230,6 +230,7 @@
 										<option value="611110 Elementary and Secondary Schools">611110 Elementary and Secondary Schools</option>
 										<option value="611310 Colleges, Universities and Professional Schools">611310 Colleges, Universities and Professional Schools</option>
 										<option value="622110 General Medical and Surgical Hospitals">622110 General Medical and Surgical Hospitals</option>
+										<option value="621111 Offices of Physicians">621111 Offices of Physicians</option>
 										<option value="623110 Nursing Care Facilities">623110 Nursing Care Facilities</option>
 										<option value="623311 Continuing Care Retirement Communities">623311 Continuing Care Retirement Communities</option>
 										<option value="713940 Fitness and Recreational Sports Centers">713940 Fitness and Recreational Sports Centers</option>
@@ -442,7 +443,7 @@
 			"State": 15,
         };
 
-		$.get('chpdb_master_2021_4_6.csv', function (data) {
+		$.get('chpdb_master_2021_7_2.csv', function (data) {
 			var objJson = Papa.parse(removeTrailingLine(data), { "header": true });
 			var csvJson = JSON.stringify(objJson.data, null, 2);
 
