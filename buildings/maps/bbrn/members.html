@@ -378,11 +378,17 @@ function dataLoaded(data) {
 			};
 		  
 		  	blank = {
+			  weight: 2,
+			  opacity: 0.4,
+			  color: 'green',
+			  fillOpacity: 0.06,
+			  fillColor: 'green'
+			  /* KC: Removed the 'off' state of the states as requested by client
 			  weight: 0,
 			  opacity: 0.0,
 			  color: 'white',
 			  fillOpacity: 0.0,
-			  fillColor: 'white'
+			  fillColor: 'white'*/
 			};
 			
 			if ( $.inArray(feature.properties.abbreviation.toString(), statesInPlay) == -1 )
