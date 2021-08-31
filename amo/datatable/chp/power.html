@@ -236,6 +236,7 @@
 										<option value="713940 Fitness and Recreational Sports Centers">713940 Fitness and Recreational Sports Centers</option>
 										<option value="721110 Hotels and Motels">721110 Hotels and Motels</option>
 										<option value="721120 Casino Hotels">721120 Casino Hotels</option>
+										<option value="722511 Full-Service Restaurants">722511 Full-Service Restaurants</option>
 										<option value="813110 Religious Organizations">813110 Religious Organizations</option>
 										<option value="813410 Civic and Social Organizations">813410 Civic and Social Organizations</option>
 										<option value="813990 Cooperative Owners' Associations">813990 Cooperative Owners' Associations</option>
@@ -443,7 +444,7 @@
 			"State": 15,
         };
 
-		$.get('chpdb_master_2021_7_2.csv', function (data) {
+		$.get('chpdb_master_2021_8_27.csv', function (data) {
 			var objJson = Papa.parse(removeTrailingLine(data), { "header": true });
 			var csvJson = JSON.stringify(objJson.data, null, 2);
 
