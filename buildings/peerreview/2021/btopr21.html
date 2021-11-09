@@ -1,0 +1,298 @@
+
+<!DOCTYPE html>
+<title>Buildings Peer Review 2019 | Department of Energy</title>
+<meta charset="UTF-8">
+
+<script src="//www1.eere.energy.gov/apps/js/jquery/3.2.0/jquery.min.js"></script>
+<script src="//www1.eere.energy.gov/apps/js/funclib.js"></script>
+<script src="//www1.eere.energy.gov/apps/js/datatables/1.10.15/jquery.dataTables.min.js"></script>
+<script src="//www1.eere.energy.gov/apps/js/papaparse/4.1.2/papaparse.min.js"></script>
+
+<link href="//www1.eere.energy.gov/apps/css/common.css" rel="stylesheet" />
+
+<link href="btopr21.css" rel="stylesheet" />
+
+<base target="_blank">
+
+<div class="content">
+    <div class="container">
+        <div class="row">
+
+
+            <div class="col-sm-3" id="facet_div">
+
+                <div class="panel-group">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                                <a data-toggle="collapse" href="javascript:void(0);" title="Program">Program</a>
+                            </h3>
+                        </div>
+                        <div id="type_collapse" class="panel-collapse collapse in">
+                            <div class="panel-body" id="program_select_div"></div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                                <a data-toggle="collapse" href="javascript:void(0);">Activity</a>
+                            </h3>
+                        </div>
+                        <div id="labname_collapse" class="panel-collapse collapse in">
+                            <div class="panel-body" id="activity_select_div"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-sm-9">
+                <h3>Project Pages and Presentations</h3>
+                <table id="datatable1" class="display dataTable"></table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    //setup Column locations
+    var objColumn = {
+        "Program": 1,
+        "Activity": 2,
+    };
+	
+
+    /* Formatting function for row details - modify as you need */
+    function format(d) {
+        var tmpActivityType = '';
+        if (d.Activity_Detail.toString().indexOf("(Portfolio)") > 0 )
+            tmpActivityType = 'Activity Category: ' + (d.Activity_Detail.toString()) + '<br/><br/>';
+        return '<h5>Peer Review Details:</h5>' + '<p class="dt_details">' + tmpActivityType + (d.Text.toString()) + '</p>';
+    }
+
+    $(document).ready(function () {
+
+        $.get("2021_BTO_Peer_Review_2021_11_09.csv", function (data) {
+            var csvJson = Papa.parse(removeTrailingLine(data), { "header": true });
+            csvJson = JSON.stringify(csvJson.data, null, 2);
+
+            var workforce_table = $('#datatable1').DataTable({
+                "processing": true,
+                "serverSide": false,
+                "autoWidth": false,
+                "order": [],
+                "pageLength": 25,
+                "data": eval(csvJson),
+
+                "columns": [
+                    {
+                        "class": 'details-control',
+                        "orderable": false,
+                        "data": null,
+                        "defaultContent": ''
+                    },
+                    { "data": "Program" },
+                    { "data": "Activity" },
+                    { "data": "Presenting Organization" },
+                    {
+                        "data": null, render: function (data, type, row) {
+                            return '<a href="' + data.URL + '" >' + data['Project Title'] + '</a>';
+                        }
+                    },
+                    { "data": "URL" },
+                    { "data": "Text" },
+
+                ],
+                "columnDefs": [
+                    {
+                        "targets": [0],
+                        "title": ""
+                    },
+                    {
+                        "targets": [1],
+                        "title": "Program"
+                    },
+                    {
+                        "targets": [2],
+                        "title": "Activity"
+                    },
+                    {
+                        "targets": [3],
+                        "title": "Presenting Organization"
+                    },
+                    {
+                        "targets": [4],
+                        "title": "Project Title"
+                    },
+                    {
+                        "targets": [5],
+                        "title": "URL",
+                        "visible": false
+                    },
+                    {
+                        "targets": [6],
+                        "title": "Text",
+                        "visible": false
+                    }
+                ],
+                "createdRow": function (row, data, index) {
+                    $('td', row).eq(0).append((data));
+                },
+                "initComplete": function (settings, json) {
+
+                    $('#datatable1_filter').prependTo('#facet_div');
+                    $('#datatable1_filter').find('input').addClass('form-control');
+                    $('#datatable1_length').find('select').addClass('form-control');
+                    $('#datatable1_paginate').removeClass();
+                    $('#datatable1_paginate').addClass('pagination');
+                    $('#datatable1_info').prependTo('#datatable1_wrapper');
+
+                    setup_select_filter('program_select', '#program_select_div', objColumn['Program'], true);
+                    setup_select_filter('activity_select', '#activity_select_div', objColumn['Activity'], true);
+
+                    var pti = $('#program_select_div .checkbox input[value="Cross-Cutting"]').parent().parent();
+                    pti.insertBefore($('#program_select_div .checkbox:first'));
+
+					var i = 0;
+                    var apo = $('#activity_select_div .checkbox input[value="Overview"]').parent().parent();
+					apo.insertBefore($('#activity_select_div .checkbox:first'));
+
+                    var aip = $('#activity_select_div .checkbox input[value="Plenary and Panel Session"]').parent().parent();
+					aip.insertAfter($('#activity_select_div .checkbox:nth-child(1)'));
+
+                    var atd = $('#activity_select_div .checkbox input[value="Technology Systems & Packages (CBI)"]').parent().parent();
+					atd.insertAfter($('#activity_select_div .checkbox:nth-child(5)'));
+
+                    //$('.dt_details').on("load", function () { char_convert(this); });
+
+                    //Setup datatable if there are querystring vars
+                    //todo: handle multiple values for Facets, find a better way to do this, there is a bug if the Value sent in is not unique to all facets
+                    if (Object.keys(qs).length != 0) {
+						
+						function objLookup (colName) {
+							var found = false;
+							for (var k in objColumn) {
+								if ( k == colName) 
+									found = true;
+							}
+							return found;
+						}
+					
+                        $.each(qs, function (val, key) {
+							if ( objLookup(val) ){
+								$('input[type="checkbox"][value="' + key + '"]').prop('checked', true);
+								search_dt_column($('#datatable1').DataTable(), objColumn[val], key);
+							}
+                        });
+
+                    }
+
+                    // Add event listener for opening and closing details
+                    $('#datatable1 tbody').on('click', 'td.details-control', function () {
+                        var tr = $(this).closest('tr');
+                        var row = $('#datatable1').DataTable().row(tr);
+
+                        if (row.child.isShown()) {
+                            // This row is already open - close it
+                            row.child.hide();
+                            tr.removeClass('shown');
+                        }
+                        else {
+                            // Open this row
+                            row.child(format(row.data())).show();
+                            tr.addClass('shown');
+                        }
+                    });
+
+
+                }
+            });
+        });
+
+    });
+
+    function search_dt_column(dtable, col, term) {
+        dtable.column(col).search(term).draw();
+    }
+
+    function setup_select_filter(strSelectID, strDivID, intCol, blnMulti) {
+
+        var tmpMarkup, tmpLabel, chkBoxMarkup;
+
+
+        if (!blnMulti) {
+            $('#datatable1').DataTable().column(intCol).data().unique().sort().each(function (d, j) {
+                tmpMarkup = $('<div class="checkbox"></div>').appendTo($(strDivID));
+                tmpLabel = $('<label></label>').appendTo(tmpMarkup);
+                chkBoxMarkup = $('<input type="checkbox" value="' + d + '">')
+                        .on('change', function () {
+                            var aryCheckVals = [];
+                            $(strDivID + ' input:checked').each(function () {
+                                aryCheckVals.push(this.value);
+
+                            });
+                            var strSelectedVals = aryCheckVals.join('|');
+                            strSelectedVals = strSelectedVals.replace(/\./g, "\\.");
+
+                            $('#datatable1').DataTable().column(intCol)
+                                //.search( val ? strSelectedVals : val, true, false )
+                                    .search(strSelectedVals, true, false)
+                                    .draw();
+
+                        });
+
+
+                tmpLabel.append(chkBoxMarkup);
+                tmpLabel.append(' ' + d);
+
+            });
+        }
+        else {
+            //there are multiple values in the column. Separate and find all uniques
+            var aryAllValues = [], objAllValues = {};
+            $('#datatable1').DataTable().column(intCol).data().each(function (d, j) {
+                var tmpColumnValue = d, tmpAryValues = [];
+                if (tmpColumnValue.indexOf(";") > 0) {
+                    tmpAryValues = tmpColumnValue.split(";");
+                    $.each(tmpAryValues, function (key, val) {
+                        objAllValues[val.trim()] = true;
+                    });
+
+                }
+                else {
+                    objAllValues[tmpColumnValue] = true;
+                }
+            });
+            for (var k in objAllValues) aryAllValues.push(k);
+            aryAllValues.sort();
+
+            //Build facet control depending on unique values from the column
+            $.each(aryAllValues, function (key, val) {
+                tmpMarkup = $('<div class="checkbox"></div>').appendTo($(strDivID));
+                tmpLabel = $('<label></label>').appendTo(tmpMarkup);
+                chkBoxMarkup = $('<input type="checkbox" value="' + val + '" />')
+                        .on('change', function () {
+                            var aryCheckVals = [];
+                            $(strDivID + ' input:checked').each(function () {
+                                aryCheckVals.push(this.value);
+                            });
+                            var strSelectedVals = aryCheckVals.join('|');
+                            strSelectedVals = strSelectedVals.replace(/\./g, "\\.");
+                            //var val = $(this).val();
+
+                            $('#datatable1').DataTable().column(intCol)
+                                //.search( val ? strSelectedVals : val, true, false )
+                                    .search(strSelectedVals, false, true)
+                                    .draw();
+                        });
+                tmpLabel.append(chkBoxMarkup);
+                tmpLabel.append(' ' + val);
+            });
+
+        }
+
+    }
+</script>
+
+<script src="//www1.eere.energy.gov/apps/js/pym.v1.min.js"></script>
+<script src="//www1.eere.energy.gov/apps/js/shim.js"></script>
