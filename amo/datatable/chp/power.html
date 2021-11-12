@@ -293,6 +293,7 @@
 										<option value="Compressed Natural Gas">Compressed Natural Gas (CNG)</option>
 										<option value="Fuel Oil">Fuel Oil</option>
 										<option value="Geothermal Energy">Geothermal Energy</option>
+										<option value="Hydrogen">Hydrogen</option>
 										<option value="Municipal Solid Waste">Municipal Solid Waste</option>
 										<option value="Natural Gas">Natural Gas</option>
 										<option value="Propane">Propane</option>
@@ -445,7 +446,7 @@
 			"State": 15,
         };
 
-		$.get('chpdb_master_2021_9_21.csv', function (data) {
+		$.get('chpdb_master_2021_11_10.csv', function (data) {
 			var objJson = Papa.parse(removeTrailingLine(data), { "header": true });
 			var csvJson = JSON.stringify(objJson.data, null, 2);
 
