@@ -48,44 +48,7 @@
 <div class="container">-->
 
 <div class="row">
-	<div class="col-sm-12"> 
 	
-<div class="routes">
-                        <ul class="tabs clear vert-match">
-                            <li class="tab">
-                                <a href="https://www.energy.gov/node/2332633/" target="_parent" data-slug="advancement-routes" data-type="freeform" class="route-item vert-match-box-99">
-                                    <div class="vcenter">BIOENERGY CAREERS</div>
-                                </a>
-                            </li>
-                            <li class="tab">
-                                <a href="https://www.energy.gov/node/4110569/" target="_parent" data-slug="advancement-routes" data-type="freeform" class="route-item vert-match-box-99">
-                                    <div class="vcenter">ALGAE TECHNOLOGY EDUCATIONAL CONSORTIUM</div>
-                                </a>
-                            </li>
-                            <li class="tab">
-                                <a href="https://www.energy.gov/node/4045677" target="_parent" data-slug="advancement-routes" data-type="freeform" class="route-item active vert-match-box-99">
-                                    <div class="vcenter">WORKFORCE DEVELOPMENT OPPORTUNITIES</div>
-                                </a>
-                            </li>
-                        </ul>
-                        <div class="description">
-                            <div class="row tab-content active" data-slug="advancement-routes">
-                                <div class="text col-sm-10">
-                                    <p>
-                                        Explore ATEC and other bioenergy workforce development opportunities. Mouse over the pinned locations on the U.S. map and interact with the search fields to create a personalized list of training options.
-                                    </p>
-                                </div>
-                                <div class="col-sm-2">
-                                    <a href="https://www.energy.gov/node/2332633/" target="_parent">
-                                        <img src="//www1.eere.energy.gov/apps/bioenergy/career_map/img/bioenergy-career-map-icon01.png" alt="Bioenergy Career Wheel" title="Back to the Career Exploration Wheel">
-                                    </a>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>	
-		
-	</div>
 
     <div class="col-sm-4" id="facet_div">
 
@@ -165,7 +128,7 @@
     <div class="col-sm-8">
         <div id='map'>
 			<div id="map" class="leaflet-container leaflet-fade-anim" tabindex="0">
-				<div id="map_intro" style="display: block;"><span class="close" id="close_intro">X</span>
+				<!--<div id="map_intro" style="display: block;"><span class="close" id="close_intro">X</span>
 					<p><strong>Workforce Training Opportunities Map</strong></p><br>
 					<p>This interactive map highlights bioenergy training program options across the United States. Adjust the map filters to control the information displayed. You can zoom in and out of the map several ways:</p>
 					<ol>
@@ -178,7 +141,7 @@
 				</p><p><strong>(We suggest using Chrome as a browser to view this map.)</strong></p><br>
 					<div id="divCloseIntro" style="text-align: center;"><button id="btnCloseIntro" type="button" class="btn btn-default">Get Started</button></div>
 					<br><br>
-				</div>
+				</div>-->
 			</div>
 		</div>
     </div>
@@ -205,7 +168,7 @@
     };
 
 	var github_location = '';
-	var csvDataFile = github_location + 'beto_training_20210818.csv';
+	var csvDataFile = github_location + 'beto_training_20211203.csv';
 	$.when($.ajax({
 		type: "GET",
 		url: csvDataFile,
@@ -217,7 +180,7 @@
 	// Though these functions are below the places where they're used in this
 	// script, they'll still work due to JavaScript's function hoisting feature.
 	function csvLoaded(data) {
-		$('#map_intro').show();
+		//$('#map_intro').show();
 
 		//console.log(data);
 		var objJson = Papa.parse(removeTrailingLine(data), { "header": true });
@@ -230,7 +193,7 @@
 			"serverSide": false,
 			"order": [[1, 'asc']],
 			"lengthMenu": [[ -1, 5, 10, 25, 50], ["All", 5, 10, 25, 50]],
-			"pageLength": (qs['showAll'] == 'true') ? -1 : -1,
+			"pageLength": (qs['showAll'] == 'true') ? -1 : 25,
 			"data": eval(csvJson),
 
 			"columns": [
@@ -736,7 +699,7 @@ console.log(tmpColumnValue);
 	// Add custom 'jump to' sidebar
 	L.control.jump().addTo(map);
 
-	$(function() {
+	/*$(function() {
         $('#divCloseIntro').css('text-align', 'center');
         $('#close_intro').on('click', function () {
                 $('#map_intro').hide();
@@ -744,7 +707,7 @@ console.log(tmpColumnValue);
         $('#btnCloseIntro').on('click', function () {
                 $('#map_intro').hide();
         });
-	});
+	});*/
 
 </script>
 
