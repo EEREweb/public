@@ -187,6 +187,7 @@
 										<option value="221320 Sewage Treatment Facilities">221320 Sewage Treatment Facilities</option>
 										<option value="311221 Wet Corn Milling">311221 Wet Corn Milling</option>
 										<option value="311224 Soybean and Other Oilseed Processing">311224 Soybean and Other Oilseed Processing</option>
+										<option value="311421 Fruit and Vegetable Canning">311421 Fruit and Vegetable Canning</option>
 										<option value="311511 Fluid Milk Manufacturing">311511 Fluid Milk Manufacturing</option>
 										<option value="311615 Poultry Processing">311615 Poultry Processing</option>
 										<option value="311919 Other Snack Food Manufacturing">311919 Other Snack Food Manufacturing</option>
@@ -204,6 +205,7 @@
 										<option value="322291 Sanitary Paper Product Manufacturing">322291 Sanitary Paper Product Manufacturing</option>
 										<option value="324110 Petroleum Refineries">324110 Petroleum Refineries</option>
 										<option value="324199 Other Petroleum and Coal Products Manufacturing">324199 Other Petroleum and Coal Products Manufacturing</option>
+										<option value="424480 Fresh Fruit and Vegetable Merchant Wholesalers">424480 Fresh Fruit and Vegetable Merchant Wholesalers</option>
 										<option value="325180 Other Basic Inorganic Chemical Manufacturing">325180 Other Basic Inorganic Chemical Manufacturing</option>
 										<option value="325193 Ethyl Alcohol Manufacturing">325193 Ethyl Alcohol Manufacturing</option><option value="325211 Plastics Material and Resin Manufacturing">325211 Plastics Material and Resin Manufacturing</option>
 										<option value="325311 Nitrogenous Fertilizer Manufacturing">325311 Nitrogenous Fertilizer Manufacturing</option>
@@ -446,7 +448,7 @@
 			"State": 15,
         };
 
-		$.get('chpdb_master_2021_11_15.csv', function (data) {
+		$.get('chpdb_master_2022_01_05.csv', function (data) {
 			var objJson = Papa.parse(removeTrailingLine(data), { "header": true });
 			var csvJson = JSON.stringify(objJson.data, null, 2);
 
