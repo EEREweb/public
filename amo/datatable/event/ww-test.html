@@ -28,7 +28,7 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h3 class="panel-title">
-                                <a data-toggle="collapse">Sssssssubject</a>
+                                <a data-toggle="collapse">Subject</a>
                             </h3>
                         </div>
                         <div id="subject_collapse" class="panel-collapse collapse in">
@@ -110,7 +110,7 @@ var objColumn = {
 	"Pillar": 6,
 };
 $(document).ready(function () {
-	$.get("amo_workshop_webinar_2022_1_6.csv", function (data) {
+	$.get("amo_workshop_webinar_2022_1_10.csv", function (data) {
 		var csvJson = Papa.parse(removeTrailingLine(data), { "header": true });
 		csvJson = JSON.stringify(csvJson.data, null, 2);
 		var datatable = $('#datatable_cf').DataTable({
