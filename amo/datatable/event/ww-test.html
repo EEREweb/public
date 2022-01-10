@@ -24,14 +24,11 @@
 			</div>
 
 			<div class="col-sm-12" id="facet_div">
-			
-			
-		
-			                <div class="panel-group col-sm-2">
+				<div class="panel-group col-sm-2">
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h3 class="panel-title">
-                                <a data-toggle="collapse">Subject Type</a>
+                                <a data-toggle="collapse">Subject</a>
                             </h3>
                         </div>
                         <div id="subject_collapse" class="panel-collapse collapse in">
@@ -42,8 +39,7 @@
 						</div>
 					</div>
 				</div>
-			
-	<div class="col-sm-1"></div>
+			<div class="col-sm-1"></div>
                 <div class="panel-group col-sm-2">
                     <div class="panel panel-default">
                         <div class="panel-heading">
@@ -108,7 +104,7 @@ function format(d) {
 }
 //setup Column locations
 var objColumn = {
-	"SubjectType": 1,
+	"Subject": 1,
 	"EventType": 2,
 	"EventDate": 7,
 	"Pillar": 6,
@@ -132,8 +128,7 @@ $(document).ready(function () {
 					"data": null,
 					"defaultContent": ''
 				},
-				
-								
+				{ "data": "Subject" },
 				{ "data": "Event Type" },
 				{ 
 					"data": null, render: function (data, type, row) {
@@ -154,7 +149,6 @@ $(document).ready(function () {
 						return data["Event Date"];
 					}
 				},
-				{ "data": "Subject" },
 				{ "data": "AMO Pillar" },
 				{ "data": "Event Date" },
 			],
@@ -238,7 +232,7 @@ $(document).ready(function () {
 				$('select').addClass('form-control');
 				
 				$('select').on('change', function () {
-					if ($(this).attr('id') == 'subject_select') search_dt_column($('#datatable_cf').DataTable(), objColumn["SubjectType"], $(this));
+					if ($(this).attr('id') == 'subject_select') search_dt_column($('#datatable_cf').DataTable(), objColumn["Subject"], $(this));
 					if ($(this).attr('id') == 'event_select') search_dt_column($('#datatable_cf').DataTable(), objColumn["EventType"], $(this));
 					if ($(this).attr('id') == 'date_select') filter_dt_column($('#datatable_cf').DataTable(), objColumn["EventDate"], $(this));
 					if ($(this).attr('id') == 'pillar_select') search_dt_column($('#datatable_cf').DataTable(), objColumn["Pillar"], $(this));
