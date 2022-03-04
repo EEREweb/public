@@ -134,6 +134,8 @@
 										<option value="Agriculture">Agriculture</option>
 										<option value="Amusement and Recreation">Amusement and Recreation</option>
 										<option value="Breweries">Breweries</option>
+										<option value="Child and Youth Services">Child and Youth Services</option>
+										<option value="Child Day Care Services">Child Day Care Services</option>
 										<option value="Data Centers">Data Centers</option>
 										<option value="District Energy">District Energy</option>
 										<option value="Ethanol Plants">Ethanol Plants</option>
@@ -187,6 +189,7 @@
 										<option value="221320 Sewage Treatment Facilities">221320 Sewage Treatment Facilities</option>
 										<option value="311221 Wet Corn Milling">311221 Wet Corn Milling</option>
 										<option value="311224 Soybean and Other Oilseed Processing">311224 Soybean and Other Oilseed Processing</option>
+										<option value="311421 Fruit and Vegetable Canning">311421 Fruit and Vegetable Canning</option>
 										<option value="311511 Fluid Milk Manufacturing">311511 Fluid Milk Manufacturing</option>
 										<option value="311615 Poultry Processing">311615 Poultry Processing</option>
 										<option value="311919 Other Snack Food Manufacturing">311919 Other Snack Food Manufacturing</option>
@@ -216,6 +219,7 @@
 										<option value="332216 Saw Blade and Handtool Manufacturing">332216 Saw Blade and Handtool Manufacturing</option>
 										<option value="333120 Construction Machinery Manufacturing">333120 Construction Machinery Manufacturing</option>
 										<option value="336111 Automotive Manufacturing">336111 Automotive Manufacturing</option>
+										<option value="424480 Fresh Fruit and Vegetable Merchant Wholesalers">424480 Fresh Fruit and Vegetable Merchant Wholesalers</option>
 										<option value="441110 New Car Dealers">441110 New Car Dealers</option>
 										<option value="445110 Supermarkets and Other Grocery Stores">445110 Supermarkets and Other Grocery Stores</option>
 										<option value="488111 Air Traffic Control">488111 Air Traffic Control</option>
@@ -234,6 +238,8 @@
 										<option value="621111 Offices of Physicians">621111 Offices of Physicians</option>
 										<option value="623110 Nursing Care Facilities">623110 Nursing Care Facilities</option>
 										<option value="623311 Continuing Care Retirement Communities">623311 Continuing Care Retirement Communities</option>
+										<option value="624110 Child and Youth Services">624110 Child and Youth Services</option>
+										<option value="624410 Child Day Care Services">624410 Child Day Care Services</option>
 										<option value="713940 Fitness and Recreational Sports Centers">713940 Fitness and Recreational Sports Centers</option>
 										<option value="721110 Hotels and Motels">721110 Hotels and Motels</option>
 										<option value="721120 Casino Hotels">721120 Casino Hotels</option>
@@ -446,7 +452,7 @@
 			"State": 15,
         };
 
-		$.get('chpdb_master_2021_11_15.csv', function (data) {
+		$.get('chpdb_master_2022_03_01.csv', function (data) {
 			var objJson = Papa.parse(removeTrailingLine(data), { "header": true });
 			var csvJson = JSON.stringify(objJson.data, null, 2);
 
