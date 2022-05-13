@@ -156,6 +156,7 @@
 										<option value="Refineries">Refineries</option>
 										<option value="Retail Sales">Retail Sales</option>
 										<option value="Schools">Schools</option>
+										<option value="Senior Living Community">Senior Living Community</option>
 										<option value="Transportation">Transportation</option>
 										<option value="Universities and Colleges">Universities and Colleges</option>
 										<option value="Utilities">Utilities</option>
@@ -236,6 +237,7 @@
 										<option value="611310 Colleges, Universities and Professional Schools">611310 Colleges, Universities and Professional Schools</option>
 										<option value="622110 General Medical and Surgical Hospitals">622110 General Medical and Surgical Hospitals</option>
 										<option value="621111 Offices of Physicians">621111 Offices of Physicians</option>
+										<option value="621112 Offices of Physicians, Mental Health Specialists">621112 Offices of Physicians, Mental Health Specialists</option>
 										<option value="623110 Nursing Care Facilities">623110 Nursing Care Facilities</option>
 										<option value="623311 Continuing Care Retirement Communities">623311 Continuing Care Retirement Communities</option>
 										<option value="624110 Child and Youth Services">624110 Child and Youth Services</option>
@@ -452,7 +454,7 @@
 			"State": 15,
         };
 
-		$.get('chpdb_master_2022_03_10.csv', function (data) {
+		$.get('chpdb_master_2022_05_13.csv', function (data) {
 			var objJson = Papa.parse(removeTrailingLine(data), { "header": true });
 			var csvJson = JSON.stringify(objJson.data, null, 2);
 
