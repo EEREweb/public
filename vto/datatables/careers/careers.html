@@ -31,7 +31,7 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h3 class="panel-title">
-                                <a data-toggle="collapse">Technology Area</a>
+                                <a data-toggle="collapse">Location</a>
                             </h3>
                         </div>
                         <div id="tech_collapse" class="panel-collapse collapse in">
@@ -48,7 +48,7 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h3 class="panel-title">
-                                <a data-toggle="collapse">Publication Year</a>
+                                <a data-toggle="collapse">Position Close</a>
                             </h3>
                         </div>
                         <div id="year_collapse" class="panel-collapse collapse in">
@@ -63,7 +63,7 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h3 class="panel-title">
-                                <a data-toggle="collapse">Published By</a>
+                                <a data-toggle="collapse">Grade</a>
                             </h3>
                         </div>
                         <div id="org_collapse" class="panel-collapse collapse in">
@@ -103,7 +103,7 @@ $('#queryURL').val('');
 
 $(document).ready(function () {
 
-	$.get("VTO_Publications_Database_12.1.2021.csv", function (data) {
+	$.get("VTO_careers_06-12-2022.csv", function (data) {
 		var csvJson = Papa.parse(removeTrailingLine(data), { "header": true });
 		csvJson = JSON.stringify(csvJson.data, null, 2);
 
@@ -126,15 +126,15 @@ $(document).ready(function () {
 				{ 
 					"data": null, render: function (data, type, row) {
 					if (data["CMS node"] && data["CMS node"] != '')
-						return '<a href="' + data["CMS node"] + '">' + data["Publication Title"] + '</a>';
+						return '<a href="' + data["CMS node"] + '">' + data["Position Title"] + '</a>';
 					else
-						return data["Publication Title"];
+						return data["Position Title"];
 					}
 				},
-				{ "data": "Published By" },
-				{ "data": "Publication Year" },
-				{ "data": "Technology Area" },
-				{ "data": "Publication Type" },
+				{ "data": "Grade" },
+				{ "data": "Position Close" },
+				{ "data": "Location" },
+				{ "data": "Position type " },
 				{ "data": "Summary" },
 			],
 			"columnDefs": [
@@ -149,7 +149,7 @@ $(document).ready(function () {
 				},
 				{
 					"targets": [2],
-					"title": "Published By"
+					"title": "Grade"
 				},
 				{
 					"targets": [3],
@@ -158,11 +158,11 @@ $(document).ready(function () {
 				},
 				{
 					"targets": [4],
-					"title": "Technology Area"
+					"title": "Location"
 				},
 				{
 					"targets": [5],
-					"title": "Publication Type",
+					"title": "Position type ",
 				},
 				{
 					"targets": [6],
