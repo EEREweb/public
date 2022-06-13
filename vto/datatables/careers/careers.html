@@ -154,7 +154,7 @@ $(document).ready(function () {
 				},
 				{
 					"targets": [3],
-					"title": "Year",
+					"title": "Position Closed",
 					"width": "32px"
 				},
 				{
@@ -187,9 +187,9 @@ $(document).ready(function () {
 				$('#datatable_cf_paginate').prependTo($('#datatable_cf_wrapper'));
 				$('#datatable_cf_paginate').after($('#datatable_cf_info'));
 				
-				setup_select_filter('org_group', '#org_div', objColumn['Grade'], false);
-				setup_select_filter('year_group', '#year_div', objColumn['Position Closed'], true);
-				setup_select_filter('tech_group', '#tech_div', objColumn['Location'], false);
+				setup_select_filter('org_group', '#org_div', objColumn['Organization'], false);
+				setup_select_filter('year_group', '#year_div', objColumn['Year'], true);
+				setup_select_filter('tech_group', '#tech_div', objColumn['TechArea'], false);
 				
 				
 				$('#year_group').addClass('form-control');
