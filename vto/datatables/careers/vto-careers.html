@@ -102,9 +102,9 @@
 
     //setup Column locations
     var objColumn = {
-        "Grade": 2,
-        "Year": 5,
-        "TypeArea": 4,
+        "Grade": 3,
+        "Year": 1,
+        "TypeArea": 5,
         //"Publication": 6,
     };
 
@@ -157,27 +157,26 @@
                         "title": "Title",
                         "width": "30%"
                     },
-			
-
-                    {
+			                    {
                         "targets": [2],
+                        "title": "Technology Area",
+			 "width": "25%"
+                    },
+			
+                    {
+                        "targets": [3],
                         "title": "Grade",
 			"width": "10%"
                     },
                     {
-                        "targets": [3],
+                        "targets": [4],
                         "title": "Opening-Closing Dates",
                          "width": "15%"
                     },
                     {
-                        "targets": [4],
+                        "targets": [5],
                         "title": "Type",
 			 "width": "15%"
-                    },
-                    {
-                        "targets": [5],
-                        "title": "Technology Area",
-			 "width": "25%"
                     },
                     {
                         "targets": [6],
@@ -202,7 +201,7 @@
                     $('#datatable_cf_paginate').after($('#datatable_cf_info'));
 
                     setup_select_filter('grade_group', '#grade_div', objColumn['Grade'], false);
-                    setup_select_filter('year_group', '#year_div', objColumn['Year'], true);
+                    setup_select_filter('year_groupyear_group', '#year_div', objColumn['Year'], true);
                     setup_select_filter('type_group', '#type_div', objColumn['TypeArea'], false);
 
 
