@@ -126,8 +126,8 @@ $(document).ready(function () {
 				},
 				{ 
 					"data": null, render: function (data, type, row) {
-					if (data["CMS node"] && data["CMS node"] != '')
-						return '<a href="' + data["CMS node"] + '">' + data["Position Title"] + '</a>';
+					if (data["CMS Node"] && data["CMS Node"] != '')
+						return '<a href="' + data["CMS Node"] + '">' + data["Position Title"] + '</a>';
 					else
 						return data["Position Title"];
 					}
