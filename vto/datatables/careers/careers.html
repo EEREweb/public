@@ -419,7 +419,7 @@ $(document).ready(function () {
                 $('#datatable_cf').DataTable().column(intCol).data().unique().sort().each(function (data, value) {
 				
 					
-					var arr = data.trim().split(",");
+					var arr = data.trim().split(";");
 					for (i=0; i<arr.length; i++) {
 						if (data.indexOf('TARDEC') > 0)
 						{
