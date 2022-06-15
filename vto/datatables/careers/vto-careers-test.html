@@ -225,7 +225,35 @@
                     $('#datatable_cf_filter').find('select').change(function () {
                         //updateLink();
                     });
+                    //Setup datatable if there are querystring vars
+                    //todo: handle multiple values for Facets, find a better way to do this, there is a bug if the Value sent in is not unique to all facets
+                    if (Object.keys(qs).length != 0) {
+                        function objLookup(colName) {
+                            var found = false;
+                            for (var k in objColumn) {
+                                if (k == colName)
+                                    found = true;
+                            }
+                            return found;
+                        }
 
+                        $.each(qs, function (val, key) {
+                            if (objLookup(val)) {
+                                items = key.split('|');
+                                $.each(items, function (idx, item) {
+                                    $(':checkbox[value="' + item + '"]').prop('checked', true);
+                                    filter_dt_column($('#datatable_cf').DataTable(), objColumn[val], '#' + $(':checkbox[value="' + item + '"]').parent().attr('id'));
+                                });
+                                if (val == "Year") {
+                                    $('#year_group').val(key);
+                                    search_dt_column($('#datatable_cf').DataTable(), objColumn[val], '#year_group');
+                                }
+                            } else if (val == 'Search') {
+                                $('#datatable_cf_filter').find('input').val(key);
+                                $('#datatable_cf').DataTable().data().search(key).draw();
+                            }
+                        });
+                    }
 </script>
 
 <script src="//www1.eere.energy.gov/apps/js/pym.v1.min.js"></script>
