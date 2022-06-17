@@ -112,7 +112,7 @@
 
     $(document).ready(function () {
 
-        $.get("VTO_careers_06-14-2022.csv", function (data) {
+        $.get("VTO_careers_06-17-2022.csv", function (data) {
             var csvJson = Papa.parse(removeTrailingLine(data), { "header": true });
             csvJson = JSON.stringify(csvJson.data, null, 2);
 
