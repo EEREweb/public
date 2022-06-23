@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<title>Distributed Energy Technical Specifications | Department of Energy</title>
+<meta charset="UTF-8">
+
+
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
+
+<script src="//www1.eere.energy.gov/apps/js/jquery/3.2.0/jquery.min.js"></script>
+<script src="//www1.eere.energy.gov/apps/js/bootstrap/3.3.7/bootstrap.min.js"></script>
+<script src="//www1.eere.energy.gov/apps/js/papaparse/4.1.2/papaparse.min.js"></script>
+<script src='//www1.eere.energy.gov/apps/js/funclib.js'></script>
+
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/searchpanes/1.4.0/css/searchPanes.dataTables.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/select/1.3.4/css/select.dataTables.min.css"/>
+ 
+<script type="text/javascript" src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/searchpanes/1.4.0/js/dataTables.searchPanes.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/select/1.3.4/js/dataTables.select.min.js"></script>
+<script type="text/javascript" src="scripts/clipboardjs/clipboard.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="pv_tech_specs.css">
+
+<base target="_parent">
+
+<script>
+
+/* Formatting function for row details - modify as you need */
+function format(d) {
+	var strSpecTitle = '<h3>' + d.Specification_Title + '</h3>';
+	var strSpecDesc = '<h4>Specification Description:</h4>' + d.Specification_Description;
+	var strSpecTemplate = '<h4>Specification Template Language:</h4>' + d.Specification_Template_Language;
+	var strSpecBackground = '';
+	var tmpDebugInfo ='';
+	var tmpImage = '';
+	var strCopyBtn = '';
+	var tmpAlertMsg = '';
+
+
+	//images
+	let objImages = new Map();
+	var arrImages = {};
+	if (d.Images != ''){
+		tmpImage = '<div class="media-block">';
+		arrImages = d.Images.split('; ');
+		arrImages.forEach(function (item, index) {
+			tmpItems = item.split('|');
+			tmpImage += '<img src="'+ tmpItems[1] + '" class="img-responsive"/>' +
+						'<p class="media-caption">' + tmpItems[0] + 
+						' <a href="' + tmpItems[1] + '" target="_blank">(Download)</a>' +
+						'</p>';
+		});
+	}
+	if (tmpImage != '')
+		tmpImage += '</div>';
+	
+	//copy button https://clipboardjs.com/
+	//strCopyBtn = '<button class="btn btn-default" data-clipboard-target="#fempCopyPaste'+d.ID+'" style="float:right;" >Copy to clipboard</button>';
+
+    if (d.Specification_Background != ''){
+		strSpecBackground = '<h4>Specification Background:</h4>' + d.Specification_Background;
+	}
+
+	tmpDebugInfo =  '<strong>ID: </strong>' + d.ID + '<br/>' +
+					'<strong>Requirements: </strong>' + d.Requirements + '<br/>' +
+					'<strong>Solicitation Section: </strong>' + d.Solicitation_Section + '<br/>' +
+					'<strong>Array Type: </strong>' + d.Array_Type + '<br/>' +
+					'<strong>System Component: </strong>' + d.System_Component + '<br/>' +
+					'<strong>Specification Topic: </strong>' + d.Specification_Topic;
+
+	//tmpAlertMsg = '<div class="alert alert-success" role="alert" id="alertmsg'+ d.ID + '">Template copied to clipboard.</div>';
+	
+	//return strCopyBtn+'<div id="fempCopyPaste' + d.ID + '" class="detailsDiv">' + tmpAlertMsg + strSpecTitle + tmpDebugInfo + tmpImage + strSpecDesc + strSpecTemplate + strSpecBackground + '</div>';
+	return '<div class="detailsDiv">' + strSpecTitle /*+ tmpDebugInfo*/ + strSpecDesc + strCopyBtn + '<div id="fempCopyPaste' + d.ID + '">' + tmpAlertMsg + tmpImage + strSpecTemplate + '</div>' + strSpecBackground + '</div>';
+			
+}
+
+
+$(document).ready(function () {
+
+	
+	var defaultTableLength = 25;
+	var dataFilePath = 'pv_tech_specs_20220615.csv';
+
+	$.get(dataFilePath, function (data) {
+	
+		var objJson = Papa.parse(removeTrailingLine(data), { "header": true });
+		var csvJson = JSON.stringify(objJson.data, null, 2);
+				
+
+		var advanced_datatable = $('#projects-datatable').DataTable({
+			"processing": true,
+			"serverSide": false,
+			"order": [[0, 'asc']],
+			"lengthMenu": [[ -1, 5, 10, 25, 50, 100], ["All", 5, 10, 25, 50, 100]],
+			"pageLength": (qs['showAll'] == 'true') ? -1 : defaultTableLength,
+			"data": eval(csvJson),
+			"searchPanes":{
+				//https://datatables.net/reference/option/#searchpanes
+				layout:'auto',
+				columns:[8],
+				orderable: false,
+				viewCount: false,
+				controls: false,
+				collapse: false,
+				clear:false,
+				info:false,
+				dtOpts: {
+					select: {
+						style:'multi',
+					},
+				},
+				//cascadePanes: true
+			},
+			// left column filters "dom": '<"dtsp-dataTable"lfrtip>',
+			"dom": 'Plfrtip',
+			"paging":false,
+			"columns": [
+				{
+					"class": 'details-control',					// [0]
+					"orderable": false,
+					"data": null,
+					"defaultContent": ''
+				},
+				{ "data": "ID" }, 					 			//[1]
+				{
+					"data": null, render: function (data, type, row) {
+						return '<h5>' + data.Specification_Title + '</h5>';
+					},											//[2]
+					"orderable":false,
+				},
+				{ "data": "Specification_Description" }, 		//[3]
+				{ "data": "Specification_Template_Language" },	//[4]
+				{ "data": "Specification_Background" }, 		//[5]			
+				{ "data": "Requirements" }, 					//[6]
+				{ "data": "Solicitation_Section" }, 			//[7]
+				{ "data": "Array_Type" }, 						//[8]
+				{ "data": "System_Component" }, 				//[9]
+				{ "data": "Specification_Topic" }, 				//[10]
+				{ "data": "Images" }, 							//[11]
+				{ "data": "Specialized_Topic" }, 				//[12]
+			],
+			"columnDefs": [
+				{
+					"class": 'details-control',
+					"orderable": false,
+					"data": null,
+					"defaultContent": ''
+				},
+				{
+					"targets": [1],
+					"visible": false
+				},
+				{
+					"targets": [2],
+					"title": "Title"
+				},
+				{
+					"targets": [3],
+					"searchable":true,
+					"visible": false
+				},
+				{
+					"targets": [4],
+					"searchable":true,
+					"visible": false
+				},
+				{
+					"targets": [5],
+					"searchable":true,
+					"visible": false
+				},
+				{
+					"targets": [6],
+					/*
+					searchPanes: {
+						show: true,
+						header: 'Requirement Level',
+						className: "panel panel-default",
+					},
+					*/
+					"visible": false
+				},
+				{
+					"targets": [7],
+					"searchable":true,
+					"visible": false
+				},
+				{
+					"targets": [8],
+					render: function (data, type, row) {
+						if (type === 'sp') {
+						return data.split('; ')
+						}
+						return data;
+					},
+					
+					"searchPanes": {
+                    	show: true,
+						orthogonal:'sp',
+						header: ' ',
+						className: "panel panel-default",
+						preSelect:"All",
+                	},
+					"searchable":true,
+					"visible": false
+				},
+				{
+					"targets": [9],
+					"visible":false,
+					
+					"searchable":true
+				},
+				{
+					"targets": [10],
+					"visible":false,
+					// render: function (data, type, row) {
+					// 	if (type === 'sp') {
+					// 	return data.split('; ')
+					// 	}
+					// 	return data;
+					// },
+					
+					// "searchPanes": {
+                    // 	show: true,
+					// 	orthogonal:'sp',
+					// 	header: 'Specification Topic',
+					// 	className: "panel panel-default",
+                	// },
+					"searchable":true
+				},
+				{
+					"targets": [11],
+					"visible":false
+				},
+				{
+					"targets": [12],
+					"visible":false,
+					render: function (data, type, row) {
+						if (type === 'sp') {
+						return data.split('; ')
+						}
+						return data;
+					},
+					
+					"searchPanes": {
+                    	show: true,
+						orthogonal:'sp',
+						header: 'Specialized Topic',
+						className: "panel panel-default",
+						//preSelect: "All",
+                	},
+					"searchable":true
+				},
+			],
+			"createdRow": function (row, data, index) {
+				//$('td', row).eq(0).append(format(data));
+			},
+			"initComplete": function (settings, json) {
+				
+				// Add event listener for opening and closing details
+				$('#projects-datatable tbody').on('click', 'td.details-control', function () {
+					var tr = $(this).closest('tr');
+					var row = $('#projects-datatable').DataTable().row(tr);
+
+					if (row.child.isShown()) {
+						// This row is already open - close it
+						$('div.detailsDiv', row.child()).slideUp( function () {
+							row.child.hide();
+							tr.removeClass('shown');
+						} );
+					}
+					else {
+						// Open this row
+						row.child(format(row.data())).show();
+						tr.addClass('shown');
+						// hide any messages
+						$('div.detailsDiv', row.child()).find('.alert').hide();
+						// animate
+						$('div.detailsDiv', row.child()).slideDown();
+						
+					}
+				});
+
+				//remove the No data option from all searchpanes
+				//$("span[title='No data']").closest("tr").css("display","none");
+				$("span[title='All']").closest("tr").css("display","none");
+
+				
+					
+				
+			} //init complete
+		});
+		
+		
+		//attach vertical filters - left side
+		//advanced_datatable.searchPanes();
+  		//$("#facet_div").append(advanced_datatable.searchPanes.container());
+		
+		$('#projects-datatable_length').find('select').addClass('form-control');
+		$('#projects-datatable_filter').find('input').addClass('form-control form-text');
+		$('#projects-datatable_paginate').removeClass();
+		$('#projects-datatable_paginate').addClass('pagination');
+
+		$('#projects-datatable_info').insertAfter('#projects-datatable_filter');
+		$('#projects-datatable_paginate').insertAfter('#projects-datatable_info');
+
+		//move the alert message after the filters and hide it initially
+		$('#alertFullTemplateCopy').insertAfter('#projects-datatable_filter');
+		$('#alertFullTemplateCopy').hide();
+
+		//move copy button to after filters in datatable and hide it initially
+		$('#btnCreateTemplate').insertAfter('#projects-datatable_filter');
+		//$('#btnCreateTemplate').hide();
+		//hide text search
+		$('#projects-datatable_filter').hide();
+		//hide some of the helper items for the searchPanes
+		$('.dtsp-titleRow').hide();
+		$('.dataTables_info').hide();
+
+		//clear the search box and reset the datatable when the Clear All button selected.
+		$('.dtsp-clearAll').on('click', '', function () {
+			$('#projects-datatable_filter').find('input').val();
+			$('#projects-datatable').DataTable().search('').columns().search('').draw();
+		});
+
+		function setupCopyBtn(table) {
+			//show fullTemplateCopy so the copy function can write to the div.
+			$("#fullTemplateCopy").css("display", "block");
+
+			tmpFilteredTemplate = '';
+			tmpTemplateIntro = '<h1 style="text-align:center">Technical Specifications for On-site Solar Photovoltaic (PV) Systems: For Use in Developing Federal Solicitations</h1>' +
+				'<p><strong><u>DISCLAIMER</u></strong></p>' +
+				'<p>This template is intended as a resource only. <strong><em>It is the responsibility of Government staff to ensure that all procurements – including on-site solar photovoltaic (PV) systems –  follow all applicable federal requirements and agency-specific policies and procedures</em></strong>. All documents comprising an on-site solar PV system contract must be thoroughly reviewed by agency contracting and legal staff and should be modified to address each agency\'s unique acquisition process, agency-specific authorities, and project-specific characteristics.</p>' +
+				'<p><strong><u>INSTRUCTIONS FOR USING THIS TEMPLATE</u></strong></p>' +
+				'<p>This document is meant to be used as a customizable template for federal government agencies seeking the construction of one or more on-site solar PV systems. This template contains recommended technical specifications and should be considered as the starting point for developing a Request for Proposal (RFP).</p>' +
+				'<p>The drafter of this contract shall:</p>' +
+				'<ol><li>Add, remove, and/or edit any of the template language to fit the needs and requirements of the agency. Standard and advanced specification language is included in the template. Identify which best suits the site\'s needs and delete the alternate specification language.</li>' +
+				'<li>Fill in the areas indicated with bracket symbols ("&lt; &gt;").</li></ol>' +
+				'<p>This document is based on "Section C: Description/Specifications/Statement of Work" included in the Uniform Contract Format (UCF).</p>' +
+				'<p><strong>IMPORTANT:</strong> The following items must be deleted from the template before solicitation:</p>' +
+				'<ul><li>This title page and instructions for using this template</li>' +
+				'<li>Any contract sections that are not included in the RFP</li></ul><p>&nbsp;</p>';
+
+			tmpFilteredTemplate += tmpTemplateIntro;
+
+			//choose a column number that was defined above with custom formatting: "data": null, render: function --- use that column number and the table.column.data.each should work.
+			//console.log(table.column(2,{ search: 'applied'}).data());
+		
+			// Iterate through all filtered rows of the table, setup Div for copy button.
+			table
+				.column(2, { search: 'applied' })
+				.data()
+				.each(function (val) {
+					//console.log(val.Specification_Template_Language);
+					var tmpTableRow = '<div class="templateItem">';
+
+					var strSpecTitle = '<h3>' + val.Specification_Title + '</h3>';
+					var strSpecTemplateLang = val.Specification_Template_Language;
+
+					//images
+					var tmpImage = '';
+					let objImages = new Map();
+					var arrImages = {};
+					if (val.Images != ''){
+						tmpImage = '<div class="media-block">';
+						arrImages = val.Images.split('; ');
+						arrImages.forEach(function (item, index) {
+							tmpItems = item.split('|');
+							tmpImage += '<img src="'+ tmpItems[1] + '" class="img-responsive"/>' +
+										'<p class="media-caption">' + tmpItems[0] + 
+										' <a href="' + tmpItems[1] + '" target="_blank">(Download)</a>' +
+										'</p>';
+						});
+					}
+					if (tmpImage != '')
+						tmpImage += '</div>';
+
+					
+					tmpTableRow += strSpecTitle + strSpecTemplateLang + tmpImage + "</div>";
+
+					tmpFilteredTemplate += tmpTableRow;
+					
+				});
+
+				$('#fullTemplateCopy').html(tmpFilteredTemplate);
+			
+		} //end setupCopyBtn
+
+		//setup the button to create the template html on click
+		$("#btnCreateTemplate").click(function(){
+			setupCopyBtn(advanced_datatable);
+		}); 
+		//initialize ClipboardJS
+		var clipboard = new ClipboardJS('.btn');
+
+		clipboard.on('success', function(e) {
+			//console.info('Action:', e.action);
+			//console.info('Text:', e.text);
+			//console.info('Trigger:', e.trigger);
+
+			$('.alert').show('slide');
+			e.clearSelection();
+
+			//hide fullTemplateCopy so the page isn't too tall
+			$("#fullTemplateCopy").css("display","none");
+		});
+
+		clipboard.on('error', function(e) {
+			//console.error('Action:', e.action);
+			//console.error('Trigger:', e.trigger);
+		});
+
+		// On each draw, update the data in the chart
+		advanced_datatable.on('draw', function () {
+			//alert('table updated');
+			$('#btnCreateTemplate').show();
+			$('#alertFullTemplateCopy').hide();
+			$('.dataTables_info').show();
+    	});
+
+	}); //end .get
+
+	
+	
+
+	
+}); //end document Ready
+
+</script>
+
+
+
+<!--LEFT Side Facets
+	<div class="row">
+    <div class="col-sm-4" id="facet_div"></div>
+	<div class="col-sm-8 datatable-container">
+		<table id="projects-datatable" class="display dataTable" cellspacing="0"></table>
+	</div>
+</div>-->
+
+<div class="row">
+	<div class="col-sm-12 datatable-container">
+		<table id="projects-datatable" class="display dataTable" cellspacing="0"></table>
+	</div>
+</div>
+<button class="btn btn-default" data-clipboard-target="#fullTemplateCopy" style="float:right;" id="btnCreateTemplate">Create Template on Clipboard</button>
+<div id="fullTemplateCopy"></div>
+<div class="alert alert-success" role="alert" id="alertFullTemplateCopy">Full template copied to clipboard.</div>;
+
+<script src="//www1.eere.energy.gov/apps/js/pym.v1.min.js"></script>
+<script src="//www1.eere.energy.gov/apps/js/shim.js"></script>
