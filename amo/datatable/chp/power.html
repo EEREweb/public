@@ -238,6 +238,7 @@
 										<option value="622110 General Medical and Surgical Hospitals">622110 General Medical and Surgical Hospitals</option>
 										<option value="621111 Offices of Physicians">621111 Offices of Physicians</option>
 										<option value="621112 Offices of Physicians, Mental Health Specialists">621112 Offices of Physicians, Mental Health Specialists</option>
+										<option value="622210 Psychiatric and Substance Abuse Hospitals">622210 Psychiatric and Substance Abuse Hospitals</option>
 										<option value="623110 Nursing Care Facilities">623110 Nursing Care Facilities</option>
 										<option value="623311 Continuing Care Retirement Communities">623311 Continuing Care Retirement Communities</option>
 										<option value="624110 Child and Youth Services">624110 Child and Youth Services</option>
@@ -454,7 +455,7 @@
 			"State": 15,
         };
 
-		$.get('chpdb_master_2022_05_13.csv', function (data) {
+		$.get('chpdb_master_2022_06_26.csv', function (data) {
 			var objJson = Papa.parse(removeTrailingLine(data), { "header": true });
 			var csvJson = JSON.stringify(objJson.data, null, 2);
 
