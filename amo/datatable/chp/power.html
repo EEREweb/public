@@ -1,3 +1,33 @@
+Skip to content
+Search or jump to…
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@david-brown-doe 
+david-brown-doe
+/
+public
+Public
+forked from EEREweb/public
+Code
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+Settings
+public/amo/datatable/chp/power.html
+@david-brown-doe
+david-brown-doe Update power.html
+Latest commit cf8adbc 11 days ago
+ History
+ 3 contributors
+@david-brown-doe@karlchan@jasonkardell
+869 lines (798 sloc)  47.5 KB
+
 <!DOCTYPE html>
 <title>Combined Heat and Power (CHP) Project Profiles Database | Department of Energy</title>
 
@@ -180,7 +210,7 @@
                             <div class="panel-body">
                                 <div id="NAICS_div">
 									<select id="NAICS_select" name="NAICS_select" multiple="multiple">
-										<option value="111219 Other Vegetable (except Potato) and Melon Farming">111219 Other Vegetable (except Potato) and Melon Farming</option>
+										<option value="111219">111219 Other Vegetable (except Potato) and Melon Farming</option>
 										<option value="112112 Cattle Feedlots">112112 Cattle Feedlots</option>
 										<option value="112120 Dairy Cattle and Milk Production">112120 Dairy Cattle and Milk Production</option>
 										<option value="211130 Natural Gas Extraction">211130 Natural Gas Extraction</option>
@@ -201,7 +231,7 @@
 										<option value="312130 Wineries">312130 Wineries</option>
 										<option value="314110 Carpet and Rug Mills">314110 Carpet and Rug Mills</option>
 										<option value="321113 Sawmills">321113 Sawmills</option>
-										<option value="321918 Other Millwork (including Flooring)">321918 Other Millwork (including Flooring)</option>
+										<option value="321918">321918 Other Millwork (including Flooring)</option>
 										<option value="321999 Other Miscellaneous Wood Product Manufacturing">321999 Other Miscellaneous Wood Product Manufacturing</option>
 										<option value="322110 Pulp Mills">322110 Pulp Mills</option>
 										<option value="322120 Paper Mills">322120 Paper Mills</option>
@@ -216,7 +246,7 @@
 										<option value="325998 All Other Miscellaneous Chemical Product and Preparation Manufacturing">325998 All Other Miscellaneous Chemical Product and Preparation Manufacturing</option>
 										<option value="326199 All Other Plastics Product Manufacturing">326199 All Other Plastics Product Manufacturing</option>
 										<option value="331110 Iron and Steel Mills and Ferroalloy Manufacturing">331110 Iron and Steel Mills and Ferroalloy Manufacturing</option>
-										<option value="331410 Nonferrous Metal (except Aluminum) Smelting and Refining">331410 Nonferrous Metal (except Aluminum) Smelting and Refining</option>
+										<option value="331410">331410 Nonferrous Metal (except Aluminum) Smelting and Refining</option>
 										<option value="336110 Automobile and Light Duty Motor Vehicle Manufacturing">336110 Automobile and Light Duty Motor Vehicle Manufacturing</option>
 										<option value="424480 Fresh Fruit and Vegetable Merchant Wholesalers">424480 Fresh Fruit and Vegetable Merchant Wholesalers</option>
 										<option value="441110 New Car Dealers">441110 New Car Dealers</option>
@@ -226,26 +256,26 @@
 										<option value="522130 Credit Unions">522130 Credit Unions</option>
 										<option value="531110 Lessors of Residential Buildings and Dwellings">531110 Lessors of Residential Buildings and Dwellings</option>
 										<option value="531312 Nonresidential Property Managers">531312 Nonresidential Property Managers</option>
-										<option value="541715 Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)">541715 Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)</option>
+										<option value="541715">541715 Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)</option>
 										<option value="562212 Solid Waste Landfill">562212 Solid Waste Landfill</option>
 										<option value="562219 Other Nonhazardous Waste Treatment and Disposal">562219 Other Nonhazardous Waste Treatment and Disposal</option>
 										<option value="611110 Elementary and Secondary Schools">611110 Elementary and Secondary Schools</option>
 										<option value="611310 Colleges, Universities, and Professional Schools">611310 Colleges, Universities, and Professional Schools</option>
-										<option value="621111 Offices of Physicians (except Mental Health Specialists)">621111 Offices of Physicians (except Mental Health Specialists)</option>
+										<option value="621111">621111 Offices of Physicians (except Mental Health Specialists)</option>
 										<option value="621112 Offices of Physicians, Mental Health Specialists">621112 Offices of Physicians, Mental Health Specialists</option>
 										<option value="622110 General Medical and Surgical Hospitals">622110 General Medical and Surgical Hospitals</option>
 										<option value="622210 Psychiatric and Substance Abuse Hospitals">622210 Psychiatric and Substance Abuse Hospitals</option>
-										<option value="623110 Nursing Care Facilities (Skilled Nursing Facilities)">623110 Nursing Care Facilities (Skilled Nursing Facilities)</option>
+										<option value="623110">623110 Nursing Care Facilities (Skilled Nursing Facilities)</option>
 										<option value="623311 Continuing Care Retirement Communities">623311 Continuing Care Retirement Communities</option>
 										<option value="624110 Child and Youth Services">624110 Child and Youth Services</option>
 										<option value="624410 Child Care Services">624410 Child Care Services</option>
 										<option value="713940 Fitness and Recreational Sports Centers">713940 Fitness and Recreational Sports Centers</option>
-										<option value="721110 Hotels (except Casino Hotels) and Motels">721110 Hotels (except Casino Hotels) and Motels</option>
+										<option value="721110">721110 Hotels (except Casino Hotels) and Motels</option>
 										<option value="721120 Casino Hotels">721120 Casino Hotels</option>
 										<option value="722511 Full-Service Restaurants">722511 Full-Service Restaurants</option>
 										<option value="813110 Religious Organizations">813110 Religious Organizations</option>
 										<option value="813410 Civic and Social Organizations">813410 Civic and Social Organizations</option>
-										<option value="813990 Other Similar Organizations (except Business, Professional, Labor, and Political Organizations)">813990 Other Similar Organizations (except Business, Professional, Labor, and Political Organizations)</option>
+										<option value="813990">813990 Other Similar Organizations (except Business, Professional, Labor, and Political Organizations)</option>
 										<option value="921110 Executive Offices">921110 Executive Offices</option>
 										<option value="922140 Correctional Institutions">922140 Correctional Institutions</option>
 										<option value="927110 Space Research and Technology">927110 Space Research and Technology</option>
@@ -867,3 +897,18 @@
         }
 
 </script>
+Footer
+© 2022 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+You have unread notifications
