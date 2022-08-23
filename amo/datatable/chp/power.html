@@ -194,6 +194,7 @@
 										<option value="311224 Soybean and Other Oilseed Processing">311224 Soybean and Other Oilseed Processing</option>
 										<option value="311421 Fruit and Vegetable Canning">311421 Fruit and Vegetable Canning</option>
 										<option value="311511 Fluid Milk Manufacturing">311511 Fluid Milk Manufacturing</option>
+										<option value="311514 Dry, Condensed, and Evaporated Dairy Product Manufacturing">311514 Dry, Condensed, and Evaporated Dairy Product Manufacturing</option>
 										<option value="311615 Poultry Processing">311615 Poultry Processing</option>
 										<option value="311919 Other Snack Food Manufacturing">311919 Other Snack Food Manufacturing</option>
 										<option value="311920 Coffee and Tea Manufacturing">311920 Coffee and Tea Manufacturing</option>
@@ -455,7 +456,7 @@
 			"State": 15,
         };
 
-		$.get('chpdb_master_2022_08_18.csv', function (data) {
+		$.get('chpdb_master_2022_08_22.csv', function (data) {
 			var objJson = Papa.parse(removeTrailingLine(data), { "header": true });
 			var csvJson = JSON.stringify(objJson.data, null, 2);
 
