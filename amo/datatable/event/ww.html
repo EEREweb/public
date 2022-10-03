@@ -256,10 +256,17 @@ $(document).ready(function () {
 		});
 		
 		function search_dt_column(dtable, col, cntl) {
-			var val = '^' + $(cntl).val() + '$';
-			if ($(cntl).val() == '') val = '';
-			dtable.column(col).search(val, true, false, false).draw();
-		}
+                  var val = $(cntl).val();
+                  //account for parens in the regex
+                  val = val.replace('\(', '\\(');
+                  val = val.replace('\)', '\\)');
+                  val = '^' + val + '$';
+                  //console.log(val);
+                  
+                  if ($(cntl).val() == '') val = '';
+                  dtable.column(col).search(val, true, false, false).draw();
+            }
+
 		
 		function filter_dt_column(dtable, col, cntl) {
 			var val = $(cntl).val();
