@@ -110,7 +110,7 @@ var objColumn = {
 	"Pillar": 6,
 };
 $(document).ready(function () {
-	$.get("amo_workshop_webinar_2022_2_9.csv", function (data) {
+	$.get("amo_workshop_webinar_2022_9_30.csv", function (data) {
 		var csvJson = Papa.parse(removeTrailingLine(data), { "header": true });
 		csvJson = JSON.stringify(csvJson.data, null, 2);
 		var datatable = $('#datatable_cf').DataTable({
@@ -256,10 +256,17 @@ $(document).ready(function () {
 		});
 		
 		function search_dt_column(dtable, col, cntl) {
-			var val = '^' + $(cntl).val() + '$';
-			if ($(cntl).val() == '') val = '';
-			dtable.column(col).search(val, true, false, false).draw();
-		}
+                  var val = $(cntl).val();
+                  //account for parens in the regex
+                  val = val.replace('\(', '\\(');
+                  val = val.replace('\)', '\\)');
+                  val = '^' + val + '$';
+                  //console.log(val);
+                  
+                  if ($(cntl).val() == '') val = '';
+                  dtable.column(col).search(val, true, false, false).draw();
+            }
+
 		
 		function filter_dt_column(dtable, col, cntl) {
 			var val = $(cntl).val();
