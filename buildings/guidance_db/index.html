@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<title>Buildings Guidance Database | Department of Energy</title>
+<meta charset="UTF-8">
+
+
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
+
+<script src="//www1.eere.energy.gov/apps/js/jquery/3.2.0/jquery.min.js"></script>
+<script src="//www1.eere.energy.gov/apps/js/bootstrap/3.3.7/bootstrap.min.js"></script>
+<script src="//www1.eere.energy.gov/apps/js/papaparse/4.1.2/papaparse.min.js"></script>
+<script src='//www1.eere.energy.gov/apps/js/funclib.js'></script>
+
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/searchpanes/1.4.0/css/searchPanes.dataTables.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/select/1.3.4/css/select.dataTables.min.css"/>
+ 
+<script type="text/javascript" src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/searchpanes/1.4.0/js/dataTables.searchPanes.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/select/1.3.4/js/dataTables.select.min.js"></script>
+
+
+<link rel="stylesheet" type="text/css" href="guidance_db.css">
+
+<base target="_parent">
+
+<script> 
+
+/* Formatting function for row details - modify as you need */
+function format(d) {
+	var strQuestion = '<h3>' + d.Question + '</h3>';
+	var strAnswer = '';
+	var tmpDebugInfo ='';
+
+	if (d.URL.indexOf('https') >= 0)
+		strAnswer += '<a href="' + d.URL + '" target="_blank">' + d.FileName +'</a>  (Guidance Posted: ' + d.DocumentDate + ')<br/>'; 
+
+	/*tmpDebugInfo =  '<div class="guidanceDebug"><strong>ID: </strong>' + d.IdQuestion + '<br/>' +
+					'<strong>Product Category: </strong>' + d.ProductCategory + '<br/>' +
+					'<strong>Category Name: </strong>' + d.CategoryName + '<br/>' +
+					'<strong>Sub-Product: </strong>' + d.SubProductName + '</div><br/>';
+	*/
+	
+	return '<div class="guidanceAnswer"><h4>Answer:</h4>' + strAnswer + '</br>' + tmpDebugInfo + '</div>';
+}
+
+
+$(document).ready(function () {
+
+	
+	
+	var defaultTableLength = 25;
+	var dataFilePath = 'guidance_db_20221014.csv';
+
+	$.get(dataFilePath, function (data) {
+	
+		var objJson = Papa.parse(removeTrailingLine(data), { "header": true });
+		var csvJson = JSON.stringify(objJson.data, null, 2);
+				
+
+		var advanced_datatable = $('#projects-datatable').DataTable({
+			"processing": true,
+			"serverSide": false,
+			"order": [[0, 'desc']],
+			"lengthMenu": [[ -1, 5, 10, 25, 50, 100], ["All", 5, 10, 25, 50, 100]],
+			"pageLength": (qs['showAll'] == 'true') ? -1 : defaultTableLength,
+			"data": eval(csvJson),
+			"searchPanes":{
+				layout:'columns-1',
+				columns:[4,5,6,7,8],
+				orderable: false,
+				controls: false,
+				dtOpts: {
+					select: {
+						style:'multi',
+					},
+				},
+				cascadePanes: true
+			},
+			"dom": '<"dtsp-dataTable"lfrtip>',
+			"columns": [
+				/*{
+					"class": 'details-control',					// [0]
+					"orderable": false,
+					"data": null,
+					"defaultContent": ''
+				},*/
+				{ "data": "IdQuestion" }, 					 	//[1]
+				{
+					"data": null, render: function (data, type, row) {
+						return '<div class="guidanceQuestion details-control">' + '<h4>Question:</h4>' + data.Question + "</div>";
+					}											//[2]
+				},
+				{ "data": "Answer" }, 							//[3]
+				{ "data": "Archive" },							//[4]
+				{ "data": "Draft", 
+					render: function(data, type, row){
+						if(row.Draft == 0){
+							return "Final";
+						}
+						else {
+							return "Draft";
+						}
+					}
+				}, 												//[5]			
+				{ "data": "GuidanceTypeName" }, 				//[6]
+				{ "data": "ProductCategory" }, 					//[7]
+				{ "data": "CategoryName" }, 					//[8]
+				{ "data": "SubProductName" }, 					//[9]
+				{ "data": "FileName" }, 						//[10]
+				{ "data": "URL" }, 								//[11]
+				{ "data": "DocumentDate" }, 					//[12]
+			],
+			"columnDefs": [
+				/*{
+					"class": 'details-control',
+					"orderable": false,
+					"data": null,
+					"defaultContent": ''
+				},*/
+				{
+					"targets": [0],
+					"visible": false
+				},
+				{
+					"targets": [1],
+					"title": "Questions"
+				},
+				{
+					"targets": [2],
+					"searchable":true,
+					"visible": false
+				},
+				{
+					"targets": [3],
+					"visible": false
+				},
+				{
+					"targets": [4],
+					"searchPanes": {
+                    	show: true,
+						className: "panel panel-default",
+						header: 'Guidance Version'
+                	},
+					"visible": false
+				},
+				{
+					"targets": [5],
+					render: function (data, type, row) {
+						if (type === 'sp') {
+						return data.split('; ')
+						}
+						return data;
+					},
+					
+					"searchPanes": {
+                    	show: true,
+						orthogonal:'sp',
+						className: "panel panel-default",
+						header: 'Guidance Type'
+                	},
+					"searchable":true,
+					"visible": false
+				},
+				{
+					"targets": [6],
+					render: function (data, type, row) {
+						if (type === 'sp') {
+						return data.split('; ')
+						}
+						return data;
+					},
+					
+					"searchPanes": {
+                    	show: true,
+						orthogonal:'sp',
+						className: "panel panel-default",
+						header: 'Category'
+                	},
+					"searchable":true,
+					"visible": false
+				},
+				{
+					"targets": [7],
+					render: function (data, type, row) {
+						if (type === 'sp') {
+						return data.split('; ')
+						}
+						return data;
+					},
+					
+					"searchPanes": {
+                    	show: true,
+						orthogonal:'sp',
+						className: "panel panel-default",
+						header: 'Product'
+                	},
+					"searchable":true,
+					"visible": false
+				},
+				{
+					"targets": [8],
+					"visible":false,
+					render: function (data, type, row) {
+						if (type === 'sp') {
+						return data.split('; ')
+						}
+						return data;
+					},
+					
+					"searchPanes": {
+                    	show: true,
+						orthogonal:'sp',
+						className: "panel panel-default",
+						header: 'Sub-Product'
+                	},
+					"searchable":true
+				},
+				{
+					"targets": [9],
+					"visible":false,
+				},
+				{
+					"targets": [10],
+					"visible":false
+				},
+				{
+					"targets": [11],
+					"visible":false
+				}
+			],
+			"createdRow": function (row, data, index) {
+				//$('td', row).eq(0).append(format(data));
+			},
+			"initComplete": function (settings, json) {
+				
+				// Add event listener for opening and closing details
+				$('#projects-datatable tbody').on('click', 'div.details-control', function () {
+						
+
+					var tr = $(this).closest('tr');
+					var row = $('#projects-datatable').DataTable().row(tr);
+
+					if (row.child.isShown()) {
+						// This row is already open - close it
+						$('div.guidanceAnswer', row.child()).slideUp( function () {
+							row.child.hide();
+							tr.removeClass('shown');
+						} );
+					}
+					else {
+						// Open this row
+						row.child(format(row.data())).show();
+						tr.addClass('shown');
+						$('div.guidanceAnswer', row.child()).slideDown();
+					}
+				});
+						
+			} //init complete
+		});
+		
+		
+		//attach vertical filters
+		advanced_datatable.searchPanes()
+  		$("#facet_div").append(advanced_datatable.searchPanes.container());
+		
+		$('#projects-datatable_length').find('select').addClass('form-control');
+		$('#projects-datatable_filter').find('input').addClass('form-control form-text');
+		$('#projects-datatable_paginate').removeClass();
+		$('#projects-datatable_paginate').addClass('pagination');
+
+		$('#projects-datatable_info').insertAfter('#projects-datatable_filter');
+		$('#projects-datatable_paginate').insertAfter('#projects-datatable_info');
+
+		//clear the search box and reset the datatable when the Clear All button selected.
+		$('.dtsp-clearAll').on('click', '', function () {
+			$('#projects-datatable_filter').find('input').val();
+			$('#projects-datatable').DataTable().search('').columns().search('').draw();
+		});
+
+	}); //end .get
+
+	
+
+}); //end document Ready
+
+</script>
+
+
+
+<div class="row">
+    <div class="col-sm-4" id="facet_div"></div>
+	<div class="col-sm-8 datatable-container">
+		<table id="projects-datatable" class="display dataTable" cellspacing="0"></table>
+	</div>
+</div>
+
+<script src="//www1.eere.energy.gov/apps/js/pym.v1.min.js"></script>
+<script src="//www1.eere.energy.gov/apps/js/shim.js"></script>

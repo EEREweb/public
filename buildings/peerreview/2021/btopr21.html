@@ -72,7 +72,7 @@
 
     $(document).ready(function () {
 
-        $.get("2021_BTO_Peer_Review_2021_11_09.csv", function (data) {
+        $.get("2021_BTO_Peer_Review_2022_04_04.csv", function (data) {
             var csvJson = Papa.parse(removeTrailingLine(data), { "header": true });
             csvJson = JSON.stringify(csvJson.data, null, 2);
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<title>Energy Transitions Initiative Partnership Project — Communities | Department of Energy</title>
+<title>Distributed Energy Technical Specifications | Department of Energy</title>
 <meta charset="UTF-8">
 
 <script src='//api.mapbox.com/mapbox.js/v2.4.0/mapbox.js?access_token="pk.eyJ1IjoiZW5lcmd5IiwiYSI6IkozTG9BZDQifQ.1WKh4U0kKCdknF3gxBOF7Q"'></script>
@@ -21,10 +21,10 @@
 
 
 <script src="scripts/popper.min.js"></script>
-<script src="scripts/brackets-negative.js"></script>
 
 
-<link rel="stylesheet" type="text/css" href="etipp_communities.css">
+
+<link rel="stylesheet" type="text/css" href="pv_tech_specs.css">
 
 <base target="_parent">
 
@@ -32,13 +32,13 @@
 //setup Column locations according to the datatable defined columns (not .csv - this can get confusing if your ordering for datatable display differs from the ordering in the .csv), index starts at 0
 
 var objColumn = {
-	"state_full": 5,
+	"Requirements": 6,
 	"Regional_Partners": 7,
 	"Technology": 6
 };
 //ugly, but looks up the dropdown IDs, and associates the column name in objColumn. TODO, make these an array of objects, and refactor code to make things cleaner.
 var objControlIDs = {
-		'#state_full_select': "state_full",
+		'#requirement_select': "Requirements",
 		'#partner_select': "Regional_Partners",
 		'#technology_select': "Technology",	
 	};
@@ -63,7 +63,7 @@ function format(d) {
 			'<p class="dt_details">' + "<strong>" + d.funding_category + '</strong><br/>' + d.award_description + tmpAllFO + tmpFOTotal + '</p>';
 	*/
 	return '<h4>Description:</h4>' + 
-			'<p class="dt_details">' + d.brief_description + '</p>';
+			'<p class="dt_details">' + d.Specification_Description  + '</p>';
 }
 function addStr(str, index, stringToAdd){
   return str.substring(0, index) + stringToAdd + str.substring(index, str.length);
@@ -84,12 +84,9 @@ function formatCurrency(total) {
 $(document).ready(function () {
 
 	
-	var dataDate = 'November 30, 2021';
-	var maxMapZoom = 7;
-	
 	var defaultTableLength = 25;
 
-	var dataFilePath = 'etipp_communities_20220802.csv';
+	var dataFilePath = 'pv_tech_specs_20220204.csv';
 	
 	
 	$.get(dataFilePath, function (data) {
@@ -103,8 +100,7 @@ $(document).ready(function () {
 		var workforce_table = $('#projects-datatable').DataTable({
 			"processing": true,
 			"serverSide": false,
-			"order": [[1, 'asc']],
-			"paging": false,
+			"order": [[2, 'asc']],
 			"lengthMenu": [[ -1, 5, 10, 25, 50, 100], ["All", 5, 10, 25, 50, 100]],
 			"pageLength": (qs['showAll'] == 'true') ? -1 : defaultTableLength,
 			"data": eval(csvJson),
@@ -116,26 +112,22 @@ $(document).ready(function () {
 					"data": null,
 					"defaultContent": ''
 				},
-				{ "data": "Community" }, 					 	//Not shown [1]
+				{ "data": "ID" }, 					 			//Not shown [1]
 				{
 					"data": null, render: function (data, type, row) {
-						return data.Community;
-						//return "<a href='" + data.Node_ID + "'>" + data.Community + "</a>"; 			// [2]
+						return data.Specification_Title;
+						//return "<a href='" + data.Node_ID + "'>" + data.Community + "</a>"; 		// [2]
 					}
 				},
-				{ "data": "latitude" }, 						//Not shown [3]
-				{ "data": "longitude" },						//Not shown [4]
-				{ "data": "state_full" }, 						//[5]			
-				{ "data": "Technology" }, 						//[6]
-				{
-					"data": null, render: function (data, type, row) {
-						//return data.Regional_Partners;
-						return "<a href='" + data.Regional_Partner_URL + "' target='_blank'>" + data.Regional_Partners + "</a>"; 			// [7]
-					}
-				},
-				{ "data": "Qualification" }, 					//[8]
-				{ "data": "brief_description" }, 				//[9]
-				{ "data": "Regional_Partner_URL" }, 			//[10]
+				{ "data": "Specification_Description" }, 		//Not shown [3]
+				{ "data": "Specification_Template_Language" },	//Not shown [4]
+				{ "data": "Specification_Background" }, 		//[5]			
+				{ "data": "Requirements" }, 					//[6]
+				{ "data": "Solicitation_Section" }, 			//[7]
+				{ "data": "Array_Type" }, 						//[8]
+				{ "data": "System_Component" }, 				//[9]
+				{ "data": "Specification_Topic" }, 				//[10]
+				{ "data": "Images" }, 							//[11]
 			],
 			"columnDefs": [
 				{
@@ -150,46 +142,52 @@ $(document).ready(function () {
 				},
 				{
 					"targets": [2],
-					"title": "Community"
+					"title": "Title"
 				},
 				{
 					"targets": [3],
-					"searchable": false,
+					"searchable":true,
 					"visible": false
 				},
 				{
 					"targets": [4],
-					"searchable": false,
+					"searchable":true,
 					"visible": false
 				},
 				{
 					"targets": [5],
-					"title": "State"
+					"searchable":true,
+					"visible": false
 				},
 				{
 					"targets": [6],
-					"title": "Technical Assistance Areas",
+					"searchable": false,
+					"visible": false
 				},
 				{
 					"targets": [7],
-					"title": "Regional Partners"
+					"searchable":true,
+					"visible": false
 				},
 				{
 					"targets": [8],
-					"title": "Qualification",
+					"searchable":true,
 					"visible": false
 				},
 				{
 					"targets": [9],
-					"title": "Description",
 					"visible":false,
 					"searchable":true
 				},
 				{
 					"targets": [10],
-					"title": "RP URL",
-					"visible": false
+					"visible":false,
+					"searchable":true
 				},
+				{
+					"targets": [11],
+					"visible":false
+				}
 			],
 			"createdRow": function (row, data, index) {
 				//$('td', row).eq(0).append(format(data));
@@ -225,39 +223,8 @@ $(document).ready(function () {
 						tr.addClass('shown');
 					}
 				});
-				
-				
-				/*
-				//Tooltips for datatable column headers
-				$('#projects-datatable thead th').each(function () {
-					var $td = $(this);
-					var headerText = $td.text(); 
-					var headerTitle= $td.text(); 
-					//switch statement here comparing headerText then set headerTitle if you want custom text
-					switch(headerText){
-						case 'DOE Program Office':
-							headerTitle = "Initiating or sponsoring office of funding category";
-							break;
-						...
-						default: headerTitle = headerText;
-					}
-					
-					
-					$td.attr('title', headerTitle);
-				});
-
-				//Apply the tooltips
-				$('#projects-datatable thead th[title]').tooltip(
-				{
-					"container": 'body'
-				});  
-				*/
-				
-				//	$('.data-citations').append(div);
-				
-
-				
-			}
+						
+			} //init complete
 		});
 		$('#projects-datatable_length').find('select').addClass('form-control');
 		//dt-search-box
@@ -273,163 +240,52 @@ $(document).ready(function () {
 		$('#projects-datatable_info').insertAfter('#projects-datatable_filter');
 		$('#projects-datatable_paginate').insertAfter('#projects-datatable_info');
 
+	
+
 		
-
-		/*
-		//Tooltips for other elements
-		$(function () {
-			$('[data-toggle="tooltip"]').tooltip();
-		});
-		*/
-
-		//setup abbreviations
-		var state_list = {
-			'AL': "Alabama",
-			'AK': "Alaska",
-			'AZ': "Arizona",
-			'AR': "Arkansas",
-			'CA': "California",
-			'CO': "Colorado",
-			'CT': "Connecticut",
-			'DE': "Delaware",
-			'DC': "District Of Columbia",
-			'FL': "Florida",
-			'GA': "Georgia",
-			'HI': "Hawaii",
-			'ID': "Idaho",
-			'IL': "Illinois",
-			'IN': "Indiana",
-			'IA': "Iowa",
-			'KS': "Kansas",
-			'KY': "Kentucky",
-			'LA': "Louisiana",
-			'ME': "Maine",
-			'MD': "Maryland",
-			'MA': "Massachusetts",
-			'MI': "Michigan",
-			'MN': "Minnesota",
-			'MS': "Mississippi",
-			'MO': "Missouri",
-			'MT': "Montana",
-			'NE': "Nebraska",
-			'NV': "Nevada",
-			'NH': "New Hampshire",
-			'NJ': "New Jersey",
-			'NM': "New Mexico",
-			'NY': "New York",
-			'NC': "North Carolina",
-			'ND': "North Dakota",
-			'OH': "Ohio",
-			'OK': "Oklahoma",
-			'OR': "Oregon",
-			'PA': "Pennsylvania",
-			'RI': "Rhode Island",
-			'SC': "South Carolina",
-			'SD': "South Dakota",
-			'TN': "Tennessee",
-			'TX': "Texas",
-			'UT': "Utah",
-			'VT': "Vermont",
-			'VA': "Virginia",
-			'WA': "Washington",
-			'WV': "West Virginia",
-			'WI': "Wisconsin",
-			'WY': "Wyoming",
-			'AS': "American Somoa",
-			'GU': "Guam",
-			'MP': "Northern Mariana Islands",
-			'PR': "Puerto Rico",
-			'VI': "U.S. Virgin Islands",
-		};
 
 		// Find and store a variable reference to the list of filters.
 		//var category_filter = document.getElementById('category_div');
-		
-		// removed at client request. FacetRemoval
-		var statefullSelect = document.getElementById('state_full_select');
-		// var partnerSelect = document.getElementById('partner_select');
-		var technologySelect = document.getElementById('technology_select');
-		
+		var requirementsSelect = document.getElementById('requirement_select');
+		//var partnerSelect = document.getElementById('partner_select');
+		//var technologySelect = document.getElementById('technology_select');
 
 		L.mapbox.accessToken = 'pk.eyJ1IjoiZW5lcmd5IiwiYSI6IkozTG9BZDQifQ.1WKh4U0kKCdknF3gxBOF7Q';
-		
-		var mapid = '';
-
-		var basemap = L.mapbox.styleLayer('mapbox://styles/energy/ckhc7eaqv0mjm19p3yr4jtlcw');
-		
-		//map with ONLY one baselayer
-        var map = L.mapbox.map('map', mapid,
-			{ maxZoom: maxMapZoom, minZoom: 2, layers:[basemap], attributionControl: true })
-			.setView([50, -120], 3);
-
-		
 		var featureLayer = L.mapbox.featureLayer();
-
-		// The clusterGroup gets each marker in the group added to it
-		// once loaded, and then is added to the map
-		var clusterGroup = new L.MarkerClusterGroup({
-			showCoverageOnHover: false,
-			spiderfyOnMaxZoom: true,
-			maxClusterRadius: 40
-		});
-
-		var resetMap = function () {
-			//reset filters
-			//dt-search-box
-			$('#projects-datatable_filter').find('input').val('');
-			//$("#category_div [type='checkbox']").prop('checked', true);
-			$('#partner_select').val(' ');
-			$('#state_full_select').val(' ');
-			$('#technology_select').val(' ');
-			
-			
-			//reset datatable
-			$('#projects-datatable').DataTable().search('').columns().search('').draw();
-			
-			//reset map
-			search('');
-			map.setView([50, -120], 3);
-		};
-		var zoomToData = function () {
-			map.fitBounds(clusterGroup.getBounds(), { padding: [45, 45] });
-		}
-		//$("#btnReset").click(zoomToData);
-		//$("#lnkDownload").click(downloadAction);
-		
-		//console.log(data);
-		
+ 
 		var dataSet = csv2geojson.csv2geojson(data);
 		//console.log(dataSet);
-		var readyLayer = featureLayer.setGeoJSON(dataSet);
+		//var readyLayer = featureLayer.setGeoJSON(dataSet);
 
-		
+
 		setupDataControls();
 
 		
 		
 
 		//add the initial data (all of it) to the map.
-		customPopup(readyLayer);
+		//customPopup(readyLayer);
 
 		//use this for clustering
-		map.addLayer(clusterGroup);
+		//map.addLayer(clusterGroup);
 
 		//use this for no cluster
 		//featureLayer.addTo(map);
 		//map.featureLayer.on('ready', function () {
 			
-		//});
+		
 
 
 
 		
 		function setupDataControls() {
-
+console.log(featureLayer);
 			var features = featureLayer.getGeoJSON().features;
+			
 			var checkboxes = [];
 
 			var typesObj = {}, types = [];
-			var fullStateObj = {}, aryFullState = [];
+			var fullStateObj = {}, aryRequirements = [];
 			var partnersObj = {}, aryPartners = [];
 			var technologyObj = {}, aryTechnology = [], tmpAryValues = [], technologyValue = '';
 			//var qualificationObj = {}, aryQualification = [];
@@ -443,17 +299,17 @@ $(document).ready(function () {
 					typesObj[categories[j].trim()] = true;
 				}*/
 
-				//State Names
-				fullStateObj[features[i].properties['state_full'].trim()] = true;
+				//Requirements
+				requirementsObj[features[i].properties['state_full'].trim()] = true;
 				
 				//Regional Partners
-				partnersObj[features[i].properties['Regional_Partners'].trim()] = true;
+				//partnersObj[features[i].properties['Regional_Partners'].trim()] = true;
 
 				//Technology
-				technologyValue = features[i].properties['Technology'].trim();
+				//technologyValue = features[i].properties['Technology'].trim();
 
 				//handle multiple values in the field
-				if (technologyValue.indexOf(", ") > 0) {
+				/*if (technologyValue.indexOf(", ") > 0) {
 					tmpAryValues = technologyValue.split(", ");
 					$.each(tmpAryValues, function (key, val) {
 						technologyObj[val.trim()] = true;
@@ -465,7 +321,7 @@ $(document).ready(function () {
 						technologyObj[technologyValue.trim()] = true;
 					else
 						technologyObj["Unavailable"] = true;
-				}
+				}*/
 
 				//Qualification
 				//if (features[i].properties['Qualification'])
@@ -511,35 +367,19 @@ $(document).ready(function () {
 			*/
 
 			//create State selection interface
-			for (var k in fullStateObj) if (k != "") aryFullState.push(k);
+			for (var k in requirementsObj) if (k != "") aryRequirements.push(k);
 
+			aryRequirements.sort();
 
-			aryFullState.sort();
-
-			for (let [key, value] of Object.entries(state_list)) {
+			for (var i = 0; i < aryRequirements.length; i++) {
 				// Create an an input option inside.
-				item = statefullSelect.appendChild(document.createElement('option'));
-				item.setAttribute('value', value);
-				if (!aryFullState.includes(value)){
-					item.setAttribute('disabled', true);
-					item.setAttribute('class','stateDisabled');
-				}
-				
-				item.innerHTML = value;
+				item = requirementsSelect.appendChild(document.createElement('option'));
+
+				item.setAttribute('value', aryRequirements[i]);
+				item.innerHTML = aryRequirements[i];
+
 			}
-
-			//doing it normally.
-			/*for (var i = 0; i < aryFullState.length; i++) {
-				// Create an an input option inside.
-				item = statefullSelect.appendChild(document.createElement('option'));
-
-				item.setAttribute('value', aryFullState[i]);
-				item.innerHTML = aryFullState[i];
-
-			}*/
-
-
-			statefullSelect.addEventListener('change', function () {
+			requirementsSelect.addEventListener('change', function () {
 				var val = $(this).val();
 				//console.log('id: ' + this.id);
 				
@@ -547,17 +387,14 @@ $(document).ready(function () {
 				search_dt_column2($('#projects-datatable').DataTable(), this.id);
 				
 				//update map according to filter
-				search();
+				//search();
 
-				//console.log('state_full_select changed');
+				//console.log('requirement_select changed');
 			});
 
-			/*
-			//create Partner selection interface
+			/*//create Partner selection interface
 			for (var k in partnersObj) if (k != "") aryPartners.push(k);
 
-			//Custom = added Spark Northwest to array
-			aryPartners.push('Spark Northwest');
 			aryPartners.sort();
 
 			for (var i = 0; i < aryPartners.length; i++) {
@@ -576,7 +413,6 @@ $(document).ready(function () {
 				search_dt_column2($('#projects-datatable').DataTable(), this.id);
 				//console.log('partner_select changed');
 			});
-			*/
 
 			//create Technology selection interface
 	
@@ -604,56 +440,12 @@ $(document).ready(function () {
 				//console.log('technology_select changed');
 			});
 
+			*/
 			
 			
 		}
 
-		function customPopup(markersLayer) {
-			
-			
-			markersLayer.eachLayer(function (layer) {
-
-				//debug only
-				var strLatLng = "";
-				//strLatLng = '<br/>' + layer.feature.properties.latitude + ', ' + layer.feature.properties.longitude;
-				
-				var strRegionalPartner = '';
-				if (layer.feature.properties.Regional_Partners != '') {
-					strRegionalPartner = '<div class="callout_label">Regional Partners: <\/div><div><a href="' + layer.feature.properties.Regional_Partner_URL + '" target=_blank">' + layer.feature.properties.Regional_Partners + '<\/a><\/div>';
-				}
-
-				//var content = '<div class="project_title"><a href="' + layer.feature.properties.Node_ID + '">' + layer.feature.properties.Community + '</a><\/div>' +
-				var content = '<div class="project_title">' + layer.feature.properties.Community + '<\/div>' +
-						'<div class="partner_location">('+ layer.feature.properties.state_full + ')<\/div><hr\/>' +
-					    '<div class="callout_label">Technical Assistance Areas:<\/div> ' + layer.feature.properties.Technology.trim() + ' <br\/>' +
-						strRegionalPartner +
-						//'<div class="callout_label">Qualification:<\/div> ' + layer.feature.properties.Qualification + ' <br\/>' +
-						strLatLng;
-
-				layer.bindPopup(content);
-
-				//style the marker
-				//var project_type = layer.feature.properties.funding_category.split(",")[0].trim();
-				var project_type = "Default";
-
-				layer.setIcon(L.mapbox.marker.icon({
-					'marker-size': projectTypeAttributes[project_type].size,
-					'marker-color': projectTypeAttributes[project_type].color,
-					'marker-symbol': projectTypeAttributes[project_type].icon
-				}));
-
-				//assign Click event
-				layer.on('click', function (e) {
-					//reserved for future functionality
-					//$('#info_div').html(content);
-				});
-				clusterGroup.addLayer(layer);
-			});
-
-			
-			
-
-		}
+		
 
 	
 
@@ -672,214 +464,12 @@ $(document).ready(function () {
 		return blnchecked;
 	}
 
-	//Handy util for find latlong on right-click
-	/*map.on("contextmenu", function (event) {
-		console.log("Coordinates: " + event.latlng.toString());
-	});
-	*/
-
-	var markers = [];
-	function search(strFilterName) {
-		// get the values of the each of the different facets
-		//removed at client request. FacetRemoval
-		var stateFullString = $('#state_full_select').val().trim().toLowerCase();
-		// var partnerString = $('#partner_select').val().trim().toLowerCase();
-		var technologyString = $('#technology_select').val().trim().toLowerCase();
-
-		//var stateFullString = '';
-		var partnerString = '';
-		//var technologyString = '';
-		
-		//dt-search-box
-		var searchString = ($('#projects-datatable_filter').length ) ? ($('#projects-datatable_filter').find('input').val().toLowerCase().trim()) : '';
-		
-
-		featureLayer.setFilter(showState);
-		
-
-		// here we're simply comparing the 'state' property of each marker
-		// to the search string, seeing whether the former contains the latter.
-		// If this symbol is in the list, return true. if not, return false.
-		// The 'in' operator in javascript does exactly that: given a string
-		// or number, it says if that is in a object.
-		// 2 in { 2: true } // true
-		// 2 in { } // false
-		function showState(feature) {
-
-			var tmpTechnologycheck = false;
-					
-			tmpTechnologycheck = ((feature.properties.Technology.toLowerCase().indexOf(technologyString) > -1) || technologyString == '');
-
-			return (
-					(feature.properties.state_full.trim().toLowerCase() == stateFullString || stateFullString == '') //check feature against state dropdown value
-					&& (feature.properties.Regional_Partners.trim().toLowerCase() == partnerString || partnerString == '') //check feature against regional partners dropdown value
-					&& (tmpTechnologycheck) //check feature against technology dropdown value, we use indexOf here to find the string since it could be a multiple value.
-					//&& (feature.properties.Qualification.trim().toLowerCase() == qualificationString || qualificationString == '') //check feature against qualifications dropdown value
-					
-					//dt-search-box
-					&& ( //full text search of the following columns, using searchString
-						(feature.properties.Community.toLowerCase().indexOf(searchString) !== -1)
-						|| (feature.properties.state_full.toLowerCase().indexOf(searchString) !== -1)
-						|| (feature.properties.Technology.toLowerCase().indexOf(searchString) !== -1)
-						|| (feature.properties.Regional_Partners.toLowerCase().indexOf(searchString) !== -1)
-						|| (feature.properties.Qualification.toLowerCase().indexOf(searchString) !== -1)
-					)
-			); 
-					
-		}
-
-		//clean up current map, remove the current clustered layer
-		map.removeLayer(clusterGroup);
-		
-		
-		
-		//reinitialize cluster group
-		clusterGroup = new L.MarkerClusterGroup({
-			showCoverageOnHover: false,
-			spiderfyOnMaxZoom: true,
-			maxClusterRadius: 40
-		});
-		//update layers with new filtered data
-		customPopup(featureLayer);
-
-		map.addLayer(clusterGroup);
-		
-		
-		
-		//Slightly hardcoded here, however, usability wise, centering on CONUS was better when the entire recordset was shown vs zooming way out to try to fit all markers.
-		if(clusterGroup.getBounds().isValid() && clusterGroup.getLayers().length < 6000){
-			map.fitBounds(clusterGroup.getBounds(), { padding: [45, 45] });
-		}
-		else
-			map.setView([40, -97], 4);
-
-		}
-
-	// Custom jump-to control 
-	(function () {
-		L.Control.Jump = L.Control.extend({
-			options: {
-				position: 'topleft',
-				hawaiiTitle: 'Zoom to Hawaii',
-				alaskaTitle: 'Zoom to Alaska',
-				guTitle: 'Zoom to Guam',
-				asTitle: 'Zoom to American Somoa',
-				mpTitle: 'Zoom to Northern Mariana Islands',
-				viTitle: 'Zoom to U.S. Virgin Islands',
-				prTitle: 'Zoom to Puerto Rico',
-				downloadTitle: 'Download CSV data',
-				usTitle: 'Zoom to contiguous US',
-				zoomTitle: 'Zoom to Selections',
-				resetTitle: 'Reset Selections'
-			},
-
-			onAdd: function (map) {
-				// set options
-				options = this.options;
-
-				// create jump container
-				var jumpControl = 'leaflet-control-jump';
-				var container = L.DomUtil.create('div', jumpControl + ' leaflet-bar');
-
-				// add buttons
-				this._usButton = this._createButton(options.usTitle, jumpControl + '-style-us', container, usAction);
-				this._alaskaButton = this._createButton(options.alaskaTitle, jumpControl + '-style-ak', container, akAction);
-				this._asButton = this._createButton(options.asTitle, jumpControl + '-style-as', container, asAction);
-				this._guButton = this._createButton(options.guTitle, jumpControl + '-style-gu', container, guAction);
-				this._hawaiiButton = this._createButton(options.hawaiiTitle, jumpControl + '-style-hi', container, hiAction);
-				this._mpButton = this._createButton(options.mpTitle, jumpControl + '-style-mp', container, mpAction);
-				this._prButton = this._createButton(options.prTitle, jumpControl + '-style-pr', container, prAction);
-				this._viButton = this._createButton(options.viTitle, jumpControl + '-style-vi', container, viAction);
-				this._zoomTitle = this._createButton(options.zoomTitle, jumpControl + '-style-zoom', container, zoomAction);
-				this._resetTitle = this._createButton(options.resetTitle, jumpControl + '-style-reset', container, resetAction);
-
-				return container;
-			},
-
-			_createButton: function (title, className, container, fn) {
-				var link = L.DomUtil.create('a', className, container);
-				link.href = '#';
-				link.title = title;
-				if (className.indexOf('-us') > 0)
-					link.innerHTML = '<b style="margin-top:12px;margin-left:6px;color: black;">US</b>';
-				if (className.indexOf('-hi') > 0)
-					link.innerHTML = '<b style="margin-top:12px;margin-left:7px;color: black">HI</b>';
-				if (className.indexOf('-ak') > 0)
-					link.innerHTML = '<b style="margin-top:12px;margin-left:5px;color: black">AK</b>';
-				if (className.indexOf('-gu') > 0)
-					link.innerHTML = '<b style="margin-top:12px;margin-left:5px;color: black">GU</b>';
-				if (className.indexOf('-as') > 0)
-					link.innerHTML = '<b style="margin-top:12px;margin-left:5px;color: black">AS</b>';
-				if (className.indexOf('-mp') > 0)
-					link.innerHTML = '<b style="margin-top:12px;margin-left:5px;color: black">MP</b>';
-				if (className.indexOf('-vi') > 0)
-					link.innerHTML = '<b style="margin-top:12px;margin-left:5px;color: black">VI</b>';
-				if (className.indexOf('-pr') > 0)
-					link.innerHTML = '<b style="margin-top:12px;margin-left:5px;color: black">PR</b>';
-				if (className.indexOf('zoom') > 0)
-					link.innerHTML = '<i class="fa fa-search fa-1" style="margin-top:7px;margin-left:8px;"></i>';
-				if (className.indexOf('reset') > 0)
-					link.innerHTML = '<i class="fa fa-undo fa-1" style="margin-top:7px;margin-left:8px;"></i>';
-				L.DomEvent
-					.on(link, 'mousedown dblclick', L.DomEvent.stopPropagation)
-					.on(link, 'click', L.DomEvent.stop)
-					.on(link, 'click', fn, this)
-					.on(link, 'click', this._refocusOnMap, this);
-
-				return link;
-			}
-		});
-
-		L.control.jump = function (options) {
-			return new L.Control.Jump(options);
-		};
-	})();
-
-	// Create button functionality for jump control
-	function usAction() {
-		map.setView([40, -97], 4);
-	}
-
-	function hiAction() {
-		map.fitBounds([[18.542116654448996, -161.03759765625], [22.573438264572406, -154.22607421875]]);
-	}
-	function akAction() {
-		//console.log(map.getBounds().getCenter());
-		map.setView([60.95549084444146, -156.708984375], 4);
-	}
-	function prAction() {
-		map.setView([18.0362, -66.46591], 9);
-	}
-	function guAction() {
-		map.setView([13.47577, 144.7998], 10);
-	}
-	function viAction() {
-		map.setView([17.738493919, -64.75705680], 10);
-	}
-	function mpAction() {
-		map.setView([15.12989379, 145.700448336], 10);
-	}
-	function asAction() {
-		map.setView([-14.29891395, -170.7182346], 10);
-	}
 	
-	function downloadAction() {
-		window.parent.location = 'https://train.cms.doe.gov/diversity/j40-database-download';
-	}
 
-	function zoomAction() {
-		zoomToData();
-	}
-
-	function resetAction() {
-		resetMap();
-	}
-
-	// Add custom 'jump to' sidebar
-	L.control.jump().addTo(map);
-		
 	});
 
+	
+	
 
 }); //end document Ready
 
@@ -913,7 +503,7 @@ function search_dt_column2(dtable, callingControl, fuzzySearch) {
 			term = "^" + term + "$";
 			dtable.column(columnNum).search(term, true, false).draw();
 		}
-		//console.log('in search_dt_column2: control: ' + callingControl +' - col:' + columnNum + ' - term: ' + term);
+		console.log('in search_dt_column2: control: ' + callingControl +' - col:' + columnNum + ' - term: ' + term);
 	
 	}
 
@@ -1015,6 +605,7 @@ var projectTypeAttributes = {
 };
 
 
+
 </script>
 
 <!--<div class="row">
@@ -1026,7 +617,7 @@ var projectTypeAttributes = {
 <div class="row">
     <div class="col-sm-3" id="facet_div">
 
-      <!--   <div class="panel-group">
+        <!--<div class="panel-group">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">
@@ -1043,12 +634,12 @@ var projectTypeAttributes = {
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">
-                        <span data-toggle="tooltip" title="State" data-placement="top">State</span>
+                        <span data-toggle="tooltip" title="State" data-placement="top">Requirement Level</span>
                     </h3>
                 </div>
-                <div id="state_collapse" class="panel-collapse collapse in">
+                <div id="requirement_collapse" class="panel-collapse collapse in">
                     <div class="panel-body" id="foa_div">
-                        <select id='state_full_select' name='state_full_select' class='form-control' aria-label='state_full_select'>
+                        <select id='requirement_select' name='requirement_select' class='form-control' aria-label='requirement_select'>
                             <option value=" ">All</option>
                         </select>
                     </div>
@@ -1057,7 +648,7 @@ var projectTypeAttributes = {
 		</div>
 		
 
-        <!--<div class="panel-group">
+        <div class="panel-group">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">
@@ -1072,7 +663,7 @@ var projectTypeAttributes = {
                     </div>
                 </div>
             </div>
-		</div>-->
+		</div>
 		
 		<div class="panel-group">
             <div class="panel panel-default">
@@ -1095,21 +686,22 @@ var projectTypeAttributes = {
 		
 
         
-        
+        <!--<div  class="panel-group" style="text-align: center;">
+			<a id="lnkDownload" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Download the .csv datafile." href="javascript:void(0);"><i class="fa fa-download fa-1"></i> Download All Projects Data</a>
+			<br><br>
+		</div>-->
 
-    </div> 
+    </div>
 
-    <div class="col-sm-9 maprow">
-		<div id='map'>
-			
+    
+		<div class="col-sm-9 datatable-container">
+			<table id="projects-datatable" class="display dataTable" cellspacing="0"></table>
 		</div>
-	</div>
+	
 </div>
 
 <div class="row">
-	<div class="col-sm-12 datatable-container">
-		<table id="projects-datatable" class="display dataTable" cellspacing="0"></table>
-	</div>
+	
 
 </div>
 
