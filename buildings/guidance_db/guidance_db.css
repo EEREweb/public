@@ -308,6 +308,47 @@ img.info-icon {
  #projects-datatable {
      width: 99% !important;
  }
+
+
+/*Custom SearchPanes*/
+input.dtsp-search::placeholder {
+    font-size: 18px !important;
+    color: rgb(27, 27, 27) !important;
+    text-transform: uppercase;
+  }
+
+.guidanceQuestion{
+    font-size: 1.2em;
+}
+.guidanceQuestion:hover, .guidanceQuestion:hover h4{
+    font-weight:bold;
+    cursor: pointer;
+}
+.guidanceAnswer{
+    font-size: 1.2em;
+    padding-left:30px;
+    display: none;
+}
+.guidanceDebug{
+    font-size: .8em;
+}
+
+div.dtsp-topRow {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    border-bottom: 1px solid #ddd;
+    border-radius: 0px;
+    justify-content: space-around;
+    align-content: flex-start;
+    align-items: flex-start;
+    padding: 5px;
+
+}
+div.dtsp-panesContainer div.dtsp-title {
+    float:none !important;
+}
+
 /********************** DataTables.css ********************/
 /*
  * Table styles
@@ -1981,6 +2022,7 @@ hr {
 
 .h5, h5 {
     font-size: 16px;
+    font-weight:bold;
 }
 
 .h6, h6 {
@@ -7864,11 +7906,6 @@ footer {
     background-image: linear-gradient(#FFF,#EEE);
 }
 
-.stateDisabled {
-    color: #939393;
-    font-style: italic;
-}
-
 :-moz-placeholder, :-ms-input-placeholder, ::-moz-placeholder, ::-webkit-input-placeholder {
     color: #ccc;
 }
@@ -8261,4 +8298,13 @@ blockquote {
     text-transform: uppercase;
     font-weight: 700;
     font-size: 80%;
+}
+
+.media-block {
+    float:right;
+    padding: 5px;
+    max-width: 250px;
+}
+.media-caption {
+    text-align: center;
 }

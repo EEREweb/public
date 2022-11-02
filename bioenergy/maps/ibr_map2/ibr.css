@@ -36,7 +36,7 @@
 #map {
     position: absolute;
     top: 0;bottom: 0;
-    width: 772px;height: 645px;
+    width: 97%;height: 645px;
     }
     
 }
@@ -234,6 +234,12 @@ h3.panel-title {
     color: #000000 !important;
     
     font-weight: 200;
+}
+
+/*Custom scrolling for large checkbox control*/
+#feedstock_div {
+    overflow-y: scroll;
+    max-height: 492px;
 }
 
 .checkbox label {
@@ -1056,7 +1062,7 @@ tr.shown td.details-control {
 
 
 
-#facet_div label {
+.facet_div label {
     color: #444;
 }
 
@@ -1918,7 +1924,7 @@ hr {
     margin-top: 26px;
     margin-bottom: 26px;
     border: 0;
-    border-top: 1px solid #eee;
+    border-top: 1px solid #bbb;
 }
 
 .sr-only {
@@ -7862,11 +7868,6 @@ footer {
 
 .faceted-search .panel-heading {
     background-image: linear-gradient(#FFF,#EEE);
-}
-
-.stateDisabled {
-    color: #939393;
-    font-style: italic;
 }
 
 :-moz-placeholder, :-ms-input-placeholder, ::-moz-placeholder, ::-webkit-input-placeholder {
