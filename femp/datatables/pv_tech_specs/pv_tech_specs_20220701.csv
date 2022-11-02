@@ -1,4 +1,4 @@
-﻿ID,Specification_Title,Specification_Description,Specification_Template_Language,Specification_Background,Requirements,Solicitation_Section,Array_Type,System_Component,Specification_Topic,Images,Specialized_Topic
+ID,Specification_Title,Specification_Description,Specification_Template_Language,Specification_Background,Requirements,Solicitation_Section,Array_Type,System_Component,Specification_Topic,Images,Specialized_Topic
 1,Government Objectives,"<p>This section allows the agency to convey strategic and overarching agency goals to project bidders. Establishing clear goals can help bidders and contractors craft solutions to meet these goals. Although not legally enforceable, this language can be very useful for agencies to convey to bidders.</p>","<p>Include objectives for the solar PV system(s), for example:</p>
 <ul>
 <li>Annual solar PV production is to be at least <X%> of annual site consumption (kWh), as averaged over the previous three years.
@@ -33,6 +33,7 @@
 </li><li>Ground and arc fault protection and alarming
 </li><li>An electrical grounding subsystem
 </li><li>Everything necessary to interconnect with the site electrical distribution system</li></ul>
+
 
 <p>In addition, the Contractor shall provide all incidentals required, such as the agency's electrical distribution system impact studies and needed modifications, permits, approvals, environmental and historic compliance, freight, financing, procurement, monitoring, inspection, and billing as necessary to design, construct, operate, and maintain all the complete solar PV systems, described hereinafter.</p>",,Advanced,Specifications,All,,Codes and Standards; Cybersecurity; Engineering; O&M; Resiliency; Safety; Severe Weather,,All
 3,Generally Encompassed Specifications,<p>This section describes what the Contractor is responsible for from the start of the project to the end.</p>,"<p>The Contractor shall provide all labor, material, equipment, engineering, maintenance, and capital to design, install, commission, interconnect, maintain, and operate solar photovoltaic (PV) systems as required herein.  All one-time and recurring efforts, soft and hard costs, shall be the Contractor's responsibility. </p>",,Minimum,Specifications,All,,Codes and Standards; Cybersecurity; Engineering; O&M; Resiliency; Safety; Severe Weather,,All
