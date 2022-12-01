@@ -183,6 +183,7 @@
 										<option value="111219">111219 Other Vegetable (except Potato) and Melon Farming</option>
 										<option value="112112 Cattle Feedlots">112112 Cattle Feedlots</option>
 										<option value="112120 Dairy Cattle and Milk Production">112120 Dairy Cattle and Milk Production</option>
+										<option value="112320 Broilers and Other Meat Type Chicken Production">112320 Broilers and Other Meat Type Chicken Production</option>
 										<option value="211130 Natural Gas Extraction">211130 Natural Gas Extraction</option>
 										<option value="221112 Fossil Fuel Electric Power Generation">221112 Fossil Fuel Electric Power Generation</option>
 										<option value="221210 Natural Gas Distribution">221210 Natural Gas Distribution</option>
@@ -454,7 +455,7 @@
 			"State": 15,
         };
 
-		$.get('chpdb_master_2022_10_31.csv', function (data) {
+		$.get('chpdb_master_2022_11_28.csv', function (data) {
 			var objJson = Papa.parse(removeTrailingLine(data), { "header": true });
 			var csvJson = JSON.stringify(objJson.data, null, 2);
 
