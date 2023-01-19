@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<title>FEMP Utility Carbon Pollution-Free Electricity (CFE) Program Availability Map | Department of Energy</title>
+<meta charset="UTF-8">
+
+<script src='//api.mapbox.com/mapbox.js/v2.4.0/mapbox.js?access_token="pk.eyJ1IjoiZW5lcmd5IiwiYSI6ImNsY3J6eHRqMDBreHozcmxyb2xlcmsxajQifQ.ARcoivXZ8yd-kLLeDI-oLg"'></script>
+<link href='//api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet' />
+
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
+
+<!-- <script src="//www1.eere.energy.gov/apps/js/jquery/3.2.0/jquery.min.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!-- <script src="//www1.eere.energy.gov/apps/js/bootstrap/3.3.7/bootstrap.min.js"></script> -->
+
+<link href="includes/bootstrap.min.css" rel="stylesheet">
+<script src="includes/popper.min.js"></script>
+<script src="includes/bootstrap.min.js"></script>
+<script src="includes/sweetalert2.all.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+
+<script src="//www1.eere.energy.gov/apps/js/datatables/1.10.15/jquery.dataTables.min.js"></script>
+<script src="//www1.eere.energy.gov/apps/js/papaparse/4.1.2/papaparse.min.js"></script>
+
+<script src="//www1.eere.energy.gov/apps/js/leaflet/clustering/Leaflet.markercluster.min.js"></script>
+<script src="//www1.eere.energy.gov/apps/js/csv2geojson/csv2geojson.src.js"></script>
+
+<script src='//www1.eere.energy.gov/apps/js/funclib.js'></script>
+
+
+<script src="cfe-states.json.js"></script>
+
+<link rel="stylesheet" type="text/css" href="cfe.css">
+<base target="_parent">
+
+<script>
+//setup Column locations according to the datatable defined columns (not .csv - this can get confusing if your ordering for datatable display differs from the ordering in the .csv), index starts at 0
+
+var objColumn = {
+	"State": 3,
+	"Available_and_Eligible": 5,
+	"EO_14057_Eligibility":6,
+	"Areawide_Contract":7
+};
+//ugly, but looks up the dropdown IDs, and associates the column name in objColumn. TODO, make these an array of objects, and refactor code to make things cleaner.
+var objControlIDs = {
+		'#state_select': "State",
+		'#availability_select': "Available_and_Eligible",
+		'#eo14057_select': "EO_14057_Eligibility",
+		'#areawide_select': "Areawide_Contract"
+	};
+
+/* Formatting function for row details - modify as you need */
+function format(d) {
+	
+	return '<h4>Description:</h4>' + 
+			'<p class="dt_details">' + d.Description + '</p>';
+}
+function addStr(str, index, stringToAdd){
+  return str.substring(0, index) + stringToAdd + str.substring(index, str.length);
+}
+
+function formatCurrency(total) {
+	var formattedTotal = '';
+	formattedTotal = parseFloat(total, 10).toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, "$1,");
+	//remove cents
+	formattedTotal = formattedTotal.substring(0, formattedTotal.length - 3);
+	if (total >= 0)
+		return '$'+formattedTotal.toString();
+	else {
+		return addStr(formattedTotal, 1, "$").toString();
+	}
+}
+
+$(document).ready(function () {
+
+	var maxMapZoom = 6;	
+	var defaultTableLength = 25;
+
+	var dataFilePath = 'utility-map-filters-20230118.csv';
+	
+	
+	$.get(dataFilePath, function (data) {
+	
+		var objJson = Papa.parse(removeTrailingLine(data), { "header": true });
+		var csvJson = JSON.stringify(objJson.data, null, 2);
+		//found solution here to add tfoot manually: https://datatables.net/forums/discussion/40370/datatables-footercallback-function-not-displaying-results-in-footer
+		//$("#projects-datatable").append('<tfoot><th colspan="23" style="text-align:right;padding-right:10px"></th></tfoot>');
+				
+
+		var dt_datatable = $('#datatable_1').DataTable( {
+            "processing": true,
+            "serverSide": false,
+            "order": [[ 1, 'asc' ]],
+            "lengthMenu":  [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]],
+			"pageLength": 25,
+			"language": {
+				"zeroRecords": "No matching programs found"
+			},
+			"data": eval(csvJson),
+
+            "columns": [
+				{
+				 	"class": 'details-control',					// [0]
+				 	"orderable": false,
+				 	"data": null,
+				 	"defaultContent": ''
+				},
+				{ "data": "Utility" },
+                { "data": "Program_Name"},
+                /*{ 
+                    "data": null, render:function(data,type,row) {
+						if (data.Website == '') return data.Organization;
+						return  '<span style="display: none;">' + data.Organization + '</span><a href="' + data.Website + '" target="_blank">'+ data.Organization +'</a>';
+					}
+				},*/
+				{ "data": "State" },
+                { "data": "Description" },
+                { "data": "Available_and_Eligible" },
+				{ "data": "EO_14057_Eligibility" },
+                { "data": "Areawide_Contract" },
+				{ "data": "Status" },
+                { "data": "longitude" },
+				{ "data": "latitude" },
+            ],
+            "columnDefs": [
+                {
+					"targets": [0],
+				},
+				{
+                    "targets": [ 1 ],
+					"title":"Utility"
+                },
+				{
+                    "targets": [ 2 ],
+					"title":"Program Name"
+                },
+				{
+                    "targets": [ 3 ],
+					"title":"State"
+                },
+                {
+                    "targets": [ 4 ],
+					"title":"Description",
+					"visible":false
+                },
+                {
+                    "targets": [ 5 ],
+					"title":"Availability"
+                },
+                {
+                    "targets": [ 6 ],
+					"title":"E.O. 14057 Eligibility"
+                },
+                {
+                    "targets": [ 7 ],
+					"title":"GSA Areawide Contract"
+                },
+                {
+                    "targets": [ 8 ],
+					"title":"Status",
+					"visible":false,
+                },
+				{
+                    "targets": [ 9 ],
+					"title":"long",
+					"visible":false,
+                },
+				{
+                    "targets": [ 10 ],
+					"title":"lat",
+					"visible":false,
+                },
+                
+
+            ],
+            "createdRow": function ( row, data, index ) {
+                //$('td', row).eq(0).append(format(data));
+            },
+            "initComplete": function (settings, json) {
+
+				//search map
+				//$('#datatable_1_filter').find('input').keyup( function () { search(''); });
+
+				// Add event listener for opening and closing details
+				$('#datatable_1 tbody').on('click', 'td.details-control', function () {
+					var tr = $(this).closest('tr');
+					var row = $('#datatable_1').DataTable().row(tr);
+
+					if (row.child.isShown()) {
+						// This row is already open - close it
+						row.child.hide();
+						tr.removeClass('shown');
+					}
+					else {
+						// Open this row
+						row.child(format(row.data())).show();
+						tr.addClass('shown');
+					}
+				});
+
+            },
+			//This will call sweetalert2 to launch a modal dialog after no records are found when the table is filtered.
+			"drawCallback": function( settings ) {
+				//console.log( $(this).DataTable().rows( {search:'applied'} ).count() );
+				if ($(this).DataTable().rows( {search:'applied'} ).count()==0) {
+					//using Sweetalert2: https://sweetalert2.github.io
+					Swal.fire({
+						//title: 'Error!',
+						html: '<p>There are no programs that match the filters you requested.</p><p>For federal agencies in retail electric choice markets, email both <a href="mailto:dlaenergy.eteam@dla.mil">DLA Energy</a> and <a href="mailto:energy@gsa.gov">GSA</a> to determine federal requirements and obtain competitive pricing.</p><p>Submit a request through the <a href="https://www7.eere.energy.gov/femp/assistance/node/add/application-combined" target="_blank">FEMP Assistance Request Portal</a> to get help identifying your electricity market type and evaluating off-site purchasing options.</p>',
+						icon: 'error',
+						confirmButtonText: 'OK'
+						});
+					}   
+			}
+
+        } ); //end datatable
+
+		$('#datatable_1_length').find('select').addClass('form-control');
+		$('#datatable_1_filter').find('input').addClass('form-control form-text dt_searchbox');
+		$('#datatable_1_filter').find('input').attr('placeholder', 'Search by keyword');
+		//$('#ctrlSearch').append( $('#datatable_1_filter').find('input') );
+		//$('#ctrlSearch').find('input').keyup( function () { search(); });
+
+		//Move and style pagination/dt info to top of table
+		$('#datatable_1_paginate').removeClass();
+		$('#datatable_1_paginate').addClass('pagination');
+		$('#datatable_1_info').insertAfter('#datatable_1_filter');
+		$('#datatable_1_paginate').insertAfter('#datatable_1_info');
+		//move search input box to correct position
+		$('#datatable_1_filter').find('input').insertAfter('#datatable_1_length');
+		
+
+		// Find and store a variable reference to the list of filters.
+		var stateSelect = document.getElementById('state_select');
+		var availSelect = document.getElementById('availability_select');
+		var eo14057Select = document.getElementById('eo14057_select');
+		var areawideSelect = document.getElementById('areawide_select');
+
+		//Tooltips for other elements
+		document.querySelectorAll('[data-bs-toggle="tooltip"]')
+			.forEach(tooltip => {
+			new bootstrap.Tooltip(tooltip);
+			})
+		
+		L.mapbox.accessToken = 'pk.eyJ1IjoiZW5lcmd5IiwiYSI6ImNsY3J6eHRqMDBreHozcmxyb2xlcmsxajQifQ.ARcoivXZ8yd-kLLeDI-oLg';
+		var mapid = '';
+		var basemap = L.mapbox.styleLayer('mapbox://styles/energy/cld0qkgpu000801nxgz647vo5');
+		
+		//map with ONLY one baselayer
+        var map = L.mapbox.map('map', mapid,
+			{ maxZoom: maxMapZoom, minZoom: 4, layers:[basemap], attributionControl: true })
+			//.setView([39, -98], 4);
+			usAction(); //better to use this function to centralize the reset and default viewport
+
+		var featureLayer = L.mapbox.featureLayer();
+
+		// The clusterGroup gets each marker in the group added to it
+		// once loaded, and then is added to the map
+		var clusterGroup = new L.MarkerClusterGroup({
+			showCoverageOnHover: false,
+			spiderfyOnMaxZoom: true,
+			maxClusterRadius: 5
+		});
+
+		var resetMap = function () {
+			//reset filters
+			//dt-search-box
+			$('#datatable_1_filter').find('input').val('');
+			$('#availability_select').val(' ');
+			//$('#eo14057_select').val('Yes');
+			$('#areawide_select').val(' ');
+			$('#state_select').val(' ');
+			
+			//reset datatable
+			$('#datatable_1').DataTable().search('').columns().search('').draw();
+			
+			//Client requested that Default for EO14057 is Yes
+			$('#eo14057_select').val('Yes');
+			search_dt_column2($('#datatable_1').DataTable(), 'eo14057_select');
+			
+			//reset map
+			usAction();
+			//search('');
+			//zoomToData();
+			//map.setView([50, -120], 3);
+		};
+		var zoomToData = function () {
+			map.fitBounds(clusterGroup.getBounds(), { padding: [45, 45] });
+		}
+		$("#btnReset").click(resetMap);
+		//$("#lnkDownload").click(downloadAction);
+		
+		//console.log(data);
+		
+		var dataSet = csv2geojson.csv2geojson(data);
+		//console.log(dataSet);
+		var readyLayer = featureLayer.setGeoJSON(dataSet);
+		
+
+		setupDataControls();
+
+		
+		
+
+		//add the initial data (all of it) to the map.
+		//customPopup(readyLayer);
+
+		//use this for clustering
+		//map.addLayer(clusterGroup);
+
+		//zoomToData();
+
+		//use this for no cluster
+		//featureLayer.addTo(map);
+
+		//map.featureLayer.on('ready', function () {
+			
+		//});
+
+		var features = featureLayer.getGeoJSON().features;
+		var statesObj = {}, statesInPlay = [], statesStatus = {};
+		$.each( features, function ( key, feature ) {
+			statesObj[ feature.properties['State'] ] = true;
+			statesStatus[ feature.properties['State'] ] = feature.properties['Status'];
+		});
+		
+		//console.log(statesStatus);
+
+		for (var state in statesObj) statesInPlay.push(state);
+		statesInPlay.sort();
+
+		var statesLayer0 = L.geoJson(statesData0,  {
+		  style: getStyle,
+		  onEachFeature: onEachFeature
+		}).addTo(map);
+
+		function getColor(d) {
+        return d === 'Ineligible or no data available'  ? "#FFA500" : //orange
+               d === 'Not currently available and E.O. 14057 eligible'  ? "#377eb8" : //blue
+               d === 'Available and E.O. 14057 eligible' ? "#4daf4a" : //green
+               d === 'No programs identified to date' ? "#cccccc" :
+                            "#ff7f00";
+    	}
+
+		function getStyle(feature) {
+			cfe_style = {
+			  weight: 2,
+			  opacity: 0.4,
+			  color: getColor(statesStatus[feature.properties.name.toString()]),
+			  fillOpacity: 0.15,
+			  fillColor: getColor(statesStatus[feature.properties.name.toString()])
+			};
+			// cfe_ok = {
+			//   weight: 2,
+			//   opacity: 0.4,
+			//   color: 'yellow',
+			//   fillOpacity: 0.2,
+			//   fillColor: 'yellow'
+			// };
+			// cfe_na = {
+			//   weight: 2,
+			//   opacity: 0.4,
+			//   color: 'grey',
+			//   fillOpacity: 0.06,
+			//   fillColor: 'grey'
+			// };
+		  	cfe_none = {
+			  weight: 0,
+			  opacity: 0.0,
+			  color: getColor('No programs identified'),
+			  fillOpacity: 0.0,
+			  fillColor: getColor('No programs identified')
+			};
+
+			//console.log(statesStatus[feature.properties.abbreviation.toString()]);
+
+			
+			// switch (statesStatus[feature.properties.abbreviation.toString()]) {
+			// 	case 'Best':
+			// 		return cfe_best;
+			// 		break;
+			// 	case 'OK':
+			// 		return cfe_ok;
+			// 		break;
+			// 	case 'Not Available':
+			// 		return cfe_na;
+			// 		break;
+			// 	default:
+			// 		return cfe_none;
+			// 		break;
+			// }
+
+			if (statesStatus[feature.properties.name.toString()])
+				return cfe_style;
+			else
+				return cfe_none;
+
+		}
+
+		//define legend
+		var legend = L.control({position: 'bottomleft'});
+		legend.onAdd = function (map) {
+
+		var div = L.DomUtil.create('div', 'info legend');
+		labels = ['<strong>Status</strong>'],
+		categories = ['Available and E.O. 14057 eligible','Not currently available and E.O. 14057 eligible','Ineligible or no data available','No programs identified to date'];
+
+		for (var i = 0; i < categories.length; i++) {
+
+				div.innerHTML += 
+				labels.push(
+					'<i class="circle" style="background:' + getColor(categories[i]) + '"></i> ' +
+				(categories[i] ? categories[i] : '+'));
+
+			}
+			div.innerHTML = labels.join('<br>');
+		return div;
+		};
+		legend.addTo(map);
+
+		function onEachFeature(feature, layer) {
+		  layer.on({
+			  mousemove: mousemove,
+			  mouseout: mouseout,
+			  click: zoomToFeature
+		  });
+		}
+		var closeTooltip;
+		
+		function mousemove(e) {
+			var layer = e.target;
+
+			// popup.setLatLng(e.latlng);
+			
+			// popup.setContent('<div class="marker-title">' + layer.feature.properties.name + '</div>');
+
+			// if (!popup._map && !layer.feature.properties.name) popup.openOn(map);
+			// window.clearTimeout(closeTooltip);
+
+			// highlight feature
+			layer.setStyle({
+				weight: 3,
+				opacity: 0.3,
+				fillOpacity: 0.5
+			});
+
+			if (!L.Browser.ie && !L.Browser.opera) {
+				layer.bringToFront();
+			}
+		}
+		
+			function mouseout(e) {
+				statesLayer0.resetStyle(e.target);
+				// closeTooltip = window.setTimeout(function() {
+				// map.closePopup();
+				// }, 100);
+			}
+		
+			function zoomToFeature(e) {
+				var stateAbbr = e.target.feature.properties.name;
+				if ( $.inArray(stateAbbr, statesInPlay) == -1 ) return;
+				$("#state_select").val(stateAbbr);
+				//search('state_select');
+
+				//search_dt_column( $('#bto_members-table1').DataTable(), objColumn['State'], stateAbbr);
+				//map.fitBounds(e.target.getBounds());
+				search_dt_column2($('#datatable_1').DataTable(), 'state_select');
+			}
+		
+		function setupDataControls() {
+
+			var features = featureLayer.getGeoJSON().features;
+
+			//console.log(dataSet);
+			var checkboxes = [];
+			
+			var stateObj = {}, aryState = [];
+			var availObj = {}, aryAvail = [];
+			var eo14057Obj = {}, aryEO14057 = [];
+			var areaObj = {}, aryArea = [];
+			
+			
+			//This loop will go through the dataset and setup all the arrays for the different filters.
+			for (var i = 0; i < features.length; i++) {
+				
+				//State
+				//stateObj[features[i].properties['State'].trim()] = true;
+
+				//Availability
+				availObj[features[i].properties['Available_and_Eligible'].trim()] = true;
+
+				//eo14057 Eligible
+				eo14057Obj[features[i].properties['EO_14057_Eligibility'].trim()] = true;
+
+				//Areawide Contract
+				areaObj[features[i].properties['Areawide_Contract'].trim()] = true;
+
+			}
+
+			//create State interface
+			// for (var k in stateObj) if (k != "") aryState.push(k);
+			// aryState.sort();
+
+			// for (var i = 0; i < aryState.length; i++) {
+			// 	// Create an an input option inside.
+			// 	item = stateSelect.appendChild(document.createElement('option'));
+
+			// 	item.setAttribute('value', aryState[i]);
+			// 	item.innerHTML = aryState[i];
+			// }
+
+			stateSelect.addEventListener('change', function () {
+				var val = $(this).val();
+				//console.log('id: ' + this.id);
+				
+				//exact search using the newly selected DOE Office
+				search_dt_column2($('#datatable_1').DataTable(), this.id);
+				
+				//update map according to filter
+				//search();
+
+				//console.log('state_select changed');
+			});
+
+			//create Availability interface
+			for (var k in availObj) if (k != "") aryAvail.push(k);
+			aryAvail.sort();
+
+			for (var i = 0; i < aryAvail.length; i++) {
+				// Create an an input option inside.
+				item = availSelect.appendChild(document.createElement('option'));
+
+				item.setAttribute('value', aryAvail[i]);
+				item.innerHTML = aryAvail[i];
+			}
+
+			availSelect.addEventListener('change', function () {
+				var val = $(this).val();
+				//console.log('id: ' + this.id);
+				
+				//exact search using the newly selected DOE Office
+				search_dt_column2($('#datatable_1').DataTable(), this.id);
+				
+				//update map according to filter
+				//search();
+
+				//console.log('availability_select changed');
+			});
+
+			//create EO_14057_Eligibility interface
+			for (var k in eo14057Obj) if (k != "") aryEO14057.push(k);
+			aryEO14057.sort();
+
+			for (var i = 0; i < aryEO14057.length; i++) {
+				// Create an an input option inside.
+				item = eo14057Select.appendChild(document.createElement('option'));
+
+				item.setAttribute('value', aryEO14057[i]);
+				item.innerHTML = aryEO14057[i];
+			}
+
+			eo14057Select.addEventListener('change', function () {
+				var val = $(this).val();
+				//console.log('id: ' + this.id);
+				
+				//exact search using the newly selected DOE Office
+				search_dt_column2($('#datatable_1').DataTable(), this.id);
+				
+				//update map according to filter
+				//search();
+
+				//console.log('eo14057_select changed');
+			});
+
+			//Client wanted page to default to Yes for EO14057
+			$('#eo14057_select').val('Yes');
+			search_dt_column2($('#datatable_1').DataTable(), 'eo14057_select');
+			
+
+			//create Areawide interface
+			for (var k in areaObj) if (k != "") aryArea.push(k);
+			aryArea.sort();
+
+			for (var i = 0; i < aryArea.length; i++) {
+				// Create an an input option inside.
+				item = areawideSelect.appendChild(document.createElement('option'));
+
+				item.setAttribute('value', aryArea[i]);
+				item.innerHTML = aryArea[i];
+			}
+
+			areawideSelect.addEventListener('change', function () {
+				var val = $(this).val();
+				//console.log('id: ' + this.id);
+				
+				//exact search using the newly selected DOE Office
+				search_dt_column2($('#datatable_1').DataTable(), this.id);
+				
+				//update map according to filter
+				//search();
+
+				//console.log('areawide_select changed');
+			});
+
+			
+
+			
+		}
+
+		function customPopup(markersLayer) {
+			
+			
+			markersLayer.eachLayer(function (layer) {
+
+				//debug only
+				var strLatLng = "";
+				//strLatLng = '<br/>' + layer.feature.properties.latitude + ', ' + layer.feature.properties.longitude;
+				
+
+				var content = '<div class="project_title"><a href="' + layer.feature.properties.url + '">' + layer.feature.properties.title + '</a><\/div>' +
+						'<hr\/>' +
+					    '<div class="callout_label">Ownership:<\/div> ' + layer.feature.properties.ownership.trim() + ' <br\/>' +
+						'<div class="callout_label">Waste Type:<\/div> ' + layer.feature.properties.waste_type.trim() + ' <br\/>' +
+						'<div class="callout_label">Status:<\/div> ' + layer.feature.properties.status.trim() + ' <br\/>' +
+						strLatLng;
+
+				layer.bindPopup(content);
+
+				//style the marker
+				var project_type = layer.feature.properties.ownership.trim();
+				
+				layer.setIcon(L.mapbox.marker.icon({
+					'marker-size': projectTypeAttributes[project_type].size,
+					'marker-color': projectTypeAttributes[project_type].color,
+					'marker-symbol': projectTypeAttributes[project_type].icon
+				}));
+
+				//assign Click event
+				// layer.on('click', function (e) {
+				// 	//reserved for future functionality
+				// 	$('#info_div').html(content);
+				// });
+				clusterGroup.addLayer(layer);
+			});
+
+		}
+
+		//for checkboxes
+		function checkCategoryTypes(categories) {
+			var blnchecked = false;
+
+			var categorytypes = categories.split(",");
+			for (var i = 0; i < categorytypes.length; i++)
+			{
+				if ($("input[id='" + categorytypes[i].trim() + "']").is(':checked')) {
+					blnchecked = true;
+				}
+			}
+
+			return blnchecked;
+		}
+	
+
+	//Handy util for find latlong on right-click
+	/*map.on("contextmenu", function (event) {
+		console.log("Coordinates: " + event.latlng.toString());
+	});
+	*/
+
+	var markers = [];
+	function search(strFilterName) {
+		// get the values of the each of the different facets
+		var statusString = $('#status_select').val().trim().toLowerCase();
+		var siteString = $('#site_select').val().trim().toLowerCase();
+		var wasteString = $('#waste_type_select').val().trim().toLowerCase();
+		
+		
+		//dt-search-box
+		var searchString = ($('#projects-datatable_filter').length ) ? ($('#projects-datatable_filter').find('input').val().toLowerCase().trim()) : '';
+
+		featureLayer.setFilter(showState);
+		
+
+		// here we're simply comparing the 'state' property of each marker
+		// to the search string, seeing whether the former contains the latter.
+		// If this symbol is in the list, return true. if not, return false.
+		// The 'in' operator in javascript does exactly that: given a string
+		// or number, it says if that is in a object.
+		// 2 in { 2: true } // true
+		// 2 in { } // false
+		function showState(feature) {
+
+			var tempWastecheck = false;
+					
+			tempWastecheck = ((feature.properties.waste_type.toLowerCase().indexOf(wasteString) > -1) || wasteString == '');
+
+			
+			return (
+					(feature.properties.status.trim().toLowerCase() == statusString || statusString == '') //check feature against status dropdown value
+					&& (feature.properties.name.trim().toLowerCase() == siteString || siteString == '') //check feature against site dropdown value
+					&& (tempWastecheck) //check feature against waste dropdown value, we use indexOf here to find the string since it could be a multiple value.
+					
+					//dt-search-box
+					&& ( //full text search of the following columns, using searchString
+						(feature.properties.title.toLowerCase().indexOf(searchString) !== -1)
+						|| (feature.properties.ownership.toLowerCase().indexOf(searchString) !== -1)
+						|| (feature.properties.waste_type.toLowerCase().indexOf(searchString) !== -1)
+						|| (feature.properties.status.toLowerCase().indexOf(searchString) !== -1)
+					)
+					&& (checkCategoryTypes(feature.properties['ownership']))
+			); 
+					
+		}
+
+		//clean up current map, remove the current clustered layer
+		map.removeLayer(clusterGroup);
+		
+		
+		
+		//reinitialize cluster group
+		clusterGroup = new L.MarkerClusterGroup({
+			showCoverageOnHover: false,
+			spiderfyOnMaxZoom: true,
+			maxClusterRadius: 5
+		});
+		//update layers with new filtered data
+		customPopup(featureLayer);
+
+		map.addLayer(clusterGroup);
+		zoomToData()
+		
+		//Slightly hardcoded here, however, usability wise, centering on CONUS was better when the entire recordset was shown vs zooming way out to try to fit all markers.
+		// if(clusterGroup.getBounds().isValid() && clusterGroup.getLayers().length < 6000){
+		// 	map.fitBounds(clusterGroup.getBounds(), { padding: [45, 45] });
+		// }
+		// else
+		// 	map.setView([40, -97], 4);
+
+	}
+
+	// Custom jump-to control 
+	(function () {
+		L.Control.Jump = L.Control.extend({
+			options: {
+				position: 'topleft',
+				hawaiiTitle: 'Zoom to Hawaii',
+				alaskaTitle: 'Zoom to Alaska',
+				// guTitle: 'Zoom to Guam',
+				// asTitle: 'Zoom to American Somoa',
+				// mpTitle: 'Zoom to Northern Mariana Islands',
+				// viTitle: 'Zoom to U.S. Virgin Islands',
+				// prTitle: 'Zoom to Puerto Rico',
+				// downloadTitle: 'Download CSV data',
+				usTitle: 'Zoom to contiguous US',
+				// zoomTitle: 'Zoom to Selections',
+				resetTitle: 'Reset Selections'
+			},
+
+			onAdd: function (map) {
+				// set options
+				options = this.options;
+
+				// create jump container
+				var jumpControl = 'leaflet-control-jump';
+				var container = L.DomUtil.create('div', jumpControl + ' leaflet-bar');
+
+				// add buttons
+				this._usButton = this._createButton(options.usTitle, jumpControl + '-style-us', container, usAction);
+				this._alaskaButton = this._createButton(options.alaskaTitle, jumpControl + '-style-ak', container, akAction);
+				// this._asButton = this._createButton(options.asTitle, jumpControl + '-style-as', container, asAction);
+				// this._guButton = this._createButton(options.guTitle, jumpControl + '-style-gu', container, guAction);
+				this._hawaiiButton = this._createButton(options.hawaiiTitle, jumpControl + '-style-hi', container, hiAction);
+				// this._mpButton = this._createButton(options.mpTitle, jumpControl + '-style-mp', container, mpAction);
+				// this._prButton = this._createButton(options.prTitle, jumpControl + '-style-pr', container, prAction);
+				// this._viButton = this._createButton(options.viTitle, jumpControl + '-style-vi', container, viAction);
+				// this._zoomTitle = this._createButton(options.zoomTitle, jumpControl + '-style-zoom', container, zoomAction);
+				this._resetTitle = this._createButton(options.resetTitle, jumpControl + '-style-reset', container, resetAction);
+
+				return container;
+			},
+
+			_createButton: function (title, className, container, fn) {
+				var link = L.DomUtil.create('a', className, container);
+				link.href = '#';
+				link.title = title;
+				if (className.indexOf('-us') > 0)
+					link.innerHTML = '<b style="margin-top:12px;margin-left:6px;color: black;">US</b>';
+				if (className.indexOf('-hi') > 0)
+				 	link.innerHTML = '<b style="margin-top:12px;margin-left:7px;color: black">HI</b>';
+				if (className.indexOf('-ak') > 0)
+				 	link.innerHTML = '<b style="margin-top:12px;margin-left:5px;color: black">AK</b>';
+				// if (className.indexOf('-gu') > 0)
+				// 	link.innerHTML = '<b style="margin-top:12px;margin-left:5px;color: black">GU</b>';
+				// if (className.indexOf('-as') > 0)
+				// 	link.innerHTML = '<b style="margin-top:12px;margin-left:5px;color: black">AS</b>';
+				// if (className.indexOf('-mp') > 0)
+				// 	link.innerHTML = '<b style="margin-top:12px;margin-left:5px;color: black">MP</b>';
+				// if (className.indexOf('-vi') > 0)
+				// 	link.innerHTML = '<b style="margin-top:12px;margin-left:5px;color: black">VI</b>';
+				// if (className.indexOf('-pr') > 0)
+				// 	link.innerHTML = '<b style="margin-top:12px;margin-left:5px;color: black">PR</b>';
+				//if (className.indexOf('zoom') > 0)
+				//	link.innerHTML = '<i class="fa fa-search fa-1" style="margin-top:7px;margin-left:8px;"></i>';
+				if (className.indexOf('reset') > 0)
+					link.innerHTML = '<i class="fa fa-undo fa-1" style="margin-top:7px;margin-left:8px;"></i>';
+				L.DomEvent
+					.on(link, 'mousedown dblclick', L.DomEvent.stopPropagation)
+					.on(link, 'click', L.DomEvent.stop)
+					.on(link, 'click', fn, this)
+					.on(link, 'click', this._refocusOnMap, this);
+
+				return link;
+			}
+		});
+
+		L.control.jump = function (options) {
+			return new L.Control.Jump(options);
+		};
+	})();
+
+	// Create button functionality for jump control
+	function usAction() {
+		map.setView([36, -102], 4);
+	}
+
+	 function hiAction() {
+	 	map.fitBounds([[18.542116654448996, -161.03759765625], [22.573438264572406, -154.22607421875]]);
+	 }
+	function akAction() {
+		//console.log(map.getBounds().getCenter());
+		map.setView([60.95549084444146, -156.708984375], 4);
+	}
+	// function prAction() {
+	// 	map.setView([18.0362, -66.46591], 9);
+	// }
+	// function guAction() {
+	// 	map.setView([13.47577, 144.7998], 10);
+	// }
+	// function viAction() {
+	// 	map.setView([17.738493919, -64.75705680], 10);
+	// }
+	// function mpAction() {
+	// 	map.setView([15.12989379, 145.700448336], 10);
+	// }
+	// function asAction() {
+	// 	map.setView([-14.29891395, -170.7182346], 10);
+	// }
+	
+	// function downloadAction() {
+	// 	window.parent.location = 'https://train.cms.doe.gov/diversity/j40-database-download';
+	// }
+
+	function zoomAction() {
+		zoomToData();
+	}
+
+	function resetAction() {
+		resetMap();
+	}
+
+	// Add custom 'jump to' sidebar
+	L.control.jump().addTo(map);
+		
+	}); //end .get
+			
+
+}); //end document Ready
+
+
+function search_dt_column2(dtable, callingControl, fuzzySearch) {
+
+	//adding for IE compatibility
+	if(fuzzySearch === undefined) {
+		fuzzySearch = false;
+   }
+
+	//got to add in the #
+	callingControl = "#"+callingControl;
+	var columnNum = objColumn[objControlIDs[callingControl]];
+
+	var term = $(callingControl).val();
+	
+	//if the Any/All option is selected, just search that column with an empty string.
+	if (term == ' ') {
+		//dtable.search('').columns().search('').draw();
+		dtable.column(columnNum).search('', false, false).draw();
+	}
+	else {
+		//Not optimal. TODO figure out a better way.
+		//If the column allows for multiple values, use the Datatables Smart search.  
+		if (fuzzySearch) {
+			//this is SmartSearch for Datatables. kind of a fuzzy search to match up any terms in a column.
+			dtable.column(columnNum).search(term, false, true).draw(); 
+		}
+		else { //use regex to find EXACT match. This is for columns that require exact search, sometimes values from dropdowns are so close that they match when the term is very close to other terms (Virgina Beach vs Virgina - both show up in Smart search, so we have to use regex to get exact.
+			term = "^" + term + "$";
+			dtable.column(columnNum).search(term, true, false).draw();
+		}
+		//console.log('in search_dt_column2: control: ' + callingControl +' - col:' + columnNum + ' - term: ' + term);
+	
+	}
+
+}
+
+function filter_dt_column(dtable, col, control) {
+	var aryCheckVals = [];
+	$(control + ' input:checked').each(function () {
+		aryCheckVals.push(this.id);
+	});
+	var strSelectedVals = aryCheckVals.join('|');
+	strSelectedVals = strSelectedVals.replace(/\./g, "\\.");
+	
+	//basically here, if no checkboxes are selected, make the datatable find a string that will never show up so it looks like the user doesn't want any of the values in the checkbox filter. Not pretty, but works.
+	if (strSelectedVals == '') strSelectedVals = 'zzzzzzzzzzzz000000';
+
+	dtable.column(col)
+		//.search( val ? strSelectedVals : val, true, false )
+			.search(strSelectedVals, true, false)
+			.draw();
+
+			//console.log('in filter_dt_column: control: ' + control +' - col:' + col + ' - vals: ' + strSelectedVals);
+}
+
+var projectTypeAttributes = {
+	'State': {
+		color: '#5d9300', //green
+		desc: '',
+		icon: '',
+		size: 'small',
+		title: '',
+	},
+	'Federal': {
+		color: '#0074a1', //blue
+		desc: '', icon: '',
+		size: 'small',
+		title: '',
+	},
+	'Commercial': {
+		color: '#e37222', //orange
+		desc: '',
+		icon: '',
+		size: 'small',
+		title: '',
+	},
+	
+};
+
+
+</script>
+<body>
+	<div class="row">
+		<div class="col-sm-12 maprow">
+			<div id='map'>
+				
+			</div>
+		</div>
+	</div> <!--row-->
+<div class="row">
+	<div class="col-sm-3" style="padding-right:unset;"> 
+		
+		<div class="panel-group">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						<span data-bs-toggle="tooltip" data-bs-title="Agencies can enroll in available options. A program may be unavailable if the program has already been fully subscribed or if enrollment has not yet begun." data-bs-placement="top">Availability <i class="fas fa-circle-info"></i></span>
+					</h3>
+				</div>
+				<div id="availability_collapse" class="panel-collapse collapse in">
+					<div class="panel-body" id="foa_div">
+						<select id='availability_select' name='availability_select' class='form-control' aria-label='availability_select'>
+							<option value=" ">All</option>
+						</select>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-sm-3" style="padding-right:unset;">
+		<div class="panel-group">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						<span data-bs-toggle="tooltip" data-bs-title="Eligible options must meet the specific requirements listed in the E.O. 14057 Implementing Instructions: the technology meets the definition of CFE; the generator was placed in service on or after October 1, 2021; CFE is delivered to the same balancing authority as the federal facility; and energy attribute certificates (EAC) are obtained and retired by the customer or on the customer's behalf." data-bs-placement="top">E.O. 14057 Eligibility <i class="fas fa-circle-info"></i></span>
+					</h3>
+				</div>
+				<div id="eo14057_collapse" class="panel-collapse collapse in">
+					<div class="panel-body" id="foa_div">
+						<select id='eo14057_select' name='eo14057_select' class='form-control' aria-label='eo14057_select'>
+							<option value=" ">All</option>
+						</select>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-sm-3" style="padding-right:unset;">
+		<div class="panel-group">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						<span data-bs-toggle="tooltip" data-bs-title="Agencies can take electric service using a Task Order under a GSA Areawide Contract." data-bs-placement="top">GSA Areawide Contract <i class="fas fa-circle-info"></i></span>
+					</h3>
+				</div>
+				<div id="areawide_collapse" class="panel-collapse collapse in">
+					<div class="panel-body" id="foa_div">
+						<select id='areawide_select' name='areawide_select' class='form-control' aria-label='areawide_select'>
+							<option value=" ">All</option>
+						</select>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-sm-3" style="padding-right:unset;">
+		<div class="panel-group">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">                    
+						<a data-toggle="collapse"><span>State</span></a>
+					</h3>
+				</div>
+				<div id="state_collapse" class="panel-collapse collapse in">
+					<div class="panel-body" id="state_div"><select id='state_select' name='state_select' class='form-control'>
+						<option value=" ">All</option>
+						<option value="Alabama">Alabama</option>
+						<option value="Alaska">Alaska</option>
+						<option value="Arizona">Arizona</option>
+						<option value="Arkansas">Arkansas</option>
+						<option value="California">California</option>
+						<option value="Colorado">Colorado</option>
+						<option value="Connecticut">Connecticut</option>
+						<option value="Delaware">Delaware</option>
+						<option value="District Of Columbia">District Of Columbia</option>
+						<option value="Florida">Florida</option>
+						<option value="Georgia">Georgia</option>
+						<option value="Hawaii">Hawaii</option>
+						<option value="Idaho">Idaho</option>
+						<option value="Illinois">Illinois</option>
+						<option value="Indiana">Indiana</option>
+						<option value="Iowa">Iowa</option>
+						<option value="Kansas">Kansas</option>
+						<option value="Kentucky">Kentucky</option>
+						<option value="Louisiana">Louisiana</option>
+						<option value="Maine">Maine</option>
+						<option value="Maryland">Maryland</option>
+						<option value="Massachusetts">Massachusetts</option>
+						<option value="Michigan">Michigan</option>
+						<option value="Minnesota">Minnesota</option>
+						<option value="Mississippi">Mississippi</option>
+						<option value="Missouri">Missouri</option>
+						<option value="Montana">Montana</option>
+						<option value="Nebraska">Nebraska</option>
+						<option value="Nevada">Nevada</option>
+						<option value="New Hampshire">New Hampshire</option>
+						<option value="New Jersey">New Jersey</option>
+						<option value="New Mexico">New Mexico</option>
+						<option value="New York">New York</option>
+						<option value="North Carolina">North Carolina</option>
+						<option value="North Dakota">North Dakota</option>
+						<option value="Ohio">Ohio</option>
+						<option value="Oklahoma">Oklahoma</option>
+						<option value="Oregon">Oregon</option>
+						<option value="Pennsylvania">Pennsylvania</option>
+						<option value="Puerto Rico">Puerto Rico</option>
+						<option value="Rhode Island">Rhode Island</option>
+						<option value="South Carolina">South Carolina</option>
+						<option value="South Dakota">South Dakota</option>
+						<option value="Tennessee">Tennessee</option>
+						<option value="Texas">Texas</option>
+						<option value="Utah">Utah</option>
+						<option value="Vermont">Vermont</option>
+						<option value="Virginia">Virginia</option>
+						<option value="Washington">Washington</option>
+						<option value="West Virginia">West Virginia</option>
+						<option value="Wisconsin">Wisconsin</option>
+						<option value="Wyoming">Wyoming</option>
+					</select></div>
+				</div>
+			</div>
+		</div>
+		
+
+		<!-- <div class="panel-group">
+			<div id="reset_collapse" class="panel-collapse collapse in">
+				<button id="btnReset" type="button" class="btn btn-default">Reset</button>
+			</div>
+		</div> -->
+			
+		<!--<div  class="panel-group" style="text-align: center;">
+			<a id="lnkDownload" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Download the .csv datafile." href="javascript:void(0);"><i class="fa fa-download fa-1"></i> Download All Projects Data</a>
+			<br><br>
+		</div>-->
+
+	</div>
+
+	
+</div> <!--row-->
+
+    
+
+<div class="row">
+	<div class="col-sm-12 datatable-container">
+		<table id="datatable_1" class="display dataTable" cellspacing="0"></table>
+	</div>
+
+</div>
+
+
+
+<script src="//www1.eere.energy.gov/apps/js/pym.v1.min.js"></script>
+<script src="//www1.eere.energy.gov/apps/js/shim.js"></script>
+</body>
