@@ -1,0 +1,3689 @@
+﻿Utility,Program_Name,State,Description,Available_and_Eligible,EO_14057_Eligibility,Areawide_Contract,Status,longitude,latitude
+Alabama Power Co,Rate OPS (Greener State),Alabama,"	<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>Alabama</td>
+	</tr>
+		<tr>
+		<th>Availability</th>
+		<td>Available</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>Yes, until 12/15/2024</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>No</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>No</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td>All Alabama Power Co. customers</td>
+</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td>$0.015/kWh, price subject to negotiation if purchasing over 100 MWh</td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>Minimum 1MW</td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>1 year</td>
+	</tr>
+	<tr>
+		<th>Program Website</th>
+		<td><a href=""https://www.alabamapower.com/content/dam/alabama-power/pdfs-docs/Rates/OPS.pdf"">Rate OPS</a></td>	
+	</tr>
+	</table>",Available,No/Unknown,Yes,Not currently available and E.O. 14057 eligible,0,0
+"Minnesota Power (ALLETE, Inc.)",Renewable Source,Minnesota,"<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>Minnesota</td>
+	</tr>
+	<tr>
+	<th>Availability</th>
+	<td>Available</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>No</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>No</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>No</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td>All customers</td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td><ul><li>$0.03292/kWh Subsciption Charge</li>
+			<li>Variable Subscription Credit</li></ul>
+</td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>The customer may nominate between 25% and 100% of their monthly kWh use</td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>1 year</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td><a href=""https://www.mnpower.com/ProgramsRebates/RenewableSource"">Renewable Source</a></td>	
+	</tr>
+	</table>",Available,No/Unknown,No,Not currently available and E.O. 14057 eligible,0,0
+"Ameren Corporation, formerly Union Electric Co (MO)",Renewable Solutions,Missouri,"<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>Missouri</td>
+	</tr>
+		<tr>
+		<th>Availability</th>
+		<td>Not currently available</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>Yes, until 11/18/2028</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td>Unspecified, to be determined</td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td>Unspecified, to be determined</td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>Unspecified, to be determined</td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>15 years</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td><a href=""https://www.ameren.com/missouri/business/clean-energy-customer-programs/renewable-solutions"">Renewable Solutions</a></td>	
+	</tr>
+	</table>",Fully subscribed/Not currently available,Yes,Yes,Not currently available and E.O. 14057 eligible,0,0
+Appalachian Power Co (AEP),Wind Water Sunlight,Virginia,"<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>Virginia</td>
+	</tr>
+	<tr><th>Availability</th>
+	<td>Available</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>Yes, until 7/24/2032</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td>All AEP customers in Virginia</td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td>$0.00425/kWh</td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>100% of a customer's load</td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>30 days</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td><ul>
+			<li><a href=""https://www.appalachianpower.com/account/bills/programs/green-pricing/va/"">Virginia Green Pricing</a></li>
+			<li><a href=""https://www.appalachianpower.com/lib/docs/ratesandtariffs/Virginia/Tariff26-MASTER-Standard-December12022-Tariff1.pdf"">Appalachian Power Company Standard Rate Schedules</a> (PDF page 128, Sheet No. 40-1)</li></ul></td>	
+	</tr>
+	</table>",Available,Yes,Yes,Available and E.O. 14057 eligible,0,0
+Appalachian Power Co (AEP),Renewable Energy Credit,Virginia,"<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>Virginia</td>
+	</tr>
+		<tr>
+		<th>Availability</th>
+		<td>Available</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>Yes, until 7/24/2032</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td>All AEP customers in Virginia</td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td>$0.0010/kWh</td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>100kWh/month blocks, up to 100% of a customer's load</td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>30 days</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td><ul>
+			<li><a href=""https://www.appalachianpower.com/account/bills/programs/green-pricing/va/"">Virginia Green Pricing</a></li>
+			<li><a href=""https://www.appalachianpower.com/lib/docs/ratesandtariffs/Virginia/Tariff26-MASTER-Standard-December12022-Tariff1.pdf"">Appalachian Power Company Standard Rate Schedules</a> (PDF page 127, Sheet No.39)</li></ul></td>	
+	</tr>
+	</table>",Available,Yes,Yes,Available and E.O. 14057 eligible,0,0
+Appalachian Power Co (AEP),Green Pricing Option,West Virginia,"<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>West Virginia</td>
+	</tr>
+		<tr>
+		<th>Availability</th>
+		<td>Available</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>Yes, until 7/24/2032</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td>All AEP West Virgina customers</td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td><ul>
+			<li>Solar and Wind RECs: $0.009/kWh</li>
+<li>Hydro + Other RECs: 0.003/kWh</li></ul></td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>Minimum 100kWh per month, subcriptions shall be made in 100kWh/month blocks</td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>30 days</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td><ul><li><a href=""https://www.appalachianpower.com/account/bills/programs/green-pricing/wv/"">West Virginia Green Pricing</a></li>
+			<li><a href=""https://www.appalachianpower.com/lib/docs/ratesandtariffs/WestVirginia/SecuritizationTariffSheetsEff11-1-22.pdf"">Appalachian Power Company Rate Schedules</a> (PDF page 105, Sheet No. 31-1)</li></ul></td>	
+	</tr>
+	</table>",Available,Yes,Yes,Available and E.O. 14057 eligible,0,0
+Arizona Public Service Co,Green Power Partners Option A - Green Connect,Arizona,"<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>Arizona</td>
+	</tr>
+		<tr>
+		<th>Availability</th>
+		<td>Availabile</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>Yes, until 12/12/2023</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td><ul><li>All APS retail Standard Offer business customers under large and extra-large general service rates.</li>
+<li>Extra-small, small, and medium general service rates available for customers with accounts with an aggregate non-coincident sum of individual peak loads exceeding 1MW or 5,000 MWh annually.</li></ul></td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td><ul><li>Contract specific, minimum price $0.001 to $0.015/kWh maximum price</li>
+<li>REC purchase may include additional charge</li></ul></td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>Up to 100% of a customer's load</td>
+		</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>1 year</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td><a href=""https://www.aps.com/en/Business/Service-Plans/Green-Power-Partners"">Green Power Partners Program</a></td>	
+	</tr>
+	</table>",Available,Yes,Yes,Available and E.O. 14057 eligible,0,0
+Arizona Public Service Co,Green Power Partners Option B - Green Locate,Arizona,"<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>Arizona</td>
+	</tr>
+		<tr>
+		<th>Availability</th>
+		<td>Available</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>Yes, until 12/12/2023</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td><ul><li>All APS retail Standard Offer business customers under large and extra-large general service rates.</li>
+<li>Extra-small, small, and medium general service rates available for customers with accounts with an aggregate non-coincident sum of individual peak loads exceeding 1MW or 5,000 MWh annually.</li></ul></td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td><ul><li>Contract specific, adder minimum price $0.001 to $0.015/kWh maximum price.</li>
+<li>REC purchase may include additional charge.</li>
+	  </ul></td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>Up to 100% of a customer's load</td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>20 years</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td><a href=""https://www.aps.com/en/Business/Service-Plans/Green-Power-Partners"">Green Power Partners Program</a></td>	
+	</tr>
+	</table>",Available,Yes,Yes,Available and E.O. 14057 eligible,0,0
+Arizona Public Service Co,Green Power Partners Option C - Green Commit,Arizona,"<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>Arizona</td>
+	</tr>
+		<tr>
+		<th>Availability</th>
+		<td>Available</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>Yes, until 12/12/2023</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td><ul><li>All APS retail Standard Offer business customers under large and extra-large general service rates.</li>
+<li>Extra-small, small, and medium general service rates available for customers with accounts with an aggregate non-coincident sum of individual peak loads exceeding 1MW or 5,000 MWh annually.</li></ul></td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td><ul><li>Contract specific, adder minimum price $0.001 to $0.015/kWh maximum price</li>
+<li>REC purchase may include additional charge</li></ul></td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>No restriction</td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>Negotiable</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td><a href=""https://www.aps.com/en/Business/Service-Plans/Green-Power-Partners"">Green Power Partners Program</a></td>	
+	</tr>
+	</table>",Available,Yes,Yes,Available and E.O. 14057 eligible,0,0
+"Black Hills Power, Inc. d/b/a",Renewable Ready,South Dakota,"<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>South Dakota</td>
+	</tr>
+		<tr>
+		<th>Availability</th>
+		<td>Fully Subscribed</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>Yes, until 4/1/2029</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>No</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>No</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td>Government, commercial, and industrial business customers</td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td>Contract specific</td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>Minimum 300,000kWh electricity use per year</td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>5 years</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td><a href=""https://www.blackhillsenergy.com/services/electric-services/renewable-ready"">Renewable Ready</a></td>	
+	</tr>
+	</table>",Fully subscribed/Not currently available,No/Unknown,Yes,Ineligible or no data available,0,0
+BrightRidge Johnson City - (TN),BrightRidge Solar,Tennessee,"<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>Tennessee</td>
+	</tr>
+		<tr><th>Availability</th>
+		<td>Fully Subscribed</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>No</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>No</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td>Unspecified</td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td>Unspecified</td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>Unspecified</td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>30 days</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td><a href=""https://www.brightridge.com/home-service/programs-services/green-power/solar/"">BrightRidge Solar</a></td>	
+	</tr>
+	</table>",Fully subscribed/Not currently available,No/Unknown,No,Not currently available and E.O. 14057 eligible,0,0
+Cheyenne Light Fuel & Power d/b/a Black Hills Energy,Renewable Ready,Wyoming,"<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>Wyoming</td>
+	</tr>
+	<tr><th>Availability</th>
+	<td>Fully Subscribed</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>Yes, until 10/25/2026</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>No</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>No</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td>Government accounts and customers with annual useage of 300,000kWh or more</td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td><ul><li>Pricing is based on duration of initial subscription: 5-9 years = $0.028/kWh</li>
+			<li>10-14 years = $0.026/kWh</li>
+<li>15-25 years = $0.024/kWh</li></ul></td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>The Company will work with each interested customer individually to determine appropriate subscriptions.</td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>5 years</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td><a href=""https://www.blackhillsenergy.com/sites/blackhillsenergy.com/files/clfp_electric.pdf"">Cheyenne Light Fuel &amp; Power d/b/a Black Hills Energy Schedule of Rates</a> (PDF page 41, Sheet No. 30)</td>	
+	</tr>
+	</table>",Fully subscribed/Not currently available,No/Unknown,Yes,Ineligible or no data available,0,0
+Choctawhatchee Elec Coop,Green Power Choice,Florida,"<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>Florida</td>
+	</tr>
+	<tr>
+	<th>Availability</th>
+	<td>Fully Subscribed</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>Yes, until 9/23/2031</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>No</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td>All Choctawhatchee Electric Cooperative residential, commercial, and industrial customers</td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td>$0.02/kWh</td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>Minimum 100kWh per month</td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>1 year</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td><a href=""https://www.chelco.com/sites/chelco/files/Green%20Power%20Choice.pdf"">Green Power Choice Rate Rider</a></td>	
+	</tr>
+	</table>",Fully subscribed/Not currently available,No/Unknown,Yes,Available and E.O. 14057 eligible,0,0
+City of Colorado Springs - (CO),Green Power Service,Colorado,"<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>Colorado</td>
+	</tr>
+	<tr>
+	<th>Availability</th>
+	<td>Fully Subscribed</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>Yes, until 4/11/2026</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>No</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td>All Colorado Springs Utilities customers</td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td>$0.0307/kWh</td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>Subscriptions can be made in 10% increments. Residential customers must subscribe at least 30% of their monthly use. Commercial and industrial customers can subscribe 10%&#8211;100% of their use.</td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>1 year</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td><a href=""https://www.csu.org/Pages/GreenPower.aspx"">Green Power</a></td>	
+	</tr>
+	</table>",Fully subscribed/Not currently available,No/Unknown,Yes,Ineligible or no data available,0,0
+City of Oak Ridge,TVA Green Invest,Tennessee,"<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>Tennessee</td>
+	</tr>
+	<tr>
+	<th>Availability</th>
+	<td>Not currently available</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>No</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td>All TVA Customers</td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td>Contract specific</td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>Minimum 10 MW</td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>15 years</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td><a href=""https://www.tva.com/energy/valley-renewable-energy/green-switch/green-invest"">Green Invest</a></td>	
+	</tr>
+	</table>",Fully subscribed/Not currently available,Yes,No,Not currently available and E.O. 14057 eligible,0,0
+CPS Energy,Green Tariff,Texas,"<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>Texas</td>
+	</tr>
+	<tr>
+	<th>Availability</th>
+	<td>Not currently available</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>Yes, until 2/27/2029</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td>Customers must have at least least 5 MW of demand or 75,000 MWh of consumption per year across all accounts</td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td>Unspecified, to be determined</td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>Unspecified, to be determined</td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>1 year</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td><a href=""https://www.cpsenergy.com/content/dam/corporate/en/Documents/Environmental/CPS%20Energy%20SACC%208%2011%202020.pdf"">FlexPOWER Bundle &amp; Green Tariff</a></td>	
+	</tr>
+	</table>",Fully subscribed/Not currently available,Yes,Yes,Not currently available and E.O. 14057 eligible,0,0
+Cumberland Elec Member Corp,TVA Green Invest,Tennessee,"<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>Tennessee</td>
+	</tr>
+	<tr><th>Availability</th>
+	<td>Not currently available</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>No</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td>All TVA Customers</td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td>Contract specific</td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>Minimum 10 MW</td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>15 years</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td><a href=""https://www.tva.com/energy/valley-renewable-energy/green-switch/green-invest"">Green Invest</a></td>	
+</tr>
+	</table>",Fully subscribed/Not currently available,Yes,No,Not currently available and E.O. 14057 eligible,0,0
+Dominion Energy Virginia,Green Power,Virginia,"<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>Virginia</td>
+	</tr>
+	<tr>
+	<th>Availability</th>
+	<td>Available</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>Yes, until 8/21/2028</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>No</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td>All Dominion Energy customers</td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td><ul><li>100% Option: $0.012/kWh</li>
+<li>Block Option: $2 per 167kWh block</li></ul></td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>Customers may enroll in the 100% option to match their entire monthly electricity usage or in monthly 167kWh blocks.</td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>1 year</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td><ul><li><a href=""https://www.dominionenergy.com/virginia/renewable-energy-programs/green-power"">Dominion Energy Green Power</a></li>
+			<li><a href=""https://www.dominionenergy.com/-/media/pdfs/virginia/save-energy/gp-price-terms-conditions.pdf?la=en&rev=48b365ca8afd4657b1deb401c855612b&hash=CAB89F5AB1198CB3D87C6C3962661EC9"">Green Power Prices, Terms, and Conditions</a></li>
+					</ul>
+</td>	
+	</tr>
+	</table>",Available,No/Unknown,Yes,Available and E.O. 14057 eligible,0,0
+Dominion Energy Virginia,Renewable Energy Pilot,Virginia,"<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>Virginia</td>
+	</tr>
+	<tr>
+	<th>Availability</th>
+	<td>Available</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>Yes, until 8/21/2028</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td>All Dominion Energy customers, as long as Virigina SCC standards are followed</td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td>Dependent on the individual agreements</td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>Dependent on the individual agreements</td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>Negotiable</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td><ul><li><a href=""https://www.dominionenergy.com/virginia/renewable-energy-programs/renewable-energy-pilot-program"">Dominion Energy: Renewable Energy Pilot Program</a></li><li><a href=""https://scc.virginia.gov/pages/Renewable-Energy-Pilot-Program"">State Corporation Commission: Renewable Energy Pilot Program</a></li></ul>
+</td>	
+	</tr>
+	</table>",Available,Yes,Yes,Available and E.O. 14057 eligible,0,0
+Duck River Elec Member Corp,TVA Green Invest,Tennessee,"<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>Tennessee</td>
+	</tr>
+	<tr>
+	<th>Availability</th>
+	<td>Not currently available</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>No</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td>All TVA Customers</td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td>Contract specific</td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>Minimum 10 MW</td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>15 years</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td><a href=""https://www.tva.com/energy/valley-renewable-energy/green-switch/green-invest"">Green Invest</a></td>	
+	</tr>
+	</table>",Fully subscribed/Not currently available,Yes,No,Not currently available and E.O. 14057 eligible,0,0
+"Duke Energy Carolinas, LLC",Green Source Advantage,South Carolina,"<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>South Carolina</td>
+	</tr>
+	<tr>
+	<th>Availability</th>
+	<td>Available</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>Yes, until 6/15/2024</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td>Large, non-residential customers</td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td>$2,000 application fee. Product charges, bill credits, and administrative charges will be specified in each service agreement</td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>Minimum 1MW aggregated demand</td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>Negotiable</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td><a href=""https://www.duke-energy.com/business/products/renewables/green-source-advantage"">Green Source Advantage</a></td>	
+	</tr>
+	</table>",Available,Yes,Yes,Available and E.O. 14057 eligible,0,0
+"Duke Energy Carolinas, LLC",Green Source Advantage,North Carolina,"<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>North Carolina</td>
+	</tr>
+	<tr><th>Availability</th>
+	<td>Fully Subscribed</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>Yes, until 6/15/2024</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>No</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td>Large, non-residential customers</td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td>$2,000 application fee. Product charges, bill credits, and administrative charges will be specified in each service agreement</td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>Minimum 1MW demand at a single location or 5MW aggregated demand for multiple locations. Up to 125% of a customer's aggregate maximum annual peak demand.</td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>Negotiable</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td><a href=""https://www.duke-energy.com/business/products/renewables/green-source-advantage"">Green Source Advantage</a></td>	
+	</tr>
+	</table>",Fully subscribed/Not currently available,No/Unknown,Yes,Ineligible or no data available,0,0
+"Duke Energy Florida, LLC",Clean Energy Connection,Florida,"<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>Florida</td>
+	</tr>
+	<tr>
+	<th>Availability</th>
+	<td>Fully Subscribed</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>Yes, until 6/15/2024</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td>All customers served by Duke Energy Florida</td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td>$8.35/kW per month</td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>Minimum 1kW/month, up to 100% of customer's total kWh usage in the previous 12 months</td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>1 Year</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td><ul><li><a href=""https://www.duke-energy.com/home/products/clean-energy-connection"">Clean Energy Connection</a></li>
+			<li><a href=""https://desitecore10prod-cd.azureedge.net/-/media/pdfs/for-your-home/rates/rates-fl/pe-rates-cec-1.pdf?rev=930262f8915a4c2cb07bb25fd3b2f75c"">Rate Schedule</a></li></ul></td>	
+	</tr>
+	</table>",Fully subscribed/Not currently available,Yes,Yes,Available and E.O. 14057 eligible,0,0
+Duke Energy Indiana,GoGreen Indiana,Indiana,"<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>Indiana</td>
+	</tr>
+	<tr><th>Availability</th>
+	<td>Available</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>Yes, until 6/15/2024</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Unknown</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>Unknown</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td>All Duke Energy Indiana customers</td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td>$0.009/kWh</td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>Minimum 200kWh per month</td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>30 days</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td><ul><li><a href=""https://www.duke-energy.com/home/products/renewable-energy/gogreen-energy"">GoGreen Energy</a></li>
+	<li><a href=""https://desitecore10prod-cd.azureedge.net/-/media/pdfs/for-your-home/rates/electric-in/iurc-15/041-de-in-rider-56-gogreen.pdf?rev=e88fe9c85a87497384a59f5873be2bed"">GoGreen Power Rates</a></li></ul>
+		</td>	
+	</tr> 
+	</table>",Available,No/Unknown,Yes,Available and E.O. 14057 eligible,0,0
+Duke Energy Progress - (NC),Green Source Advantage,North Carolina,"<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>North Carolina</td>
+	</tr>
+	<tr><th>Availability</th>
+	<td>Fully Subscribed</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>Yes, until 6/15/2024</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>No</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td>Large, non-residential customers</td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td>$2,000 application fee. Product charges, bill credits, and administrative charges will be specified in each service agreement</td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>Minimum 1MW demand at a single location or 5MW aggregated demand for multiple locations. Up to 125% of a customer's aggregate maximum annual peak demand </td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>Negotiable</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td><a href=""https://www.duke-energy.com/business/products/renewables/green-source-advantage"">Green Source Advantage</a></td>	
+	</tr>
+	</table>",Fully subscribed/Not currently available,No/Unknown,Yes,Ineligible or no data available,0,0
+Entergy Louisiana LLC,Green Select,Louisiana,"<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>Louisiana</td>
+	</tr>
+	<tr>
+	<th>Availability</th>
+	<td>Unknown</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>Yes, until 11/20/2026</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>No</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>No</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td>Residential and business customers</td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td>$0.010/kWh for 25% option, $0.0075/kWh for 50% option, and $0.0050/kWh for 100% option</td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>Customers may choose 25%, 50%, or 100% of their total electricity use</td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>1 year</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td><a href=""https://renew.entergy.com/louisiana/green-select/pricing"">Green Select</a></td>	
+	</tr>
+	</table>",Fully subscribed/Not currently available,No/Unknown,Yes,Ineligible or no data available,0,0
+"Entergy New Orleans, LLC",Green Select,Louisiana,"<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>Louisiana</td>
+	</tr>
+	<tr>
+	<th>Availability</th>
+	<td>Available</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>Yes, until 11/20/2026</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>Unknown</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td>Residential and business customers</td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td>$0.0150/kWh for 25% option, $0.0125/kWh for 50% option, and $0.0100/kWh for 100% option</td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>Customers may choose 25%, 50%, or 100% of their total electricity use</td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>30 days</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td><a href=""https://renew.entergy.com/new-orleans/green-select/pricing"">Green Select</a></td>	
+	</tr>
+	</table>",Available,No/Unknown,Yes,Ineligible or no data available,0,0
+"Evergy Kansas Central, Inc ",Renewables Direct,Kansas,"<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>Kansas</td>
+	</tr>
+	<tr>
+	<th>Availability</th>
+	<td>Fully Subscribed</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>Yes, until 11/1/2027</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>No</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td>All customers with an average monthly peak demand of >500kW, with service under any tariff subject to the Retail Energy Cost Adjustment (RECA)</td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td>$0.0180/kWh, $0.01729/kWh, or $0.01688.kWh depending on option chosen. See DRPS Tariff sheet 3</td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>500kW increments up to 2,000kW with 1,000kW increments thereafter</td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>&nbsp;</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td><ul>
+			<li><a href=""https://www.evergy.com/-/media/documents/ways-to-save/programs/renewables-direct-kansas-central.pdf?la=en"">Evergy Renewables Direct FAQ</a></li>
+			<li>
+			<a href=""https://www.evergy.com/-/media/documents/billing/kansas-central/other/direct-renewable-participation-service-090120.pdf"">Direct Renewable Participation Service</a></li></ul></td>	
+	</tr>
+	</table>",Fully subscribed/Not currently available,No/Unknown,Yes,Ineligible or no data available,0,0
+"Evergy Kansas Metro, Inc",Renewables Direct,Kansas,"<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>Kansas</td>
+	</tr>
+	<tr><th>Availability</th><td>Fully Subscribed</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>Yes, until 11/1/2027</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>No</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td>All customers with an average monthly peak demand greater than 200kW</td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td>Unspecified</td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>200kW increments up to 1,000kW with 500kW increments thereafter</td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>20 years</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td><ul><li><a href=""https://www.evergy.com/smart-energy/renewable-resources-link/renewables-direct?hasTerritory="">Renewables Direct</a></li>
+			<li><a href=""https://www.evergy.com/-/media/documents/billing/kansas-metro/detailed-tariffs/renewable-energy-rider-20181220.pdf"">Renewable Energy Rider</a></li></ul></td>	
+	</tr>
+	</table>",Fully subscribed/Not currently available,No/Unknown,Yes,Ineligible or no data available,0,0
+Evergy Metro / Missouri West,Renewables Direct,Missouri,"	<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>Missouri</td>
+	</tr>
+		<tr><th>Availability</th><td>Fully Subscribed</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>Yes, until 11/1/2027</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>No</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td>Customers served under the Small General Service, Large General Service, and Large Power Service rate schedules with an annual average monthly peak demand &gt;200kW. Customers receiving unmetered, Lighting, Net Metering, or Time-of-Use services are ineligible. </td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td>$0.0170/kWh</td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>Increments are determined based on annual energy use.</td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>5, 10, 15, and 20 year options</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td><ul>
+			<li><a href=""https://www.evergy.com/-/media/documents/ways-to-save/programs/renewables-direct-missouri.pdf"">Evergy Renewables Direct FAQ</a></li>
+			<li><a href=""https://www.evergy.com/-/media/documents/billing/missouri/detailed_tariffs_mo/gmo/renewable-energy-rider-05112021.pdf"">Renewable Energy Rider Schedule</a></li></ul></td>	
+	</tr>
+	</table>",Fully subscribed/Not currently available,No/Unknown,Yes,Not currently available and E.O. 14057 eligible,0,0
+Florida Power & Light Co,SolarVantage,Florida,"<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>Florida</td>
+	</tr>
+	<tr><th>Availability</th>
+	<td>Available</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>Yes, until 12/2/2024</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td>All Non-Residential Customers</td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td>Contract specific</td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>No restriction</td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>Negotiable</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td><a href=""https://www.fpl.com/energy-my-way/solar/solarvantage.html"">FPL SolarVantage</a></td>	
+	</tr>
+	</table>",Available,Yes,Yes,Available and E.O. 14057 eligible,0,0
+Florida Power & Light Co,Solar Together,Florida,"<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>Florida</td>
+	</tr>
+	<tr>
+	<th>Availability</th>
+	<td>Fully Subscribed</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>Yes, until 12/2/2024</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>Unknown</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td>All FPL Customers</td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td>6.76/kW subscription charge, $0.0359/kWh subscription credit escalating at 1.5% annually.</td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>Up to 100% of a customer's load</td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>30 days</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td><a href=""https://www.fpl.com/energy-my-way/solar/how-it-works.html"">FPL Solar Together</a></td>	
+	</tr>
+	</table>",Fully subscribed/Not currently available,No/Unknown,Yes,Available and E.O. 14057 eligible,0,0
+FPL Northwest (fka Gulf Power),SolarVantage,Florida,"<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>Florida</td>
+	</tr>
+	<tr>
+	<th>Availability</th>
+	<td>Available</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>Yes, until 12/2/2024</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td>All Non-Residential Customers</td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td>Contract specific</td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>No restriction</td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>Negotiable</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td><a href=""https://www.fpl.com/rates/pdf/electric-tariff-section8.pdf"">Florida Power &amp; Light Co. Rate Schedule</a> (PDF page 150 for SolarVantage)</td>	
+	</tr>
+	</table>",Available,Yes,Yes,Available and E.O. 14057 eligible,0,0
+Georgia Power Co,Simple Solar,Georgia,"<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>Georgia</td>
+	</tr>
+	<tr>
+	<th>Availability</th>
+	<td>Available</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>Yes, until 12/15/2024</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>Unknown</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>No</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td>All Georgia Power customers</td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td>$0.0100/kWh. Discounted rates are available in the Large Volume Purhase Option for customers using &gt;50,000kWh per month.</td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>50% or 100% of a customer's monthly electricity usage</td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>30 days</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td>
+			<ul>
+			<li><a href=""https://www.georgiapower.com/company/energy-industry/energy-sources/solar-energy/solar/simple-solar.html"">Simple Solar</a></li>
+		<li><a href=""https://www.georgiapower.com/content/dam/georgia-power/pdfs/residential-pdfs/residential-rate-plans/SS-1-Simple-Solar-Tariff.pdf"">Simple Solar Schedule: ""SS-1""</a></li></ul>
+		</td>	
+	</tr>
+	</table>",Available,No/Unknown,Yes,Ineligible or no data available,0,0
+Georgia Power Co,Commercial & Industrial REDI ,Georgia,"<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>Georgia</td>
+	</tr>
+	<tr><th>Availability</th>
+	<td>Fully Subscribed</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>Yes, until 12/15/2024</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>No</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td>Commercial and industrial customers that have an annual peak demand &gt;3MW</td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td>Variable pricing and credits</td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>Up to 100% of a customer's load</td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>10 years</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td>
+			<ul>
+			<li><a href=""https://www.georgiapower.com/company/energy-industry/energy-sources/solar-energy/solar/c-and-i-redi.html"">Commercial &amp; Industrial Renewable Energy Development Initiative</a></li>
+		<li><a href=""https://www.georgiapower.com/content/dam/georgia-power/pdfs/business-pdfs/rates-schedules/CIR-1.pdf"">Commercial &amp; Industrial REDI Schedule: ""CIR-1""</a></li></ul>
+		</td>	
+	</tr>
+	</table>",Fully subscribed/Not currently available,No/Unknown,Yes,Ineligible or no data available,0,0
+Huntsville Utilities,TVA Green Invest,Alabama,"<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>Alabama</td>
+	</tr>
+	<tr><th>Availability</th>
+	<td>Not currently available</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>No</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td>All TVA Customers</td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td>Contract specific</td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>Minimum 10 MW</td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>15 years</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td>
+			<a href=""https://www.tva.com/energy/valley-renewable-energy/green-switch/green-invest"">Green Invest</a>
+		</td>	
+	</tr>
+	</table>",Fully subscribed/Not currently available,Yes,No,Not currently available and E.O. 14057 eligible,0,0
+Idaho Power Co,Green Power Program ,Idaho,"<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>Idaho</td>
+	</tr>
+	<tr><th>Availability</th>
+	<td>Available</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>Yes, until 1/12/2030</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>Unknown</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td>All Customers</td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td>$0.010/kWh</td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>100kWh blocks or 100% of a customers mothly electricty usage</td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>30 days</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td>
+			<a href=""https://www.idahopower.com/energy-environment/green-choices/green-power-program/"">Green Power Program</a>
+		</td>	
+	</tr>
+	</table>",Available,No/Unknown,Yes,Ineligible or no data available,0,0
+Indiana Michigan Power Co (AEP),IM Green (Local),Indiana,"<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>Indiana</td>
+	</tr>
+	<tr>
+	<th>Availability</th>
+	<td>Available</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>Yes, until 7/24/2032</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>No</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td>Residential and commercial customers</td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td>$0.02294/kWh</td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>From 10% to 100% of a customers load, in 10% increments</td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>30 days</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td>
+<ul>
+			<li><a href=""https://www.indianamichiganpower.com/account/bills/programs/im-green/"">IM Green</a></li>
+			<li><a href=""https://www.indianamichiganpower.com/lib/docs/ratesandtariffs/Indiana/IMINTB1912-08-2022.pdf"">Indiana Michigan Power Company</a> (PDF page 154, Sheet No. 40)</li></ul>
+		</td>	
+	</tr>
+	</table>",Available,No/Unknown,Yes,Available and E.O. 14057 eligible,0,0
+Indiana Michigan Power Co (AEP),IM Green (Custom),Indiana,"<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>Indiana</td>
+	</tr>
+	<tr>
+	<th>Availability</th>
+	<td>Available</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>Yes, until 7/24/2032</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td>Customers taking service under IP, CS-IRP2, GS, or LGS if the average monthly peak demand is greater than 1MW</td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td>Contract specific</td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>Contract specific</td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>1 year</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td>
+			<a href=""https://www.indianamichiganpower.com/lib/docs/ratesandtariffs/Indiana/IMINTB1912-08-2022.pdf"">Indiana Michigan Power Company</a> (PDF page 154, Sheet No. 40)
+		</td>	
+	</tr>
+	</table>",Available,Yes,Yes,Available and E.O. 14057 eligible,0,0
+Indianapolis Power & Light Co (AES Indiana),Green Power Initiative,Indiana,"<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>Indiana</td>
+	</tr>
+	<tr><th>Availability</th>
+	<td>Available</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>No</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>No</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td>All Customers</td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td>$0.0055/kWh</td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>Customers may subscribe to 10% (business customers only), 25%, 50%, or 100% of their monthly electricity use.</td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>30 days</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td>
+<a href=""https://www.aesindiana.com/green-power"">Green Power</a>
+		</td>	
+	</tr>
+	</table>",Available,No/Unknown,No,Available and E.O. 14057 eligible,0,0
+Interstate Power and Light Co (Alliant Energy),Renewable Energy Partners,Iowa,"<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>Iowa</td>
+	</tr>
+	<tr><th>Availability</th>
+	<td>Available</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>No</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td>All Non-Residential General Service and Large General Service customers</td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td>Contract specific</td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>Contract specific. The program is limited to 150MW total.</td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>Negotiable</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td>
+			<ul>
+			<li><a href=""https://www.alliantenergy.com/cleanenergy/whatyoucando/renewableenergypartner"">Alliant Energy&reg; Renewable Energy Partner</a></li>
+			<li><a href=""https://www.alliantenergy.com/-/media/alliant/documents/accountandbilling/ratesandtariffs/iowaelectricrates/renewableenergyrider.pdf"">Rider RER&#8212;Renewable Energy Rider</a> (Direct PDF Download)</li></ul>
+		</td>	
+	</tr>
+	</table>",Available,Yes,No,Available and E.O. 14057 eligible,0,0
+Interstate Power and Light Co (Alliant Energy),Renewable Energy Partners,Wisconsin,"<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>Wisconsin</td>
+	</tr>
+	<tr><th>Availability</th>
+	<td>Available</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>No</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td>All customers served under a commercial or industrial rate schedule</td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td>Contract specific</td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>Contract specific. The program is limited to 150MW total.</td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>Negotiable</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td>
+			<ul>
+			<li><a href=""https://www.alliantenergy.com/cleanenergy/whatyoucando/renewableenergypartner"">Alliant Energy&reg; Renewable Energy Partner</a></li>
+			<li><a href=""https://www.alliantenergy.com/-/media/alliant/documents/accountandbilling/ratesandtariffs/wisconsinelectricrates/wisconsinelectricscheduleofrates.pdf?la=en&hash=2CCB0D1DC4EA7D294D0DE4F87EAC87C9"">Wisconsin Scheduled Electric Rates</a> (Direct Download, PDF page 186, Sheet No. 9.80)</li></ul>
+		</td>	
+	</tr>
+	</table>",Available,Yes,No,Available and E.O. 14057 eligible,0,0
+JEA,JEA SolarSmart,Florida,"<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>Florida</td>
+	</tr>
+	<tr><th>Availability</th>
+	<td>Available</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>No</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>No</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td>All JEA customers that do not currently have privately owned PV systems</td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td>$0.0750/kWh</td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>Customers may subscribe any percentage of their electricity use, 1-100%</td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>30 days</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td>
+			<a href=""https://www.jea.com/solarsmart/"">JEA SolarSmart</a>
+		</td>	
+	</tr>
+	</table>",Available,No/Unknown,No,Available and E.O. 14057 eligible,0,0
+JEA,JEA SolarMax,Florida,"<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>Florida</td>
+	</tr>
+	<tr>
+	<th>Availability</th>
+	<td>Available</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>No</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td>Commercial customers with a minimum annual electricity use of 7,000,000kWh</td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td>Contract specific</td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>Customers may subscribe any percentage of their electricity use, 1-100%</td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>5 years</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td>
+			<a href=""https://www.jea.com/my_account/rates/solarmax/"">JEA SolarMax</a>
+		</td>	
+	</tr>
+	</table>",Available,Yes,No,Available and E.O. 14057 eligible,0,0
+Kentucky Utilities Co,Green Tariff Option 2 - Business Solar,Kentucky,"<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>Kentucky</td>
+	</tr>
+	<tr>
+	<th>Availability</th>
+	<td>Available</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>Yes, until 8/16/2031</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td>Available to all customers receiving service under the company's GS, GTOD-Energy, GTOD-Demand, PS, TODS, TODP, RTS, or FLS rate schedules. This option requires a special contract that must be filed with and approved by the KY Public Service Commission. </td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td>Contract Specific</td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>Contract specific&#8212;participation will be limited to customers who wish to have KU develop, procure, construct, maintain, manage, and own a solar array</td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>Negotiable</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td>
+			<ul><li><a href=""https://lge-ku.com/green-tariff"">Green Tariff</a></li>
+			<li><a href=""https://lge-ku.com/sites/default/files/media/files/downloads/KU-Electric-Rates-101722.pdf"">Kentucky Utilities Company Electric Rates</a> (PDF page 112, Sheet No. 69)</li></ul>
+		</td>	
+	</tr>
+	</table>",Available,Yes,Yes,Available and E.O. 14057 eligible,0,0
+Kentucky Utilities Co,Green Tariff Option 3 - Renewable Power Agreement,Kentucky,"<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>Kentucky</td>
+	</tr>
+	<tr>
+	<th>Availability</th>
+	<td>Available</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>Yes, until 8/16/2031</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>Unknown</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td>Available to all customers receiving service under the company's TODS, RTS, or FLS rate schedules. This option requires a special contract that must be filed with and approved by the KY Public Service Commission.</td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td>Contract Specific</td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>Contracts must be for a minimum monthly load of 10MW</td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>Negotiable</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td>
+			<ul><li><a href=""https://lge-ku.com/green-tariff"">Green Tariff</a></li>
+			<li><a href=""https://lge-ku.com/sites/default/files/media/files/downloads/KU-Electric-Rates-101722.pdf"">Kentucky Utilities Company Electric Rates</a> (PDF page 112, Sheet No. 69)</li></ul>
+		</td>	
+	</tr>
+	</table>",Available,No/Unknown,Yes,Available and E.O. 14057 eligible,0,0
+Kentucky Utilities Co,Green Tariff Option 1 - RECs,Kentucky,"<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>Kentucky</td>
+	</tr>
+	<tr>
+	<th>Availability</th>
+	<td>Unknown</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>Yes, until 8/16/2031</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>Unknown</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>Unknown</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td>Available to all customers receiving service under the company's RS, RTOD-Energy, RTOD-Demand, GS, GTOD-Demand, PS, TODS, TODP, RTS, or FLS rat schedules</td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td>Maximum $13/MWh</td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td> <ul><li>RS, RTOD-Energy, RTOD-Demand, GS, GTOD-Demand customers: Any amount in $5.00 increments</li>
+			<li>PS, TODS, TODP, RTS, or FLS customers: any amount in $13.00 increments</li></ul></td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>30 days</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td>
+			<ul>
+			<li><a href =""https://lge-ku.com/green-tariff"">Green Tariff</a></li>
+			<li><a href=""https://lge-ku.com/sites/default/files/media/files/downloads/KU-Electric-Rates-101722.pdf"">Ketucky Utilities Company Electric Rates</a> (PDF page 112, Sheet No. 69)</li></ul>
+		</td>	
+	</tr>
+	</table>",Fully subscribed/Not currently available,No/Unknown,Yes,Available and E.O. 14057 eligible,0,0
+Madison Gas & Electric Co,Renewable Energy Rider,Wisconsin,"<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>Wisconsin</td>
+	</tr>
+	<tr>
+	<th>Availability</th>
+	<td>Available</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>No</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td>MGE customers served under Cg-2, Cg-4, Cg-6, Sp3, and Cp-1</td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td>Contract specific</td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>Minimum demand of 200kW</td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>Negotiable</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td>
+			<a href=""https://www.mge.com/customer-service/for-businesses/renewable-energy-rider"">Renewable Energy Rider</a>
+		</td>	
+	</tr>
+	</table>",Available,Yes,No,Available and E.O. 14057 eligible,0,0
+Madison Gas & Electric Co,Green Power Tomorrow,Wisconsin,"<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>Wisconsin</td>
+	</tr>
+	<tr><th>Availability</th>
+	<td>Available</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>No</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td>All MGE customers</td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td>$0.0100/kWh</td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>Any percentage of a customer's monthly energy use, 1&#8211;
+100%. Residential customers may also choose to participate in fixed dollar amounts.</td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>Negotiable</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td>
+			<a href=""https://www.mge.com/our-environment/green-power/green-power-tomorrow"">Green Power Tomorrow</a>
+		</td>	
+	</tr>
+	</table>",Available,Yes,No,Available and E.O. 14057 eligible,0,0
+MidAmerican Energy Co,GreenAdvantage,Iowa,"<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>Iowa</td>
+	</tr>
+	<tr><th>Availability</th>
+	<td>Available</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>No</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>Unknown</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>No</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td>All Customers</td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td>Unspecified</td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>Unspecified</td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>Unknown</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td>
+			<a href=""https://www.midamericanenergy.com/green-advantage"">Green Advantage</a>
+		</td>	
+	</tr>
+	</table>",Available,Yes,No,Available and E.O. 14057 eligible,0,0
+Monongahela Power Co,Voluntary Renewable Electricity Rider,West Virginia,"<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>West Virginia</td>
+	</tr>
+		<tr><th>Availability</th>
+		<td>Available</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>Yes, until 2/16/2028</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td>All customers in good financial standing with the company</td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td>$0.040/kWh</td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>Customers will subscribe to a fixed number of kWh per month to apply towards RECs, subject to REC availability</td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>30 days</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td>
+			<a href=""https://www.firstenergycorp.com/content/dam/customer/Customer%20Choice/Files/west-virginia/tariffs/WVMPRetailTariff.pdf"">Monongahela Power Company Rates and Rules &amp; Regulations for Electric Service</a> (PDF page 98, Sheet No. 30-1)
+		</td>	
+	</tr>
+	</table>",Available,Yes,Yes,Available and E.O. 14057 eligible,0,0
+"Mountain View Elec Assn, Inc",Green Power,Colorado,"<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>Colorado</td>
+	</tr>
+	
+		<tr><th>Availability</th>
+		<td>Unknown</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>No</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>Unknown</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>Unknown</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td>All MVEA customers</td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td>$0.0100/kWh</td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>100kWh blocks</td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>1 year</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td>
+		<a href=""https://www.mvea.coop/save-energy-money/green-power/"">Green Power</a>
+		</td>	
+	</tr>
+	</table>",Fully subscribed/Not currently available,No/Unknown,No,Ineligible or no data available,0,0
+Nashville Electric Service,TVA Green Invest,Tennessee,"<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>Tennessee</td>
+	</tr>
+		<tr>
+		<th>Availability</th>
+		<td>Not currently available</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>No</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td>All TVA Customers&nbsp;</td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td>Contract specific</td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>Minimum 10 MW</td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>15 years</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td>
+		<a href=""https://www.tva.com/energy/valley-renewable-energy/green-switch/green-invest"">Green Invest</a>
+		</td>	
+	</tr>
+	</table>",Fully subscribed/Not currently available,Yes,No,Not currently available and E.O. 14057 eligible,0,0
+Nodak Electric Coop Inc,Infinity Renewable Energy Program,North Dakota,"	<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>North Dakota</td>
+	</tr>
+		<tr>
+		<th>Availability</th>
+		<td>Available</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>No</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>No</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td>Unspecified</td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td>Unspecified</td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>Unspecified</td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>30 days</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td>
+		<a href=""https://www.nodakelectric.com/infinity-renewable-energy-program/"">Infinity Renewable Energy Program</a>
+		</td>	
+	</tr>
+	</table>",Available,No/Unknown,No,Ineligible or no data available,0,0
+Northern States Power Co - Minnesota (Xcel),Renewable Connect,Minnesota,"<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>Minnesota</td>
+	</tr>
+		<tr><th>Availability</th>
+		<td>Not currently available</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>Yes, until 1/13/2024</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td>Residential and business customers</td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td><ul>
+			<li>Month-to-month: $0.0365/kWh</li>
+			<li>5-year contract: $0.0335/kWh</li>
+			<li>10-year contract: $0.0335/kWh</li></ul>
+*Pricing is subject to change annually</td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>100kWh blocks</td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>Month-to-month, 5-year, or 10-year options</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td>
+		<a href=""https://mn.my.xcelenergy.com/s/renewable/renewable-connect"">Renewable Connect</a>
+		</td>	
+	</tr>
+	</table>",Fully subscribed/Not currently available,Yes,Yes,Not currently available and E.O. 14057 eligible,0,0
+NV Energy: Nevada Power & Sierra Pacific Power,"GreenEnergy Rider ""NGR 2.0""",Nevada,"<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>Nevada</td>
+	</tr>
+		<tr>
+		<th>Availability</th>
+		<td>Available</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>No</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td><ul>
+			<li>Option A&#8212;All customers</li>
+<li>Option B&#8212;Non-residential customers able to enter into special utility contracts</li>
+	  </ul></td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td><ul>
+			<li>Option A&#8212;Pricing will be updated annually</li>
+<li>Option B&#8212;Pricing is contract specific</li></ul></td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td><ul>
+			<li>Option A&#8212;Customers may contract for 50% or 100% of their monthly electricity use</li>
+<li>Option B&#8212;Minimum load requirement of 1MW </li></ul></td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td><ul>
+			<li>Option A&#8212;1 year</li>
+<li>Option B&#8212;Negotiable</li></ul>
+		</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td><ul><li><a href=""https://www.nvenergy.com/cleanenergy/ngr-open-season"">NV GreenEnergy Rider Open Season</a></li>
+			<li><a href=""https://www.nvenergy.com/publish/content/dam/nvenergy/brochures_arch/about-nvenergy/rates-regulatory/electric-schedules-south/NGR_South.pdf"">NV GreenEnergy Rider Schedule</a></li></ul>
+		
+		</td>	
+	</tr>
+	</table>",Available,Yes,No,Available and E.O. 14057 eligible,0,0
+NV Energy: Nevada Power & Sierra Pacific Power,Large Customer Market Price Energy,Nevada,"<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>Nevada</td>
+	</tr>
+		<tr><th>Availability</th>
+		<td>Available</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>No</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td>Non-residential customers with an annual average hourly load &gt;10MW</td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td>Contract specific</td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>No restriction</td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>Negotiable
+		</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td>
+		<a href=""https://www.nvenergy.com/publish/content/dam/nvenergy/brochures_arch/about-nvenergy/rates-regulatory/electric-schedules-north/LCMPE_North.pdf"">Large Customer Market Price Energy</a>
+		</td>	
+	</tr>
+	</table>",Available,Yes,No,Available and E.O. 14057 eligible,0,0
+Oklahoma Gas & Electric Co,Green Power Wind Rider,Oklahoma,"<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>Oklahoma</td>
+	</tr>
+	<tr><th>Availability</th>
+	<td>Fully Subscribed</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>Yes, until 8/3/2027</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>No</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Unknown</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td>All Residential, General Service, Oil &amp; Gas Producer, Small &amp; Large Public School, Municipal Plumbing, and Power &amp; Light customers</td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td>$0.0390/kWh</td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>100kWh blocks. Residential customers may purchase up to 2,000kWh per month. General Service, Oil &amp; Gas Producers, and Small Public School customers may purchase 4,000kWh per month. Large Public Schools, Municipal Plumbing, and Power &amp; Light customers may purchase up to 16,000kWh per month</td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>120 days
+		</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td>
+		<a href=""https://www.oge.com/wps/wcm/connect/0dee0900-0bba-45e3-b805-c5a84798ebca/50.30+-+GPWR+Stamped+Approved.pdf?MOD=AJPERES&CACHEID=ROOTWORKSPACE-0dee0900-0bba-45e3-b805-c5a84798ebca-nRJK6Xw"">Green Power Wind Rider</a>
+		</td>	
+	</tr>
+	</table>",Fully subscribed/Not currently available,No/Unknown,Yes,Available and E.O. 14057 eligible,0,0
+PacifiCorp (FERC),Renewable Energy Rider,California,"<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>California</td>
+	</tr>
+	<tr><th>Availability</th>
+	<td>Available</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>No</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>Unknown</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>Unknown</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td>All Non-Residential Customers</td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td><ul><li>$0.007/kWh plus $1,500 annual fixed charge</li>
+<li>Contract pricing negotiable for purchases over 2 years in length or over 75,000 MWh per year</li></ul></td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>Minimum purchase of 121,200 kWh annually, in 100 kWh blocks</td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>Less than 1 year</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td>
+		<a href=""https://www.pacificpower.net/content/dam/pcorp/documents/en/pacificpower/rates-regulation/california/rates/RO-3_Renewable_Energy_Rider_Optional_Bulk_Purchase_Option.pdf"">Renewable Energy Rider</a>
+		</td>	
+	</tr>
+	</table>",Available,No/Unknown,No,Not currently available and E.O. 14057 eligible,0,0
+PacifiCorp (FERC),Renewable Energy Rider,Utah,"<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>Utah</td>
+	</tr>
+	<tr><th>Availability</th><td>Available</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>No</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>Unknown</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>Unknown</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td>All Non-Residential Customers</td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td><ul><li>$0.007/kWh plus $1,500 annual fixed charge</li>
+<li>Contract pricing negotiable for purchases over 2 years in length or over 75,000 MWh per year</li></ul></td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>Minimum purchase of 121,200 kWh annually, in 100 kWh blocks</td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>Less than 1 year</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td>
+		<a href=""https://www.rockymountainpower.net/content/dam/pcorp/documents/en/rockymountainpower/rates-regulation/utah/rates/072_Renewable_Energy_Rider_Optional_Bulk_Purchase_Option.pdf"">Renewable Energy Rider</a>
+		</td>	
+	</tr>
+	</table>",Available,No/Unknown,No,Ineligible or no data available,0,0
+PacifiCorp (FERC),Renewable Energy Rider,Washington,"<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>Washington</td>
+	</tr>
+		<th>Availability</th>
+		<td>Available</td>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>No</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>Unknown</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>Unknown</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td>All Non-Residential Customers</td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td><ul><li>$0.007/kWh plus $1,500 annual fixed charge</li>
+<li>Contract pricing negotiable for purchases over 2 years in length or over 75,000 MWh per year</li></ul></td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>Minimum purchase of 121,200 kWh annually, in 100 kWh blocks</td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>Less than 1 year</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td>
+		<a href=""https://www.pacificpower.net/content/dam/pcorp/documents/en/pacificpower/rates-regulation/washington/rates/073_Renewable_Energy_Rider_Optional_Bulk_Purchase_Option.pdf"">Renewable Energy Rider</a>
+		</td>	
+	</tr>
+	</table>",Available,No/Unknown,No,Available and E.O. 14057 eligible,0,0
+Public Service Co of Colorado (Xcel),Renewable Connect,Colorado,"<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>Colorado</td>
+	</tr>
+		<tr><th>Availability</th>
+		<td>Fully Subscribed</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>Yes, until 1/20/2026</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>Unknown</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>No</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td>Residential and business customers</td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td><ul><li>Month-to-month: $0.044/kWh</li>
+			<li>5-year contract: $0.042/kWh</li>
+			<li>10-year contract: $0.041/kWh</li></ul>
+*Pricing is subject to change annually</td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>100kWh blocks</td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>Month-to-month, 5-year, or 10-year options</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td>
+		<a href=""https://co.my.xcelenergy.com/s/renewable/renewable-connect"">Renewable Connect</a>
+		</td>	
+	</tr>
+	</table>",Fully subscribed/Not currently available,No/Unknown,Yes,Ineligible or no data available,0,0
+Public Service Co of NM,Voluntary Solar Rider No. 50,New Mexico,"<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>New Mexico</td>
+	</tr>
+		<tr><th>Availability</th>
+		<td>Available</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>Yes, until 10/13/2026&nbsp;</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>No</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td>Government customers taking permanent retail service uder PNM's rate schedules 3B, 3C, 3D, 3E, 4B, 5B, 15B, 30B, or 35B with a monthly average demand &gt;2.5MW</td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td>Contract specific</td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>No customer may subscribe to more than 60% of the total capacity of PNM's solar facility</td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>15 years</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td><a href=""https://www.pnm.com/documents/28767612/28775078/PNM+AN+575+-+Effective+March+31+2021.pdf/e4cd044f-b820-5956-3a4c-6e0c07086de7?t=1617899398325"">Public Service Company of New Mexico Voluntary Solar Rider No. 50</a>
+		</td>	
+	</tr>
+	</table>",Available,No/Unknown,Yes,Not currently available and E.O. 14057 eligible,0,0
+Public Service Co of NM,Green Energy Rider,New Mexico,"	<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>New Mexico</td>
+	</tr>
+		<tr><th>Availability</th>
+		<td>Ineligible</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>Yes, until 10/13/2026</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Unknown</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td>The rider is only available to new customers able to enter into special service contracts. Customers must have a minimum demand of 10MW and achieve a load factor of at least 75%</td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td>Contract specific</td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>Minimum 10MW</td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>Negotiable</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td>
+		<a href=""https://www.pnm.com/documents/396023/396197/Rider+47+-+Original+-+AN+535.pdf/b0de70c4-0d0c-4649-8e4a-73d9655f50db?t=1551995968369"">Green Energy Rider</a>
+		</td>	
+	</tr>
+	</table>
+</body>",Fully subscribed/Not currently available,Yes,Yes,Not currently available and E.O. 14057 eligible,0,0
+Public Service Co of Oklahoma (AEP),Wind Choice (Green Energy Choice Tariff),Oklahoma,"	<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>Oklahoma</td>
+	</tr>
+		<tr><th>Availability</th><td>Available</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>Yes, until 7/24/2032</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td>All PSO customers taking service under a standard rate schedule, residential or business</td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td>$0.0048/kWh</td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>Up to 100% of a customers load. Total program subscription is only limited by REC availability to PSO.</td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>1 year</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td>
+		<a href=""https://www.psoklahoma.com/account/bills/programs/windchoice/"">WindChoice</a>
+		</td>	
+	</tr>
+	</table>",Available,Yes,Yes,Available and E.O. 14057 eligible,0,0
+Puget Sound Energy Inc,Green Direct,Washington,"<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>Washington</td>
+	</tr>
+		<tr><th>Availability</th><td>Available</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>Yes, until 1/28/2026</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td><ul><li>Limited to Customers taking Electric Service on any of the following schedules: 24, 25, 26, 31, 43, 46 and 49.</li>
+<li>Customers must also have a minimum aggregated load of 10,000,000 kWh annually with PSE, or be a municipal, county, state or federal institution. </li></ul></td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td><ul><li>Rates vary depending on generation mix and contract term, typically between $0.045/kWh to $0.06/kWh for 2023.</li>
+<li>$0.0396/kWh Subscription Credit</li></ul></td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>Customers must contract for 100% of the load of all meters located at each service address under contract for Renewable Energy</td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>10 years</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td>
+		<a href=""https://www.prod.aws.pse.com/-/media/Project/PSE/Portal/Rate-documents/Electric/elec_sch_139.pdf?sc_lang=en ; https://www.pse.com/en/green-options/Renewable-Energy-Programs/green-direct"">Voluntary Long-Term Renewable Energy Purchase Rider</a> (Direct Download)
+		</td>	
+	</tr>
+	</table>",Available,Yes,Yes,Available and E.O. 14057 eligible,0,0
+Southern California Edison Co,Green Rate 2021,California,"<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>California</td>
+	</tr>
+	<tr><th>Availability</th><td>Fully Subscribed</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>Yes, until 2/27/2029</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td>All SCE customers</td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td>Various&#8212;See the Price, Terms, and Conditions file on the program website</td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>50% or 100% of a customer's monthly electricity usage</td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>30 days</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td><ul><li><a href=""https://www.sce.com/residential/rates/standard-residential-rate-plan/green-rates"">Green Rate</a></li>
+			<li><a href=""https://www.sce.com/sites/default/files/custom-files/Web%20files/Price%2C%20Terms%2C%20and%20Conditions.pdf"">Southern California Edison Green Rate 2022 Price, Terms and Conditions</a></li>
+			</ul>
+		</td>	
+	</tr>
+	</table>",Fully subscribed/Not currently available,Yes,Yes,Not currently available and E.O. 14057 eligible,0,0
+Southwestern Electric Power Co (AEP),SWEPCO Renewable Energy Choice,Louisiana,"<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>Louisiana</td>
+	</tr>
+	<tr><th>Availability</th>
+	<td>Available</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>Yes, until 7/24/2032</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>No</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td>All retail customers</td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td>$0.003145/kWh</td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>Any percentage of a customer's monthly energy use, 1&#8211;100%</td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>1 year</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td>
+		<a href=""https://www.swepco.com/clean-energy/renewable/energy-choice/"">Renewable Energy Choice</a>
+		</td>	
+	</tr>
+	</table>",Available,No/Unknown,Yes,Ineligible or no data available,0,0
+Tampa Electric Co,Sun Select,Florida,"<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>Florida</td>
+	</tr>
+	<tr><th>Availability</th>
+	<td>Available</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>Yes, until 10/8/2029</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td>Residential, business, or commercial customers</td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td>$0.0630/kWh</td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>Residential and small business customers may subscribe to 25%, 50% or 100% of electricity use. Business and commercial customers may subscribe in 1,000kWh increments.</td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>30 days</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td>
+		<a href=""https://www.tampaelectric.com/company/solar-energy/sun-select/"">Sun Select</a>
+		</td>	
+	</tr>
+	</table>",Available,Yes,Yes,Available and E.O. 14057 eligible,0,0
+Tennessee Valley Authority (all states),Green Invest,Alabama,"<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>Alabama</td>
+	</tr>
+	<tr>
+	<th>Availability</th>
+	<td>Not currently available</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>No</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td>All TVA Customers</td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td>Contract specific</td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>Minimum 10 MW</td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>15 years</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td><a href=""https://www.tva.com/energy/valley-renewable-energy/green-switch/green-invest"">Green Invest</a>
+		
+		</td>	
+	</tr>
+	</table>",Fully subscribed/Not currently available,Yes,No,Not currently available and E.O. 14057 eligible,0,0
+Town of Crane - (IN),GoGreen Indiana,Indiana,"<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>Indiana</td>
+	</tr>
+	<tr><th>Availability</th>
+	<td>Available</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>Yes, until 6/15/2024</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Unknown</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>Unknown</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td>All Duke Energy Indiana customers</td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td>$0.009/kWh</td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>Minimum 200 kWh purchase, up to 100% of a customer's load</td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>30 days</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td>
+		<a href=""https://www.duke-energy.com/home/products/renewable-energy/gogreen-energy"">GoGreen Indiana</a>
+		</td>	
+	</tr>
+	</table>",Available,No/Unknown,Yes,Available and E.O. 14057 eligible,0,0
+Tucson Electric Power Co,GoSolar Shares,Arizona,"<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>Arizona</td>
+	</tr>
+	<tr><th>Availability</th>
+		<td>Available</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>Yes, until 6/3/2023</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td>All customers served under the Basic Residential and Small, Medium, and Large General Service rates </td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td>$0.0100/kWh 
+</td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>150kWh block</td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>30 days</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td>
+		<a href=""https://www.tep.com/gosolarshares/"">TEP GoSolar Shares</a>
+		</td>	
+	</tr>
+	</table>",Available,Yes,Yes,Available and E.O. 14057 eligible,0,0
+Wisconsin Power & Light (Alliant Energy),Renewable Energy Partners,Wisconsin,"<table>
+	<tr>
+		<th>State(s)</th>
+	  <td>Wisconsin</td>
+	</tr>
+	<tr><th>Availablity</th><td>Available</td></tr>
+	<tr>
+		<th>GSA Areawide Contract</th>
+		<td>No</td>
+	</tr>
+	<tr>
+		<th>CFE Delivery to the Same Balancing Authority</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible CFE Technology</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Generator Placed in Service on or after 10/1/2021</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>EACs Obtained or Retired on behalf of Customer</th>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<th>Eligible Customers</th>
+		<td>All Non-Residential General Service and Large General Service customers</td>
+	</tr>
+	<tr>
+		<th>Program Cost</th>
+		<td>Contract specific</td>
+	</tr>
+	<tr>
+		<th>Minimum Subscription Size</th>
+		<td>Contract specific. The program is limited to 150MW total.</td>
+	</tr>
+	<tr>
+		<th>Contract Term</th>
+		<td>Negotiable</td>
+	</tr>
+	<tr> 
+		<th>Program Website</th>
+		<td>
+		<a href=""https://www.alliantenergy.com/cleanenergy/whatyoucando/renewableenergypartner"">Alliant Energy Renewable Energy Partner</a>
+		</td>	
+	</tr>
+	</table>",Available,Yes,No,Available and E.O. 14057 eligible,0,0
