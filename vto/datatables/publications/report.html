@@ -101,7 +101,7 @@ $('#queryURL').val('');
 
 $(document).ready(function () {
 
-	$.get("VTO_Publications_Database_12-23-2022.csv", function (data) {
+	$.get("VTO_Publications_Database_1-23-2023.csv", function (data) {
 		var csvJson = Papa.parse(removeTrailingLine(data), { "header": true });
 		csvJson = JSON.stringify(csvJson.data, null, 2);
 
