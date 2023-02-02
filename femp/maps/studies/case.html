@@ -369,7 +369,7 @@
                         ('<p class="dt_details">' + d.Description + '</p>');
         }
 
-		$.get('case-studies-map-11302022.csv', function (data) {
+		$.get('case-studies-map-01312023.csv', function (data) {
 			var objJson = Papa.parse(removeTrailingLine(data), { "header": true });
 			var csvJson = JSON.stringify(objJson.data, null, 2);
 
@@ -501,7 +501,7 @@
 				// }
 			// });
 
-			L.mapbox.accessToken = 'pk.eyJ1IjoiZW5lcmd5IiwiYSI6IkozTG9BZDQifQ.1WKh4U0kKCdknF3gxBOF7Q';
+			L.mapbox.accessToken = 'pk.eyJ1IjoiZW5lcmd5IiwiYSI6ImNsY3J6eHRqMDBreHozcmxyb2xlcmsxajQifQ.ARcoivXZ8yd-kLLeDI-oLg';
 
 			var map = L.mapbox.map('map', '', 
 			{ zoomControl: true, attributionControl: false, maxZoom: 7, minZoom: 1,})
