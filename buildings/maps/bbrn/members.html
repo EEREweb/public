@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <title>BBRN Members Map | Department of Energy</title>
 
-<meta name="datafile" content="bbrn_members_2020_10_27.csv">
+<meta name="datafile" content="bbrn_members_2022_09_27.csv">
 
 <script src="states.json.js"></script>
 
@@ -206,7 +206,7 @@ $(document).ready(function() {
 	
     $.when($.ajax({
 		type: "GET",
-        url: 'bbrn_members_2021_05_25.csv',
+        url: 'bbrn_members_2022_10_19.csv',
 		aysnc: false
     }).done(dataLoaded)
 	.fail(function (jqXHR, textStatus, errorThrown) {
@@ -556,7 +556,7 @@ function dataLoaded(data) {
         for (var i = 0; i < states.length; i++) {
             // Create an an input checkbox and label inside.
 
-			if ( (states[i] == 'BC' || states[i] == 'NS' || states[i] == 'ON' || states[i] == 'Guanajuato'  || states[i] == 'Sindh'|| states[i] == 'Hamilton' || states[i] == 'England' || states[i] == '') ) continue;
+			if ( (states[i] == 'BC' || states[i] == 'NS' || states[i] == 'ON' || states[i] == 'Guanajuato'  || states[i] == 'Sindh'|| states[i] == 'Hamilton' || states[i] == 'England' || states[i] == 'AB' || states[i] == 'QC' || states[i] == '') ) continue;
 
 			//item = stateSelect.appendChild(document.createElement('option'));
 
@@ -574,7 +574,7 @@ function dataLoaded(data) {
         for (var i = 0; i < states.length; i++) {
             // Create an an input checkbox and label inside.
 			
-			if ( (states[i] == 'BC' || states[i] == 'NS' || states[i] == 'ON') )
+			if ( (states[i] == 'BC' || states[i] == 'NS' || states[i] == 'ON' || states[i] == 'AB' || states[i] == 'QC') )
 			{
 				$('<option>').text(states[i]).val(states[i]).appendTo(stateSelect);
 			}

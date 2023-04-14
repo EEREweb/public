@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<title>Energy Transitions Initiative Partnership Project — Communities | Department of Energy</title>
+<title>Integrated Biorefineries Map | Department of Energy</title>
 <meta charset="UTF-8">
 
 <script src='//api.mapbox.com/mapbox.js/v2.4.0/mapbox.js?access_token="pk.eyJ1IjoiZW5lcmd5IiwiYSI6IkozTG9BZDQifQ.1WKh4U0kKCdknF3gxBOF7Q"'></script>
@@ -19,12 +19,7 @@
 <script src='//www1.eere.energy.gov/apps/js/funclib.js'></script>
 
 
-
-<script src="scripts/popper.min.js"></script>
-<script src="scripts/brackets-negative.js"></script>
-
-
-<link rel="stylesheet" type="text/css" href="etipp_communities.css">
+<link rel="stylesheet" type="text/css" href="ibr.css">
 
 <base target="_parent">
 
@@ -32,15 +27,23 @@
 //setup Column locations according to the datatable defined columns (not .csv - this can get confusing if your ordering for datatable display differs from the ordering in the .csv), index starts at 0
 
 var objColumn = {
-	"state_full": 5,
-	"Regional_Partners": 7,
-	"Technology": 6
+	"foa":2,
+	"feedstock":5,
+	"conversion_technology": 7,
+	"primary_product": 8,
+	"scale": 12,
+	"status": 16,
+	"state": 17
 };
 //ugly, but looks up the dropdown IDs, and associates the column name in objColumn. TODO, make these an array of objects, and refactor code to make things cleaner.
 var objControlIDs = {
-		'#state_full_select': "state_full",
-		'#partner_select': "Regional_Partners",
-		'#technology_select': "Technology",	
+		'#foa_select': "foa",
+		'#feedstock_div': "feedstock",
+		'#convtech_select': "conversion_technology",
+		'#product_select': "primary_product",
+		'#scale_div': "scale",
+		'#status_select': "status",
+		'#state_select': "state"
 	};
 
 /* Formatting function for row details - modify as you need */
@@ -62,8 +65,42 @@ function format(d) {
 	return '<h4>Full Award Description:</h4>' + 
 			'<p class="dt_details">' + "<strong>" + d.funding_category + '</strong><br/>' + d.award_description + tmpAllFO + tmpFOTotal + '</p>';
 	*/
-	return '<h4>Description:</h4>' + 
-			'<p class="dt_details">' + d.brief_description + '</p>';
+	tmpStartDate = '';
+	tmpEndDate = '';
+	tmpStatus = '';
+
+	tmpStatus = '<br/><p class="dt_details">' + "<strong>Status</strong><br/>" + d.status;
+	if(d.project_start != '')
+		tmpStartDate = ':  ' + d.project_start + ' - ';
+
+	if(d.project_end != '' && d.project_start != '') {
+		if(d.project_end == 'Active')
+			tmpEndDate = 'Present';
+		else
+			tmpEndDate = d.project_end;
+	}
+
+	tmpStatus+= tmpStartDate + tmpEndDate +'</p>';
+
+	tmpTRL = '';
+	if (d.scale != '')
+	tmpTRL = '<br/><p class="dt_details">' + "<strong>Final Technology Readiness Level (TRL)</strong><br/>" + d.scale+'</p>';
+
+	tmpDetailedFeedstock = '';
+	if (d.detailed_feedstock != '')
+		tmpDetailedFeedstock = '<br/><p class="dt_details">' + "<strong>Detailed Feedstock</strong><br/>" + d.detailed_feedstock+'</p>';
+
+	tmpBioCapacity = '';
+	if (d.biofuel_capacity != '')
+		tmpBioCapacity = '<br/><p class="dt_details">' + "<strong>Biofuel Capacity</strong><br/>" + d.biofuel_capacity+'gal/yr</p>';
+
+	var tmpOSTIFinal = d.osti_final;
+
+	if (tmpOSTIFinal != '')
+	tmpOSTIFinal = "<br/><a href='" + d.osti_final + "' target='_blank'>OSTI Final Report</a>";
+
+	return '<h4>'+d.company+'</h4>' + 
+			'<p class="dt_details">' + d.description + '</p>' + tmpStatus + tmpTRL + tmpDetailedFeedstock + tmpBioCapacity + tmpOSTIFinal;
 }
 function addStr(str, index, stringToAdd){
   return str.substring(0, index) + stringToAdd + str.substring(index, str.length);
@@ -83,13 +120,10 @@ function formatCurrency(total) {
 
 $(document).ready(function () {
 
-	
-	var dataDate = 'November 30, 2021';
-	var maxMapZoom = 7;
-	
+	var maxMapZoom = 10;
 	var defaultTableLength = 25;
 
-	var dataFilePath = 'etipp_communities_20220802.csv';
+	var dataFilePath = 'ibr_data_05182022.csv';
 	
 	
 	$.get(dataFilePath, function (data) {
@@ -103,39 +137,76 @@ $(document).ready(function () {
 		var workforce_table = $('#projects-datatable').DataTable({
 			"processing": true,
 			"serverSide": false,
-			"order": [[1, 'asc']],
-			"paging": false,
+			"order": [[2, 'desc']],
 			"lengthMenu": [[ -1, 5, 10, 25, 50, 100], ["All", 5, 10, 25, 50, 100]],
 			"pageLength": (qs['showAll'] == 'true') ? -1 : defaultTableLength,
 			"data": eval(csvJson),
 
 			"columns": [
 				{
-					"class": 'details-control',					// [0]
+					"class": 'details-control',			// [0]
 					"orderable": false,
 					"data": null,
 					"defaultContent": ''
 				},
-				{ "data": "Community" }, 					 	//Not shown [1]
+				{ "data": "cid" }, 					 	//[1]
+				{ "data": "foa" }, 					 	//[2]
 				{
 					"data": null, render: function (data, type, row) {
-						return data.Community;
-						//return "<a href='" + data.Node_ID + "'>" + data.Community + "</a>"; 			// [2]
-					}
+						var tmpLocation = '<br/>' + data.city + ', ' + data.state_code;
+						var tmpCompany = data.company;
+
+						if (data.factsheet != '')
+							tmpCompany = "<a href='" + data.factsheet + "'>" + data.company + "</a>";
+						
+						return tmpCompany + tmpLocation 			
+					}									//[3]
 				},
-				{ "data": "latitude" }, 						//Not shown [3]
-				{ "data": "longitude" },						//Not shown [4]
-				{ "data": "state_full" }, 						//[5]			
-				{ "data": "Technology" }, 						//[6]
-				{
-					"data": null, render: function (data, type, row) {
-						//return data.Regional_Partners;
-						return "<a href='" + data.Regional_Partner_URL + "' target='_blank'>" + data.Regional_Partners + "</a>"; 			// [7]
+				{ "data": "shortname" }, 				//[4]
+				{ "data": "feedstock" },				//[5]
+				{ "data": "detailed_feedstock" }, 		//[6]			
+				{ "data": "conversion_technology" }, 	//[7]
+				{ "data": "primary_product" }, 			//[8]
+				{ "data": "biofuel_capacity" }, 		//[9]
+				{ "data": "latitude" }, 				//[10]
+				{ "data": "longitude" }, 				//[11]
+				{ "data": "scale" }, 					//[12]
+				{ "data": "city" }, 					//[13]
+				{ "data": "project_start" }, 			//[14]
+				{ "data": "project_end" }, 				//[15]
+				{ "data": "status" }, 					//[16]
+				{ "data": "state" }, 					//[17]
+				{ "data": "state_code" }, 				//[18]
+				{ "data": "factsheet" }, 				//[19]
+				{ "data": null, render: function (data, type, row) {
+					if(data.doegrant!='')
+						return '$'+data.doegrant;
+					return '';
 					}
-				},
-				{ "data": "Qualification" }, 					//[8]
-				{ "data": "brief_description" }, 				//[9]
-				{ "data": "Regional_Partner_URL" }, 			//[10]
+				}, 										//[20]
+				{ "data": null, render: function (data, type, row) {
+						var tmpOSTIFinal = data.osti_final;
+
+						if (tmpOSTIFinal != '')
+							tmpOSTIFinal = "<a href='" + data.osti_final + "' target='_blank'>OSTI Final Report</a>";
+						
+						return tmpOSTIFinal 			
+					}	
+				}, 										//[21]
+				{ "data": "description" }, 				//[22]
+				{ "data": null, render: function (data, type, row) {
+						if(data.costshare!='')
+							return '$' + data.costshare;
+
+						return '';
+					}
+				},										//[23]
+				{ "data": null, render: function (data, type, row) {
+					if(data.total_project_cost!='')
+						return '$'+data.total_project_cost;
+					return '';
+					}
+				}, 										//[24]
 			],
 			"columnDefs": [
 				{
@@ -146,16 +217,17 @@ $(document).ready(function () {
 				},
 				{
 					"targets": [1],
-					"visible": false
+					"title": "CID",
+					"searchable": true,
+					"visible": false,
 				},
 				{
 					"targets": [2],
-					"title": "Community"
+					"title": "FOA",
 				},
 				{
 					"targets": [3],
-					"searchable": false,
-					"visible": false
+					"title": "Company"
 				},
 				{
 					"targets": [4],
@@ -164,31 +236,94 @@ $(document).ready(function () {
 				},
 				{
 					"targets": [5],
-					"title": "State"
+					"title": "Feedstock"
 				},
 				{
 					"targets": [6],
-					"title": "Technical Assistance Areas",
+					"title": "Detailed Feedstock",
+					"searchable": true,
+					"visible": false
 				},
 				{
 					"targets": [7],
-					"title": "Regional Partners"
+					"title": "Conversion Technology"
 				},
 				{
 					"targets": [8],
-					"title": "Qualification",
-					"visible": false
+					"title": "Primary Product",
 				},
 				{
 					"targets": [9],
-					"title": "Description",
-					"visible":false,
-					"searchable":true
+					"title": "Biofuel Capacity",
+					"searchable": false,
+					"visible": false
 				},
 				{
-					"targets": [10],
-					"title": "RP URL",
+					"targets": [10], //latitude
 					"visible": false
+				},
+				{
+					"targets": [11], //longitude
+					"visible": false
+				},
+				{
+					"targets": [12],
+					"title": "Final Technology Readiness Level (TRL)", //scale
+					"searchable": true,
+					"visible": false,
+				},
+				{
+					"targets": [13], //city
+					"visible": false 
+				},
+				{
+					"targets": [14], //project_start
+					"visible": false
+				},
+				{
+					"targets": [15], //project_end
+					"visible": false
+				},
+				{
+					"targets": [16],
+					"title": "Status",
+					"visible": false,
+				},
+				{
+					"targets": [17], //state
+					"visible": false
+				},
+				{
+					"targets": [18], //state_code
+					"visible": false
+				},
+				{
+					"targets": [19], //factsheet
+					"visible": false
+				},
+				{
+					"targets": [20],
+					"title": "Federal Share of Funding (millions, USD)",
+				},
+				{
+					"targets": [21],
+					"title": "OSTI Final",
+					"searchable": false,
+					"visible": false
+				},
+				{
+					"targets": [22],
+					"title": "description",
+					"visible": false,
+					"searchable":true,
+				},
+				{
+					"targets": [23],
+					"title": "Cost Share (millions, USD)",
+				},
+				{
+					"targets": [24],
+					"title": "Total Project Cost  (millions, USD)",
 				},
 			],
 			"createdRow": function (row, data, index) {
@@ -200,12 +335,13 @@ $(document).ready(function () {
 					
 					//console.log($('#projects-datatable_filter').length);
 					//if ($('#projects-datatable_filter').find('input').val().length >= 5 ){
-						if ($('#projects-datatable_filter').find('input').val().indexOf(" ") < 0) //As of now, we're only allowing one word terms
+						//if ($('#projects-datatable_filter').find('input').val().indexOf(" ") < 0) //As of now, we're only allowing one word terms
 							search();
-						else {
-							var tmpTrimmedText = $('#projects-datatable_filter').find('input').val().replace(" ", "");
-							$('#projects-datatable_filter').find('input').val(tmpTrimmedText);
-						}
+						//else {
+							//var tmpTrimmedText = $('#projects-datatable_filter').find('input').val().replace(" ", "");
+							//var tmpTrimmedText = $('#projects-datatable_filter').find('input').val();
+							//$('#projects-datatable_filter').find('input').val(tmpTrimmedText);
+						//}
 					//}
 				});
 
@@ -306,6 +442,7 @@ $(document).ready(function () {
 			'ME': "Maine",
 			'MD': "Maryland",
 			'MA': "Massachusetts",
+			'MX': "Mexico",
 			'MI': "Michigan",
 			'MN': "Minnesota",
 			'MS': "Mississippi",
@@ -323,32 +460,30 @@ $(document).ready(function () {
 			'OK': "Oklahoma",
 			'OR': "Oregon",
 			'PA': "Pennsylvania",
+			'PR': "Puerto Rico",
 			'RI': "Rhode Island",
 			'SC': "South Carolina",
 			'SD': "South Dakota",
 			'TN': "Tennessee",
 			'TX': "Texas",
 			'UT': "Utah",
+			'VI': "Virgin Islands",
 			'VT': "Vermont",
 			'VA': "Virginia",
 			'WA': "Washington",
 			'WV': "West Virginia",
 			'WI': "Wisconsin",
-			'WY': "Wyoming",
-			'AS': "American Somoa",
-			'GU': "Guam",
-			'MP': "Northern Mariana Islands",
-			'PR': "Puerto Rico",
-			'VI': "U.S. Virgin Islands",
+			'WY': "Wyoming"
 		};
 
-		// Find and store a variable reference to the list of filters.
-		//var category_filter = document.getElementById('category_div');
-		
-		// removed at client request. FacetRemoval
-		var statefullSelect = document.getElementById('state_full_select');
-		// var partnerSelect = document.getElementById('partner_select');
-		var technologySelect = document.getElementById('technology_select');
+		// Find and store a variable reference to the list of facets.
+		var scale_filter = document.getElementById('scale_div');
+		var feedstock_filter = document.getElementById('feedstock_div');
+		var stateSelect = document.getElementById('state_select');
+		var convtechSelect = document.getElementById('convtech_select');
+		var statusSelect = document.getElementById('status_select');
+		var foaSelect = document.getElementById('foa_select');
+		var productSelect = document.getElementById('product_select');
 		
 
 		L.mapbox.accessToken = 'pk.eyJ1IjoiZW5lcmd5IiwiYSI6IkozTG9BZDQifQ.1WKh4U0kKCdknF3gxBOF7Q';
@@ -378,9 +513,13 @@ $(document).ready(function () {
 			//dt-search-box
 			$('#projects-datatable_filter').find('input').val('');
 			//$("#category_div [type='checkbox']").prop('checked', true);
-			$('#partner_select').val(' ');
-			$('#state_full_select').val(' ');
-			$('#technology_select').val(' ');
+			$("#scale_div [type='checkbox']").prop('checked', true);
+			$("#feedstock_div [type='checkbox']").prop('checked', true);
+			$('#convtech_select').val(' ');
+			$('#state_select').val(' ');
+			$('#status_select').val(' ');
+			$('#foa_select').val(' ');
+			$('#product_select').val(' ');
 			
 			
 			//reset datatable
@@ -398,11 +537,12 @@ $(document).ready(function () {
 		
 		//console.log(data);
 		
+		//load map data
 		var dataSet = csv2geojson.csv2geojson(data);
 		//console.log(dataSet);
 		var readyLayer = featureLayer.setGeoJSON(dataSet);
 
-		
+		//Setup facets
 		setupDataControls();
 
 		
@@ -411,7 +551,7 @@ $(document).ready(function () {
 		//add the initial data (all of it) to the map.
 		customPopup(readyLayer);
 
-		//use this for clustering
+		//use this for map clustering
 		map.addLayer(clusterGroup);
 
 		//use this for no cluster
@@ -428,12 +568,14 @@ $(document).ready(function () {
 			var features = featureLayer.getGeoJSON().features;
 			var checkboxes = [];
 
-			var typesObj = {}, types = [];
-			var fullStateObj = {}, aryFullState = [];
-			var partnersObj = {}, aryPartners = [];
-			var technologyObj = {}, aryTechnology = [], tmpAryValues = [], technologyValue = '';
-			//var qualificationObj = {}, aryQualification = [];
-
+			var scaleObj = {}, aryScale = [];
+			var feedstockObj = {}, aryFeedstock = [];
+			var stateObj = {}, aryState = [];
+			//var technologyObj = {}, aryTechnology = [], tmpAryValues = [], technologyValue = '';
+			var productObj = {}, aryProduct = [], tmpAryValues = [], productValue = '';
+			var convtechObj = {}, aryConvtech = [];
+			var foaObj = {}, aryFOA = [];
+			var statusObj = {}, aryStatus = [];
 
 			//create categories type interface
 			//This loop will go through the dataset and setup all the arrays for the different filters.
@@ -443,45 +585,62 @@ $(document).ready(function () {
 					typesObj[categories[j].trim()] = true;
 				}*/
 
-				//State Names
-				fullStateObj[features[i].properties['state_full'].trim()] = true;
-				
-				//Regional Partners
-				partnersObj[features[i].properties['Regional_Partners'].trim()] = true;
+				//Scale/Final Technology Readiness Level (TRL)
+				scaleObj[features[i].properties['scale'].trim()] = true;
 
-				//Technology
-				technologyValue = features[i].properties['Technology'].trim();
+				//feedstock
+				var feedstocks = features[i].properties['feedstock'].split(";");
+				for (var j = 0; j < feedstocks.length; j++) {
+					feedstockObj[feedstocks[j].trim()] = true;
+				}
+
+				//FOAs
+				//if (features[i].properties['foa'])
+				foaObj[features[i].properties['foa'].trim()] = true;
+				
+				//Status
+				statusObj[features[i].properties['status'].trim()] = true;
+
+				//State Names
+				stateObj[features[i].properties['state'].trim()] = true;
+
+				//Conversion Technology
+				convtechObj[features[i].properties['conversion_technology'].trim()] = true;
+				
+				//Primary Product
+				productValue = features[i].properties['primary_product'].trim();
 
 				//handle multiple values in the field
-				if (technologyValue.indexOf(", ") > 0) {
-					tmpAryValues = technologyValue.split(", ");
+				if (productValue.indexOf("; ") > 0) {
+					tmpAryValues = productValue.split("; ");
 					$.each(tmpAryValues, function (key, val) {
-						technologyObj[val.trim()] = true;
+						productObj[val.trim()] = true;
 					});
 				}
 				else {
 					//Account for empty data
-					if (technologyValue)
-						technologyObj[technologyValue.trim()] = true;
+					if (productValue)
+						productObj[productValue.trim()] = true;
 					else
-						technologyObj["Unavailable"] = true;
+						productObj["Unavailable"] = true;
 				}
-
-				//Qualification
-				//if (features[i].properties['Qualification'])
-				//	qualificationObj[features[i].properties['Qualification'].trim()] = true;
+				
 
 			}
 			
-			/*for (var k in typesObj) types.push(k);
 
-			types.sort();
+			//create Scale checkbox selection control
+			for (var k in scaleObj) aryScale.push(k);
 
-			// Create a category type filter interface.
-			for (var i = 0; i < types.length; i++) {
+			aryScale.sort();
+			//move the first element to last position. requested by client.
+			aryScale.push(aryScale.shift());
+
+
+			for (var i = 0; i < aryScale.length; i++) {
 
 				// Create an an input checkbox and label inside.
-				var item = category_filter.appendChild(document.createElement('div'));
+				var item = scale_filter.appendChild(document.createElement('div'));
 				item.setAttribute('class', 'checkbox');
 				var checkbox = item.appendChild(document.createElement('input'));
 				var colorCode = item.appendChild(document.createElement('div'));
@@ -489,57 +648,124 @@ $(document).ready(function () {
 
 				colorCode.setAttribute('class', 'chkboxColorKey');
 				colorCode.innerHTML = '<img />';
-				colorCode.style.background = projectTypeAttributes[types[i]].color;
+				colorCode.style.background = projectTypeAttributes[aryScale[i]].color;
 				checkbox.type = 'checkbox';
-				checkbox.id = types[i];
+				checkbox.id = aryScale[i];
 				checkbox.checked = true;
 
-				label.innerHTML = '&nbsp;' + types[i];
-				label.setAttribute('for', types[i]);
+				label.innerHTML = '&nbsp;' + aryScale[i];
+				label.setAttribute('for', aryScale[i]);
 				label.setAttribute('data-toggle', 'tooltip');
 				label.setAttribute('data-placement','bottom');
-				label.setAttribute('title', projectTypeAttributes[types[i]].title);
+				label.setAttribute('title', projectTypeAttributes[aryScale[i]].title);
 
 				// Whenever a person clicks on this checkbox, call the update().
 				checkbox.addEventListener('change', function () {
 					search('checkbox1');
-					filter_dt_column($('#projects-datatable').DataTable(), objColumn['funding_category'], '#category_div');
+					filter_dt_column($('#projects-datatable').DataTable(), objColumn['scale'], '#scale_div');
 					//console.log('checkbox changed');
 				});
 				checkboxes.push(checkbox);
 			}
-			*/
-
-			//create State selection interface
-			for (var k in fullStateObj) if (k != "") aryFullState.push(k);
 
 
-			aryFullState.sort();
+			//create Feedstock checkbox selection control
+			checkboxes = [];
+			for (var k in feedstockObj) aryFeedstock.push(k);
 
-			for (let [key, value] of Object.entries(state_list)) {
-				// Create an an input option inside.
-				item = statefullSelect.appendChild(document.createElement('option'));
-				item.setAttribute('value', value);
-				if (!aryFullState.includes(value)){
-					item.setAttribute('disabled', true);
-					item.setAttribute('class','stateDisabled');
-				}
-				
-				item.innerHTML = value;
+			aryFeedstock.sort();
+
+			for (var i = 0; i < aryFeedstock.length; i++) {
+
+				// Create an an input checkbox and label inside.
+				var item = feedstock_filter.appendChild(document.createElement('div'));
+				item.setAttribute('class', 'checkbox');
+				var checkbox = item.appendChild(document.createElement('input'));
+				var label = item.appendChild(document.createElement('label'));
+
+				checkbox.type = 'checkbox';
+				checkbox.id = aryFeedstock[i];
+				checkbox.checked = true;
+
+				label.innerHTML = '&nbsp;' + aryFeedstock[i];
+				label.setAttribute('for', aryFeedstock[i]);
+				label.setAttribute('data-toggle', 'tooltip');
+				label.setAttribute('data-placement','bottom');
+				label.setAttribute('title', aryFeedstock[i]);
+
+				// Whenever a person clicks on this checkbox, call the update().
+				checkbox.addEventListener('change', function () {
+					search('checkbox2');
+					filter_dt_column($('#projects-datatable').DataTable(), objColumn['feedstock'], '#feedstock_div');
+					//console.log('feedstock checkbox changed');
+				});
+				checkboxes.push(checkbox);
 			}
 
-			//doing it normally.
-			/*for (var i = 0; i < aryFullState.length; i++) {
+			//create Status selection interface
+			for (var k in statusObj) if (k != "") aryStatus.push(k);
+
+			aryStatus.sort();
+
+			for (var i = 0; i < aryStatus.length; i++) {
 				// Create an an input option inside.
-				item = statefullSelect.appendChild(document.createElement('option'));
+				item = statusSelect.appendChild(document.createElement('option'));
 
-				item.setAttribute('value', aryFullState[i]);
-				item.innerHTML = aryFullState[i];
+				item.setAttribute('value', aryStatus[i]);
+				item.innerHTML = aryStatus[i];
 
-			}*/
+			}
+			statusSelect.addEventListener('change', function () {
+				var val = $(this).val();
+				//console.log('id: ' + this.id);
+				
+				search_dt_column2($('#projects-datatable').DataTable(), this.id);
+				
+				//update map according to filter
+				search();
 
+				//console.log('status_select changed');
+			});
 
-			statefullSelect.addEventListener('change', function () {
+			//create FOA selection interface
+			for (var k in foaObj) if (k != "") aryFOA.push(k);
+
+			aryFOA.sort();
+
+			for (var i = 0; i < aryFOA.length; i++) {
+				// Create an an input option inside.
+				item = foaSelect.appendChild(document.createElement('option'));
+
+				item.setAttribute('value', aryFOA[i]);
+				item.innerHTML = aryFOA[i];
+
+			}
+			foaSelect.addEventListener('change', function () {
+				var val = $(this).val();
+				//console.log('id: ' + this.id);
+				
+				search_dt_column2($('#projects-datatable').DataTable(), this.id);
+				
+				//update map according to filter
+				search();
+
+				//console.log('foa_select changed');
+			});
+
+			//create State selection interface
+			for (var k in stateObj) if (k != "") aryState.push(k);
+
+			aryState.sort();
+
+			for (var i = 0; i < aryState.length; i++) {
+				// Create an an input option inside.
+				item = stateSelect.appendChild(document.createElement('option'));
+
+				item.setAttribute('value', aryState[i]);
+				item.innerHTML = aryState[i];
+
+			}
+			stateSelect.addEventListener('change', function () {
 				var val = $(this).val();
 				//console.log('id: ' + this.id);
 				
@@ -549,62 +775,59 @@ $(document).ready(function () {
 				//update map according to filter
 				search();
 
-				//console.log('state_full_select changed');
+				//console.log('state_select changed');
 			});
-
-			/*
-			//create Partner selection interface
-			for (var k in partnersObj) if (k != "") aryPartners.push(k);
-
-			//Custom = added Spark Northwest to array
-			aryPartners.push('Spark Northwest');
-			aryPartners.sort();
-
-			for (var i = 0; i < aryPartners.length; i++) {
-				// Create an an input checkbox and label inside.
-				item = partnerSelect.appendChild(document.createElement('option'));
-
-				item.setAttribute('value', aryPartners[i]);
-				item.innerHTML = aryPartners[i];
-
-			}
-
-			partnerSelect.addEventListener('change', function () {
-				search();
-				var val = $(this).val();
-				
-				search_dt_column2($('#projects-datatable').DataTable(), this.id);
-				//console.log('partner_select changed');
-			});
-			*/
-
-			//create Technology selection interface
+			
+			//create Conversion Technology selection interface
 	
 			//find unique items. Use the items as keys in the array, at the end of the loop, you have an array of uniques.
-			for (var k in technologyObj) if (k != "") aryTechnology.push(k);
+			for (var k in convtechObj) if (k != "") aryConvtech.push(k);
 
-			aryTechnology.sort();
+			aryConvtech.sort();
 
-			for (var i = 0; i < aryTechnology.length; i++) {
+			for (var i = 0; i < aryConvtech.length; i++) {
+				// Create an option
+				item = convtechSelect.appendChild(document.createElement('option'));
+
+				item.setAttribute('value', aryConvtech[i]);
+				item.innerHTML = aryConvtech[i];
+
+			}
+
+			convtechSelect.addEventListener('change', function () {
+				search(); //update the map
+				var val = $(this).val();
+				
+				//exact search using the new selection
+				search_dt_column2($('#projects-datatable').DataTable(), this.id);
+				//console.log('convtech_select changed');
+			});
+
+			//create Primary Product selection interface
+	
+			//find unique items. Use the items as keys in the array, at the end of the loop, you have an array of uniques.
+			for (var k in productObj) if (k != "") aryProduct.push(k);
+
+			aryProduct.sort();
+
+			for (var i = 0; i < aryProduct.length; i++) {
 				// Create an an input checkbox and label inside.
-				item = technologySelect.appendChild(document.createElement('option'));
+				item = productSelect.appendChild(document.createElement('option'));
 
-				item.setAttribute('value', aryTechnology[i]);
-				item.innerHTML = aryTechnology[i];
+				item.setAttribute('value', aryProduct[i]);
+				item.innerHTML = aryProduct[i];
 
 			}
 
 
-			technologySelect.addEventListener('change', function () {
+			productSelect.addEventListener('change', function () {
 				search();
 				var val = $(this).val();
 				
 				//send the extra true parameter because Technology is a column that can have multiple values.
 				search_dt_column2($('#projects-datatable').DataTable(), this.id, true);
-				//console.log('technology_select changed');
+				//console.log('product_select changed');
 			});
-
-			
 			
 		}
 
@@ -617,25 +840,66 @@ $(document).ready(function () {
 				var strLatLng = "";
 				//strLatLng = '<br/>' + layer.feature.properties.latitude + ', ' + layer.feature.properties.longitude;
 				
-				var strRegionalPartner = '';
-				if (layer.feature.properties.Regional_Partners != '') {
-					strRegionalPartner = '<div class="callout_label">Regional Partners: <\/div><div><a href="' + layer.feature.properties.Regional_Partner_URL + '" target=_blank">' + layer.feature.properties.Regional_Partners + '<\/a><\/div>';
+				var tmpCompany = '<div class="project_title">' + layer.feature.properties.company + '<\/div>';
+				if (layer.feature.properties.factsheet != '')
+					tmpCompany = '<div class="project_title"><strong><a href="' + layer.feature.properties.factsheet + '" target="_blank">' + layer.feature.properties.company + '</a></strong><\/div>';
+				
+				var tmpBioCapacity = layer.feature.properties.biofuel_capacity;
+				if (tmpBioCapacity != '')
+					tmpBioCapacity = '<div class="callout_label">Biofuel capacity (gal/yr):<\/div> ' + layer.feature.properties.biofuel_capacity.trim() + ' <br\/>';
+
+				var tmpOSTIFinal = layer.feature.properties.osti_final;
+				if (tmpOSTIFinal != '')
+					tmpOSTIFinal = '<a href="' + layer.feature.properties.osti_final + '" target="_blank">OSTI Final Report</a>';
+
+				var tmpStartDate = '', tmpEndDate = '';
+				var tmpStatus = layer.feature.properties.status;
+				if(layer.feature.properties.project_start != '')
+					tmpStartDate = ':  ' + layer.feature.properties.project_start + ' - ';
+
+				if(layer.feature.properties.project_end != '' && layer.feature.properties.project_start != '') {
+					if(layer.feature.properties.project_end == 'Active')
+						tmpEndDate = 'Present';
+					else
+						tmpEndDate = layer.feature.properties.project_end;
 				}
 
-				//var content = '<div class="project_title"><a href="' + layer.feature.properties.Node_ID + '">' + layer.feature.properties.Community + '</a><\/div>' +
-				var content = '<div class="project_title">' + layer.feature.properties.Community + '<\/div>' +
-						'<div class="partner_location">('+ layer.feature.properties.state_full + ')<\/div><hr\/>' +
-					    '<div class="callout_label">Technical Assistance Areas:<\/div> ' + layer.feature.properties.Technology.trim() + ' <br\/>' +
-						strRegionalPartner +
-						//'<div class="callout_label">Qualification:<\/div> ' + layer.feature.properties.Qualification + ' <br\/>' +
-						strLatLng;
+				tmpStatus+= tmpStartDate + tmpEndDate;
 
+				var tmpDoeGrant = layer.feature.properties.doegrant;
+				if (tmpDoeGrant != '')
+					tmpDoeGrant = '<div class="callout_label">Federal Share of Funding (millions, USD):<\/div> $' + layer.feature.properties.doegrant + ' <br\/>';
+						
+				var tmpCostshare = layer.feature.properties.costshare;
+				if (tmpCostshare != '')
+					tmpCostshare = '<div class="callout_label">Cost Share (millions, USD):<\/div> $' + layer.feature.properties.costshare + ' <br\/>';
+				
+				var tmpTotalCost = layer.feature.properties.total_project_cost;
+				if (tmpTotalCost != '')
+					tmpTotalCost = '<div class="callout_label">Total Project Cost (millions, USD):<\/div> $' + layer.feature.properties.total_project_cost + ' <br\/>';
+				
+
+				var content = tmpCompany +
+						'<div class="partner_location">('+ layer.feature.properties.city + ', '+ layer.feature.properties.state +')<\/div><hr\/>' +
+						tmpOSTIFinal +
+						'<div class="callout_label">Feedstock:<\/div> ' + layer.feature.properties.feedstock.replaceAll(';', ',') + ' <br\/>' +
+						//'<div class="callout_label">Detailed Feedstock:<\/div> ' + layer.feature.properties.detailed_feedstock.replaceAll(';', ',') + ' <br\/>' +
+						'<div class="callout_label">Conversion Technology:<\/div> ' + layer.feature.properties.conversion_technology.trim() + ' <br\/>' +
+						'<div class="callout_label">Primary Product:<\/div> ' + layer.feature.properties.primary_product.replaceAll(';', ',') + ' <br\/>' +
+						tmpBioCapacity +	
+						'<div class="callout_label">Final Technology Readiness Level (TRL):<\/div> ' + layer.feature.properties.scale.trim() + ' <br\/>' +
+						'<div class="callout_label">FOA:<\/div> ' + layer.feature.properties.foa.trim() + ' <br\/>' +
+						'<div class="callout_label">Status:<\/div> ' + tmpStatus + ' <br\/>' +
+						tmpDoeGrant + tmpCostshare + tmpTotalCost;
+						
+				
 				layer.bindPopup(content);
 
 				//style the marker
-				//var project_type = layer.feature.properties.funding_category.split(",")[0].trim();
-				var project_type = "Default";
-
+				var project_type = layer.feature.properties.scale.trim();
+				//var project_type = layer.feature.properties.scale.split(",")[0].trim();
+				//var project_type = "Default";
+				
 				layer.setIcon(L.mapbox.marker.icon({
 					'marker-size': projectTypeAttributes[project_type].size,
 					'marker-color': projectTypeAttributes[project_type].color,
@@ -661,7 +925,7 @@ $(document).ready(function () {
 	function checkCategoryTypes(categories) {
 		var blnchecked = false;
 
-		var categorytypes = categories.split(",");
+		var categorytypes = categories.split(";");
 		for (var i = 0; i < categorytypes.length; i++)
 		{
 			if ($("input[id='" + categorytypes[i].trim() + "']").is(':checked')) {
@@ -681,18 +945,15 @@ $(document).ready(function () {
 	var markers = [];
 	function search(strFilterName) {
 		// get the values of the each of the different facets
-		//removed at client request. FacetRemoval
-		var stateFullString = $('#state_full_select').val().trim().toLowerCase();
-		// var partnerString = $('#partner_select').val().trim().toLowerCase();
-		var technologyString = $('#technology_select').val().trim().toLowerCase();
+		var statusString = $('#status_select').val().trim().toLowerCase();
+		var foaString = $('#foa_select').val().trim().toLowerCase();
+		var stateString = $('#state_select').val().trim().toLowerCase();
+		var convtechString = $('#convtech_select').val().trim().toLowerCase();
+		var productString = $('#product_select').val().trim().toLowerCase();
 
-		//var stateFullString = '';
-		var partnerString = '';
-		//var technologyString = '';
-		
 		//dt-search-box
 		var searchString = ($('#projects-datatable_filter').length ) ? ($('#projects-datatable_filter').find('input').val().toLowerCase().trim()) : '';
-		
+		console.log(searchString);
 
 		featureLayer.setFilter(showState);
 		
@@ -706,23 +967,29 @@ $(document).ready(function () {
 		// 2 in { } // false
 		function showState(feature) {
 
-			var tmpTechnologycheck = false;
-					
-			tmpTechnologycheck = ((feature.properties.Technology.toLowerCase().indexOf(technologyString) > -1) || technologyString == '');
-
+			//multiple values
+			var tmpProductcheck = false;
+			tmpProductcheck = ((feature.properties.primary_product.toLowerCase().indexOf(productString) > -1) || productString == '');
+	
 			return (
-					(feature.properties.state_full.trim().toLowerCase() == stateFullString || stateFullString == '') //check feature against state dropdown value
-					&& (feature.properties.Regional_Partners.trim().toLowerCase() == partnerString || partnerString == '') //check feature against regional partners dropdown value
-					&& (tmpTechnologycheck) //check feature against technology dropdown value, we use indexOf here to find the string since it could be a multiple value.
-					//&& (feature.properties.Qualification.trim().toLowerCase() == qualificationString || qualificationString == '') //check feature against qualifications dropdown value
-					
+					(feature.properties.state.trim().toLowerCase() == stateString || stateString == '') //check feature against state dropdown value
+					&& (feature.properties.status.trim().toLowerCase() == statusString || statusString == '') //check feature against status dropdown value
+					&& (feature.properties.conversion_technology.trim().toLowerCase() == convtechString || convtechString == '') //check feature against conversion technologies dropdown value
+					&& (tmpProductcheck) //check feature against primary product dropdown value, we use indexOf here to find the string since it could be a multiple values.
+					&& (feature.properties.foa.trim().toLowerCase() == foaString || foaString == '') //check feature against FOA dropdown value
+					&& (checkCategoryTypes(feature.properties['scale'])) //check the feature against scale filter
+					&& (checkCategoryTypes(feature.properties['feedstock'])) //check the feature against feedstock filter
 					//dt-search-box
 					&& ( //full text search of the following columns, using searchString
-						(feature.properties.Community.toLowerCase().indexOf(searchString) !== -1)
-						|| (feature.properties.state_full.toLowerCase().indexOf(searchString) !== -1)
-						|| (feature.properties.Technology.toLowerCase().indexOf(searchString) !== -1)
-						|| (feature.properties.Regional_Partners.toLowerCase().indexOf(searchString) !== -1)
-						|| (feature.properties.Qualification.toLowerCase().indexOf(searchString) !== -1)
+						(feature.properties.detailed_feedstock.toLowerCase().indexOf(searchString) !== -1)
+						|| (feature.properties.company.toLowerCase().indexOf(searchString) !== -1)
+						|| (feature.properties.city.toLowerCase().indexOf(searchString) !== -1)
+						|| (feature.properties.state.toLowerCase().indexOf(searchString) !== -1)
+						|| (feature.properties.primary_product.toLowerCase().indexOf(searchString) !== -1)
+						|| (feature.properties.conversion_technology.toLowerCase().indexOf(searchString) !== -1)
+						|| (feature.properties.foa.toLowerCase().indexOf(searchString) !== -1)
+						|| (feature.properties.scale.toLowerCase().indexOf(searchString) !== -1)
+						|| (feature.properties.feedstock.toLowerCase().indexOf(searchString) !== -1)
 					)
 			); 
 					
@@ -762,11 +1029,6 @@ $(document).ready(function () {
 				position: 'topleft',
 				hawaiiTitle: 'Zoom to Hawaii',
 				alaskaTitle: 'Zoom to Alaska',
-				guTitle: 'Zoom to Guam',
-				asTitle: 'Zoom to American Somoa',
-				mpTitle: 'Zoom to Northern Mariana Islands',
-				viTitle: 'Zoom to U.S. Virgin Islands',
-				prTitle: 'Zoom to Puerto Rico',
 				downloadTitle: 'Download CSV data',
 				usTitle: 'Zoom to contiguous US',
 				zoomTitle: 'Zoom to Selections',
@@ -783,13 +1045,8 @@ $(document).ready(function () {
 
 				// add buttons
 				this._usButton = this._createButton(options.usTitle, jumpControl + '-style-us', container, usAction);
-				this._alaskaButton = this._createButton(options.alaskaTitle, jumpControl + '-style-ak', container, akAction);
-				this._asButton = this._createButton(options.asTitle, jumpControl + '-style-as', container, asAction);
-				this._guButton = this._createButton(options.guTitle, jumpControl + '-style-gu', container, guAction);
 				this._hawaiiButton = this._createButton(options.hawaiiTitle, jumpControl + '-style-hi', container, hiAction);
-				this._mpButton = this._createButton(options.mpTitle, jumpControl + '-style-mp', container, mpAction);
-				this._prButton = this._createButton(options.prTitle, jumpControl + '-style-pr', container, prAction);
-				this._viButton = this._createButton(options.viTitle, jumpControl + '-style-vi', container, viAction);
+				this._alaskaButton = this._createButton(options.alaskaTitle, jumpControl + '-style-ak', container, akAction);
 				this._zoomTitle = this._createButton(options.zoomTitle, jumpControl + '-style-zoom', container, zoomAction);
 				this._resetTitle = this._createButton(options.resetTitle, jumpControl + '-style-reset', container, resetAction);
 
@@ -800,22 +1057,12 @@ $(document).ready(function () {
 				var link = L.DomUtil.create('a', className, container);
 				link.href = '#';
 				link.title = title;
-				if (className.indexOf('-us') > 0)
+				if (className.indexOf('us') > 0)
 					link.innerHTML = '<b style="margin-top:12px;margin-left:6px;color: black;">US</b>';
-				if (className.indexOf('-hi') > 0)
+				if (className.indexOf('hi') > 0)
 					link.innerHTML = '<b style="margin-top:12px;margin-left:7px;color: black">HI</b>';
-				if (className.indexOf('-ak') > 0)
+				if (className.indexOf('ak') > 0)
 					link.innerHTML = '<b style="margin-top:12px;margin-left:5px;color: black">AK</b>';
-				if (className.indexOf('-gu') > 0)
-					link.innerHTML = '<b style="margin-top:12px;margin-left:5px;color: black">GU</b>';
-				if (className.indexOf('-as') > 0)
-					link.innerHTML = '<b style="margin-top:12px;margin-left:5px;color: black">AS</b>';
-				if (className.indexOf('-mp') > 0)
-					link.innerHTML = '<b style="margin-top:12px;margin-left:5px;color: black">MP</b>';
-				if (className.indexOf('-vi') > 0)
-					link.innerHTML = '<b style="margin-top:12px;margin-left:5px;color: black">VI</b>';
-				if (className.indexOf('-pr') > 0)
-					link.innerHTML = '<b style="margin-top:12px;margin-left:5px;color: black">PR</b>';
 				if (className.indexOf('zoom') > 0)
 					link.innerHTML = '<i class="fa fa-search fa-1" style="margin-top:7px;margin-left:8px;"></i>';
 				if (className.indexOf('reset') > 0)
@@ -853,15 +1100,6 @@ $(document).ready(function () {
 	function guAction() {
 		map.setView([13.47577, 144.7998], 10);
 	}
-	function viAction() {
-		map.setView([17.738493919, -64.75705680], 10);
-	}
-	function mpAction() {
-		map.setView([15.12989379, 145.700448336], 10);
-	}
-	function asAction() {
-		map.setView([-14.29891395, -170.7182346], 10);
-	}
 	
 	function downloadAction() {
 		window.parent.location = 'https://train.cms.doe.gov/diversity/j40-database-download';
@@ -896,6 +1134,7 @@ function search_dt_column2(dtable, callingControl, fuzzySearch) {
 	var columnNum = objColumn[objControlIDs[callingControl]];
 
 	var term = $(callingControl).val();
+	 
 	
 	//if the Any/All option is selected, just search that column with an empty string.
 	if (term == ' ') {
@@ -910,6 +1149,9 @@ function search_dt_column2(dtable, callingControl, fuzzySearch) {
 			dtable.column(columnNum).search(term, false, true).draw(); 
 		}
 		else { //use regex to find EXACT match. This is for columns that require exact search, sometimes values from dropdowns are so close that they match when the term is very close to other terms (Virgina Beach vs Virgina - both show up in Smart search, so we have to use regex to get exact.
+			//escape certain terms for regex
+			term = term.replaceAll('(', '\\(');
+			term = term.replaceAll(')', '\\)');
 			term = "^" + term + "$";
 			dtable.column(columnNum).search(term, true, false).draw();
 		}
@@ -939,35 +1181,48 @@ function filter_dt_column(dtable, col, control) {
 }
 
 var projectTypeAttributes = {
-	'Contract': {
+	'Modeling/Analysis': {
 		color: '#e37222', //orange
 		desc: '', icon: '',
 		size: 'small',
-		title: 'Purchases for the direct benefit of the Government',
+		//title: '',
 	},
-	'Grant': {
+	'TRL 6: Pilot Scale': {
 		color: '#0074a1', //blue
 		desc: '', icon: '',
 		size: 'small',
-		title: 'The transfer of a thing of value to carry out a public purpose',
+		title: '',
 	},
-	'Default': {
+	'TRL 1: Basic Research ': {
 		color: '#5d9300', //green
 		desc: '',
 		icon: '',
 		size: 'small',
-		title: 'The transfer of a thing of value to carry out a public purpose with Government involvement',
+		title: '',
 	},
-	//'Photovoltaics': {
-	//	color: '#fecb00', //yellow
-	//	desc: '', icon: '',
-	//	size: 'small'
-	//},
-	//'Systems Integration': {
-	//	color: '#B22222', //red
-	//	desc: '', icon: '',
-	//	size: 'small'
-	//},
+	'TRL 3: Bench Scale': {
+		color: '#fecb00', //yellow
+		desc: '', icon: '',
+		size: 'small'
+	},
+	'TRL 7: Demonstration Scale': {
+		color: '#B22222', //red
+		desc: '', 
+		icon: '',
+		size: 'small'
+	},
+	'TRL 5: Industrially Relevant Scale/ Pre-Pilot': {
+		color: '#780116', //maroon
+		desc: '', 
+		icon: '',
+		size: 'small'
+	},
+	'TRL 2: Applied Research': {
+		color: '#a3bcf9', //baby blue
+		desc: '', 
+		icon: '',
+		size: 'small'
+	},
 	// 'DOL - TAACCCT': {
 	// color:'#CC66CC', //pink
 	// desc:'<h4>Department of Labor -Trade Adjustment Assistance Community College and Career Training Program (TAACCCT)</h4>'+
@@ -977,15 +1232,14 @@ var projectTypeAttributes = {
 	// legend_label:'Trade Adjustment Assistance Community College and Career Training',
 	// size:'small'
 	// },
-	// 'DOE - WAP': {
-	// color: '#000066', //dkblue
-	// desc:'<h4>DOE Weatherization Assistance Program</h4>'+
-	// '<p>The U.S. Department of Energy (DOE) Weatherization Assistance Program provides grants to states, territories, and some Indian tribes to improve the energy efficiency of the homes of low-income families. These governments, in turn, contract with local governments and nonprofit agencies to provide weatherization services to those in need using the latest technologies for home energy upgrades.</p>',
-	// icon:'',
-	// legend_label:'Weatherization Assistance Program',
-	// //legend_label:'WAP',
-	// size:'small'
-	// },
+	'TRL 8: Commercial Scale': {
+	color: '#000066', //dkblue
+	// desc:'<h4></h4>'+
+	// '<p></p>',
+	icon:'',
+	// legend_label:'',
+	size:'small'
+	},
 	// 'NNMI': {
 	// color: '#B22222', //red
 	// desc:'<h4>National Network for Manufacturing Innovation</h4>' +
@@ -995,23 +1249,24 @@ var projectTypeAttributes = {
 	// legend_label:'National Network for Manufacturing Innovation',
 	// size:'large'
 	// },
-	// 'DOE - NIICE': {
-	// color: '#5E6A71', //grey
-	// desc:'<h4>DOE National Incubator Initiative for Clean Energy</h4>'+
+	'Inactive': {
+	color: '#C3C8C8', //grey
+	// desc:''
 	// '<p>NIICE will support incubators across the country to help unleash the creative potential of America\'s entrepreneurs. Through these incubators, small businesses and entrepreneurs can receive important services to help successfully develop and commercialize clean energy technologies, including mentorship, business development, capital access, and manufacturing support.</p>',
-	// icon:'',
+	icon:'',
 	// //legend_label:'NIICE',
 	// legend_label:'National Incubator Initiative for Clean Energy',
-	// size:'small'
-	// },
-	// 'DOE - National Lab': {
-	// color: '#5D478B', //purple
+	size:'small'
+	},
+	'TRL 4: Engineering Scale': {
+	color: '#5D478B', //purple
 	// desc:'<h4>DOE National Laboratories</h4>'+
 	// '<p>The DOE laboratories comprise a preeminent federal research system, providing the Nation with strategic scientific and technological capabilities.</p> ',
-	// icon:'chemist',
+	//icon:'chemist', //?????
+	icon: '',
 	// legend_label:'National Lab',
-	// size:'large'
-	// }
+	size: 'small'
+	}
 };
 
 
@@ -1024,21 +1279,121 @@ var projectTypeAttributes = {
 </div>-->
 
 <div class="row">
-    <div class="col-sm-3" id="facet_div">
+    <div class="col-sm-12 maprow">
+		<div id='map'>
+			
+		</div>
+	</div>
+</div>
 
-      <!--   <div class="panel-group">
+<div class="row">
+    <div class="col-sm-4" class="facet_div">
+
+        <div class="panel-group">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">
-                        Funding Category
+                        Final Technology Readiness Level (TRL)
                     </h3>
                 </div>
                 <div id="type_collapse" class="panel-collapse collapse in">
-                    <div class="panel-body" id="category_div" aria-label="category_div"></div>
+                    <div class="panel-body" id="scale_div" aria-label="scale_div"></div>
                 </div>
             </div>
-		</div>-->
+		</div>
+
+		<div class="panel-group">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+						<span data-toggle="tooltip" title="Status" data-placement="top">Status</span>
+                    </h3>
+                </div>
+                <div id="type_collapse" class="panel-collapse collapse in">
+                    <div class="panel-body" id="status_div">
+                        <select id='status_select' name='status_select' class='form-control' aria-label='status_select'>
+                            <option value=" ">All</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+		</div>
+	</div><!--col4-->
+
+
+    <div class="col-sm-4" class="facet_div">
+
+		<div class="panel-group">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        Feedstock
+                    </h3>
+                </div>
+                <div id="type_collapse" class="panel-collapse collapse in">
+                    <div class="panel-body" id="feedstock_div" aria-label="feedstock_div"></div>
+                </div>
+            </div>
+		</div>
+
+       
+	</div><!--col4-->
+
+
+
+    <div class="col-sm-4" class="facet_div">
+
+		<div class="panel-group">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        <span data-toggle="tooltip" title="Conversion Technology" data-placement="top">Conversion Technology</span>
+                    </h3>
+                </div>
+                <div id="type_collapse" class="panel-collapse collapse in">
+                    <div class="panel-body" id="convtech_div">
+                        <select id='convtech_select' name='convtech_select' class='form-control' aria-label='convtech_select'>
+                            <option value=" ">All</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+		</div>
+
+		<div class="panel-group">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        <span data-toggle="tooltip" title="Primary Product" data-placement="top">Primary Product</span>
+                    </h3>
+                </div>
+                <div id="type_collapse" class="panel-collapse collapse in">
+                    <div class="panel-body" id="product_div">
+                        <select id='product_select' name='product_select' class='form-control' aria-label='product_select'>
+                            <option value=" ">All</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+		</div>
 		
+		<div class="panel-group">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+						<span data-toggle="tooltip" title="FOA" data-placement="top">FOA</span>
+                    </h3>
+                </div>
+                <div id="type_collapse" class="panel-collapse collapse in">
+                    <div class="panel-body" id="foa_div">
+                        <select id='foa_select' name='foa_select' class='form-control' aria-label='foa_select'>
+                            <option value=" ">All</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+		</div>
+
 		<div class="panel-group">
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -1048,63 +1403,30 @@ var projectTypeAttributes = {
                 </div>
                 <div id="state_collapse" class="panel-collapse collapse in">
                     <div class="panel-body" id="foa_div">
-                        <select id='state_full_select' name='state_full_select' class='form-control' aria-label='state_full_select'>
+                        <select id='state_select' name='state_select' class='form-control' aria-label='state_select'>
                             <option value=" ">All</option>
                         </select>
                     </div>
                 </div>
             </div>
 		</div>
+	</div><!--col4-->
+</div><!--row-->
+
 		
 
-        <!--<div class="panel-group">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">
-                        <span data-toggle="tooltip" title="Regional Partners" data-placement="top">Regional Partners</span>
-                    </h3>
-                </div>
-                <div id="type_collapse" class="panel-collapse collapse in">
-                    <div class="panel-body" id="status_div">
-                        <select id='partner_select' name='partner_select' class='form-control' aria-label='partner_select'>
-                            <option value=" ">All</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
+		
+		
+
+        
+        <!--<div  class="panel-group" style="text-align: center;">
+			<a id="lnkDownload" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Download the .csv datafile." href="javascript:void(0);"><i class="fa fa-download fa-1"></i> Download All Projects Data</a>
+			<br><br>
 		</div>-->
-		
-		<div class="panel-group">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">
-						<span data-toggle="tooltip" title="Technical Assistance Areas" data-placement="top">Technical Assistance Areas</span>
-                    </h3>
-                </div>
-                <div id="type_collapse" class="panel-collapse collapse in">
-                    <div class="panel-body" id="status_div">
-                        <select id='technology_select' name='technology_select' class='form-control' aria-label='technology_select'>
-                            <option value=" ">All</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-		
-		
+	
+	
 
-        
-        
-
-    </div> 
-
-    <div class="col-sm-9 maprow">
-		<div id='map'>
-			
-		</div>
-	</div>
-</div>
 
 <div class="row">
 	<div class="col-sm-12 datatable-container">
