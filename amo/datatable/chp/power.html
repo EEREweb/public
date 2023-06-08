@@ -212,11 +212,13 @@
 										<option value="324199 All Other Petroleum and Coal Products Manufacturing">324199 All Other Petroleum and Coal Products Manufacturing</option>
 										<option value="325180 Other Basic Inorganic Chemical Manufacturing">325180 Other Basic Inorganic Chemical Manufacturing</option>
 										<option value="325193 Ethyl Alcohol Manufacturing">325193 Ethyl Alcohol Manufacturing</option><option value="325211 Plastics Material and Resin Manufacturing">325211 Plastics Material and Resin Manufacturing</option>
+										<option value="325199 All Other Basic Organic Chemical Manufacturing">325199 All Other Basic Organic Chemical Manufacturing</option>
 										<option value="325311 Nitrogenous Fertilizer Manufacturing">325311 Nitrogenous Fertilizer Manufacturing</option>
 										<option value="325411 Medicinal and Botanical Manufacturing">325411 Medicinal and Botanical Manufacturing</option>
 										<option value="325612 Polish and Other Sanitation Good Manufacturing">325612 Polish and Other Sanitation Good Manufacturing</option>
 										<option value="325998 All Other Miscellaneous Chemical Product and Preparation Manufacturing">325998 All Other Miscellaneous Chemical Product and Preparation Manufacturing</option>
 										<option value="326199 All Other Plastics Product Manufacturing">326199 All Other Plastics Product Manufacturing</option>
+										<option value="327120 Clay Building Material and Refractories Manufacturing">327120 Clay Building Material and Refractories Manufacturing</option>
 										<option value="331110 Iron and Steel Mills and Ferroalloy Manufacturing">331110 Iron and Steel Mills and Ferroalloy Manufacturing</option>
 										<option value="331410">331410 Nonferrous Metal (except Aluminum) Smelting and Refining</option>
 										<option value="336110 Automobile and Light Duty Motor Vehicle Manufacturing">336110 Automobile and Light Duty Motor Vehicle Manufacturing</option>
@@ -455,7 +457,7 @@
 			"State": 15,
         };
 
-		$.get('chpdb_master_2023_05_10.csv', function (data) {
+		$.get('chpdb_master_2023_06_08.csv', function (data) {
 			var objJson = Papa.parse(removeTrailingLine(data), { "header": true });
 			var csvJson = JSON.stringify(objJson.data, null, 2);
 
