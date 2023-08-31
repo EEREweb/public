@@ -147,7 +147,7 @@
 										<option value="Manufacturing">Manufacturing</option>
 										<option value="Metals">Metals</option>
 										<option value="Military Facilities">Military Facilities</option>
-										<option value="Multi-family Housing">Multi-family Housing</option>
+										<option value="Multifamily Housing">Multifamily Housing</option>
 										<option value="Natural Gas Production and Processing">Natural Gas Production and Processing</option>
 										<option value="Office Buildings and Skyscrapers">Office Buildings and Skyscrapers</option>
 										<option value="Pipelines">Pipelines</option>
@@ -460,7 +460,7 @@
 			"State": 15,
         };
 
-		$.get('chpdb_master_2023_7_12.csv', function (data) {
+		$.get('chpdb_master_2023_08_24.csv', function (data) {
 			var objJson = Papa.parse(removeTrailingLine(data), { "header": true });
 			var csvJson = JSON.stringify(objJson.data, null, 2);
 
