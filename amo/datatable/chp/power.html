@@ -142,6 +142,7 @@
 										<option value="Food Processing">Food Processing</option>
 										<option value="Forest Products">Forest Products</option>
 										<option value="Healthcare">Healthcare</option>
+										<option value="Hook and Loop Fasteners">Hook and Loop Fasteners</option>
 										<option value="Hotels">Hotels</option>
 										<option value="Laboratories">Laboratories</option>
 										<option value="Manufacturing">Manufacturing</option>
@@ -224,6 +225,7 @@
 										<option value="331410">331410 Nonferrous Metal (except Aluminum) Smelting and Refining</option>
 										<option value="336110 Automobile and Light Duty Motor Vehicle Manufacturing">336110 Automobile and Light Duty Motor Vehicle Manufacturing</option>
 										<option value="339112 Surgical and Medical Instrument Manufacturing">339112 Surgical and Medical Instrument Manufacturing</option> 
+										<option value="339993 Fastener, Button, Needle, and Pin Manufacturing">339993 Fastener, Button, Needle, and Pin Manufacturing</option>
 										<option value="424480 Fresh Fruit and Vegetable Merchant Wholesalers">424480 Fresh Fruit and Vegetable Merchant Wholesalers</option>
 										<option value="441110 New Car Dealers">441110 New Car Dealers</option>
 										<option value="488111 Air Traffic Control">488111 Air Traffic Control</option>
@@ -460,7 +462,7 @@
 			"State": 15,
         };
 
-		$.get('chpdb_master_2023_08_24.csv', function (data) {
+		$.get('chpdb_master_2023_09_07.csv', function (data) {
 			var objJson = Papa.parse(removeTrailingLine(data), { "header": true });
 			var csvJson = JSON.stringify(objJson.data, null, 2);
 
