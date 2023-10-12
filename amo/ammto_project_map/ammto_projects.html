@@ -84,7 +84,7 @@ $(document).ready(function () {
 	var maxMapZoom = 6;	
 	var defaultTableLength = 25;
 
-	var dataFilePath = 'ammto_project_database_map_20230920.csv';
+	var dataFilePath = 'ammto_project_database_map_20230925.csv';
 	
 	
 	$.get(dataFilePath, function (data) {
@@ -875,7 +875,7 @@ var projectTypeAttributes = {
 		size: 'small',
 		title: '',
 	},
-	'Closed': {
+	'Completed': {
 		color: '#0074a1', //blue
 		desc: '', icon: '',
 		size: 'small',
@@ -883,13 +883,6 @@ var projectTypeAttributes = {
 	},
 	'Selected': {
 		color: '#e37222', //orange
-		desc: '',
-		icon: '',
-		size: 'small',
-		title: '',
-	},
-	'Completed': {
-		color: '#ffffff', //white
 		desc: '',
 		icon: '',
 		size: 'small',
