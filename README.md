@@ -1,2 +1,0 @@
-# public
-Interactive javascript projects
