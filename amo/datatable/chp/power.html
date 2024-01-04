@@ -462,7 +462,7 @@
 			"State": 15,
         };
 
-		$.get('chpdb_master_2023_11_30.csv', function (data) {
+		$.get('chpdb_master_2024_01_04.csv', function (data) {
 			var objJson = Papa.parse(removeTrailingLine(data), { "header": true });
 			var csvJson = JSON.stringify(objJson.data, null, 2);
 
