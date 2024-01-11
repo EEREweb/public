@@ -373,7 +373,7 @@
                         ('<p class="dt_details">' + d.Description + '</p>');
         }
 
-		$.get('case-studies-map-12222023.csv', function (data) {
+		$.get('case-studies-map-01102024', function (data) {
 			var objJson = Papa.parse(removeTrailingLine(data), { "header": true });
 			var csvJson = JSON.stringify(objJson.data, null, 2);
 
