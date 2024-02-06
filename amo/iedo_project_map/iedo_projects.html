@@ -83,7 +83,7 @@ $(document).ready(function () {
 	var maxMapZoom = 6;	
 	var defaultTableLength = 25;
 
-	var dataFilePath = 'iedo_project_database_map_20230911.csv';
+	var dataFilePath = 'iedo_project_database_map_20240125_2.csv';
 	
 	
 	$.get(dataFilePath, function (data) {
@@ -872,13 +872,8 @@ var projectTypeAttributes = {
 		size: 'small',
 		title: '',
 	},
-	'Closed': {
-		color: '#0074a1', //blue
-		desc: '', icon: '',
-		size: 'small',
-		title: '',
-	},
-	'Selected': {
+	
+	'Inactive': {
 		color: '#e37222', //orange
 		desc: '',
 		icon: '',
